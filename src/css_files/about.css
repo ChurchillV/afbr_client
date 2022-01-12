@@ -1,0 +1,40 @@
+.image_about{
+    height: 50vw;
+    width: 100%;
+}
+/* rgb(186, 129, 8) */
+.about_full{
+    background-color:  white;
+    color: white;
+}
+
+.about_body {
+    background-color: rgb(255, 255, 255);
+}
+
+.about_text{
+    border-left: 2px solid rgba(218, 165, 32);
+    border-left: 2px solid rgba(218, 165, 32);
+    margin-top: 1%;
+
+    background-color: white;
+
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5vw;
+    width: 75%;
+    color: black;
+    font-weight: 300;
+
+
+}
+
+.about_main{
+    background-color: inherit;
+    color: black;
+}
+
+.image_row{
+    width: 100%;
+}

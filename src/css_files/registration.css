@@ -1,0 +1,76 @@
+.register-card{
+    margin: 2%;
+
+    background-color: white;
+    color: black;
+    border-bottom: 6px solid rgba(218, 165, 32);
+    padding: 2%;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 300;
+    /* box-shadow: 1px 2px 2px; */
+  
+  }
+
+
+.pedcar{
+    display: flex;
+    flex-direction: row;
+}
+  .FORM {
+    background-color: inherit;
+    width: 50vw ;
+    color: s;
+    padding: 5%;
+    border: 1px solid rgba(218, 165, 32);
+    
+  }
+
+  #inputName{
+    width: 100%
+  }
+
+  #inputDam{
+    width: 100%;
+  }
+
+  .dog_reg_full{
+    background-image: url('../images/logo2ee.jpg');
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    
+}
+
+  .form-group{
+      color: white;
+     
+  }
+
+  .dog_reg_pic{
+      height: 50%;
+      width: 70%;
+  }
+
+  .dog_reg_pic_row{
+      /* background-color: red; */
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid rgba(218, 165, 32);
+
+  }
+
+  .puppies{
+    width: 30vw;
+    height: 20vw;
+  }
+
+  .puppies:hover{
+    width: 40vw;
+    height: 30vw;
+    
+  }

@@ -1,0 +1,372 @@
+/* .App{
+  background-image: url('../images/logo2ee.jpg');
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+} */
+@keyframes homestuff {
+    
+  0% {
+      background-image: url('../images/mzv.jpg');
+      background-repeat: none;
+      background-position: center;
+      background-size: cover;
+  }
+  20% {
+    background-image: url('../images/dog11.jpeg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    color: red;
+
+  }
+  50% {
+    background-image: url('../images/dog12.jpeg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    color: red;
+
+  }
+  80% {
+    background-image: url('../images/dog1.jpg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    content: 'All i do';
+    color: white  ;
+  }
+
+}
+
+@keyframes enlarge {
+  0%  {font-size: 4.0vw;}
+  25% {font-size: 4.2vw;}
+  50% {font-size: 4.4vw;}
+  75% {font-size: 4.5vw;}
+}
+
+@keyframes pedigree {
+  0% {background-color: inherit;
+  } 
+  5% {background-image: url('../images/pedigree1.png');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: black;}
+  80% {
+    background-image: url('../images/pedigree1.png');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: black;
+  text-align:left;
+  padding: 10%;
+  }
+}
+
+
+@keyframes worldbackground {
+  0% {background-color: inherit;
+    color: white;
+  } 
+  5% {background-image: url('../images/world1.jpeg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: white;}
+
+  20% {background-image: url('../images/dog1.jpg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: white;}
+
+  34% {background-image: url('../images/dog9.jpg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: white;}
+
+  40% {background-image: url('../images/dog10.jpg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: white;}
+
+  50% {background-image: url('../images/dog3.jpg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: white;}
+
+  75% {background-image: url('../images/dog1.jpg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: white;}
+  80% {
+    background-image: url('../images/africa2.jfif');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  color: black;
+  text-align:left;
+  padding: 10%;
+  }
+}
+
+/* 
+@keyframes slide_to_side  {
+  25%   {left:10px; top:0px;right: 1000px;}
+  100%  {background-color:white; left:400px; top:0px;}
+  
+} */
+
+/* .row{
+  background-image: url('../images/logo2ee.jpg');
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+} */
+.navbar {
+  width: 100%;
+  text-align:center;
+  font-size: 100%;
+  font-weight: 350;
+  /* padding: 3%; */
+  /* background-color: rgba(218, 165, 32); */
+  color: white;
+  /* margin-bottom: 2%; */
+  
+}
+/* rgb(186, 129, 8)) */
+.navtitle{
+  /* background-image: linear-gradient(to left, white, rgb(186, 129, 8)); */
+  width: 100%;
+  background-color: inherit;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: black;
+}
+
+/* rgb(186, 129, 8) */
+
+.nav-link{
+  background-color: inherit; 
+  padding: 0%;
+  margin-left: 3%;
+  width: 100%;
+  font-size: 100%;
+  color: black;
+  /* border-bottom: 1px solid rgb(186, 129, 8); */
+  
+}
+
+.nav-link:hover{
+  font-size: 2vw;
+  color: rgb(135, 120, 88);
+  border-radius: 10px;
+}
+
+.nav-item {
+  background-color: inherit;
+  
+  color: black;
+  font-size: 1.6vw;
+  font-weight: 450;
+  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+
+/* .navbar-nav{
+  color: white;
+}
+
+.navbar-light{
+  color: white;
+} */
+
+.homeMessage {
+  padding: 1%;
+  background-color: white;
+  /* border-right: 10px solid  rgb(186, 129, 8); */
+  opacity: 0.7;
+  font-size: 3vw;
+  text-align: LEFT;
+  color: black;
+  margin: 5%;
+  margin-top: 10%;
+  margin-right: 60%;
+  font-family:serif;
+  -webkit-mask-image: url('../images/mzv2.jpg');
+  mask-image: url('../images/mzv2.jpg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  
+  visibility: hidden;
+ 
+
+}
+
+.home_full{
+  padding-top: 5%;
+}
+
+.homerow{
+  background-image: url('../images/mzv2.jpg');
+  background-position: center;
+  background-repeat: no repeat;
+  background-size: cover;
+  display: flex;
+  border-right: 10px solid  rgb(186, 129, 8);
+  animation-name: homestuff;
+  /* visibility: hidden; */
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  
+}
+
+.homepic{
+  background-image: url('../images/mzv5.jpg');
+  background-position: right;
+  background-repeat: no repeat;
+  background-size: cover;
+  background-color: blue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  
+  
+}
+
+
+.title{
+  background-color: inherit;
+  padding: 1%;
+  font-size: 4vw;
+  text-align: center;
+  color:  rgb(186, 129, 8);
+  animation-name: enlarge;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  border-top: 6px solid rgb(186, 129, 8);
+
+}
+
+.carousel-inner{
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+  overflow: hidden;
+}
+
+
+
+.register{
+  background-color: inherit;
+  padding: 10%;
+  
+  font-size: 1rem;
+  text-align: center;
+  color: white  ;
+  animation-name: enlarge;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  border-left: 6px solid white;
+  display: flex;
+
+}
+
+.gallery{
+  background-color: inherit;
+  padding: 10%;
+
+  font-size: 4vw;
+  text-align: center;
+  color: rgb(186, 129, 8);
+  animation-name: enlarge;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease; 
+  /* border-bottom: 6px solid black;
+  display: flex; */
+
+}
+
+.pedigree{
+  background-color: inherit;
+  padding: 10%;
+  font-size: 3.0vw;
+  text-align: center;
+  color: white;
+  animation-name: pedigree;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+.globe{
+  background-color: inherit;
+  padding: 10%;
+  font-size: 3.0vw;
+  text-align: center;
+  color: black;
+  animation-name: worldbackground;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  
+}
+
+.partners{
+  background-color: inherit;
+  padding: 1%;
+  font-size: 4vw;
+  text-align: center;
+  color: white;
+  animation-name: enlarge;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  border-right: 6px solid rgb(186, 129, 8);
+  display: flex;
+  position:relative;
+}
+
+.partners_image{
+  width: 10vw;
+  height: 10vw;
+
+}
+
+
+.profile_dog_card{
+  background-color: rgb(59, 24, 24);
+  
+}
+
+.card_row{
+  padding: 2%;
+  background-color: rgba(218, 165, 32);
+  margin-top: 5%;
+  
+}
+
+.footer_full{
+  background-image: url('../images/logo2ee.jpg');
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  color: white;
+}

@@ -1,0 +1,94 @@
+.main{
+    background-color: inherit;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+
+
+
+.sires_row{
+    background-color: inherit;
+    padding: 10%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2vw;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+
+.sire{
+    padding: 0%;
+    background-color: inherit;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* width: 100%; */
+    align-items: center;
+    
+}
+
+.sire_label{
+
+    padding-top: 15%;
+    padding-bottom: 15%;
+    /* padding: 5%; */
+    text-align: center;
+    background-color:inherit;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgb(186, 129, 8);
+    border-bottom: 1px solid rgb(186, 129, 8);
+    
+}
+
+.image{
+    border: 5px solid rgb(186, 129, 8);
+    height: 10vw;
+    width: 10vw;
+}
+
+.sire_sire{
+    padding: 0%;
+    /* width: 100%; */
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+
+}
+
+.sire_sire_1{
+    padding: 0%;
+    background-color: inherit;
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid black; */
+    align-items: center;
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black;
+     */
+     text-align: center;
+     margin-bottom: 1%;
+}
+
+.label{
+    border-top: 1px solid rgb(186, 129, 8);
+    border-bottom: 1px solid rgb(186, 129, 8);
+    padding-top: 4%;
+    padding-bottom: 4%;
+
+}
+
+.label2{
+    border-top: 1px solid rgb(186, 129, 8);
+    border-bottom: 1px solid rgb(186, 129, 8);
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
