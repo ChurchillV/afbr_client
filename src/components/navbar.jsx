@@ -44,7 +44,7 @@ class Navbar extends Component {
                             
                         </li>
                         <li class="nav-item">
-                            <Link to='/'   style={{color: this.props.color}} class="nav-link" onClick={this.props.toggle_sign_up}>Sign Up</Link>
+                            <Link   style={{color: this.props.color}} class="nav-link" to="/sign_up">Sign Up</Link>
                         </li>
                         <li class="nav-item">
                             <Link to='/'   style={{color: this.props.color}} class="nav-link" onClick={this.props.toggle_login}>Login</Link>

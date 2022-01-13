@@ -11,7 +11,7 @@ import Breeds from './components/breeds'
 import Shows from './components/shows'
 import Judges from './components/judges'
 import Contact from './components/contact'
-import { Login } from './components/sign_login';
+import { Login, SignUp } from './components/sign_login';
 import axios from 'axios'
 import ProfileDog from './components/ProfileDog';
 import ProfileMain from './components/profile_main';
@@ -20,6 +20,19 @@ import SignOut from './components/signout'
 import { PedigDam, PedigDamDam, PedigMain, PedigSire, PedigSireDam, PedigDamSire, PedigSireSire } from './components/pedig-manual-components/pedigcomponents';
 import { PedigSireDamDam, PedigSireDamSire, PedigSireSireDam, PedigSireSireSire } from './components/pedig-manual-components/pedigcomponents2';
 import { PedigDamDamDam, PedigDamDamSire, PedigDamSireDam, PedigDamSireSire } from './components/pedig-manual-components/pedigcomponents3';
+
+
+
+import { Amplify } from 'aws-amplify';
+
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+
+
 
 class App extends Component {
   constructor(props) {
@@ -130,6 +143,8 @@ class App extends Component {
 
   render() {
     return (
+     
+      
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home />} />
@@ -141,7 +156,7 @@ class App extends Component {
           <Route path='/judges' element={<Judges />} />
           <Route path='/contact' element={<Contact />} />
 
-          <Route path='/login' element={<Login />} />
+          <Route path='/sign_up' element={< SignUp />} />
 
 
           <Route path='/litter_registrations' element={<LitterRegistration />} />
@@ -217,6 +232,8 @@ class App extends Component {
         </Routes>
 
       </BrowserRouter>
+      
+
     );
   }
 

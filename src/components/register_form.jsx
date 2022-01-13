@@ -1,8 +1,14 @@
 
-import React, { Component, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import '../css_files/registration.css'
 import { Auth, Hub } from 'aws-amplify'
+import {Image} from 'cloudinary-react'
+import axios from 'axios'
+import Amplify from 'aws-amplify'
+// import {AmplifySignOut, withAuthenticator} from '@aws-amplify/ui-react'
+
+
 // import "./Signup.css";
 
 class RegisterForm extends Component {
@@ -10,6 +16,9 @@ class RegisterForm extends Component {
     constructor(props) {
         super(props)
         console.log('this.prpos.sires', Object.keys(this.props))
+        this.state = {
+            imageSelected: ''
+        }
         // console.log('this.prpos.dams', Object.values(this.props.dams))
 
     }
@@ -28,22 +37,43 @@ class RegisterForm extends Component {
         })
     }
 
+    // uploadImage = (files) => {
+    //     console.log(files[0])
+    //     const formData = new FormData()
+    //     formData.append('file', this.state.imageSelected)
+    //     formData.append('upload_preset', 'gwxgv5ii')
+
+    //     axios.post('https://api.cloudinary.com/v1_1/daurieb51/image/upload', formData)
+    //     .then((response) => 
+    //         console.log(response))
+
+    //     this.props.uploadImagetodb(formData['file'])
+                
+    // } 
+
     //edit wont work here by displaying the initial values cos props = this.state not this.state.dog
 
     render() {
+
         return (
             <form onSubmit={(e) => {
                 this.props.submit(e)
             }}
                 method='post' className='align-items-center justify-content-center FORM'>
 
-
+            
                 <div className='form-row'>
                     <div className='form-group'>
                         <label for="inputimage">Upload image &nbsp;</label>
-                        <input type='file' name='image' accept='image/*' id='inputimage' ></input>
+                        <input type='file' name='image' onChange={this.props.handleImageChange} accept='image/*' id='inputimage' ></input>
+                        <button onClick={this.props.uploadImage}>submit</button>
                         {/* { this.props.image_urls.map(imagesrc => <img src={imagesrc} alt='Dog pic'></img>)} */}
 
+                        <Image
+                            style={{width:200}}
+                             cloudName='daurieb51'
+                            publicId='https://res.cloudinary.com/daurieb51/image/upload/v1642082142/hwznl698fndnwqhmdnhn.png'
+                            />
                     </div>
                 </div>
                 <div className='form-row'>
@@ -141,90 +171,154 @@ class RegisterForm extends Component {
 }
 
 
-const initialFormState = {
-    username: '', password: '', email: '', authCode: '', formType: 'signUp'
-}
+// const initialFormState = {
+//     username: '', password: '', email: '', authCode: '', formType: 'signUp'
+// }
+
+// export const SignUpForm = () => {
+
+//     const [ formState, updateFormState ] = useState(initialFormState)
+//     const [user, updateUser] = useState(null)
+//     useEffect(()=>{
+//         checkUser()
+//         setAuthListener()
+//     }, [])
+
+//     async function setAuthListener() {
+        
+//         Hub.listen('auth', (data) => {
+//             switch (data.payload.event){
+//                 // case 'signIn':
+//                 //     console.log('user signed in');
+//                 //     break;
+//                 // case 'signUp':
+//                 //     console.log('user signed up');
+//                 //     break;
+//                 case 'signOut':
+//                     console.log('data from event', data)
+//                     console.log('user signed out');
+//                     updateFormState(() => ({...formState, formType: 'signUp'}))
+//                     break;
+//                 default :
+//                     break
+             
+                        
+                        
+                    
+
+//             }
+//         })
+//     }
+//     async function checkUser() {
+//         try{
+//             const user = await Auth.currentAuthenticatedUser() 
+//             // user ='t'
+//             console.log('user', user)
+//             // updateUser(user)
+//             updateFormState(() => ({ ...formState, formType: 'signUp' }))
+
+//         }
+//         catch (err) {
+//             updateUser(null)
+//         }
+//     }
+
+//     function onChange(e) {
+//         e.persist()
+//         updateFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
+//     }
+//     console.log('formstate', formState)
+//     const { formType } = formState 
+
+//     async function signUp() {
+//         const { username, email, password } = formState
+//         await Auth.signUp({ username, password, attributes: { email } })
+//         updateFormState(() => ({ ...formState, formType: 'confirmSignUp' }))
+//         console.log('formstate', formType)
+//     }
+//     async function confirmSignUp() {
+//         const { username, authCode } = formState
+//         await Auth.confirmSignUp( username, authCode )
+//         updateFormState(() => ({ ...formState, formType: 'signIn' }))
+//     }
+//     async function SignIn() {
+//         const { username, password } = formState
+//         await Auth.signIn( username, password )
+//         updateFormState(() => ({ ...formState, formType: 'signedIn' }))
+//     }
+
+//     return (
+//         <div className="Signup">
+//             {
+//                 formType === 'signUp' && (
+//                     <div>
+//                         <input name='username' onChange={onChange} placeholder='username'></input>
+//                         <input name='password' type='password' onChange={onChange} placeholder='password'></input>
+//                         <input name='email' onChange={onChange} placeholder='email'></input>
+//                         <button onClick={signUp}>SIgn UP</button>
+//                         <button onClick={()=> updateFormState(() => ({
+//                             ...formState, formType:'signIn'
+//                         }))}>SIgn In
+//                         </button>
+
+
+
+
+//                     </div>
+
+
+//                 )}
+//             {
+//                 formType === 'signIn' && (
+//                     <div>
+//                         <input name='username'  onChange={onChange} placeholder='username'></input>
+//                         <input name='password' type='password' onChange={onChange} placeholder='password'></input>
+//                         <button onClick={SignIn}>SIgn In</button>
+
+
+
+//                     </div>
+
+
+//                 )}
+//             {
+//                 formType === 'confirmSignUp' && (
+//                     <div>
+//                         <input name='authCode' onChange={onChange} placeholder='Confirmation Code'></input>
+//                         <button onClick={confirmSignUp} >Confirm Sign up</button>
+
+
+
+//                     </div>
+
+
+//                 )}
+//             {
+//                 formType === 'signedIn' && (
+//                     <div>
+//                         <h1>
+//                             Hello world welcome {user}</h1>
+//                         <button onClick={
+//                             () => Auth.signOut()
+//                         }>Sign Out</button>
+
+
+//                     </div>
+
+
+//                 )}
+//         </div >
+
+//     )}
+
 
 export const SignUpForm = () => {
-    const { formState, updateFormState } = useState(initialFormState)
-
-    function onChange(e) {
-        e.persist()
-        updateFormState(() => ({ ...formState, [e.target.name]: e.target.value }))
-    }
-
-    const { formType } = formState
-    async function SignUp() {
-        const { username, email, password } = formState
-        await Auth.signUp({ username, password, attributes: { email } })
-        updateFormState(() => ({ ...formState, formType: 'confirmSignup' }))
-    }
-    async function confirmSignUp() {
-        const { username, authCode } = formState
-        await Auth.confirmSignUp({ username, authCode })
-        updateFormState(() => ({ ...formState, formType: 'signIn' }))
-    }
-    async function SignIn() {
-        const { username, password } = formState
-        await Auth.SignIn({ username, password })
-        updateFormState(() => ({ ...formState, formType: 'signedIn' }))
-    }
-
-    return (
-        <div className="Signup">
-            {
-                formType === 'signUp' && (
-                    <div>
-                        <input name='username' onChange={onChange} placeholder='username'></input>
-                        <input name='password' type='password' onChange={onChange} placeholder='password'></input>
-                        <input name='email' onChange={onChange} placeholder='email'></input>
-                        <Button onClick={signUp}>SIgn UP</Button>
-
-
-
-                    </div>
-
-
-                )}
-            {
-                formType === 'signIn' && (
-                    <div>
-                        <input name='password' type='password' onChange={onChange} placeholder='password'></input>
-                        <input name='email' onChange={onChange} placeholder='email'></input>
-                        <Button onClick={SignIn}>SIgn In</Button>
-
-
-
-                    </div>
-
-
-                )}
-            {
-                formType === 'confirmSignUp' && (
-                    <div>
-                        <input name='authCode' placeholder='Confirmation Code'></input>
-                        <Button onClick={confirmSignUp} >Confirm Sign up</Button>
-
-
-
-                    </div>
-
-
-                )}
-            {
-                formType === 'signedIn' && (
-                    <div>
-                        <h1>
-                            Hello world welcome user</h1>
-
-
-                    </div>
-
-
-                )}
-        </div >
-
-    )}
-
+    return(
+        <div>
+            {/* <AmplifySignOut/> */}
+            <h1>My app content</h1>
+        </div>
+    )
+}
     export default RegisterForm;
 

@@ -38,7 +38,7 @@ const SignUp = (props) => {
 
    
     return (
-        <Modal isOpen={true} toggle={props.toggle} style={modal_Style}>
+        // <Modal isOpen={true} toggle={props.toggle} style={modal_Style}>
             <div className='row align-items-center justify-content-center ' style={row_style}>
                 <div className='col-sm-6' style={{ textAlign: 'center', padding: '0%' }}>
                     <h1>Signup</h1>
@@ -48,7 +48,7 @@ const SignUp = (props) => {
                 </div>
 
             </div>
-        </Modal>
+        // </Modal>
     )
 }
 
@@ -60,7 +60,7 @@ const Login = (props) => {
                     <h1>Login</h1>
                 </div>
                 <div className='col-sm-6' style={{ marginTop: '4%' }}>
-                    <LoginForm />
+                    
                 </div>
 
             </div>

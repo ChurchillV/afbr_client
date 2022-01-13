@@ -14,7 +14,7 @@ import logo3 from '../images/logo3.png'
 import mzv from '../images/mzv2.jpg'
 import Navbar from './navbar';
 import Footer from './footer';
-import { Login, SignUp } from './sign_login';
+
 
 
 
@@ -72,8 +72,8 @@ class Home extends Component {
                   < Card text1='Dedicated to connecting dogs across Africa and around the globe' className='globe'/>
                 </div>
               </div>
-              {this.state.sign_up_modal ? <SignUp toggle={this.toggle_sign_up}/> : null }
-              {this.state.login_modal ? <Login toggle={this.toggle_login}/> : null }
+              {/* {this.state.sign_up_modal ? <SignUp toggle={this.toggle_sign_up}/> : null }
+              {this.state.login_modal ? <Login toggle={this.toggle_login}/> : null } */}
               <div className='row card_row align-items-center justify-content-center'>
                 <div className='col-sm-6'>
                   < Card text1='Register with us today'  className='register'/>

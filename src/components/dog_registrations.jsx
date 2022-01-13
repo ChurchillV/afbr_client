@@ -36,6 +36,8 @@ class DogRegistration extends React.Component {
                 'dam': '',
                 'age': '',
                 'date_of_birth': '',
+                'image_url': '',
+                'public_id' : ''
             },
 
             sires: {
@@ -46,8 +48,7 @@ class DogRegistration extends React.Component {
 
             },
             edit: false,
-            images: [],
-            image_urls: []
+           
 
         }
 
@@ -137,23 +138,58 @@ class DogRegistration extends React.Component {
     }
 
 
-    onImageChange = (e) => {
-        console.log('here')
-        // this.setState({...this.state,'a':'1'}, ()=> console.log(this.state))
-        this.setState({ images: e.target.files }, () => {
-            console.log('image uploadad', e.target.files[0], this.state)
-            axios
-            .post(`http://localhost:8000/api/dogs/pictures`)
-            .then((res) => {
 
-              console.log('succsedffulst u[lod')
-            })
-            .catch((err) => {
-                console.log("Error couldn't upload pix");
-                console.log(err.message);
-            });
+    uploadImage = (files) => {
+        // console.log(files[0])
+        const formData = new FormData()
+        formData.append('file', this.state.imageSelected)
+        // // console.log(this.state.imageSelected)
+        formData.append('upload_preset', 'gwxgv5ii')
+
+        axios.post('https://api.cloudinary.com/v1_1/daurieb51/image/upload', formData)
+        .then((response) => {
+            console.log('responseeeee', response.data.public_id)
+            console.log('image successfuly uploaded thank you jehovah')
+            this.setState({
+                ...this.state,
+                dog: { ...this.state.dog, public_id: response.data.public_id }
+            },
+            () => console.log(this.state.dog))
+               
+    
+           
         })
+
+        // this.uploadImagetodb()
+                
+    } 
+
+
+    addImageSelected = (e) =>{
+        this.setState({
+            ...this.state,
+            imageSelected: e.target.files[0]
+        },
+            () => console.log(this.state.imageSelected, this.state))
+   
     }
+    handleImageChange = (e) => {
+        // const {  value } = e.target.files[0]
+        // console.log('e.')
+        console.log(e.target.files[0].name)
+        
+        
+        // this.setState((data) => ({ ...data, [e.target.name]: e.target.value }));
+        this.setState({
+            ...this.state,
+            dog: { ...this.state.dog, image_url: e.target.files[0].name }
+        },
+            this.addImageSelected(e))
+
+       
+        }
+
+   
 
 
     handleChange = (e) => {
@@ -221,18 +257,7 @@ class DogRegistration extends React.Component {
             });
     }
 
-    submit = (e) => {
-
-        e.preventDefault()
-
-        // setData((data) => ({...data, [e.target.name]: e.target.value }))
-        console.log(this.state)
-        // console.log(e.target.name)
-        // console.log(e.target.value)
-        // console.log(e.target.sex)
-        // console.log(e.target.value)
-
-
+    sendDogInfo = (callback) => {
         axios
             .post("http://localhost:8000/api/dogs", this.state.dog)
             .then((res) => {
@@ -246,30 +271,39 @@ class DogRegistration extends React.Component {
                     this.props.getnext_dog_id(this.props.appendto)
                 }
 
-            })
+            },
+            callback())
 
             .catch((err) => {
                 console.log("Error couldn't create Dog");
                 console.log(err.message);
             });
 
-        console.log(e.target.image.value)
-        axios
-            .post("http://localhost:8000/api/pictures", e.target.image.value)
-            .then((res) => {
+    }
 
-                console.log(res.data.message);
-                console.log('image loaded successfully')
-                
+    submit = (e) => {
 
-            })
+        e.preventDefault()
 
-            .catch((err) => {
-                console.log("Error couldn't send image");
-                console.log(err.message);
-            });
+        // setData((data) => ({...data, [e.target.name]: e.target.value }))
+        console.log(this.state)
+        // console.log(e.target.name)
+        // console.log(e.target.value)
+        // console.log(e.target.sex)
+        // console.log(e.target.value)
+
+        this.uploadImage(this.sendDogInfo)
 
         
+       
+        
+        if (this.state.dog.image_url){
+            this.uploadImage(this.sendDogInfo)
+        
+        }
+        else {
+            this.sendDogInfo()
+        }
 
 
 
@@ -297,10 +331,11 @@ class DogRegistration extends React.Component {
                                     // to_dams_sires_firstgen={this.props.to_dams_sires_firstgen}
                                     // to_dams_dams_firstgen={this.props.to_dams_dams_firstgen}
                                     image_urls={this.state.image_urls}
-                                    onImageChange={this.onImageChange}
+                                    handleImageChange={this.handleImageChange}
                                     sires={this.state.sires}
                                     dams={this.state.dams}
-
+                                    uploadImagetodb={this.uploadImagetodb}
+                                    uploadImage={this.uploadImage}
                                     submit={this.submit} handleChange={this.handleChange}
                                     getdogid={this.props.getdogid}
                                     getnameofDog={this.props.getnameofDog}
