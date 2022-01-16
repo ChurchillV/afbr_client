@@ -8,6 +8,8 @@ import Card from './card';
 import Profile_Card from './profile_card';
 import { useParams, useLocation, useNavigate } from "react-router-dom"
 import axios from 'axios';
+import {Image} from 'cloudinary-react'
+
 
 
 import Profile from './profile';
@@ -123,8 +125,22 @@ export class PedigreeDogCard extends Component {
             <a style={{color:'whitesmoke'}} href={`/my_dogs/${this.props.dog_id}`}>
                 <div className='sire_sire_1'>
                     <div className='sire_sire_1'>
-                        <img src={Profile_pic} height='100vw' width='100vw' className='image'></img>
-                    </div>
+                    {this.props.dog_publicId ? 
+                <Image
+                style={{width:200}}
+                 cloudName='daurieb51'
+                    publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog_publicId}.png`}
+                
+
+
+                />    : 
+                <img src={Profile_pic} 
+                width={width} height={height}>
+                </img>
+
+                
+            
+            }                         </div>
                     <div className='sire_sire_1 label'>
                         {this.props.dog_name}
                     </div>

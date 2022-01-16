@@ -5,6 +5,14 @@ import { PedigreeFrame, PedigreeDogCard, PedigreeDogCard2_dam, PedigreeDogCard2_
 import axios from 'axios';
 import { withRouter } from './dog_registrations';
 import { Link } from 'react-router-dom';
+import { Image } from 'cloudinary-react'
+
+const card_style = {
+    height: '100px',
+    width: '100px,'
+}
+
+const { height, width } = card_style
 
 class Pedigree extends React.Component {
 
@@ -95,9 +103,24 @@ class Pedigree extends React.Component {
                         <div className='sire'>
 
                             <div className=''>
-                                <img src={Profile_pic} height='200vw' width='200vw' className='image'></img>
+                                {this.props.data.sire.public_id ?
+                                    <Image
+                                        style={{ width: 200 }}
+                                        cloudName='daurieb51'
+                                        publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.sire.public_id}.png`}
+
+
+
+                                    /> :
+                                    <img src={Profile_pic}
+                                        width={width} height={height}>
+                                    </img>
+
+
+
+                                }
                             </div>
-                            <a style={{color:'whitesmoke'}} href={`/my_dogs/${this.props.data.sire.id}`}>
+                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                 <div className='sire_label'>
                                     {this.props.data.sire.name}
                                 </div>
@@ -107,16 +130,22 @@ class Pedigree extends React.Component {
                         </div>
 
                         <PedigreeFrame >
-                            <PedigreeDogCard dog_id={this.props.data.siresire.id} dog_name={this.props.data.siresire.name} /> 
-                            <PedigreeDogCard dog_id={this.props.data.siredam.id} dog_name={this.props.data.siredam.name} />
+                            <PedigreeDogCard dog_id={this.props.data.siresire.id} dog_name={this.props.data.siresire.name}
+                                dog_publicId={this.props.data.siresire.public_id} />
+                            <PedigreeDogCard dog_id={this.props.data.siredam.id} dog_name={this.props.data.siredam.name}
+                                dog_publicId={this.props.data.siredam.public_id} />
 
                         </PedigreeFrame>
 
                         <PedigreeFrame>
-                            <PedigreeDogCard dog_id={this.props.data.siresiresire.id} dog_name={this.props.data.siresiresire.name} />
-                            <PedigreeDogCard dog_id={this.props.data.siresiredam.id} dog_name={this.props.data.siresiredam.name} />
-                            <PedigreeDogCard dog_id={this.props.data.siredamsire.id} dog_name={this.props.data.siredamsire.name} />
-                            <PedigreeDogCard dog_id={this.props.data.siredamdam.id} dog_name={this.props.data.siredamdam.name} />
+                            <PedigreeDogCard dog_id={this.props.data.siresiresire.id} dog_name={this.props.data.siresiresire.name}
+                                dog_publicId={this.props.data.siresiresire.public_id} />
+                            <PedigreeDogCard dog_id={this.props.data.siresiredam.id} dog_name={this.props.data.siresiredam.name}
+                                dog_publicId={this.props.data.siresiredam.public_id} />
+                            <PedigreeDogCard dog_id={this.props.data.siredamsire.id} dog_name={this.props.data.siredamsire.name}
+                                dog_publicId={this.props.data.siredamsire.public_id} />
+                            <PedigreeDogCard dog_id={this.props.data.siredamdam.id} dog_name={this.props.data.siredamdam.name}
+                                dog_publicId={this.props.data.siredamdam.public_id} />
                         </PedigreeFrame>
 
 
@@ -126,33 +155,54 @@ class Pedigree extends React.Component {
                         <div className='sire'>
 
                             <div className=''>
-                                <img src={Profile_pic} height='200vw' width='200vw' className='image'></img>
-                            </div>
-                            <a style={{color:'whitesmoke'}} href={`/my_dogs/${this.props.data.dam.id}`}>
+                                {this.props.data.dam.public_id ?
+                                    <Image
+                                        style={{ width: 200 }}
+                                        cloudName='daurieb51'
+                                        publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}
+
+
+
+                                    /> :
+                                    <img src={Profile_pic}
+                                        width={width} height={height}>
+                                    </img>
+
+
+
+                                }                            </div>
+                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                 <div className='sire_label'>
                                     {this.props.data.dam.name}
                                 </div>
                             </a>
 
-
+                                
                         </div>
 
                         <PedigreeFrame >
-                            <PedigreeDogCard dog_id={this.props.data.damsire.id} dog_name={this.props.data.damsire.name} /> 
-                            <PedigreeDogCard dog_id={this.props.data.damdam.id} dog_name={this.props.data.damdam.name} />
+                            <PedigreeDogCard dog_id={this.props.data.damsire.id} dog_name={this.props.data.damsire.name}
+                            dog_publicId={this.props.data.damsire.public_id} />
+                            <PedigreeDogCard dog_id={this.props.data.damdam.id} dog_name={this.props.data.damdam.name}
+                            dog_publicId={this.props.data.damdam.public_id} 
+                             />
 
                         </PedigreeFrame>
 
                         <PedigreeFrame>
-                            <PedigreeDogCard dog_id={this.props.data.damsiresire.id} dog_name={this.props.data.damsiresire.name} />
-                            <PedigreeDogCard dog_id={this.props.data.damsiredam.id} dog_name={this.props.data.damsiredam.name} />
-                            <PedigreeDogCard dog_id={this.props.data.damdamsire.id} dog_name={this.props.data.damdamsire.name} />
-                            <PedigreeDogCard dog_id={this.props.data.damdamdam.id} dog_name={this.props.data.damdamdam.name} />
+                            <PedigreeDogCard dog_id={this.props.data.damsiresire.id} dog_name={this.props.data.damsiresire.name}
+                            dog_publicId={this.props.data.damsiresire.public_id}  />
+                            <PedigreeDogCard dog_id={this.props.data.damsiredam.id} dog_name={this.props.data.damsiredam.name} 
+                            dog_publicId={this.props.data.damsiredam.public_id} />
+                            <PedigreeDogCard dog_id={this.props.data.damdamsire.id} dog_name={this.props.data.damdamsire.name} 
+                            dog_publicId={this.props.data.damdamsire.public_id} />
+                            <PedigreeDogCard dog_id={this.props.data.damdamdam.id} dog_name={this.props.data.damdamdam.name} 
+                            dog_publicId={this.props.data.damdamdam.public_id} />
                         </PedigreeFrame>
 
 
                     </div>
-                    
+
 
                 </div>
             </div >

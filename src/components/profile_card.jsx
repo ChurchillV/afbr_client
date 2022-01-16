@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css_files/profile.css'
 import { Link } from 'react-router-dom';
+import {Image} from 'cloudinary-react'
+
 
 
 //to be edited soon
@@ -14,9 +16,17 @@ class Profile_Card extends React.Component {
     constructor(props) {
         super(props)
         console.log('this.prpos', this.props)
+       
+        
+
+        
+
+
         // console.log('this.prpos.sires', Object.values(this.props.dog.sires))
 
     }
+
+    
 
     info = () => {
 
@@ -28,13 +38,38 @@ class Profile_Card extends React.Component {
         
     }
     
+
+    
+
     render(){
         return (
             <div className='card_'>
+
+                {/* <Image
+                            style={{width:200}}
+                             cloudName='daurieb51'
+                            publicId='https://res.cloudinary.com/daurieb51/image/upload/v1642082142/hwznl698fndnwqhmdnhn.png'
+                            /> */}
                 
-    
-                <img src={this.props.image_src} height={this.props.height} width={this.props.width}></img>
-                {this.info()}
+                {this.props.dog.public_id ? 
+                <Image
+                style={{width:200}}
+                 cloudName='daurieb51'
+                    publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}
+                
+
+
+                />    : 
+                <img src={this.props.image_src} 
+                width={this.props.width} height={this.props.height}>
+                </img>
+
+                
+            
+            }
+                      
+                            
+                            {this.info()}
                 
                
             

@@ -66,14 +66,14 @@ class RegisterForm extends Component {
                     <div className='form-group'>
                         <label for="inputimage">Upload image &nbsp;</label>
                         <input type='file' name='image' onChange={this.props.handleImageChange} accept='image/*' id='inputimage' ></input>
-                        <button onClick={this.props.uploadImage}>submit</button>
+                        {/* <button onClick={this.props.uploadImage}>submit</button> */}
                         {/* { this.props.image_urls.map(imagesrc => <img src={imagesrc} alt='Dog pic'></img>)} */}
-
+{/* 
                         <Image
                             style={{width:200}}
                              cloudName='daurieb51'
                             publicId='https://res.cloudinary.com/daurieb51/image/upload/v1642082142/hwznl698fndnwqhmdnhn.png'
-                            />
+                            /> */}
                     </div>
                 </div>
                 <div className='form-row'>

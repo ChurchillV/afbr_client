@@ -80,9 +80,11 @@ class ProfileDog extends Component {
     componentDidMount() {
         
         this.props.getdogpedigree(this.props.params.dog_id)
-        // this.getspecificdog()
+        this.getspecificdog()
         console.log(this.props)
+ 
     };
+
 
     getpedigree = () => {
         console.log('calling in getpedgiree')
@@ -97,9 +99,12 @@ class ProfileDog extends Component {
             this.setState({ specificdog: res.data[0] }, () => {
                 console.log('finished setting state in profiledog', this.state)
                 
-            })
+            },
+            // this.getdogpic()
+            )
+
             
-    
+           
         }
     
         )
@@ -111,7 +116,16 @@ class ProfileDog extends Component {
     }
 
     
-    
+     
+    // getdogpic = () => {
+    //     let dogpic = ''
+    //     console.log(this.props.pedigree.maindog, '......')
+    //     this.props.pedigreemaindog.public_id ?  dogpic = this.props.maindog.public_id 
+    //     : dogpic = Profile_pic
+    //     console.log('dogpic', dogpic, this.state.specificdog, Profile_pic)
+
+    //     return dogpic
+    // }
 
     handleDelete = () => {
         axios
@@ -124,6 +138,8 @@ class ProfileDog extends Component {
             });
 
     }
+
+   
     render() {
         return (
             <div className='profiledog'>

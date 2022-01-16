@@ -1,5 +1,10 @@
 .row_{
     display: flex;
+    flex-direction: row;
+}
+
+.row_2{
+    display: flex;
     flex-direction: column;
 }
 
@@ -19,6 +24,7 @@
 .page{
     padding: 4.5%;
     border: 1px solid rgb(186, 129, 8);
+    color: white;
 
 }
 

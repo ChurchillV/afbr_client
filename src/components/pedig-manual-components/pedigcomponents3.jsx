@@ -2,6 +2,7 @@ import React from 'react';
 import { PedigNav } from './pedigcomponents';
 import Dog_registrations from '../dog_registrations';
 import axios from 'axios'
+import PedigreeCartoon from '../pedigree-manual';
 
 
 export class PedigDamSireSire extends React.Component {
@@ -28,7 +29,7 @@ export class PedigDamSireSire extends React.Component {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
                 <PedigNav />
-                <div className="row">
+                <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
                             dam sire sire
@@ -37,7 +38,16 @@ export class PedigDamSireSire extends React.Component {
                                 refresh_pedigree={this.props.refresh_pedigree} getnameofDog2={this.props.getnameofDog2}
                         getnext_dog_id={this.props.getnext_dog_id} />
                     </div>
-
+                    <div className='col-sm-6'>
+                        <div className="paginatee">
+                        <PedigreeCartoon />
+                        </div>
+                        <div className="paginatee">
+                        <PedigreeCartoon  four={true}/>
+                        </div>
+                       
+                       
+                    </div>
                 </div>
 
 
@@ -71,7 +81,7 @@ export class PedigDamSireDam extends React.Component {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
                 <PedigNav />
-                <div className="row">
+                <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
                             dam sire dam
@@ -79,6 +89,16 @@ export class PedigDamSireDam extends React.Component {
                         <Dog_registrations appenddog={true} appendto={this.appendtodamsiredam} 
                                 refresh_pedigree={this.props.refresh_pedigree} getnameofDog2={this.props.getnameofDog2}
                         getnext_dog_id={this.props.getnext_dog_id} />
+                    </div>
+                    <div className='col-sm-6'>
+                        <div className="paginatee">
+                        <PedigreeCartoon/>
+                        </div>
+                        <div className="paginatee">
+                        <PedigreeCartoon five={true} />
+                        </div>
+                       
+                       
                     </div>
 
                 </div>
@@ -114,7 +134,7 @@ export class PedigDamDamSire extends React.Component {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
                 <PedigNav />
-                <div className="row">
+                <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
                             dam dam sire
@@ -122,6 +142,16 @@ export class PedigDamDamSire extends React.Component {
                         <Dog_registrations appenddog={true} appendto={this.appendtodamdamsire} 
                                 refresh_pedigree={this.props.refresh_pedigree} getnameofDog2={this.props.getnameofDog2}
                         getnext_dog_id={this.props.getnext_dog_id} />
+                    </div>
+                    <div className='col-sm-6'>
+                        <div className="paginatee">
+                        <PedigreeCartoon />
+                        </div>
+                        <div className="paginatee">
+                        <PedigreeCartoon six={true} />
+                        </div>
+                       
+                       
                     </div>
 
                 </div>
@@ -157,7 +187,7 @@ export class PedigDamDamDam extends React.Component {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
                 <PedigNav />
-                <div className="row">
+                <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
                             dam dam dam
@@ -166,7 +196,16 @@ export class PedigDamDamDam extends React.Component {
                                 refresh_pedigree={this.props.refresh_pedigree} getnameofDog2={this.props.getnameofDog2}
                         getnext_dog_id={this.props.getnext_dog_id} />
                     </div>
-
+                    <div className='col-sm-6'>
+                        <div className="paginatee">
+                        <PedigreeCartoon/>
+                        </div>
+                        <div className="paginatee">
+                        <PedigreeCartoon seven={true} />
+                        </div>
+                       
+                       
+                    </div>
                 </div>
 
 

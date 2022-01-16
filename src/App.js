@@ -204,7 +204,7 @@ class App extends Component {
             getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
             next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
 
-          <Route path='/dog_registrations/pedigsiredamsiresire' element={<PedigDamSireSire getnameofDog2={this.getnameofDog2}
+          <Route path='/dog_registrations/pedigdamsiresire' element={<PedigDamSireSire getnameofDog2={this.getnameofDog2}
             refresh_pedigree={this.getdogpedigree}
             getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
             next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />

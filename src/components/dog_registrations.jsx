@@ -5,6 +5,7 @@ import RegisterForm from './register_form'
 import axios from 'axios';
 
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { LimitTimerRaceResolvedValues } from "@aws-amplify/datastore";
 
 
 export function withRouter(Child) {
@@ -139,7 +140,7 @@ class DogRegistration extends React.Component {
 
 
 
-    uploadImage = (files) => {
+    uploadImage = (callback) => {
         // console.log(files[0])
         const formData = new FormData()
         formData.append('file', this.state.imageSelected)
@@ -154,11 +155,15 @@ class DogRegistration extends React.Component {
                 ...this.state,
                 dog: { ...this.state.dog, public_id: response.data.public_id }
             },
-            () => console.log(this.state.dog))
+            () => {
+                console.log(this.state.dog)
+                callback()
+                console.log('called the callback')
+            })
                
     
-           
         })
+  
 
         // this.uploadImagetodb()
                 
@@ -244,20 +249,35 @@ class DogRegistration extends React.Component {
         // console.log(e.target.value)
 
 
-        axios
-            .put(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`, this.state.dog)
-            .then((res) => {
+        if (this.state.imageSelected){
+            this.uploadImage(this.updateDogInfo)
+            console.log('image url  presnet, ready to eedit')
+        
+        }
+        else {
+            this.updateDogInfo()
+            console.log('no image url present, ready to edit')
+        }
 
-                console.log(res.data.message);
-                console.log('editeed')
-            })
-            .catch((err) => {
-                console.log("Error couldn't edit Dog");
-                console.log(err.message);
-            });
+
+        
     }
 
-    sendDogInfo = (callback) => {
+    updateDogInfo = () => {
+        axios
+        .put(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`, this.state.dog)
+        .then((res) => {
+
+            console.log(res.data.message);
+            console.log('editeed')
+        })
+        .catch((err) => {
+            console.log("Error couldn't edit Dog");
+            console.log(err.message);
+        });
+    }
+
+    sendDogInfo = () => {
         axios
             .post("http://localhost:8000/api/dogs", this.state.dog)
             .then((res) => {
@@ -270,9 +290,9 @@ class DogRegistration extends React.Component {
                 if (this.props.appenddog) {
                     this.props.getnext_dog_id(this.props.appendto)
                 }
-
-            },
-            callback())
+            
+            })
+            
 
             .catch((err) => {
                 console.log("Error couldn't create Dog");
@@ -292,17 +312,19 @@ class DogRegistration extends React.Component {
         // console.log(e.target.sex)
         // console.log(e.target.value)
 
-        this.uploadImage(this.sendDogInfo)
+        
 
         
        
         
         if (this.state.dog.image_url){
             this.uploadImage(this.sendDogInfo)
+            console.log('image url  presnet')
         
         }
         else {
             this.sendDogInfo()
+            console.log('no image url present')
         }
 
 
@@ -313,7 +335,7 @@ class DogRegistration extends React.Component {
     render() {
         return (
             <div className='row align-items-center justify-content-center dog_reg_full'>
-                <Navbar color='white' />
+                {this.props.navbar ? <Navbar color='white' /> : null }
                 <div className="container-fluid">
 
                     <div className="row align-items-center justify-content-center">
@@ -322,7 +344,12 @@ class DogRegistration extends React.Component {
                         <div className="col-md-">
                             {this.state.edit ?
                                 <RegisterForm dog={this.state.dog} sires={this.state.sires}
-                                    dams={this.state.dams} submit={this.edit} handleChange={this.handleChange} />
+                                    dams={this.state.dams} submit={this.edit} 
+                                    handleChange={this.handleChange} 
+                                    image_urls={this.state.image_urls}
+                                    uploadImagetodb={this.uploadImagetodb}
+                                    uploadImage={this.uploadImage}
+                                    handleImageChange={this.handleImageChange}/>
                                 :
                                 <RegisterForm dog={this.state} to_sires_first={this.props.to_sires_first}
                                     to_dams_first={this.props.to_dams_first}
@@ -343,7 +370,7 @@ class DogRegistration extends React.Component {
                                     getnext_dog_id={this.props.getnext_dog_id} />
 
                             }
-                            {/*  */}
+                        
                         </div>
                         <div className="col-md- dog_reg_pic_row align-self-start">
                             <Link to='/dog_registrations/pedig-main'><p style={{ color: 'white' }}>Add pedigree manually</p></Link>
