@@ -28,7 +28,7 @@ export class PedigDamSireSire extends React.Component {
     render() {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
-                <PedigNav />
+                <PedigNav pedigree={this.props.pedigree} />
                 <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
@@ -40,10 +40,10 @@ export class PedigDamSireSire extends React.Component {
                     </div>
                     <div className='col-sm-6'>
                         <div className="paginatee">
-                        <PedigreeCartoon />
+                        <PedigreeCartoon pedigree={this.props.pedigree}/>
                         </div>
                         <div className="paginatee">
-                        <PedigreeCartoon  four={true}/>
+                        <PedigreeCartoon  four={true} pedigree={this.props.pedigree}/>
                         </div>
                        
                        
@@ -80,7 +80,7 @@ export class PedigDamSireDam extends React.Component {
     render() {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
-                <PedigNav />
+                <PedigNav pedigree={this.props.pedigree} />
                 <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
@@ -92,10 +92,10 @@ export class PedigDamSireDam extends React.Component {
                     </div>
                     <div className='col-sm-6'>
                         <div className="paginatee">
-                        <PedigreeCartoon/>
+                        <PedigreeCartoon pedigree={this.props.pedigree}/>
                         </div>
                         <div className="paginatee">
-                        <PedigreeCartoon five={true} />
+                        <PedigreeCartoon five={true} pedigree={this.props.pedigree}/>
                         </div>
                        
                        
@@ -133,7 +133,7 @@ export class PedigDamDamSire extends React.Component {
     render() {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
-                <PedigNav />
+                <PedigNav pedigree={this.props.pedigree} />
                 <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
@@ -145,10 +145,10 @@ export class PedigDamDamSire extends React.Component {
                     </div>
                     <div className='col-sm-6'>
                         <div className="paginatee">
-                        <PedigreeCartoon />
+                        <PedigreeCartoon pedigree={this.props.pedigree}/>
                         </div>
                         <div className="paginatee">
-                        <PedigreeCartoon six={true} />
+                        <PedigreeCartoon six={true} pedigree={this.props.pedigree}/>
                         </div>
                        
                        
@@ -186,7 +186,7 @@ export class PedigDamDamDam extends React.Component {
     render() {
         return (
             <div className="row align-items-center pedigmain_full justify-content-center">
-                <PedigNav />
+                <PedigNav pedigree={this.props.pedigree} />
                 <div className="row_">
                     <div className="col-sm-6">
                         <div className="">
@@ -198,10 +198,10 @@ export class PedigDamDamDam extends React.Component {
                     </div>
                     <div className='col-sm-6'>
                         <div className="paginatee">
-                        <PedigreeCartoon/>
+                        <PedigreeCartoon pedigree={this.props.pedigree}/>
                         </div>
                         <div className="paginatee">
-                        <PedigreeCartoon seven={true} />
+                        <PedigreeCartoon seven={true} pedigree={this.props.pedigree}/>
                         </div>
                        
                        

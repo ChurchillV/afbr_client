@@ -111,7 +111,7 @@ class DogRegistration extends React.Component {
             .then((res) => {
 
                 console.log(res.data);
-                this.setState({ sires: res.data }, () => console.log(this.state))
+                this.setState({ ...this.state, sires: res.data }, () => console.log(this.state))
                 // console.log('data',data) 
             })
             .catch((err) => {
@@ -127,7 +127,7 @@ class DogRegistration extends React.Component {
             .then((res) => {
 
                 console.log(res.data);
-                this.setState({ dams: res.data }, () => console.log(this.state))
+                this.setState({ ...this.state, dams: res.data }, () => console.log(this.state))
                 console.log('herre')
                 // console.log('data',data) 
             })
@@ -367,7 +367,10 @@ class DogRegistration extends React.Component {
                                     getdogid={this.props.getdogid}
                                     getnameofDog={this.props.getnameofDog}
                                     getnameofDog2={this.props.getnameofDog2}
-                                    getnext_dog_id={this.props.getnext_dog_id} />
+                                    getnext_dog_id={this.props.getnext_dog_id}
+                                    saveAndEndHere={true} 
+                                    saveAndContinue={true}/>
+                                    
 
                             }
                         

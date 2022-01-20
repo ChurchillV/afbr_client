@@ -20,6 +20,7 @@ import SignOut from './components/signout'
 import { PedigDam, PedigDamDam, PedigMain, PedigSire, PedigSireDam, PedigDamSire, PedigSireSire } from './components/pedig-manual-components/pedigcomponents';
 import { PedigSireDamDam, PedigSireDamSire, PedigSireSireDam, PedigSireSireSire } from './components/pedig-manual-components/pedigcomponents2';
 import { PedigDamDamDam, PedigDamDamSire, PedigDamSireDam, PedigDamSireSire } from './components/pedig-manual-components/pedigcomponents3';
+import { PedigSuccess } from './components/pedig-manual-components/pedigsuccess';
 
 
 
@@ -38,10 +39,30 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      dog_name: ''
+      dog_name: '',
+      pedigree: {
+        maindog: {id: 404},
+        sire: {id: 404},
+        dam: {id: 404},
+        siresire: {id: 404},
+        siredam:{id: 404},
+        damsire:{id: 404},
+        damdam:{id: 404},
+        siresireisre:{id: 404},
+        siresiredam:{id: 404},
+        siredamsire:{id: 404},
+        siredamdam:{id: 404},
+        damsiresire:{id: 404},
+        damsiredam:{id: 404},
+        damdamsire:{id: 404},
+        damdamdam:{id: 404}
+      }
 
     }
+    console.log('this.state', this.state)
   }
+
+ 
 
   getnameofDog = (name) => {
     this.setState({ dog_name: name }, () => {
@@ -160,15 +181,19 @@ class App extends Component {
 
 
           <Route path='/litter_registrations' element={<LitterRegistration />} />
-          <Route path='/dog_registrations' element={<DogRegistration/>} />
+          <Route path='/dog_registrations' element={<DogRegistration />} />
           <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
-          <Route path='/dog_registrations/pedig-main' element={<PedigMain getnameofDog={this.getnameofDog} getdogid={this.getdogid} />} />
+          <Route path='/dog_registrations/pedig-main' 
+          element={<PedigMain getnameofDog={this.getnameofDog} 
+          pedigree={this.state.pedigree}  getdogid={this.getdogid} />} />
           <Route path='/dog_registrations/pedigsire' element={<PedigSire getnameofDog2={this.getnameofDog2} getnext_dog_id={this.getnext_dog_id}
             refresh_pedigree={this.getdogpedigree}
             dog_id={this.state.dog_id}
+            pedigree={this.state.pedigree} 
             next_dog_id={this.state.next_dog_id} />} />
           <Route path='/dog_registrations/pedigdam' element={<PedigDam getnameofDog2={this.getnameofDog2}
-            refresh_pedigree={this.getdogpedigree} getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
+            refresh_pedigree={this.getdogpedigree}
+            pedigree={this.state.pedigree}  getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
             next_dog_id={this.state.next_dog_id} />} />
           <Route path='/dog_registrations/pedigsiresire' element={<PedigSireSire getnameofDog2={this.getnameofDog2}
             refresh_pedigree={this.getdogpedigree}
@@ -220,6 +245,11 @@ class App extends Component {
             refresh_pedigree={this.getdogpedigree}
             getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
             next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
+
+          <Route path='/dog_registrations/save_and_end_here' 
+              element={<PedigSuccess pedigree={this.props.pedigree} />}
+          />
+
 
           <Route path='/adult_registrations' element={<AdultRegistration />} />
           <Route path='/profile' element={<ProfileMain />} />

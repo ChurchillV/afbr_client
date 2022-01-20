@@ -86,10 +86,10 @@ class ProfileDog extends Component {
     };
 
 
-    getpedigree = () => {
-        console.log('calling in getpedgiree')
-        return this.props.pedigree.maindog
-    }
+    // getpedigree = () => {
+    //     console.log('calling in getpedgiree')
+    //     return this.props.pedigree.maindog
+    // }
 
     getspecificdog = () => {
         axios
@@ -185,7 +185,7 @@ class ProfileDog extends Component {
                
 
                 </Profile>
-                {this.props.pedigree ? <Pedigree data={this.props.pedigree}
+                {this.props.pedigree.maindog.name ? <Pedigree data={this.props.pedigree}
                 /> : null}
 
             </div>

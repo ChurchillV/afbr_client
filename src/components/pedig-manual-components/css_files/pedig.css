@@ -21,9 +21,22 @@
     flex-direction: column;
 }
 
+.progress-bar{
+    background-color: green;
+}
+
 .page{
-    padding: 4.5%;
+    padding: 3.5%;
+    
     border: 1px solid rgb(186, 129, 8);
+    background-image: linear-gradient(to top, black, rgb(186, 129, 8));
+    color: white;
+
+}
+
+.unavailable{
+    padding: 3.5%;
+    border: 1px solid rgb(121, 89, 21);
     color: white;
 
 }

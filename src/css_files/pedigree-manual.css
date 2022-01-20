@@ -23,6 +23,16 @@
     position: relative;
 }
 
+.col3_one{
+    display: flex;
+    flex-direction: row;
+    background-color: inherit;
+    padding: 3%;
+    justify-content: center;
+    position: relative;
+}
+
+
 .line_up{
     position: relative;
     left: 40px;
@@ -52,19 +62,21 @@
 .line{
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    color: black;
+    color: white;
+    font-size: 1.5vw;
+
 }
 
 .activeshape{
     padding: 2%;
-    background-color: red;
+    background-color: rgb(186, 129, 8);
     margin: 5%;
     border-radius: 50%;
-    color: red;
+    color: rgb(186, 129, 8) ;
 }
 
 .item{
-    padding: 2%;
+    padding:1%;
     background-color: rgb(186, 129, 8);
     margin: 5%;
     border-radius: 50%;
@@ -81,7 +93,7 @@
 }
 
 
-.row{
+/* .row{
     display: flex;
-    flex-direction: column;
-}
+    flex-direction: row;
+} */

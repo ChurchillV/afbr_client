@@ -15,7 +15,7 @@ class RegisterForm extends Component {
 
     constructor(props) {
         super(props)
-        console.log('this.prpos.sires', Object.keys(this.props))
+        console.log('this.prpos.sires',this.props)
         this.state = {
             imageSelected: ''
         }
@@ -161,6 +161,17 @@ class RegisterForm extends Component {
                 {this.props.to_sires_dams_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to sire's dam's 1st gen</Link> : null}
                 {this.props.to_dams_sires_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to Dam's sire's s 1st gen</Link> : null}
                 {this.props.to_dams_dams_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to Dam's dam's 1st gen</Link> : null}
+                
+                {this.props.saveAndContinue ? <Link onClick={(e) => {
+                    this.props.submit(e)
+                    // window.location.push('/dog_registrations/save_and_here')
+                    }} to='/dog_registrations/save_and_end_here' class="btn btn-secondary">Save and Continue</Link> : null}
+
+
+                {this.props.saveAndEndHere ? <Link onClick={(e) => {
+                    this.props.submit(e)
+                    // window.location.push('/dog_registrations/save_and_here')
+                    }} to='/dog_registrations/save_and_end_here' class="btn btn-primary">Save and End Here</Link> : null}
 
             </form>
         )

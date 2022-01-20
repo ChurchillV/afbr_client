@@ -129,7 +129,7 @@ class Pedigree extends React.Component {
 
                         </div>
 
-                        <PedigreeFrame >
+                         <PedigreeFrame >
                             <PedigreeDogCard dog_id={this.props.data.siresire.id} dog_name={this.props.data.siresire.name}
                                 dog_publicId={this.props.data.siresire.public_id} />
                             <PedigreeDogCard dog_id={this.props.data.siredam.id} dog_name={this.props.data.siredam.name}
@@ -146,7 +146,7 @@ class Pedigree extends React.Component {
                                 dog_publicId={this.props.data.siredamsire.public_id} />
                             <PedigreeDogCard dog_id={this.props.data.siredamdam.id} dog_name={this.props.data.siredamdam.name}
                                 dog_publicId={this.props.data.siredamdam.public_id} />
-                        </PedigreeFrame>
+                        </PedigreeFrame> 
 
 
                     </div>
@@ -180,7 +180,7 @@ class Pedigree extends React.Component {
                                 
                         </div>
 
-                        <PedigreeFrame >
+                      <PedigreeFrame >
                             <PedigreeDogCard dog_id={this.props.data.damsire.id} dog_name={this.props.data.damsire.name}
                             dog_publicId={this.props.data.damsire.public_id} />
                             <PedigreeDogCard dog_id={this.props.data.damdam.id} dog_name={this.props.data.damdam.name}
@@ -199,7 +199,7 @@ class Pedigree extends React.Component {
                             <PedigreeDogCard dog_id={this.props.data.damdamdam.id} dog_name={this.props.data.damdamdam.name} 
                             dog_publicId={this.props.data.damdamdam.public_id} />
                         </PedigreeFrame>
-
+ 
 
                     </div>
 
