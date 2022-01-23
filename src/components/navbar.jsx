@@ -47,7 +47,7 @@ class Navbar extends Component {
                             <Link   style={{color: this.props.color}} class="nav-link" to="/sign_up">Sign Up</Link>
                         </li>
                         <li class="nav-item">
-                            <Link to='/'   style={{color: this.props.color}} class="nav-link" onClick={this.props.toggle_login}>Login</Link>
+                            <Link to='/login'   style={{color: this.props.color}} class="nav-link" onClick={this.props.toggle_login}>Login</Link>
                         </li>
                         <li class="nav-item">
                             <Link class="nav-link"   style={{color: this.props.color}} to="/profile">Profile</Link>

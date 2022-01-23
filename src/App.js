@@ -11,7 +11,12 @@ import Breeds from './components/breeds'
 import Shows from './components/shows'
 import Judges from './components/judges'
 import Contact from './components/contact'
-import { Login, SignUp } from './components/sign_login';
+// import { SignUp } from './components/sign_login';
+import Login from './components/login';
+import Register from './components/register';
+import Reset from './components/reset';
+import Dashboard from './components/dashboard';
+
 import axios from 'axios'
 import ProfileDog from './components/ProfileDog';
 import ProfileMain from './components/profile_main';
@@ -26,11 +31,11 @@ import { PedigSuccess } from './components/pedig-manual-components/pedigsuccess'
 
 import { Amplify } from 'aws-amplify';
 
-import { Authenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
+// import { Authenticator } from '@aws-amplify/ui-react';
+// import '@aws-amplify/ui-react/styles.css';
 
-import awsExports from './aws-exports';
-Amplify.configure(awsExports);
+// import awsExports from './aws-exports';
+// Amplify.configure(awsExports);
 
 
 
@@ -177,8 +182,11 @@ class App extends Component {
           <Route path='/judges' element={<Judges />} />
           <Route path='/contact' element={<Contact />} />
 
-          <Route path='/sign_up' element={< SignUp />} />
+          <Route path='/sign_up' element={< Register />} />
+          <Route path='/login' element={< Login />} />
 
+          <Route path='/reset' element={< Reset />} />
+          <Route path='/dashboard' element={< Dashboard />} />
 
           <Route path='/litter_registrations' element={<LitterRegistration />} />
           <Route path='/dog_registrations' element={<DogRegistration />} />
