@@ -4,7 +4,7 @@ const HomeMessage = () => {
     return (
         <div className='homeMessage'>
             <div>
-            <h1>The AFBR</h1>
+            <h1  className='text-uppercase' >The AFBR</h1>
              </div>
             <div>
             <h1 className=''>Making the bully community well respected</h1>

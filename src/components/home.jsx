@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import HomeMessage from './homeMessage'
 import '../css_files/App.css';
+import '../css_files/App2.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Card from './card'
 import Carousel from './carousel'
@@ -53,10 +54,10 @@ class Home extends Component {
                {}
                
               </div>
-              <div className='row  align-items-center justify-content-center homerow'>
+              <div className='row  align-items-center justify-content-start homerow'>
               {/* <Navbar toggle_sign_up={this.toggle_sign_up} toggle_login={this.toggle_login}/> */}
 
-                  <div className='col-sm- homeMessage' style={{height: '100%'}}>
+                  <div className='col-md-4 text-capitalize' >
                          <HomeMessage />
                   </div>
                   {/* <div className='col-sm-9'>
@@ -76,7 +77,7 @@ class Home extends Component {
               {this.state.login_modal ? <Login toggle={this.toggle_login}/> : null } */}
               <div className='row card_row align-items-center justify-content-center'>
                 <div className='col-sm-6'>
-                  < Card text1='Register with us today'  className='register'/>
+                  < Card text1='Register with us today'  className='register1'/>
                 </div>
                 <div className='col-sm-6'>
                   < Card text1='Get access to pedigrees' className='pedigree'/>

@@ -13,6 +13,7 @@ class Breeds extends Component {
 
                 <Navbar />
 
+              
                 <div className='row breed_text align-items-center justify-content-center'>
                     <h1>Breeds</h1>
                     <div className='row align-items-center justify-content-center'>

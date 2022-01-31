@@ -1,6 +1,6 @@
 import React from "react";
 import Image from './image'
-import logo1 from '../images/logo1.jpg'
+import pic1 from '../images/dog12.jpeg'
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from "./navbar";
 import '../css_files/about.css';
@@ -15,9 +15,20 @@ const About = () => {
                     <img src={logo1} className="image_about"></img>
                 </div> */}
 
+                <div className="container-fluid">
+                <div className="row align-items-center justify-content-center pic_row_about">
+                    <div className="about_heading text-capitalize">
+                        About us
+                    </div>
+                </div>
+                </div>
+             
+                
+              
+
                 <div className="row align-items-center justify-content-center">
-                    <div className='col-sm- about_text'>
-                        <p>The African Bully Registry</p>
+                    <div className='col-sm- about_text align-items-center justify-content-center'>
+                        <p className=" text-uppercase afbr_heading">The African Bully Registry</p>
                         <p>This registry is an international register which enables breeders in Africa and overseas who breed American bullies,,<br/>
                             American bull dogs, American pitbull terriers, French bull dogs and all other "bully" breeds to come under one umbrella.</p>
 

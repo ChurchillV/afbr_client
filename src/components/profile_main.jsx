@@ -9,6 +9,8 @@ import Profile from './profile';
 import axios from 'axios';
 import { set } from 'mongoose';
 import { setState } from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 
 
 // const colstyle = {
@@ -44,17 +46,64 @@ class ProfileMain extends Component {
     constructor(props){
         super(props);
         this.state = {
-            dogs : [],
+            dogs : [
+               
+            ],
+            user: ''
         };
     }
 
     componentDidMount = () =>{
-        this.refreshList()
+        this.getcurrentuser(this.refreshList
+        )
+
+    }
+
+    getcurrentuser = (callback) =>{
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                this.setState({ ...this.state, firebaseUser: user }, () => {
+                    console.log('on Authstate dog reg', this.state.firebaseUser)
+                    this.changeUserToId(callback)
+
+                });
+              
+            } else {
+                this.setState({ user: null });
+                console.log('usershmm')
+
+            }
+
+            if (this.state.loading) {
+                this.setState({ loading: false });
+            }
+        });
     }
     
+    
+    changeUserToId = (callback) => {
+        axios
+            .get(`http://localhost:8000/api/users/getUserByUid/${this.state.firebaseUser.uid}`)
+            .then((res) => {
+                console.log(res.data)
+                this.setState({
+                    ...this.state, 
+                   user: res.data[0].id}, 
+                   () =>  {
+                       callback()
+                       console.log('chaingn profile main state after calling uid', this.state.user)
+
+                   })
+            })
+            
+            .catch((err) => {
+                console.log(err)
+            })
+    }
     refreshList = () => {
         axios
-        .get("http://localhost:8000/api/dogs")
+        .get(`http://localhost:8000/api/dogs/getdoguser/${this.state.user}`)
         .then((res) => {
             this.setState({ dogs: res.data }, () => (console.log(this.state)))
         }
@@ -73,7 +122,7 @@ class ProfileMain extends Component {
     render_dog_list = () => {
 
         return this.state.dogs.map((dog)=> ( 
-        <div className='col-sm-6 text-capitalize render_card'>
+        <div className='col-md-6 text-capitalize render_card'>
                                 <Link to={`/my_dogs/${dog.id}`}>
                                     <DogCard image_src={dogpic}
                                         dogname={dog.name} />

@@ -1,26 +1,5 @@
 import { initializeApp } from "firebase/app";
-
-// ​​import {
-
-// ​​     GoogleAuthProvider,
-// ​​  getAuth,
-// ​​  signInWithPopup,
-// ​​  signInWithEmailAndPassword,
-// ​​  createUserWithEmailAndPassword,
-// ​​  sendPasswordResetEmail,
-// ​​  signOut,
-// ​​} from "firebase/auth";
-
-import {
-  GoogleAuthProvider,
-  getAuth,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
-  signOut
-
-} from 'firebase/auth'
+import axios from 'axios';
 
 import {
   getFirestore,
@@ -31,14 +10,16 @@ import {
   addDoc,
 } from 'firebase/firestore';
 
-// ​​import {
-// ​​  getFirestore,
-// ​​  query,
-// ​​  getDocs,
-// ​​  collection,
-// ​​  where,
-// ​​  addDoc,
-// ​​} from "firebase/firestore";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut
+
+} from 'firebase/auth';
 
 // Import the functions you need from the SDKs you need
 import { getAnalytics } from "firebase/analytics";
@@ -76,7 +57,14 @@ const signInWithGoogle = async () => {
         name: user.displayName,
         authProvider: "google",
         email: user.email,
+
+
       });
+
+    axios
+      .post('http://localhost:8000/api/users', {uid : user.uid, username: user.displayName, email: user.email})
+      .then((res) => console.log('success', res))
+      .catch((err) => console.log(err))
     }
   } catch (err) {
     console.error(err);
@@ -103,6 +91,12 @@ const logInWithEmailAndPassword = async (email, password) => {
         authProvider: "local",
         email,
       });
+
+      axios
+      .post('http://localhost:8000/api/users', {uid: user.uid, username: name, email: email})
+      .then((res) => console.log('success', res))
+      .catch((err) => console.log(err))
+
     } catch (err) {
       console.error(err);
       alert(err.message);

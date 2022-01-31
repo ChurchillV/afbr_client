@@ -14,16 +14,36 @@
   .shows_text{
       color: inherit;
       display: flex;
+
       padding: 5%;
       
-      background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
- 
-
-    
     
       
   }
+
+  .shows_main_text{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .waves_blob1_div{
+    position: relative;
+    width: 100%;
+  }
+
+  .waves_blob1{
+    width: 100%;
+    position: absolute;
+    top: 1%
+  }
+  .shows_blob{
+    position: absolute;
+    width: 100%;
+    /* top: 1%; */
+    left: 1%;
+    opacity: 0.2;
+    z-index: -3;
+}
 .h1_judges{
     animation: enlarge 10s infinite ;
     animation-timing-function: ease;

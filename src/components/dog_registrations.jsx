@@ -3,9 +3,10 @@ import Navbar from "./navbar";
 
 import RegisterForm from './register_form'
 import axios from 'axios';
+import UserContext from '../App'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { LimitTimerRaceResolvedValues } from "@aws-amplify/datastore";
 
 
 export function withRouter(Child) {
@@ -19,13 +20,13 @@ export function withRouter(Child) {
 }
 
 class DogRegistration extends React.Component {
+    static contextType = UserContext;
 
     constructor(props) {
         super(props)
 
         console.log('this.props', this.props.location)
         // console.log(this.props.location.pathname.split('/'))
-
 
 
         this.state = {
@@ -38,7 +39,8 @@ class DogRegistration extends React.Component {
                 'age': '',
                 'date_of_birth': '',
                 'image_url': '',
-                'public_id' : ''
+                'public_id': '',
+                'user': ''
             },
 
             sires: {
@@ -49,7 +51,7 @@ class DogRegistration extends React.Component {
 
             },
             edit: false,
-           
+
 
         }
 
@@ -81,14 +83,14 @@ class DogRegistration extends React.Component {
 
     componentDidMount = () => {
 
+        this.getcurrentuser()
 
-        // if (this.state.images < 1)
-        //     return;
-        // else {
-        //     const newImageUrls = [];
-        //     this.state.images.forEach(image => newImageUrls.push(URL.createObjectURL(image)))
-        //     this.setState({ ...this.state, image_urls: newImageUrls })
-        // }
+        // const user =  this.context
+        // console.log('user',this.props.user.uid)
+        console.log('dog registrations state', this.state)
+        
+
+
         //do so that this is only called when it is to be editted
         axios
             .get(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`)
@@ -139,6 +141,45 @@ class DogRegistration extends React.Component {
     }
 
 
+    getcurrentuser = (callback) =>{
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                this.setState({ ...this.state, firebaseUser: user }, () => {
+                    console.log('on Authstate dog reg', this.state.firebaseUser)
+                    this.changeUserToId(callback)
+                });
+              
+            } else {
+                this.setState({ user: null });
+                console.log('usershmm')
+
+            }
+
+            if (this.state.loading) {
+                this.setState({ loading: false });
+            }
+        });
+    }
+
+    changeUserToId = (callback) => {
+        axios
+            .get(`http://localhost:8000/api/users/getUserByUid/${this.state.firebaseUser.uid}`)
+            .then((res) => {
+                console.log(res.data)
+                this.setState({
+                    ...this.state, 
+                    dog: {...this.state.dog, user: res.data[0].id}}, 
+                   () =>  {
+                       console.log('chaingn dog registrations state after calling uid', this.state.dog)
+
+                   })
+            })
+            
+            .catch((err) => {
+                console.log(err)
+            })
+    }
 
     uploadImage = (callback) => {
         // console.log(files[0])
@@ -148,42 +189,42 @@ class DogRegistration extends React.Component {
         formData.append('upload_preset', 'gwxgv5ii')
 
         axios.post('https://api.cloudinary.com/v1_1/daurieb51/image/upload', formData)
-        .then((response) => {
-            console.log('responseeeee', response.data.public_id)
-            console.log('image successfuly uploaded thank you jehovah')
-            this.setState({
-                ...this.state,
-                dog: { ...this.state.dog, public_id: response.data.public_id }
-            },
-            () => {
-                console.log(this.state.dog)
-                callback()
-                console.log('called the callback')
+            .then((response) => {
+                console.log('responseeeee', response.data.public_id)
+                console.log('image successfuly uploaded thank you jehovah')
+                this.setState({
+                    ...this.state,
+                    dog: { ...this.state.dog, public_id: response.data.public_id }
+                },
+                    () => {
+                        console.log(this.state.dog)
+                        callback()
+                        console.log('called the callback')
+                    })
+
+
             })
-               
-    
-        })
-  
+
 
         // this.uploadImagetodb()
-                
-    } 
+
+    }
 
 
-    addImageSelected = (e) =>{
+    addImageSelected = (e) => {
         this.setState({
             ...this.state,
             imageSelected: e.target.files[0]
         },
             () => console.log(this.state.imageSelected, this.state))
-   
+
     }
     handleImageChange = (e) => {
         // const {  value } = e.target.files[0]
         // console.log('e.')
         console.log(e.target.files[0].name)
-        
-        
+
+
         // this.setState((data) => ({ ...data, [e.target.name]: e.target.value }));
         this.setState({
             ...this.state,
@@ -191,10 +232,10 @@ class DogRegistration extends React.Component {
         },
             this.addImageSelected(e))
 
-       
-        }
 
-   
+    }
+
+
 
 
     handleChange = (e) => {
@@ -249,10 +290,10 @@ class DogRegistration extends React.Component {
         // console.log(e.target.value)
 
 
-        if (this.state.imageSelected){
+        if (this.state.imageSelected) {
             this.uploadImage(this.updateDogInfo)
             console.log('image url  presnet, ready to eedit')
-        
+
         }
         else {
             this.updateDogInfo()
@@ -260,21 +301,21 @@ class DogRegistration extends React.Component {
         }
 
 
-        
+
     }
 
     updateDogInfo = () => {
         axios
-        .put(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`, this.state.dog)
-        .then((res) => {
+            .put(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`, this.state.dog)
+            .then((res) => {
 
-            console.log(res.data.message);
-            console.log('editeed')
-        })
-        .catch((err) => {
-            console.log("Error couldn't edit Dog");
-            console.log(err.message);
-        });
+                console.log(res.data.message);
+                console.log('editeed')
+            })
+            .catch((err) => {
+                console.log("Error couldn't edit Dog");
+                console.log(err.message);
+            });
     }
 
     sendDogInfo = () => {
@@ -290,9 +331,9 @@ class DogRegistration extends React.Component {
                 if (this.props.appenddog) {
                     this.props.getnext_dog_id(this.props.appendto)
                 }
-            
+
             })
-            
+
 
             .catch((err) => {
                 console.log("Error couldn't create Dog");
@@ -312,15 +353,15 @@ class DogRegistration extends React.Component {
         // console.log(e.target.sex)
         // console.log(e.target.value)
 
-        
 
-        
-       
-        
-        if (this.state.dog.image_url){
+
+
+
+
+        if (this.state.dog.image_url) {
             this.uploadImage(this.sendDogInfo)
             console.log('image url  presnet')
-        
+
         }
         else {
             this.sendDogInfo()
@@ -334,8 +375,10 @@ class DogRegistration extends React.Component {
 
     render() {
         return (
+
             <div className='row align-items-center justify-content-center dog_reg_full'>
-                {this.props.navbar ? <Navbar color='white' /> : null }
+                {this.props.navbar ? <Navbar color='white' /> : null}
+
                 <div className="container-fluid">
 
                     <div className="row align-items-center justify-content-center">
@@ -344,12 +387,12 @@ class DogRegistration extends React.Component {
                         <div className="col-md-">
                             {this.state.edit ?
                                 <RegisterForm dog={this.state.dog} sires={this.state.sires}
-                                    dams={this.state.dams} submit={this.edit} 
-                                    handleChange={this.handleChange} 
+                                    dams={this.state.dams} submit={this.edit}
+                                    handleChange={this.handleChange}
                                     image_urls={this.state.image_urls}
                                     uploadImagetodb={this.uploadImagetodb}
                                     uploadImage={this.uploadImage}
-                                    handleImageChange={this.handleImageChange}/>
+                                    handleImageChange={this.handleImageChange} />
                                 :
                                 <RegisterForm dog={this.state} to_sires_first={this.props.to_sires_first}
                                     to_dams_first={this.props.to_dams_first}
@@ -368,12 +411,12 @@ class DogRegistration extends React.Component {
                                     getnameofDog={this.props.getnameofDog}
                                     getnameofDog2={this.props.getnameofDog2}
                                     getnext_dog_id={this.props.getnext_dog_id}
-                                    saveAndEndHere={true} 
-                                    saveAndContinue={true}/>
-                                    
+                                    saveAndEndHere={true}
+                                    saveAndContinue={true} />
+
 
                             }
-                        
+
                         </div>
                         <div className="col-md- dog_reg_pic_row align-self-start">
                             <Link to='/dog_registrations/pedig-main'><p style={{ color: 'white' }}>Add pedigree manually</p></Link>
