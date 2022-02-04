@@ -9,6 +9,7 @@ import Profile_Card from './profile_card';
 import { useParams, useLocation, useNavigate } from "react-router-dom"
 import axios from 'axios';
 import Try from './try';
+import { url } from './weburl';
 
 
 import Profile from './profile';
@@ -93,7 +94,7 @@ class ProfileDog extends Component {
 
     getspecificdog = () => {
         axios
-        .get(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`)
+        .get(`${url}api/dogs/${this.props.params.dog_id}`)
         .then((res) => {
             console.log(this.props.params.dog_id)
             this.setState({ specificdog: res.data[0] }, () => {
@@ -129,7 +130,7 @@ class ProfileDog extends Component {
 
     handleDelete = () => {
         axios
-            .delete(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`)
+            .delete(`${url}api/dogs/${this.props.params.dog_id}`)
 
 
             .catch((err) => {

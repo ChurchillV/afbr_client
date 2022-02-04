@@ -7,7 +7,7 @@ import UserContext from '../App'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
-
+import { url } from "./weburl";
 
 export function withRouter(Child) {
     return (props) => {
@@ -93,7 +93,7 @@ class DogRegistration extends React.Component {
 
         //do so that this is only called when it is to be editted
         axios
-            .get(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`)
+            .get(`${url}api/dogs/${this.props.params.dog_id}`)
             .then((res) => {
 
                 console.log(res.data);
@@ -109,7 +109,7 @@ class DogRegistration extends React.Component {
         //get all sires
 
         axios
-            .get(`http://localhost:8000/api/dogs/sires`)
+            .get(`${url}api/dogs/sires`)
             .then((res) => {
 
                 console.log(res.data);
@@ -125,7 +125,7 @@ class DogRegistration extends React.Component {
         //get all dams
 
         axios
-            .get(`http://localhost:8000/api/dogs/dams`)
+            .get(`${url}api/dogs/dams`)
             .then((res) => {
 
                 console.log(res.data);
@@ -164,7 +164,7 @@ class DogRegistration extends React.Component {
 
     changeUserToId = (callback) => {
         axios
-            .get(`http://localhost:8000/api/users/getUserByUid/${this.state.firebaseUser.uid}`)
+            .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
             .then((res) => {
                 console.log(res.data)
                 this.setState({
@@ -306,7 +306,7 @@ class DogRegistration extends React.Component {
 
     updateDogInfo = () => {
         axios
-            .put(`http://localhost:8000/api/dogs/${this.props.params.dog_id}`, this.state.dog)
+            .put(`${url}api/dogs/${this.props.params.dog_id}`, this.state.dog)
             .then((res) => {
 
                 console.log(res.data.message);
@@ -320,7 +320,7 @@ class DogRegistration extends React.Component {
 
     sendDogInfo = () => {
         axios
-            .post("http://localhost:8000/api/dogs", this.state.dog)
+            .post(`${url}api/dogs`, this.state.dog)
             .then((res) => {
 
                 console.log(res.data.message);

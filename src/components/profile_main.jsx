@@ -10,6 +10,7 @@ import axios from 'axios';
 import { set } from 'mongoose';
 import { setState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { url } from './weburl';
 
 
 
@@ -84,7 +85,7 @@ class ProfileMain extends Component {
     
     changeUserToId = (callback) => {
         axios
-            .get(`http://localhost:8000/api/users/getUserByUid/${this.state.firebaseUser.uid}`)
+            .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
             .then((res) => {
                 console.log(res.data)
                 this.setState({
@@ -103,7 +104,7 @@ class ProfileMain extends Component {
     }
     refreshList = () => {
         axios
-        .get(`http://localhost:8000/api/dogs/getdoguser/${this.state.user}`)
+        .get(`${url}api/dogs/getdoguser/${this.state.user}`)
         .then((res) => {
             this.setState({ dogs: res.data }, () => (console.log(this.state)))
         }

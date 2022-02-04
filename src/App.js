@@ -28,6 +28,7 @@ import { PedigDamDamDam, PedigDamDamSire, PedigDamSireDam, PedigDamSireSire } fr
 import { PedigSuccess } from './components/pedig-manual-components/pedigsuccess';
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { url } from './components/weburl';
 
 
 
@@ -114,7 +115,7 @@ class App extends Component {
   getdogid = () => {
 
     axios
-      .get(`http://localhost:8000/api/dogs/getbyname/${this.state.dog_name}`)
+      .get(`${url}api/dogs/getbyname/${this.state.dog_name}`)
       .then((res) => {
 
         console.log(res.data);
@@ -135,7 +136,7 @@ class App extends Component {
   getnext_dog_id = (callback_func) => {
 
     axios
-      .get(`http://localhost:8000/api/dogs/getbyname/${this.state.next_dog_name}`)
+      .get(`${url}api/dogs/getbyname/${this.state.next_dog_name}`)
       .then((res) => {
 
         console.log(res.data);
@@ -160,7 +161,7 @@ class App extends Component {
   getdogpedigree = (id) => {
     if (id) {
       axios
-        .get(`http://localhost:8000/api/dogs/pedigree/${id}`)
+        .get(`${url}api/dogs/pedigree/${id}`)
         .then((res) => {
 
           console.log(res.data);
@@ -178,7 +179,7 @@ class App extends Component {
         });
     }
     else axios
-      .get(`http://localhost:8000/api/dogs/pedigree/${this.state.dog_id.id}`)
+      .get(`${url}api/dogs/pedigree/${this.state.dog_id.id}`)
       .then((res) => {
 
         console.log(res.data);

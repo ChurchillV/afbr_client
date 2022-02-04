@@ -20,6 +20,7 @@ import {
   signOut
 
 } from 'firebase/auth';
+import { url } from "./weburl";
 
 // Import the functions you need from the SDKs you need
 import { getAnalytics } from "firebase/analytics";
@@ -62,7 +63,7 @@ const signInWithGoogle = async () => {
       });
 
     axios
-      .post('http://localhost:8000/api/users', {uid : user.uid, username: user.displayName, email: user.email})
+      .post(`${url}api/users`, {uid : user.uid, username: user.displayName, email: user.email})
       .then((res) => console.log('success', res))
       .catch((err) => console.log(err))
     }
@@ -93,7 +94,7 @@ const logInWithEmailAndPassword = async (email, password) => {
       });
 
       axios
-      .post('http://localhost:8000/api/users', {uid: user.uid, username: name, email: email})
+      .post(`${url}api/users`, {uid: user.uid, username: name, email: email})
       .then((res) => console.log('success', res))
       .catch((err) => console.log(err))
 
