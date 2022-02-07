@@ -104,16 +104,11 @@ class Pedigree extends React.Component {
 
                             <div className=''>
                                 {this.props.data.sire.public_id ?
-                                    <Image
-                                        style={{ width: 200 }}
-                                        cloudName='daurieb51'
-                                        publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.sire.public_id}.png`}
-
-
-
-                                    /> :
-                                    <img src={Profile_pic}
-                                        width={width} height={height}>
+                                      <img class='profile_img_dog'
+                                      src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.sire.public_id}.png`}></img>
+                       :
+                                    <img class='profile_img_dog' src={Profile_pic}
+                                        >
                                     </img>
 
 
@@ -156,16 +151,11 @@ class Pedigree extends React.Component {
 
                             <div className=''>
                                 {this.props.data.dam.public_id ?
-                                    <Image
-                                        style={{ width: 200 }}
-                                        cloudName='daurieb51'
-                                        publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}
-
-
-
-                                    /> :
-                                    <img src={Profile_pic}
-                                        width={width} height={height}>
+                                                 <img class='profile_img_dog'
+                                                 src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}></img>
+                               :
+                                    <img className='profile_img_dog' src={Profile_pic}
+                                        >
                                     </img>
 
 

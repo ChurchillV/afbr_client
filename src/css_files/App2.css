@@ -28,3 +28,43 @@
       
       }
 }
+
+@media screen and (max-width: 770px) {
+  .register1{
+    background-color: inherit;
+    
+    padding: 5%;
+    margin: 5%;
+    font-size: 1rem;
+    text-align: center;
+    color: white  ;
+    /* animation-name: enlarge;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease; */
+   
+  
+  }
+  
+}
+
+
+
+@media screen and (max-width: 770px) {
+  
+  .partners{
+    background-color: inherit;
+    padding: 5%;
+    margin: 5%;
+    font-size: 4vw;
+    text-align: center;
+    color: white;
+    /* animation-name: enlarge;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    border-right: 6px solid rgb(186, 129, 8); */
+    display: flex;
+    position:relative;
+  }
+  }

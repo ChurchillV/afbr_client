@@ -48,7 +48,8 @@ class Home extends Component {
         return (
           
 
-            <div className="App align-items-center justify-content-center" style={{ backgroundColor: 'white' }}>
+            <div className="App container-fluid align-items-center justify-content-center" style={{ backgroundColor: 'white' }}>
+              
                <div className='row justify-content-center'>
                <Navbar toggle_sign_up={this.toggle_sign_up} toggle_login={this.toggle_login}/>
                {}
@@ -87,9 +88,12 @@ class Home extends Component {
         
         
               <div className='row home_full align-items-center justify-content-center'>
+                <div className='col-sm-6'>
                 < Card text1="Our Gallery" className='gallery'/>
+                </div>
+               
         
-                <div className='col-sm-'>
+                <div className='col-sm-6'>
                   < Carousel image_src1={dog1} image_src2={dog2} image_src3={dog3}/>
                 </div>
               </div>
@@ -99,20 +103,26 @@ class Home extends Component {
               </div> */}
         
               <div className='row card_row align-items-center justify-content-center'>
-                <div className='col-sm-'>
+                <div className='container-fluid'>
+                <div className='row card_row align-items-center justify-content-center'>
                 < Card text1="Our Partners"className='partners' />
                 </div>
-              
-                <div className='col-sm-'>
+                <div className='row  card_row align-items-center justify-content-center'>
+                    
+                <div className='col-4'>
                 <Card image_src={logo1}  image_class='partners_image'/>
 
                 </div>
-                <div className='col-sm-'>
+                <div className='col-4'>
                 <Card image_src={logo4}  image_class='partners_image'/>
                 </div>
-                <div className='col-sm-'>
+                <div className='col-4'>
                 <Card image_src={logo3}  image_class='partners_image'/>
                 </div>
+                </div>
+                </div>
+                
+              
             
               </div>
         

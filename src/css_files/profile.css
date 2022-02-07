@@ -19,30 +19,76 @@
     font-weight: 200;
 }
 
-.profile_card_p{
-    color: black;
-    font-size: 3vw;
-}
+
 a {
     color: black;
 }
-.profile_main{
-    /* background-color: rgba(218, 165, 32); */
-    background-color: inherit;
-    text-align: center;
-    padding-left: 5%;
-    font-size: 2vw;
-    border-left:3px solid rgb(186, 129, 8);
-    color: white;
+
+@media screen and (min-width: 770px) {
+    .profile_card_p{
+        color: black;
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .profile_card_p{
+        color: black;
+        font-size: 1rem;
+    }
+}
+
+
+.profile_img_dog{
+    width: 10vw;
+}
+
+@media screen and (min-width: 770px) {
+    .profile_main{
+        /* background-color: rgba(218, 165, 32); */
+        background-color: inherit;
+        text-align: center;
+        padding-left: 5%;
+        font-size: 2vw;
+        border-left:3px solid rgb(186, 129, 8);
+        color: white;
+    } 
+}
+
+@media screen and (min-width: 770px) {
+    .profile_main{
+        /* background-color: rgba(218, 165, 32); */
+        background-color: inherit;
+        text-align: center;
+        padding-left: 5%;
+        font-size: 2vw;
+        color: white;
+    } 
 }
 /* 
 rgb(186, 129, 8) */
 
-.render_card{
-    background-color: ;
-    margin-top: 1%;
-    font-weight: 200;
 
+
+@media screen and (min-width: 770px) {
+    .render_card{
+        background-color: inherit;
+        margin-top: 1%;
+        font-weight: 200;
+    
+    }
+}
+
+
+@media screen and (max-width: 770px) {
+    .render_card{
+        font-size: 1rem;
+        background-color: inherit;
+        margin-top: 1%;
+        font-weight: 200;
+        text-align: center;
+    
+    }
 }
 .pro_nav{
     padding: 3%;

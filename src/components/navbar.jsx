@@ -12,7 +12,7 @@ class Navbar extends Component {
             <div class='row align-content-center justify-content-center '>
                    <span className='navtitle'  style={{color: this.props.color}}> <p>THE AFRICAN BULLY REGSISTRY</p></span>
         
-            <nav class="navbar navbar-expand-lg ">
+            <nav class="navbar navbar-light navbar-expand-lg ">
                 <Link class="navbar-brand " to=""><img src={logo1} height='40px' width='40px'></img></Link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

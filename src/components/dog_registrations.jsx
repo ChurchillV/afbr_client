@@ -384,7 +384,7 @@ class DogRegistration extends React.Component {
                     <div className="row align-items-center justify-content-center">
 
 
-                        <div className="col-md-">
+                        <div className="col-md-9">
                             {this.state.edit ?
                                 <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                     dams={this.state.dams} submit={this.edit}
@@ -418,7 +418,7 @@ class DogRegistration extends React.Component {
                             }
 
                         </div>
-                        <div className="col-md- dog_reg_pic_row align-self-start">
+                        <div className="col-md-3">
                             <Link to='/dog_registrations/pedig-main'><p style={{ color: 'white' }}>Add pedigree manually</p></Link>
                         </div>
 

@@ -97,45 +97,18 @@ export class PedigreeDogCard extends Component {
             dog_sire_name: ''
         }
 
-    }
-
-    // componentDidMount() {
-    //     this.getsire()
-    // }
-
-    // getsire = () => {
-    //     //get dog sire name image
-    //     axios
-    //         .get(`http://localhost:8000/api/dogs/${this.props.dog}`)
-    //         .then((res) => {
-
-    //             this.setState({ dog_sire_name: res.data[0].name }, () => console.log('finished setting state in pedigree card', this.state))
-    //             console.log(res.data)
-
-    //         }
-    //         )
-    //         .catch((err) => {
-    //             // console.log("Error couldnt get Dog");
-    //             // console.log(err.message);
-    //         });
-
-    // }
+        }
     render() {
         return (
             <a style={{color:'whitesmoke'}} href={`/my_dogs/${this.props.dog_id}`}>
                 <div className='sire_sire_1'>
                     <div className='sire_sire_1'>
                     {this.props.dog_publicId ? 
-                <Image
-                style={{width:200}}
-                 cloudName='daurieb51'
-                    publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog_publicId}.png`}
-                
-
-
-                />    : 
-                <img src={Profile_pic} 
-                width={width} height={height}>
+                                   <img class='profile_img_dog'
+                                   src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}></img>
+               : 
+                <img className='profile_img_dog' src={Profile_pic} 
+                >
                 </img>
 
                 
@@ -154,152 +127,3 @@ export class PedigreeDogCard extends Component {
 }
 
 
-export class PedigreeDogCard2_sire extends Component {
-
-
-    //the difference between these 2 components is that the second one is supplied the 
-    //child and goes along by itself to ferch the parent
-    constructor(props) {
-        super(props)
-        this.state = {
-            dog_sire_name: ''
-        }
-        console.log(this.props)
-
-    }
-
-    componentDidMount() {
-        this.getsire()
-    }
-
-    getsire = () => {
-        //get dog sire name image
-        axios
-            .get(`http://localhost:8000/api/dogs/${this.props.child}`)
-            .then((res) => {
-
-                this.setState({ dog_sire_id: res.data[0].sire }, () => {
-                    this.getsire_name()
-                    console.log('finished setting state in pedigree card', this.state)}
-                    )
-                console.log(res.data)
-
-            }
-            )
-            .catch((err) => {
-                console.log(this.props.child)
-                console.log("Error couldnt get Dog in getsire method");
-                console.log(err.message);
-            });
-
-    }
-
-    getsire_name = () => {
-        //get dog sire name image
-        axios
-            .get(`http://localhost:8000/api/dogs/${this.state.dog_sire_id}`)
-            .then((res) => {
-
-                this.setState({ dog_sire_name: res.data[0].name }, () => console.log('finished setting state in pedigree card', this.state))
-                console.log(res.data)
-
-            }
-            )
-            .catch((err) => {
-                console.log("Error couldnt get Dogin p");
-                console.log(err.message);
-            });
-
-    }
-    render() {
-        return (
-            <a href={`/my_dogs/${this.state.dog_sire_id}`}>
-                <div className='sire_sire_1'>
-                    <div className='sire_sire_1'>
-                        <img src={Profile_pic} height='100vw' width='100vw' className='image'></img>
-                    </div>
-                    <div className='sire_sire_1 label'>
-                        {this.state.dog_sire_name ? this.state.dog_sire_name : 'Unkown genealogy'}
-                    </div>
-                </div>
-            </a>
-
-
-        )
-    }
-
-}
-
-export class PedigreeDogCard2_dam extends Component {
-
-
-    //the difference between these 2 components is that the second one is supplied the 
-    //child and goes along by itself to ferch the parent
-    constructor(props) {
-        super(props)
-        this.state = {
-            dog_sire_name: ''
-        }
-
-    }
-
-    componentDidMount() {
-        this.getdam()
-    }
-
-    getdam = () => {
-        //get dog sire name image
-        axios
-            .get(`http://localhost:8000/api/dogs/${this.props.child}`)
-            .then((res) => {
-
-                this.setState({ dog_dam_id: res.data[0].dam }, () => {
-                    this.getdam_name()
-                    console.log('finished setting state in pedigree card', this.state)}
-                    )
-                console.log(res.data)
-
-            }
-            )
-            .catch((err) => {
-                // console.log("Error couldnt get Dog");
-                // console.log(err.message);
-            });
-
-    }
-
-    getdam_name = () => {
-        //get dog sire name image
-        axios
-            .get(`http://localhost:8000/api/dogs/${this.state.dog_dam_id}`)
-            .then((res) => {
-
-                this.setState({ dog_dam_name: res.data[0].name }, () => console.log('finished setting state in pedigree card', this.state))
-                console.log(res.data)
-
-            }
-            )
-            .catch((err) => {
-                // console.log("Error couldnt get Dog");
-                // console.log(err.message);
-            });
-
-    }
-    render() {
-        return (
-            <a href={`/my_dogs/${this.state.dog_dam_id}`}>
-                <div className='sire_sire_1'>
-                    <div className='sire_sire_1'>
-                        <img src={Profile_pic} height='100vw' width='100vw' className='image'></img>
-                    </div>
-                    <div className='sire_sire_1 label'>
-                        {this.state.dog_dam_name ?  this.state.dog_dam_name: 'Unkown genealogy'}
-                    </div>
-                </div>
-            </a>
-
-
-        )
-    }
-
-}

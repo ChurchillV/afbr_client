@@ -3,15 +3,10 @@
     width: 100%;
 }
 /* rgb(186, 129, 8) */
-.about_full{
-    background-color:  white;
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
 
 .about_body {
     background-color: rgb(255, 255, 255);
+    width: 100%;
 }
 
 .about_pic{
@@ -23,9 +18,9 @@
    padding-bottom: 5%;
    margin-top: 2%;
    margin-bottom: 2%;
-   padding-left: 40%;
-   padding-right: 40%;
+    width: 100%;
       font-size: 4rem;
+      text-align: center;
     color: white;
     background-color: rgba(37, 27, 1, 0.8);
 
@@ -46,7 +41,7 @@
     border-left: 2px solid #daa520;
     margin-top: 1%;
 
-   
+   text-align: center;
     padding: 4%;
     display: flex;
     flex-direction: column;
@@ -63,6 +58,7 @@
     font-size: 3rem;
     color: rgba(218, 165, 32);
     font-weight: 600;
+    text-align: center;
     
 }
 

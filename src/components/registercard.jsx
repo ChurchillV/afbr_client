@@ -8,18 +8,20 @@ const RegisterCard = (props) => {
 
             <div className='container-fluid '>
                 <div className='row align-items-center justify-content-center'>
-
+                    <div>
                     <img src={props.image_src} height={props.height} width={props.width} className={props.className}></img>
-                    <p>{props.text1}</p>
-                    <p>{props.text2}</p>
-                    <p>{props.text3}</p>
+                    <p className='register-card-p '>{props.text1}</p>
+                    <p className='register-card-p text-primary'>{props.text2}</p>
+                    <p className='register-card-p'>{props.text3}</p>
+                    </div>
+                  
 
 
                 </div>
 
-                <div className=' align-items-center justify-content-center'>
+                <div className='row align-items-center justify-content-center '>
                     <Link to={props.url}>
-                        Register
+                        <span className='register-card-register text-success'>Register</span>
                     </Link>
                 </div>
             </div>

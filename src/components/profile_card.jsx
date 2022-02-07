@@ -52,16 +52,17 @@ class Profile_Card extends React.Component {
                             /> */}
                 
                 {this.props.dog.public_id ? 
-                <Image
-                style={{width:200}}
-                 cloudName='daurieb51'
-                    publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}
+                // <Image
+                //  class='profile_img_dog'
+                //  cloudName='daurieb51'
+                //     publicId={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}
                 
+                <img class='profile_img_dog'
+                src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}></img>
 
-
-                />    : 
-                <img src={this.props.image_src} 
-                width={this.props.width} height={this.props.height}>
+               : 
+                <img class='profile_img_dog' src={this.props.image_src} 
+                >
                 </img>
 
                 
