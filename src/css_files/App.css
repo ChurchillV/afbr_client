@@ -285,13 +285,13 @@
   border-top: 6px solid rgb(186, 129, 8);
 
 }
-
+/* 
 .carousel-inner{
   position: relative;
   width: 50vw;
   height: 50vw;
   overflow: hidden;
-}
+} */
 
 @media screen and (min-width: 770px) {
     
