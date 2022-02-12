@@ -34,15 +34,7 @@
     color: red;
 
   }
-  80% {
-    background-image: url('../images/dog1.jpg');
-    background-repeat: none;
-    background-position: center;
-    background-size: cover;
-    background-color: white;
-    content: 'All i do';
-    color: white  ;
-  }
+
 
 }
 
@@ -123,19 +115,7 @@
   }
 }
 
-/* 
-@keyframes slide_to_side  {
-  25%   {left:10px; top:0px;right: 1000px;}
-  100%  {background-color:white; left:400px; top:0px;}
-  
-} */
 
-/* .row{
-  background-image: url('../images/logo2ee.jpg');
-    background-position: center;
-    background-repeat:no-repeat;
-    background-size: cover;
-} */
 .navbar {
   width: 100%;
   text-align:center;
@@ -188,13 +168,7 @@
 }
 
 
-/* .navbar-nav{
-  color: white;
-}
 
-.navbar-light{
-  color: white;
-} */
 
 .navbar-light{
   font-size: 1.6vw;
@@ -212,10 +186,7 @@
   font-weight: 500;
   text-align: center;
   color: white;
-  /* margin: 5%; */
-  /* margin-top: 20%;
-  margin-bottom: 20%; */
-  /* margin-left: 10%; */
+ 
   padding-left: 10%;
   padding-top: 50%;
   padding-bottom: 50%;
@@ -250,8 +221,7 @@
   background-size: cover;
   display: flex;
   position: relative;
-  /* animation-name: homestuff; */
-  /* visibility: hidden; */
+  animation-name: homestuff;
   animation-duration: 15s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
@@ -265,7 +235,6 @@
   background-size: cover;
   background-color: blue;
   width: 100%;
-  height: 100%;
   display: flex;
   
   
@@ -285,17 +254,8 @@
   border-top: 6px solid rgb(186, 129, 8);
 
 }
-/* 
-.carousel-inner{
-  position: relative;
-  width: 50vw;
-  height: 50vw;
-  overflow: hidden;
-} */
 
-.homelogo{
-  width: 100%;
-}
+
 
 @media screen and (min-width: 770px) {
     
@@ -320,8 +280,8 @@
 
 
 
-
-
+@media screen and (min-width: 770px) {
+  
 .gallery{
   background-color: inherit;
   padding: 10%;
@@ -337,6 +297,8 @@
   display: flex; */
 
 }
+}
+
 
 @media screen and (min-width: 770px) {
   .pedigree{
@@ -444,4 +406,12 @@
   justify-content: center;
   align-content: center;
   align-items: center;
+}
+
+.crowd{
+  width: 100%;
+}
+
+.homelogo{
+  width: 100%;
 }

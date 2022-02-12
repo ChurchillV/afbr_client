@@ -48,13 +48,10 @@
   background-color: inherit;
   padding: 10%;
 
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   color: rgb(186, 129, 8);
-  animation-name: enlarge;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease; 
+ 
   /* border-bottom: 6px solid black;
   display: flex; */
 
@@ -96,16 +93,15 @@
 
 @media screen and (max-width: 770px) {
   .register1{
-    
-    padding: 5%;
-    margin: 5%;
+    margin-top: 10%;
+    padding-top: 30%;
+    margin-bottom: 0%;
+    padding-bottom: 30%;
     font-size: 1.5rem;
     text-align: center;
     color: white  ;
-    background-image: url('../images/frenchie1.jpg');
-    background-repeat: none;
-    background-position: center;
-    background-size: cover;
+    background-color: rgba(3, 3, 3, 0.3) ;
+
     text-align: center;
    
   
@@ -133,3 +129,58 @@
     position:relative;
   }
   }
+
+  @media screen and (max-width: 770px){
+      h1{
+        font-size: 1.5rem;
+        font-weight: 400;
+       
+      }
+  }
+
+  @media screen and (max-width: 770px){
+    h5{
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 5%;
+      margin-bottom: 5%;
+
+    }
+}
+
+@media screen and (max-width: 770px){
+  .homelogo{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 50%;
+  }
+}
+
+
+
+@media screen and (max-width: 770px){
+  .tree{
+    margin-top:5%;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 75%;
+  }
+}
+
+
+
+@media screen and (max-width: 770px){
+  .documented{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+  }
+}
+
+
+

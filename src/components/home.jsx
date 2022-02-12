@@ -54,7 +54,7 @@ class Home extends Component {
 
       <div className="App container-fluid align-items-center justify-content-center" style={{ backgroundColor: 'white' }}>
 
-        <div className='row justify-content-center'>
+        <div className='row  justify-content-center'>
           <Navbar toggle_sign_up={this.toggle_sign_up} toggle_login={this.toggle_login} />
           { }
 
@@ -68,7 +68,7 @@ class Home extends Component {
 
         </div>
 
-        <div className='row  home_full align-items-center justify-content-center'>
+        <div className='row home_full align-items-center justify-content-center'>
           <div className='col-sm-'>
             < Card text1="The African Bully Registry:" text2="Africa's Premier Bully Registry" className='title' />
           </div>
@@ -81,14 +81,14 @@ class Home extends Component {
         <div >
 
         </div>
-        <div className='row card_row align-items-center justify-content-center'>
-          <div className='col-sm-6'>
+        <div className='row  card_row align-items-center justify-content-center'>
+          <div className='col-sm-6 '>
             <h1 class='text-capitalize' style={{ color: 'white' }}>Join the community of bull dog owners today</h1>
             <h5 class='text-capitalize' style={{ color: 'white' }}>Connect with dog owners acros Africa and the globe</h5>
           </div>
-          <div className='col-sm-6'>
+          <div className='col-sm-6 '>
             <div>
-              <img src={crowd}></img>
+              <img src={crowd} className='crowd'></img>
 
             </div>
 
@@ -111,17 +111,17 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className='row register1 align-items-center justify-content-center'>
+        <div className='row  register1 align-items-center justify-content-center'>
 
 
-          <div className='col-sm- '>
+          <div className='col-sm-6 '>
             <h1 class='text-capitalize' style={{ color: 'white' }}>Register your bull dog with us today</h1>
             <h5 class='text-capitalize' style={{ color: 'white' }}>American Bull Dogs, Frenchiebuls</h5>
           </div>
         </div>
 
 
-        <div className='row home_full align-items-center justify-content-center'>
+        <div className='row align-items-center justify-content-center'>
           <div className='col-sm-6'>
             < Card text1="Our Gallery" className='gallery' />
           </div>
@@ -132,8 +132,8 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className='row  align-items-center justify-content-center'>
-          <div className='col-sm-6' style={{textAlign: 'center'}}>
+        <div className='row align-items-center justify-content-center'>
+          <div className='col-sm-6 documented' style={{textAlign: 'center'}}>
             <h1>Well documented pedigrees</h1>
             <h1>Global certification</h1>
             <h1>African Identity</h1>
@@ -143,14 +143,12 @@ class Home extends Component {
 
           <div className='col-sm-6'>
             <div>
-                <img src={tree}></img> 
+                <img src={tree} className='tree'></img> 
                 </div>
             </div>         
         </div>
 
-        {/* <div className='row card_row align-items-center justify-content-center'>
-               
-              </div> */}
+      
 
         <div className='row card_row align-items-center justify-content-center'>
           <div className='container-fluid'>

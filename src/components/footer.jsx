@@ -5,7 +5,7 @@ import '../css_files/App.css'
 const Footer = (props) => {
     return (
    
-        <footer class="footer_full text-center text-lg-start">
+        <footer class="footer_full w-100 text-center text-lg-start">
           
           <section
             class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
