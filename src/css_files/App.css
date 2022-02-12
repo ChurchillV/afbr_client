@@ -293,21 +293,27 @@
   overflow: hidden;
 } */
 
+.homelogo{
+  width: 100%;
+}
+
 @media screen and (min-width: 770px) {
     
 .register1{
   background-color: inherit;
   padding: 10%;
-  
+  margin-top: 10%;
   font-size: 4vw;
   /* text-align: center; */
   color: white  ;
-  animation-name: enlarge;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease;
+  background-image: url('../images/frenchie1.jpg');
+  background-repeat: none;
+  background-position: center;
+  background-size: cover;
   border-left: 6px solid white;
   display: flex;
+  filter: brightness(0.8);
+  height: 100%;
 
 }
 }
@@ -394,7 +400,7 @@
 
 .card_row{
   padding: 2%;
-  background-color: rgba(218, 165, 32);
+  background-color: #daa520;
   margin-top: 5%;
   
 }
@@ -405,4 +411,37 @@
   background-repeat:no-repeat;
   background-size: cover;
   color: white;
+}
+
+
+.col-sm-6{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.col-sm-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.col-sm-{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.col-sm-11{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
