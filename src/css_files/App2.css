@@ -2,6 +2,10 @@
     --yellow: rgb(186, 129, 8)
   }
 
+  body{
+    text-align: center;
+  }
+
 
 @media screen and (max-width: 770px) {
     .homeMessage {
@@ -97,10 +101,12 @@
     margin: 5%;
     font-size: 1.5rem;
     text-align: center;
-    /* animation-name: enlarge;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease; */
+    color: white  ;
+    background-image: url('../images/frenchie1.jpg');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
    
   
   }

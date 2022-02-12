@@ -133,7 +133,7 @@ class Home extends Component {
         </div>
 
         <div className='row  align-items-center justify-content-center'>
-          <div className='col-sm-6'>
+          <div className='col-sm-6' style={{textAlign: 'center'}}>
             <h1>Well documented pedigrees</h1>
             <h1>Global certification</h1>
             <h1>African Identity</h1>
