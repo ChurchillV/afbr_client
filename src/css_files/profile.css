@@ -33,8 +33,7 @@ a {
 
 @media screen and (max-width: 770px) {
     .profile_card_p{
-        color: black;
-        font-size: 1rem;
+        color: white;
     }
 }
 

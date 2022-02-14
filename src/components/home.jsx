@@ -81,7 +81,7 @@ class Home extends Component {
         <div >
 
         </div>
-        <div className='row  card_row align-items-center justify-content-center'>
+        <div className='row  mt-5 pt-5 card_row align-items-center justify-content-center'>
           <div className='col-sm-6 '>
             <h1 class='text-capitalize' style={{ color: 'white' }}>Join the community of bull dog owners today</h1>
             <h5 class='text-capitalize' style={{ color: 'white' }}>Connect with dog owners acros Africa and the globe</h5>
@@ -97,21 +97,21 @@ class Home extends Component {
         </div>
 
 
-        <div className='row align-items-center justify-content-center'>
+        <div className='row mt-md-5 py-md-5 align-items-center justify-content-center'>
 
-          <div class='col-sm-1'>
+          <div class='ml-md-1 mb-md-5 col-sm-1'>
             <div>
               <img src={logo1} className='homelogo'></img>
 
             </div>
           </div>
           <div className='col-sm-11'>
-            <h1 class='text-capitalize' >Uniting passionate, dedicated dog lovers and breeders</h1>
-            <h5 class='text-capitalize'>Right here in Africa</h5>
+            <h1 class='text-capitalize text-center px-md-3 py-md-3' >Uniting passionate, dedicated dog lovers and breeders</h1>
+            <h5 class='text-capitalize text-center px-md-3'>Right here in Africa</h5>
           </div>
         </div>
 
-        <div className='row  register1 align-items-center justify-content-center'>
+        <div className='row  mt-md-5 register1 align-items-center justify-content-center'>
 
 
           <div className='col-sm-6 '>
@@ -121,7 +121,7 @@ class Home extends Component {
         </div>
 
 
-        <div className='row align-items-center justify-content-center'>
+        <div className='row mt-md-5 align-items-center justify-content-center'>
           <div className='col-sm-6'>
             < Card text1="Our Gallery" className='gallery' />
           </div>
@@ -132,7 +132,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className='row align-items-center justify-content-center'>
+        <div className='row  mt-md-5 align-items-center justify-content-center'>
           <div className='col-sm-6 documented' style={{textAlign: 'center'}}>
             <h1>Well documented pedigrees</h1>
             <h1>Global certification</h1>
@@ -150,7 +150,7 @@ class Home extends Component {
 
       
 
-        <div className='row card_row align-items-center justify-content-center'>
+        <div className='row  mt-5 card_row align-items-center justify-content-center'>
           <div className='container-fluid'>
             <div className='row card_row align-items-center justify-content-center'>
               < Card text1="Our Partners" className='partners' />

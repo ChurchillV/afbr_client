@@ -54,44 +54,8 @@ class Pedigree extends React.Component {
     };
 
     // getsire = () => {
-    //     //get dog sire name image
-    //     axios
-    //         .get(`http://localhost:8000/api/dogs/${this.props.Profilestate.dog_sire_sire_id}`)
-    //         .then((res) => {
-
-    //             this.setState({ dog_sire_id: res.data[0].sire }, () => {
-    //                 this.getsire_name()
-    //                 console.log('finished setting state in pedigree card', this.state)
-    //             }
-    //             )
-    //             console.log(res.data)
-
-    //         }
-    //         )
-    //         .catch((err) => {
-    //             console.log(this.props.Profilestate.dog_sire_sire_id)
-    //             console.log("Error couldnt get Dog in com method");
-    //             console.log(err.message);
-    //         });
-
-    // }
-
-    // getsire_name = () => {
-    //     //get dog sire name image
-    //     axios
-    //         .get(`http://localhost:8000/api/dogs/${this.props.Profilestate.dog_sire_sire_id}`)
-    //         .then((res) => {
-
-    //             this.setState({ dog_sire_name: res.data[0].name }, () => console.log('finished setting state in pedigree card', this.state))
-    //             console.log(res.data)
-
-    //         }
-    //         )
-    //         .catch((err) => {
-    //             console.log("Error couldnt get Dogin p");
-    //             console.log(err.message);
-    //         });
-
+    
+    
     // }
 
     render() {
@@ -117,7 +81,7 @@ class Pedigree extends React.Component {
                             </div>
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                 <div className='sire_label'>
-                                    {this.props.data.sire.name}
+                                    <h4>{this.props.data.sire.name}</h4>
                                 </div>
                             </a>
 
@@ -163,7 +127,7 @@ class Pedigree extends React.Component {
                                 }                            </div>
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                 <div className='sire_label'>
-                                    {this.props.data.dam.name}
+                                <h4>{this.props.data.dam.name}</h4>
                                 </div>
                             </a>
 

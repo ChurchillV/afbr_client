@@ -29,7 +29,7 @@ const DogCard = (props) => {
                 <img src={props.image_src} height={props.height} width={props.width} className='render_card_image'></img>
             </div>
             <div className='col-sm-5'>
-                <p>{props.dogname}</p>
+                <h2>{props.dogname}</h2>
                 <p>{props.dogbreed}</p>
                 <p>{props.dogsire}</p>
                 <p>{props.dogmaam}</p>

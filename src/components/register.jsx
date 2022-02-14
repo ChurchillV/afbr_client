@@ -25,25 +25,27 @@ function Register() {
     if (user) navigate('/dashboard', { replace: true });
   }, [user, loading]);
   return (
-    <div className="container-fluid"  style={{position: 'relative'}}> 
+    <div className="container-fluid" style={{ position: 'relative' }}>
       <Navbar />
 
-      <div className='shows_blob'>
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#daa520" d="M67,-20.8C72.5,-4.7,52.9,20.6,31.8,33.4C10.8,46.2,-11.7,46.7,-29.8,35C-47.8,23.3,-61.4,-0.6,-55.7,-16.9C-50,-33.2,-25,-42.1,2.9,-43C30.7,-44,61.4,-37,67,-20.8Z" transform="translate(100 100)" />
-                    </svg>
-                </div>
+      {/* <div className='shows_blob'>
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#daa520" d="M67,-20.8C72.5,-4.7,52.9,20.6,31.8,33.4C10.8,46.2,-11.7,46.7,-29.8,35C-47.8,23.3,-61.4,-0.6,-55.7,-16.9C-50,-33.2,-25,-42.1,2.9,-43C30.7,-44,61.4,-37,67,-20.8Z" transform="translate(100 100)" />
+        </svg>
+      </div> */}
       <div className="row">
 
-        <div className="row align-items-center justify-content-center">
+        <div className="col-lg-12 text-capitalize text-center ">
           <h1>Sign Up with us today</h1>
         </div>
 
-        <div className="row">
-          <div className="row align-items-center justify-content-center">
-            <div className="register">
+        <div className="container">
+          
+        <div className="row align-items-center justify-content-center">
+          <div className="align-items-center justify-content-center">
+            <div className="register my-md-5 py-md-5 ">
 
-              <div className="register__container">
+              <div className="register__container ">
                 <input
                   type="text"
                   className="register__textBox"
@@ -82,6 +84,8 @@ function Register() {
           </div>
 
         </div>
+        </div>
+
       </div>
       <div className='row align-items-center justify-content-center waves_blob1_div ' >
         <div className='waves_blob1'>

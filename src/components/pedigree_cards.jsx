@@ -115,7 +115,7 @@ export class PedigreeDogCard extends Component {
             
             }                         </div>
                     <div className='sire_sire_1 label'>
-                        {this.props.dog_name}
+                      <h4>  {this.props.dog_name}</h4>
                     </div>
                 </div>
             </a>

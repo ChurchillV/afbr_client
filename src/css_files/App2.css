@@ -130,23 +130,29 @@
   }
   }
 
-  @media screen and (max-width: 770px){
-      h1{
-        font-size: 1.5rem;
+
+  @media screen and (max-width: 770px) {
+    h1{
+        font-size: 2rem;
         font-weight: 400;
        
-      }
-  }
-
-  @media screen and (max-width: 770px){
+    }
+    h3{
+        font-size: 1.2rem;
+    }
     h5{
-      font-size: 1rem;
-      font-weight: 400;
-      margin-top: 5%;
-      margin-bottom: 5%;
-
+        font-size: 1.2rem;
+    }
+    h6{
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 1.rem;
     }
 }
+
+
+  
 
 @media screen and (max-width: 770px){
   .homelogo{

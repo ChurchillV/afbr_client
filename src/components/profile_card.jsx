@@ -33,7 +33,7 @@ class Profile_Card extends React.Component {
         return Object.keys(this.props.dog).map((dog) => {
             // console.log(this.props.dog[dog])
             // console.log(dog)
-            return <p className='profile_card_p'>{dog}:&nbsp;&nbsp;{this.props.dog[dog]}</p>
+            return <h5 className='profile_card_p mt-1'>{dog}:&nbsp;&nbsp;{this.props.dog[dog]}</h5>
         })
         
     }
