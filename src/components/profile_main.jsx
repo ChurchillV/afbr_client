@@ -11,56 +11,30 @@ import { set } from 'mongoose';
 import { setState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { url } from './weburl';
+import { Search } from './search';
 
 
 
-// const colstyle = {
-//     row_style: {
-//         margin: '1%',
-//         backgroundColor: 'black',
-//         border: '1px solid black'
-//     },
-//     column_style: {
-//         padding: '1%',
-//         border: '1px solid black',
-//         fontSize: '2vw'
-//     },
-//     p_style: {
-//         border: '1px solid black'
-//     }
-// }
-
-
-
-
-
-// export default DogCard;
-// const card_style = {
-//     height: '100px',
-//     width: '100px,'
-// }
-
-// const { height, width } = card_style
 
 class ProfileMain extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            dogs : [
-               
+            dogs: [
+
             ],
             user: ''
         };
     }
 
-    componentDidMount = () =>{
+    componentDidMount = () => {
         this.getcurrentuser(this.refreshList
         )
 
     }
 
-    getcurrentuser = (callback) =>{
+    getcurrentuser = (callback) => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -69,7 +43,7 @@ class ProfileMain extends Component {
                     this.changeUserToId(callback)
 
                 });
-              
+
             } else {
                 this.setState({ user: null });
                 console.log('usershmm')
@@ -81,76 +55,88 @@ class ProfileMain extends Component {
             }
         });
     }
-    
-    
+
+
     changeUserToId = (callback) => {
         axios
             .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
             .then((res) => {
                 console.log(res.data)
                 this.setState({
-                    ...this.state, 
-                   user: res.data[0].id}, 
-                   () =>  {
-                       callback()
-                       console.log('chaingn profile main state after calling uid', this.state.user)
+                    ...this.state,
+                    user: res.data[0].id
+                },
+                    () => {
+                        callback()
+                        console.log('chaingn profile main state after calling uid', this.state.user)
 
-                   })
+                    })
             })
-            
+
             .catch((err) => {
                 console.log(err)
             })
     }
     refreshList = () => {
         axios
-        .get(`${url}api/dogs/getdoguser/${this.state.user}`)
-        .then((res) => {
-            this.setState({ dogs: res.data }, () => (console.log(this.state)))
-        }
-                )
-            
-        .catch((err) => {
-            console.log("Error couldnt get Dog");
-            console.log(err.message);
-        }); 
-        
+            .get(`${url}api/dogs/getdoguser/${this.state.user}`)
+            .then((res) => {
+                this.setState({ dogs: res.data }, () => (console.log(this.state)))
+            }
+            )
+
+            .catch((err) => {
+                console.log("Error couldnt get Dog");
+                console.log(err.message);
+            });
 
 
-        
+
+
     };
 
     render_dog_list = () => {
 
-        return this.state.dogs.map((dog)=> ( 
-        <div className='col-md-6 text-capitalize render_card'>
-                                <Link to={`/my_dogs/${dog.id}`}>
-                                    <DogCard image_src={dogpic}
-                                        dogname={dog.name} />
-                                </Link>
-        </div>
+        return this.state.dogs.map((dog) => (
+            <div className='col-md-6 text-capitalize render_card'>
+                <Link to={`/my_dogs/${dog.id}`}>
+                    <DogCard image_src={dogpic}
+                        dogname={dog.name} />
+                </Link>
+            </div>
         ))
     }
 
 
 
 
-    
-    
+    searchClick = (e) => {
+        e.preventDefault()
+    }
+
     render() {
         return (
-            
-            <Profile>
-                
-                
-            <div className='row' style={{ padding: '1%' }}>
-                 {this.render_dog_list()}
-                 {console.log('hey')}
-                        </div>
-                            
-            </Profile>
+            <div>
+                <Profile>
+                    <div className='row align-items-center justify-content-center' >
+                        <Search name='profile_search' onClick={this.props.searchClick} />
+
+                    </div>
+
+
+                    <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
+
+
+                        {this.render_dog_list()}
+                        {console.log('hey')}
+                    </div>
+
+                </Profile>
+            </div>
+
+
         )
-        
+
     }
 
 

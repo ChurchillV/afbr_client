@@ -7,7 +7,6 @@
     width: 100%;
     color: rgb(186, 129, 8);
 
-    height: 100%;
   }
 
   
@@ -16,6 +15,8 @@
       display: flex;
 
       padding: 5%;
+      background-color:  rgb(186, 129, 8);
+      width: 100%;
       
     
       
@@ -24,6 +25,11 @@
   .shows_main_text{
     display:flex;
     flex-direction: column;
+    /* background-image: url('../images/shows_3_preview.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover; */
+    
   }
 
   .waves_blob1_div{
@@ -31,28 +37,16 @@
     width: 100%;
   }
 
-  .waves_blob1{
-    width: 100%;
-    position: absolute;
-    top: 1%
-  }
-  .shows_blob{
-    position: absolute;
-    width: 100%;
-    /* top: 1%; */
-    left: 1%;
-    opacity: 0.2;
-    z-index: -3;
-}
+  
 .h1_judges{
     animation: enlarge 10s infinite ;
     animation-timing-function: ease;
-    font-size: 5vw;
+    
+    color: white
 }
 
 .p_apply{
   color: black;
-  font-size: 3vw;
 }
   
   .shows_img {

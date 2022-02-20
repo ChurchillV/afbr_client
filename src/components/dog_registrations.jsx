@@ -162,6 +162,8 @@ class DogRegistration extends React.Component {
         });
     }
 
+
+
     changeUserToId = (callback) => {
         axios
             .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
@@ -239,7 +241,7 @@ class DogRegistration extends React.Component {
 
 
     handleChange = (e) => {
-
+        e.preventDefault()
         const { name, value } = e.target
         let dog = {
             [name]: value,
@@ -276,7 +278,9 @@ class DogRegistration extends React.Component {
     //     console.log('none')
     // }
 
+    onSearchChange = (e) => {
 
+    }
 
     edit = (e) => {
 
@@ -284,10 +288,7 @@ class DogRegistration extends React.Component {
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
-        // console.log(e.target.name)
-        // console.log(e.target.value)
-        // console.log(e.target.sex)
-        // console.log(e.target.value)
+        
 
 
         if (this.state.imageSelected) {
@@ -325,6 +326,8 @@ class DogRegistration extends React.Component {
 
                 console.log(res.data.message);
                 console.log('dog created/editted')
+
+                //new dog is used when filling the manual pedigree section
                 if (this.props.newdog) {
                     this.props.getdogid()
                 }
@@ -348,11 +351,7 @@ class DogRegistration extends React.Component {
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
-        // console.log(e.target.name)
-        // console.log(e.target.value)
-        // console.log(e.target.sex)
-        // console.log(e.target.value)
-
+        
 
 
 

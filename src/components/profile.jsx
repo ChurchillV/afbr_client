@@ -5,6 +5,8 @@ import dog from '../images/dog.jfif'
 import '../css_files/profile.css'
 import DogCard from './dog_card';
 import Navbar from './navbar';
+import { auth, db, logout } from "./firebase";
+
 
 
 const dogcard_style = {
@@ -41,38 +43,12 @@ class Profile extends Component {
                             <Link to='/profile/csandps'>Certificates and Pedigrees</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link to='/profile/signout'>Sign Out</Link>
+                            <button onClick={logout}>Log out</button>
                         </div>
                     </div>
                     <div className='col-sm-10 align-items-center justify-content-center profile_main'>
 
-                        {/* <div className='row' style={{ padding: '1%' }}>
-                            <div className='col-sm-6'>
-                                <Link to='/my_dogs/dog_name'>
-                                    <DogCard image_src={dog} height={height} width={width}
-                                        dogname='Scard Bully' />
-                                </Link>
-                            </div>
-                            <div className='col-sm-6 '>
-                                <Link to='/my_dogs/dog_name'>
-                                    <DogCard image_src={dog} height={height} width={width}
-                                        dogname='Scard Bully'
-                                        dogage='Age : 12' />
-                                </Link>
-                            </div>
-                            <div className='col-sm-6'>
-                                <Link to='/my_dogs/dog_name'>
-                                    <DogCard image_src={dog} height={height} width={width}
-                                        dogname='Scard Bully' />
-                                </Link>
-                            </div>
-                            <div className='col-sm-6'>
-                                <Link to='/my_dogs/dog_name'>
-                                    <DogCard image_src={dog} height={height} width={width}
-                                        dogname='Scard Bully' />
-                                </Link >
-                            </div>
-                        </div> */}
+                        
                         {this.props.children}
 
 

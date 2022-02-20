@@ -1,38 +1,32 @@
-.register-card{
+@media screen and (max-width: 770px) {
+  .register-card{
     margin: 5%;
 
   
-    color: black;
-    border-bottom: 2px solid rgba(218, 165, 32);
-    padding: 2%;
+    color: white;
     text-align: center;
-    font-size: 2vw;
     font-weight: 300;
-    border-radius: 5%;
     width: 100%;
     font-weight: 500;
 
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(218, 165, 32);
     /* box-shadow: 1px 2px 2px; */
   
   }
+}
 
   @media screen and (min-width: 770px) {
     .register-card{
       margin: 5%;
   
     
-      color: black;
-      border-bottom: 3px solid rgba(218, 165, 32);
-      padding: 2%;
+      color: white;
       text-align: center;
-      font-size: 1rem;
       font-weight: 300;
-      border-radius: 5%;
       width: 100%;
       font-weight: 500;
   
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(218, 165, 32);
       /* box-shadow: 1px 2px 2px; */
     
     }
@@ -44,17 +38,33 @@
     font-size: 1.3rem;
   }
 
-  .register-card-register{
-    font-size: 2rem;
-  }
   .register-card-deep{
     opacity: 1;
   }
 
 
+  .registration_title{
+    background-color: rgba(218, 165, 32);
+    width: 100%;
+    color: white;
+  }
+
+  .registration_full{
+    
+  }
+
+  .register_card_col{
+    border-left: 5px solid white ;
+
+  }
+
 .pedcar{
     display: flex;
     flex-direction: row;
+}
+
+.puppies{
+  width: 100%;
 }
   .FORM {
     background-color: inherit;
@@ -87,11 +97,6 @@
   .form-group{
       color: white;
      
-  }
-
-  .dog_reg_pic{
-      height: 50%;
-      width: 70%;
   }
 
 

@@ -9,11 +9,26 @@ import '../css_files/registration.css';
 
 const Registration = () => {
     return (
-        <div className="container">
+        <div className="container-fluid registration_full">
             <div className='row align-items-center justify-content-center'>
-                <Navbar />
+                <div className="col-lg-">
+                    <Navbar />
+
+                </div>
+
+            </div>
+            <div className='row align-items-center justify-content-center py-5'>
+                    <div className='col-lg- registration_title py-2'>
+                        <h1>Register your dog with the African Bully Registry</h1>
+                    </div>
+
+                </div>
+            <div className='row align-items-center justify-content-center'>
+
+
                 <div className="col-md-3 register-card">
-                    <RegisterCard image_src={puppies} text1='Litter Registations' className='puppies'
+                    <RegisterCard image_src={puppies} text1='Litter Registations'
+                        className='puppies'
                         text2='$20.00'
                         url='/litter_registrations' />
                 </div>

@@ -105,7 +105,7 @@ export class PedigreeDogCard extends Component {
                     <div className='sire_sire_1'>
                     {this.props.dog_publicId ? 
                                    <img class='profile_img_dog'
-                                   src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}></img>
+                                   src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog_publicId}.png`}></img>
                : 
                 <img className='profile_img_dog' src={Profile_pic} 
                 >

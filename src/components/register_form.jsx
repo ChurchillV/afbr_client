@@ -6,6 +6,7 @@ import { Auth, Hub } from 'aws-amplify'
 import {Image} from 'cloudinary-react'
 import axios from 'axios'
 import Amplify from 'aws-amplify'
+import {Search} from './search'
 // import {AmplifySignOut, withAuthenticator} from '@aws-amplify/ui-react'
 
 
@@ -37,22 +38,7 @@ class RegisterForm extends Component {
         })
     }
 
-    // uploadImage = (files) => {
-    //     console.log(files[0])
-    //     const formData = new FormData()
-    //     formData.append('file', this.state.imageSelected)
-    //     formData.append('upload_preset', 'gwxgv5ii')
-
-    //     axios.post('https://api.cloudinary.com/v1_1/daurieb51/image/upload', formData)
-    //     .then((response) => 
-    //         console.log(response))
-
-    //     this.props.uploadImagetodb(formData['file'])
-                
-    // } 
-
-    //edit wont work here by displaying the initial values cos props = this.state not this.state.dog
-
+ 
     render() {
 
         return (
@@ -100,7 +86,16 @@ class RegisterForm extends Component {
                         <label for="inputSire">Sire</label>
                         <select name='sire' onChange={this.props.handleChange} id="inputSire" class="form-control">
                             <option>Unkown</option>
-                            {this.props.sires ? this.option_list_sires() : null}                        </select>
+                            {this.props.sires ? this.option_list_sires() : null} 
+                            
+                       </select>
+                      
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-">
+                        
+                       <Search  onSearchClick={this.props.handleChange} name='sire'/>
                     </div>
                 </div>
                 <div class="form-row">
@@ -109,7 +104,15 @@ class RegisterForm extends Component {
                         <select name='dam' onChange={this.props.handleChange} id="inputDam" class="form-control">
                             <option>Unknown</option>
                             {this.props.dams ? this.option_list_dams() : null}
+                            
                         </select>
+                       
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-">
+                        
+                       <Search  onSearchClick={this.props.handleChange} name='dam'/>
                     </div>
                 </div>
 

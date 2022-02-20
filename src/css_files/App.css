@@ -6,7 +6,7 @@
 } */
 
 :root{
-  --yellow: rgb(186, 129, 8)
+  --yellow: #ba8108;
 }
 @keyframes homestuff {
     
@@ -251,7 +251,7 @@
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
-  border-top: 6px solid rgb(186, 129, 8);
+  border-top: 6px solid #ba8108;
 
 }
 
@@ -288,7 +288,7 @@
 
   font-size: 4vw;
   text-align: center;
-  color: rgb(186, 129, 8);
+  color: #ba8108;
   animation-name: enlarge;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -341,7 +341,7 @@
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
-  border-right: 6px solid rgb(186, 129, 8);
+  border-right: 6px solid #ba8108;
   display: flex;
   position:relative;
 }

@@ -157,14 +157,13 @@ class ProfileDog extends Component {
 
                     </div>
 
-                    <div className='row profil-card align-items-center justify-content-center'>
+                    <div className='row align-items-center justify-content-center'>
 
 
 
 
-                        <div className='col-sm-10'>
+                        <div className='col-sm-'>
                             
-                    {/* <Try dog={this.state.specificdog} dog_dam={this.state.dog_dam} /> */}
                   
                             {this.props.pedigree ? <Profile_Card image_src={Profile_pic} height={height}
                                 width={width}
