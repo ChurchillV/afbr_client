@@ -6,6 +6,11 @@
     align-items: center;
     justify-content: center;
   }
+
+  .register_text{
+    background-color: rgb(186, 129, 8);
+
+  }
   .register__container {
     display: flex;
     flex-direction: column;

@@ -22,6 +22,7 @@ import ProfileDog from './components/ProfileDog';
 import ProfileMain from './components/profile_main';
 import CsAndPs from './components/csandps'
 import SignOut from './components/signout'
+import { Personal, PersonalForm } from './components/personal';
 import { PedigDam, PedigDamDam, PedigMain, PedigSire, PedigSireDam, PedigDamSire, PedigSireSire } from './components/pedig-manual-components/pedigcomponents';
 import { PedigSireDamDam, PedigSireDamSire, PedigSireSireDam, PedigSireSireSire } from './components/pedig-manual-components/pedigcomponents2';
 import { PedigDamDamDam, PedigDamDamSire, PedigDamSireDam, PedigDamSireSire } from './components/pedig-manual-components/pedigcomponents3';
@@ -29,6 +30,10 @@ import { PedigSuccess } from './components/pedig-manual-components/pedigsuccess'
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { url } from './components/weburl';
+import { AmericanBulldog } from './components/americanbulldog';
+import { AmericanBully } from './components/americanbully';
+import { FrenchBulldog } from './components/frenchbulldog';
+import { Pittbull } from './components/pitbull';
 
 
 
@@ -208,6 +213,10 @@ class App extends Component {
             <Route path='/about' element={<About />} />
             <Route path='/registration' element={<Registration />} />
             <Route path='/breeds' element={<Breeds />} />
+            <Route path='/breeds/americanbulldog' element={<AmericanBulldog />} />
+            <Route path='/breeds/americanbully' element={<AmericanBully />} />
+            <Route path='/breeds/frenchbulldog' element={<FrenchBulldog />} />
+            <Route path='/breeds/pitbull' element={<Pittbull />} />
             <Route path='/shows_and_events' element={<Shows />} />
             <Route path='/judges' element={<Judges />} />
             <Route path='/contact' element={<Contact />} />
@@ -297,6 +306,9 @@ class App extends Component {
             <Route path='/my_dogs/:dog_id' element={<ProfileDog pedigree={this.state.pedigree} getdogpedigree={this.getdogpedigree} />} />
             <Route path='/profile/csandps' element={<CsAndPs />} />
             <Route path='/profile/signout' element={<SignOut />} />
+            <Route path='/profile/personal' element={<Personal />} />
+
+            <Route path='/profile/personal/edit' element={<PersonalForm />} />
 
           </Routes>
 

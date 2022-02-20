@@ -35,7 +35,7 @@ function Register() {
           <h1>Sign Up with us today</h1>
         </div>
 
-        <div className="container">
+        <div className="container-fluid register_text">
           
         <div className="row align-items-center justify-content-center">
           <div className="align-items-center justify-content-center">

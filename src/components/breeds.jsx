@@ -5,14 +5,18 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../css_files/breed.css';
 import { url } from "./weburl";
 import axios from 'axios'
-import {Search} from './search'
+import { Search } from './search'
+import { AmericanBulldog } from './americanbulldog';
+import { AmericanBully } from './americanbully';
+import { FrenchBulldog } from './frenchbulldog';
+import { Pittbull } from './pitbull';
 
 
 class Breeds extends Component {
 
 
 
-    
+
 
     render() {
         return (
@@ -25,15 +29,39 @@ class Breeds extends Component {
                         <h1>Breeds</h1>
                         <div class='container-fluid'>
                             <div className='row align-items-center justify-content-center'>
-                                <p>Shows items go here</p>
+                            <Search />
+
+                            </div>
+                            <div className='row align-items-center justify-content-center'>
+                                <div className='mx-2'>
+                                <Link to='/breeds/americanbulldog'><h1>AmericanBulldog</h1></Link>
+
+                                </div>
+                                <div className='mx-2'>
+                                <Link to='/breeds/americanbully'><h1>AmericanBully</h1></Link>
+
+                                </div>
+                                <div className='mx-2'> 
+                                <Link to='/breeds/frenchbulldog'><h1>FrenchBulldog</h1></Link>
+
+                                </div>
+                                <div className='mx-2'>
+                                <Link to='/breeds/pitbull'><h1>Pittbull</h1></Link>
+
+                                </div>
+
+
+                        
                             </div>
 
+                            <div className='row align-items-center justify-content-center'>
+                                <div className='col-lg-'>
+                                {this.props.children}
+                                </div>
+                        
+                            </div>
                             
-
-
-                                <Search/>
                             
-
                         </div>
 
                     </div>

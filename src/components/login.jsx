@@ -20,8 +20,8 @@ function Login() {
   return (
     <div className="container-fluid">
       < Navbar />
-        <div className="login">
-      <div className="login__container">
+        <div className="login login_text">
+      <div className="login__container ">
         <input
           type="text"
           className="login__textBox"

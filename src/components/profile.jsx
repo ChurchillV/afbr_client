@@ -34,6 +34,9 @@ class Profile extends Component {
                             <Link to='/Home'>Home</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
+                            <Link to='/profile/personal'>Personal</Link>
+                        </div>
+                        <div className='row align-items-center justify-content-center pro_nav'>
                             <Link to='/my_dogs'>My dogs</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
@@ -43,7 +46,7 @@ class Profile extends Component {
                             <Link to='/profile/csandps'>Certificates and Pedigrees</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <button onClick={logout}>Log out</button>
+                            <button className='btn btn-default' onClick={logout}>Log Out</button>
                         </div>
                     </div>
                     <div className='col-sm-10 align-items-center justify-content-center profile_main'>

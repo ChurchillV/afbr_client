@@ -5,6 +5,11 @@
     align-items: center;
     justify-content: center;
   }
+
+  .login_text{
+    background-color: rgb(186, 129, 8);
+
+  }
   .login__container {
     display: flex;
     flex-direction: column;
