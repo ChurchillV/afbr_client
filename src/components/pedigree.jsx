@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css_files/pedigree.css'
-import Profile_pic from '../images/profile.jpg'
+import Profile_pic from '../images/logo2-removebg-preview (1).png'
 import { PedigreeFrame, PedigreeDogCard, PedigreeDogCard2_dam, PedigreeDogCard2_sire } from './pedigree_cards'
 import axios from 'axios';
 import { withRouter } from './dog_registrations';
@@ -81,7 +81,7 @@ class Pedigree extends React.Component {
                             </div>
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                 <div className='sire_label'>
-                                    <h4>{this.props.data.sire.name}</h4>
+                                    <p>{this.props.data.sire.name}</p>
                                 </div>
                             </a>
 
@@ -127,7 +127,7 @@ class Pedigree extends React.Component {
                                 }                            </div>
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                 <div className='sire_label'>
-                                <h4>{this.props.data.dam.name}</h4>
+                                <p>{this.props.data.dam.name}</p>
                                 </div>
                             </a>
 

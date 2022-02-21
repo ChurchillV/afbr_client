@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import { Link, NavLink } from "react-router-dom";
-import Profile_pic from '../images/profile.jpg'
+import Profile_pic from '../images/logo2-removebg-preview (1).png'
 import dog from '../images/dog.jfif'
 import '../css_files/profile.css'
 import DogCard from './dog_card';
@@ -63,22 +63,7 @@ export class PedigreeFrame extends Component {
         return (
             <div className='sire_sire'>
 
-                {/* <div className='sire_sire_1'>
-                    <div className='sire_sire_1'>
-                        <img src={Profile_pic} height='100vw' width='100vw' className='image'></img>
-                    </div>
-                    <div className='sire_sire_1 label'>
-                        AFBR dog q kennel sky
-                    </div>
-                </div>
-                <div className='sire_sire_1'>
-                    <div className='sire_sire_1'>
-                        <img src={Profile_pic} height='100vw' width='100vw' className='image'></img>
-                    </div>
-                    <div className='sire_sire_1 label'>
-                        AFBR dog q kennel sky
-                    </div>
-                </div> */}
+               
 
                 {this.props.children}
             </div>
@@ -115,7 +100,7 @@ export class PedigreeDogCard extends Component {
             
             }                         </div>
                     <div className='sire_sire_1 label'>
-                      <h4>  {this.props.dog_name}</h4>
+                      <p>  {this.props.dog_name}</p>
                     </div>
                 </div>
             </a>

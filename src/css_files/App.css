@@ -153,9 +153,9 @@
 }
 
 .nav-link:hover{
-  font-size: 2vw;
-  color: rgb(135, 120, 88);
-  border-radius: 10px;
+  /* font-size: 2vw; */
+  background-color: rgb(135, 120, 88);
+  color: white;
 }
 
 .nav-item {
