@@ -38,7 +38,13 @@ function Register() {
         <div className="container-fluid register_text">
           
         <div className="row align-items-center justify-content-center">
-          <div className="align-items-center justify-content-center">
+        <div className="col-sm-5">
+         <h1 className="text-capitalize text-white">Sign up with the African Bully Registry</h1>
+         <h4 className="text-capitalize">Free of charge</h4>
+         <h4 className="text-capitalize"> Join the global community of bulldog owners</h4>
+
+        </div>  
+          <div className="col-md-5 align-items-center justify-content-center">
             <div className="register my-md-5 py-md-5 ">
 
               <div className="register__container ">
