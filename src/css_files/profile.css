@@ -110,7 +110,7 @@ rgb(186, 129, 8) */
         border-bottom: 5px solid rgb(186, 129, 8);
         background-color: rgba(208, 213, 218, 0.3);
         color:white;
-        display: none;
+        /* display: none; */
     
     }
 }
