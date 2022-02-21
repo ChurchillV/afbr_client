@@ -35,7 +35,9 @@ a {
         color: white;
     }
 }
-
+.main_profile_img_dog{
+    width: 100%;
+}
 
 .profile_img_dog{
     width: 10vw;

@@ -31,8 +31,8 @@ class Profile_Card extends React.Component {
     info = () => {
 
         return Object.keys(this.props.dog).map((dog) => {
-            
-            return <p className='profile_card_p' style={{marginBottom: '0px'}}>{dog}:&nbsp;&nbsp;{this.props.dog[dog]}</p>
+
+            return <p className='profile_card_p text-capitalize' style={{ marginBottom: '0px' }}>{dog}:&nbsp;&nbsp;{this.props.dog[dog]}</p>
         })
 
     }
@@ -46,25 +46,26 @@ class Profile_Card extends React.Component {
 
 
                 <div className='row justify-content-center align-items-center'>
-                    {this.props.dog.public_id ?
-                        <img class='profile_img_dog'
-                            src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}></img>
+                    <div className='col-sm-6'>
 
-                        :
-                        <img class='profile_img_dog' src={this.props.image_src}
-                        >
-                        </img>
+                        {this.props.dog.public_id ?
+                            <img class='main_profile_img_dog'
+                                src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}></img>
 
-
-
-                    }
-                </div>
+                            :
+                            <img class='profile_img_dog' style={{width: '100%'}} src={this.props.image_src}
+                            >
+                            </img>
 
 
-                <div className='row justify-content-center align-items-center'>   
-                    <div>
-                    {this.info()}
 
+                        }
+                    </div>
+                    <div className='col-sm-6'>
+                        <div>
+                            {this.info()}
+
+                        </div>
                     </div>
                 </div>
 
