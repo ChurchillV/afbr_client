@@ -165,25 +165,6 @@ class DogRegistration extends React.Component {
 
 
 
-    // changeUserToId = (callback) => {
-    //     axios
-    //         .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
-    //         .then((res) => {
-    //             console.log(res.data)
-    //             this.setState({
-    //                 ...this.state, 
-    //                 dog: {...this.state.dog, user: res.data[0].id}}, 
-    //                () =>  {
-    //                    console.log('chaingn dog registrations state after calling uid', this.state.dog)
-
-    //                })
-    //         })
-            
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }
-
     uploadImage = (callback) => {
         // console.log(files[0])
         const formData = new FormData()
@@ -277,10 +258,7 @@ class DogRegistration extends React.Component {
 
 
     }
-    // console.log(data) 
-    // function handleChange(e) {
-    //     console.log('none')
-    // }
+
 
     onSearchChange = (e) => {
 
@@ -379,9 +357,12 @@ class DogRegistration extends React.Component {
         }
         else {
             this.sendDogInfo()
+            console.log('navigating to profile')
+
+            this.props.navigate('/profile')
+
             console.log('no image url present')
         }
-        console.log('navigating to profile')
         this.sendDogRegEmail()
 
 

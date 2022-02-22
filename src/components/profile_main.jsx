@@ -78,6 +78,8 @@ class ProfileMain extends Component {
             })
     }
     refreshList = () => {
+
+        
         axios
             .get(`${url}api/dogs/getdoguser/${this.state.user}`)
             .then((res) => {
