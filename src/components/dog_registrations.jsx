@@ -6,8 +6,9 @@ import axios from 'axios';
 import UserContext from '../App'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams, Navigate } from 'react-router-dom';
 import { url } from "./weburl";
+
 
 export function withRouter(Child) {
     return (props) => {
@@ -345,6 +346,16 @@ class DogRegistration extends React.Component {
 
     }
 
+    sendDogRegEmail = () => {
+        axios
+        .post(`${url}api/email/dog_registered`, { user: this.state.firebaseUser,
+                    dog: this.state.dog })
+        .then((res) => console.log('successfully sent email', res))
+        .catch((err) => console.log(err))
+
+        console.log('sendmail')
+    }
+
     submit = (e) => {
 
         e.preventDefault()
@@ -359,6 +370,7 @@ class DogRegistration extends React.Component {
 
         if (this.state.dog.image_url) {
             this.uploadImage(this.sendDogInfo)
+            
             console.log('image url  presnet')
 
         }
@@ -366,8 +378,9 @@ class DogRegistration extends React.Component {
             this.sendDogInfo()
             console.log('no image url present')
         }
-
-
+        console.log('navigating to profile')
+        this.sendDogRegEmail()
+        this.props.navigate('/profile')
 
     }
 
