@@ -1,6 +1,8 @@
 import React, { Component, useEffect, useState } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import Profile_pic from '../images/profile.jpg'
+import Logo from '../images/logo2-removebg-preview (1).png'
+
 import dog from '../images/dog.jfif'
 import '../css_files/profile.css'
 import DogCard from './dog_card';
@@ -14,23 +16,6 @@ import { url } from './weburl';
 
 import Profile from './profile';
 import Pedigree from './pedigree';
-// const colstyle = {
-//     row_style: {
-//         margin: '1%',
-//         backgroundColor: 'black',
-//         border: '1px solid black'
-//     },
-//     column_style: {
-//         padding: '1%',
-//         border: '1px solid black',
-//         fontSize: '2vw'
-//     },
-//     p_style: {
-//         border: '1px solid black'
-//     }
-// }
-
-
 
 
 
@@ -117,16 +102,7 @@ class ProfileDog extends Component {
     }
 
     
-     
-    // getdogpic = () => {
-    //     let dogpic = ''
-    //     console.log(this.props.pedigree.maindog, '......')
-    //     this.props.pedigreemaindog.public_id ?  dogpic = this.props.maindog.public_id 
-    //     : dogpic = Profile_pic
-    //     console.log('dogpic', dogpic, this.state.specificdog, Profile_pic)
-
-    //     return dogpic
-    // }
+    
 
     handleDelete = () => {
         axios
@@ -165,7 +141,7 @@ class ProfileDog extends Component {
                         <div className='col-sm-'>
                             
                   
-                            {this.props.pedigree ? <Profile_Card image_src={Profile_pic} height={height}
+                            {this.props.pedigree ? <Profile_Card image_src={Logo} height={height}
                                 width={width}
                                dog={this.props.pedigree.maindog} 
                               

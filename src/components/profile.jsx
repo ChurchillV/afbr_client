@@ -6,6 +6,7 @@ import '../css_files/profile.css'
 import DogCard from './dog_card';
 import Navbar from './navbar';
 import { auth, db, logout } from "./firebase";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 
@@ -18,7 +19,37 @@ const { height, width } = dogcard_style
 
 class Profile extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
 
+        }
+    }
+
+    componentDidMount(){
+        this.getcurrentuser()
+    }
+
+    getcurrentuser = (callback) => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                this.setState({ ...this.state, firebaseUser: user }, () => {
+                    console.log('on Authstate profile', this.state.firebaseUser)
+
+                });
+
+            } else {
+                this.setState({ user: null });
+                console.log('displatyin data from profile')
+
+            }
+
+            if (this.state.loading) {
+                this.setState({ loading: false });
+            }
+        });
+    }
 
     render() {
         return (
@@ -34,7 +65,7 @@ class Profile extends Component {
                             <Link to='/Home'>Home</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link to='/profile/personal'>Personal</Link>
+                           {this.state.firebaseUser ? <Link to={`/profile/personal/${this.state.firebaseUser.uid}`}>Personal</Link> :  <Link to='/profile/personal/'>Personal</Link> }
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             <Link to='/my_dogs'>My dogs</Link>

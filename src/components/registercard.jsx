@@ -7,27 +7,27 @@ const RegisterCard = (props) => {
         <div className='row align-items-center justify-content-center ' >
 
             <div className='container-fluid '>
-                
+
 
 
             </div>
 
-            <div className='container-fluid '>
-                <div className='row align-items-center justify-content-center py-5'>
-                    <div className='col-lg-5'>
-                        <img src={props.image_src} className={props.className}></img>
-                    </div>
-
-                    <div className='col-lg-7 register_card_col'>
-                        <p className='register-card-p '>{props.text1}</p>
-                        <p className='register-card-p'>{props.text2}</p>
-                        <p className='register-card-p'>{props.text3}</p>
-
-                        <Link to={props.url}>
-                            <span className='register-card-register '><h1>Register</h1></span>
-                        </Link>
-                    </div>
-
+            <div className='container-fluid'>
+                <div class="card w-100">
+                    <img class="card-img-top" src={props.image_src} alt="Card image cap"></img>
+                        <div class="card-body">
+                            <h5 class="card-title">{props.title}</h5>
+                            <p class="card-text">{props.subtitle}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{props.text1}</li>
+                            <li class="list-group-item">{props.text2}</li>
+                            <li class="list-group-item">{props.text3}</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link">{props.link1}</a>
+                            <Link to={props.url} class="card-link">Register</Link>
+                        </div>
                 </div>
 
 

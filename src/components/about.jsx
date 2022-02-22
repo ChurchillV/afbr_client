@@ -22,7 +22,7 @@ const About = () => {
 
 
 
-                    <div className="row align-items-center justify-content-center">
+                    <div className="row align-items-center justify-content-center text-left">
                         <div className='col-sm- about_text align-items-center justify-content-center'>
 
 
@@ -34,7 +34,7 @@ const About = () => {
 
                         </div>
 
-                        <div className="about_text">
+                        <div className="about_text text-left">
                             <p> For many years breeders in Africa had to rely on other registry's outside the continent to register their dogs.</p>
                             <p>This comes with a lot of challenges.</p>
 
@@ -53,7 +53,7 @@ const About = () => {
 
             </div>
             </div>
-            
+
             )
 }
 

@@ -18,9 +18,11 @@ class Judges extends Component {
                     <div className='container-fluid judges_full'>
                         <div className='row align-items-center justify-content-center judges_text'>
                             <div className='col-md- py-5'>
-                                <h1 className=' py-5'>Judges</h1>
-                                <p className='p_apply'>Apply as a Judge</p>
-                                <p>THE AFRICAN BULLY REGISTRY</p>
+                                <h1 className=' py-5 my-5'>Judges</h1>
+                                <p className='p_apply text-white text-large'>Apply as a Judge</p>
+                                <p className='p_apply text-white text-large'>Sign up, Send us an email and we will contact you</p>
+
+                                <p className='my-5 py-5'>THE AFRICAN BULLY REGISTRY</p>
                             </div>
 {/* 
                             <div className='col-md-6 shows_img_col'>
