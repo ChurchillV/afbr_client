@@ -92,12 +92,12 @@ class RegisterForm extends Component {
                       
                     </div>
                 </div>
-                <div class="form-row">
+                {/* <div class="form-row">
                     <div class="form-group col-md-">
                         
                        <Search  onSearchClick={this.props.handleChange} name='sire'/>
                     </div>
-                </div>
+                </div> */}
                 <div class="form-row">
                     <div class="form-group col-md-">
                         <label for="inputDam">Dam</label>
@@ -109,12 +109,12 @@ class RegisterForm extends Component {
                        
                     </div>
                 </div>
-                <div class="form-row">
+                {/* <div class="form-row">
                     <div class="form-group col-md-">
                         
                        <Search  onSearchClick={this.props.handleChange} name='dam'/>
                     </div>
-                </div>
+                </div> */}
 
 
                 <div className='form-row'>
