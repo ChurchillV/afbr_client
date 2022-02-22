@@ -84,8 +84,9 @@ class RegisterForm extends Component {
                 <div class="form-row">
                     <div class="form-group col-md-">
                         <label for="inputSire">Sire</label>
-                        <select name='sire' onChange={this.props.handleChange} id="inputSire" class="form-control">
-                            <option>Unkown</option>
+                        <select name='sire' onChange={this.props.handleChange} 
+                        placeholder='Enter dogs name' id="inputSire" class="form-control">
+                            <option name='sire' value='404'>Unkown Genealogy</option>
                             {this.props.sires ? this.option_list_sires() : null} 
                             
                        </select>
@@ -102,7 +103,7 @@ class RegisterForm extends Component {
                     <div class="form-group col-md-">
                         <label for="inputDam">Dam</label>
                         <select name='dam' onChange={this.props.handleChange} id="inputDam" class="form-control">
-                            <option>Unknown</option>
+                        <option name='dam' value='404'>Unkown Genealogy</option>
                             {this.props.dams ? this.option_list_dams() : null}
                             
                         </select>
