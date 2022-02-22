@@ -148,7 +148,7 @@ class DogRegistration extends React.Component {
             if (user) {
                 this.setState({ ...this.state, firebaseUser: user }, () => {
                     console.log('on Authstate dog reg', this.state.firebaseUser)
-                    this.changeUserToId(callback)
+                    // this.changeUserToId(callback)
                 });
               
             } else {
@@ -165,24 +165,24 @@ class DogRegistration extends React.Component {
 
 
 
-    changeUserToId = (callback) => {
-        axios
-            .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
-            .then((res) => {
-                console.log(res.data)
-                this.setState({
-                    ...this.state, 
-                    dog: {...this.state.dog, user: res.data[0].id}}, 
-                   () =>  {
-                       console.log('chaingn dog registrations state after calling uid', this.state.dog)
+    // changeUserToId = (callback) => {
+    //     axios
+    //         .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
+    //         .then((res) => {
+    //             console.log(res.data)
+    //             this.setState({
+    //                 ...this.state, 
+    //                 dog: {...this.state.dog, user: res.data[0].id}}, 
+    //                () =>  {
+    //                    console.log('chaingn dog registrations state after calling uid', this.state.dog)
 
-                   })
-            })
+    //                })
+    //         })
             
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+    //         .catch((err) => {
+    //             console.log(err)
+    //         })
+    // }
 
     uploadImage = (callback) => {
         // console.log(files[0])
@@ -322,7 +322,7 @@ class DogRegistration extends React.Component {
 
     sendDogInfo = () => {
         axios
-            .post(`${url}api/dogs`, this.state.dog)
+            .post(`${url}api/dogs`, {dog:this.state.dog, user:this.state.firebaseUser})
             .then((res) => {
 
                 console.log(res.data.message);
