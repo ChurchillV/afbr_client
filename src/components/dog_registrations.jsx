@@ -193,9 +193,9 @@ class DogRegistration extends React.Component {
 
         axios.post('https://api.cloudinary.com/v1_1/daurieb51/image/upload', formData)
             .then((response) => {
-                console.log('responseeeee', response.data.public_id)
-                console.log('image successfuly uploaded thank you jehovah')
+                
                 this.setState({
+                    
                     ...this.state,
                     dog: { ...this.state.dog, public_id: response.data.public_id }
                 },
@@ -203,9 +203,12 @@ class DogRegistration extends React.Component {
                         console.log(this.state.dog)
                         callback()
                         console.log('called the callback')
+                        this.props.navigate('/profile')
+
                     })
 
-
+                    console.log('responseeeee', response.data.public_id)
+                    console.log('image successfuly uploaded thank you jehovah')
             })
 
 
@@ -380,7 +383,7 @@ class DogRegistration extends React.Component {
         }
         console.log('navigating to profile')
         this.sendDogRegEmail()
-        this.props.navigate('/profile')
+
 
     }
 
