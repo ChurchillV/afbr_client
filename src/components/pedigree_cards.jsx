@@ -8,7 +8,7 @@ import Card from './card';
 import Profile_Card from './profile_card';
 import { useParams, useLocation, useNavigate } from "react-router-dom"
 import axios from 'axios';
-import {Image} from 'cloudinary-react'
+import { Image } from 'cloudinary-react'
 
 
 
@@ -63,7 +63,7 @@ export class PedigreeFrame extends Component {
         return (
             <div className='sire_sire'>
 
-               
+
 
                 {this.props.children}
             </div>
@@ -82,28 +82,37 @@ export class PedigreeDogCard extends Component {
             dog_sire_name: ''
         }
 
-        }
+    }
     render() {
         return (
-            <a style={{color:'whitesmoke'}} href={`/my_dogs/${this.props.dog_id}`}>
-                <div className='sire_sire_1'>
-                    <div className='sire_sire_1'>
-                    {this.props.dog_publicId ? 
-                                   <img class='profile_img_dog'
-                                   src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog_publicId}.png`}></img>
-               : 
-                <img className='profile_img_dog' src={Profile_pic} 
-                >
-                </img>
 
-                
-            
-            }                         </div>
-                    <div className='sire_sire_1 label'>
-                      <p>  {this.props.dog_name}</p>
-                    </div>
+            <div className='sire_sire_1'>
+                <div className='sire_sire_1'>
+                    {this.props.dog_publicId ?
+                        <img class='profile_img_dog'
+                            src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog_publicId}.png`}></img>
+                        :
+                        <img className='profile_img_dog' src={Profile_pic}
+                        >
+                        </img>
+
+
+
+                    }                         </div>
+                <div className='sire_sire_1 label'>
+                    {this.props.dog_name == 'Unkown Genealogy'? 
+
+                    <p>  {this.props.dog_name}</p>
+                :
+                <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.dog_id}`}>
+
+                        <p>  {this.props.dog_name}</p>
+                    </a>
+                }
+                    
+
                 </div>
-            </a>
+            </div>
 
 
         )

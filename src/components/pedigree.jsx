@@ -79,12 +79,20 @@ class Pedigree extends React.Component {
 
                                 }
                             </div>
+                            { this.props.data.sire.name == 'Unkown Genealogy' ? 
+                            <div className='sire_label'>
+                                <p>{this.props.data.sire.name}</p>
+                            </div>
+
+                            : 
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                 <div className='sire_label'>
                                     <p>{this.props.data.sire.name}</p>
                                 </div>
                             </a>
 
+                            }
+                            
 
                         </div>
 
@@ -125,11 +133,19 @@ class Pedigree extends React.Component {
 
 
                                 }                            </div>
-                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
-                                <div className='sire_label'>
+                            { this.props.data.dam.name == 'Unkown Genealogy' ? 
+                            <div className='sire_label'>
                                 <p>{this.props.data.dam.name}</p>
+                            </div>
+
+                            : 
+                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
+                                <div className='sire_label'>
+                                    <p>{this.props.data.dam.name}</p>
                                 </div>
                             </a>
+
+                            }
 
                                 
                         </div>
