@@ -64,8 +64,8 @@ class RegisterForm extends Component {
                 </div>
                 <div className='form-row'>
                     <div class="form-group ">
-                        <label for="inputName">Name</label>
-                        <input name='name' value={this.props.dog.name} onChange={this.props.handleChange} type="text" class="form-control" id="inputName" placeholder="Name of Dog"></input>
+                        <label for="inputName">Registration Name</label>
+                        <input name='name' value={this.props.dog.name} onChange={this.props.handleChange} type="text" class="form-control" id="inputName" placeholder="Registration Name of Dog"></input>
                     </div>
                 </div>
                 <div className='form-row'>
