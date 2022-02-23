@@ -70,20 +70,30 @@ class RegisterForm extends Component {
                 </div>
                 <div className='form-row'>
                     <div class="form-group col-md-">
+                        <label for="inputName">Kennel Name</label>
+                        <input name='kennel_name' value={this.props.dog.kennel_name} onChange={this.props.handleChange}
+                         type="text" class="form-control" id="inputName" placeholder="Kennel Name"></input>
+                    </div>
+                    <div class="form-group col-md-">
+                        <label for="inputName">Current Owner</label>
+                        <input name='current_owner' value={this.props.dog.current_owner} onChange={this.props.handleChange} 
+                        type="text" class="form-control" id="inputName" placeholder="Current Owner"></input>
+                    </div>
+                </div>
+
+                <div className='form-row'>
+                    <div class="form-group col-md-">
                         <label for="inputAge">Age</label>
                         <input name='age' value={this.props.dog.age} onChange={this.props.handleChange} type="number" class="form-control" id="inputAge" placeholder="Age"></input>
 
                     </div>
-                    {/* <div class="form-group col-md-6">
-                        <label for="inputBreed">Sex</label>
-                        <input name='sex' value={this.props.dog.sex} onChange={this.props.handleChange} type="text" class="form-control" id="inputBreed" placeholder="Sex"></input>
-                    </div> */}
+                    
                 </div>
 
 
                 <div class="form-row">
                     <div class="form-group col-md-">
-                        <label for="inputSire">Sire</label>
+                        <label for="inputSire">Registered Sire</label>
                         <select name='sire' onChange={this.props.handleChange} 
                         placeholder='Enter dogs name' id="inputSire" class="form-control">
                             <option name='sire' value='404'>Unkown Genealogy</option>
@@ -93,15 +103,10 @@ class RegisterForm extends Component {
                       
                     </div>
                 </div>
-                {/* <div class="form-row">
-                    <div class="form-group col-md-">
-                        
-                       <Search  onSearchClick={this.props.handleChange} name='sire'/>
-                    </div>
-                </div> */}
+               
                 <div class="form-row">
                     <div class="form-group col-md-">
-                        <label for="inputDam">Dam</label>
+                        <label for="inputDam">Registered Dam</label>
                         <select name='dam' onChange={this.props.handleChange} id="inputDam" class="form-control">
                         <option name='dam' value='404'>Unkown Genealogy</option>
                             {this.props.dams ? this.option_list_dams() : null}
@@ -110,13 +115,7 @@ class RegisterForm extends Component {
                        
                     </div>
                 </div>
-                {/* <div class="form-row">
-                    <div class="form-group col-md-">
-                        
-                       <Search  onSearchClick={this.props.handleChange} name='dam'/>
-                    </div>
-                </div> */}
-
+            
 
                 <div className='form-row'>
                     <div class="form-group">
@@ -139,25 +138,43 @@ class RegisterForm extends Component {
                 <div class="form-row">
                     <div class="form-group col-md-">
                         <label for="inputDate">Date of Birth</label>
-                        <input name='date_of_birth' value={this.props.dog.sex} onChange={this.props.handleChange} class="form-date" type="date" id="Date"></input>
+                        <input name='date_of_birth' value={this.props.dog.sex} onChange={this.props.handleChange} 
+                        class="form-date" type="date" id="Date"></input>
+                    </div>
+                    <div class="form-group col-md-">
+                        <label for="inputDate"> Place of Birth</label>
+                        <input name='place_of_birth' value={this.props.dog.place_of_birth}
+                         onChange={this.props.handleChange} class="form-date" type="text" id="Date"></input>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-">
-                        <label for="Breed">Breed</label>
-                        <input name='breed' value={this.props.dog.breed} onChange={this.props.handleChange} type="text" class="form-control" id="Breed" placeholder="Breed"></input>
+                        <label for="Breed">Land of Standing</label>
+                        <input name='land_of_standing' value={this.props.dog.land_of_standing} 
+                        onChange={this.props.handleChange} type="text" class="form-control" id="Breed" placeholder="Land Of Standing"></input>
                     </div>
 
                 </div>
-
+                <div class="form-row">
                 <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck"></input>
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
+                        <label for="inputDam">Breeds</label>
+                        <select name='breed' onChange={this.props.handleChange} id="inputDam" class="form-control">
+                        <option name='breed' value='American Bulldog'>American Bulldog</option>
+                        <option name='breed' value='French Bulldog'>French Bulldog</option>
+                        <option name='breed' value='American Bully'>American Bully</option>
+                        <option name='breed' value='American XL Bully'>American XL Bully</option>
+
+
+
+                            
+                            
+                        </select>
+                       
                     </div>
+
                 </div>
+
+               
                 <button type="submit" class="btn btn-success">Register</button>
                 {this.props.to_sires_first ? <Link to='/dog_registrations/pedig-sirefirst' class="btn btn-primary">Save and continue to sire's 1st gen</Link> : null}
                 {this.props.to_dams_first ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to dam's 1st gen</Link> : null}
