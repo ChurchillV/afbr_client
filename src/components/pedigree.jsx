@@ -139,7 +139,7 @@ class Pedigree extends React.Component {
                             </div>
 
                             : 
-                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
+                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                 <div className='sire_label'>
                                     <p>{this.props.data.dam.name}</p>
                                 </div>
