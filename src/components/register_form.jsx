@@ -89,7 +89,14 @@ class RegisterForm extends Component {
                     </div>
                     
                 </div> */}
+                <div className='form-row'>
+                    <div class="form-group ">
+                        <label for="inputName">AFBR NO</label>
 
+                        <input name='afbr_no' value={this.props.dog.afbr_no} onChange={this.props.handleChange} 
+                        type="number" class="form-control" id="inputName" placeholder="AFBR NO."></input>
+                    </div>
+                </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-">
