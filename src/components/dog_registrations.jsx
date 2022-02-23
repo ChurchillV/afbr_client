@@ -280,6 +280,8 @@ class DogRegistration extends React.Component {
         }
         else {
             this.updateDogInfo()
+            this.props.navigate('/profile')
+
             console.log('no image url present, ready to edit')
         }
 
