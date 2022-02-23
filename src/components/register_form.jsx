@@ -81,14 +81,14 @@ class RegisterForm extends Component {
                     </div>
                 </div>
 
-                <div className='form-row'>
+                {/* <div className='form-row'>
                     <div class="form-group col-md-">
                         <label for="inputAge">Age</label>
                         <input name='age' value={this.props.dog.age} onChange={this.props.handleChange} type="number" class="form-control" id="inputAge" placeholder="Age"></input>
 
                     </div>
                     
-                </div>
+                </div> */}
 
 
                 <div class="form-row">
@@ -157,7 +157,7 @@ class RegisterForm extends Component {
                 </div>
                 <div class="form-row">
                 <div class="form-group">
-                        <label for="inputDam">Breeds</label>
+                        <label for="inputDam">Breed</label>
                         <select name='breed' onChange={this.props.handleChange} id="inputDam" class="form-control">
                         <option name='breed' value='American Bulldog'>American Bulldog</option>
                         <option name='breed' value='French Bulldog'>French Bulldog</option>
