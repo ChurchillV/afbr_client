@@ -102,11 +102,11 @@ export class PedigreeDogCard extends Component {
                 <div className='sire_sire_1 label'>
                     {this.props.dog_name == 'Unkown Genealogy'? 
 
-                    <p>  {this.props.dog_name}</p>
+                    <p className='text-capitalize'>  {this.props.dog_name}</p>
                 :
                 <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.dog_id}`}>
 
-                        <p>  {this.props.dog_name}</p>
+                        <p className='text-uppercase'>  {this.props.dog_name}</p>
                     </a>
                 }
                     

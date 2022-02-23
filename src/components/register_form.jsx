@@ -26,14 +26,14 @@ class RegisterForm extends Component {
 
     option_list_dams = () => {
         return Object.values(this.props.dams).map((item) => {
-            return <option name='dam' value={item.id}>{item.name}</option>
+            return <option name='dam' className='text-lowercase text-capitalize' value={item.id}>{item.name}</option>
 
         })
     }
 
     option_list_sires = () => {
         return Object.values(this.props.sires).map((item) => {
-            return <option name='sire' value={item.id}>{item.name}</option>
+            return <option name='sire' className='text-lowercase text-capitalize' value={item.id}>{item.name}</option>
 
         })
     }
@@ -96,7 +96,7 @@ class RegisterForm extends Component {
                         <label for="inputSire">Registered Sire</label>
                         <select name='sire' onChange={this.props.handleChange} 
                         placeholder='Enter dogs name' id="inputSire" class="form-control">
-                            <option name='sire' value='404'>Unkown Genealogy</option>
+                            <option name='sire' value='404' className='text-capitalize'>Unkown Genealogy</option>
                             {this.props.sires ? this.option_list_sires() : null} 
                             
                        </select>
@@ -108,7 +108,7 @@ class RegisterForm extends Component {
                     <div class="form-group col-md-">
                         <label for="inputDam">Registered Dam</label>
                         <select name='dam' onChange={this.props.handleChange} id="inputDam" class="form-control">
-                        <option name='dam' value='404'>Unkown Genealogy</option>
+                        <option name='dam' value='404' className='text-capitalize'>Unkown Genealogy</option>
                             {this.props.dams ? this.option_list_dams() : null}
                             
                         </select>
