@@ -21,10 +21,10 @@ export class Search extends Component {
         }
     }
     onChange = (e) => {
-        this.setState({ search_input: e.target.value },
+        this.setState({ search_dogs: e.target.value },
             () => {
                 axios
-                    .get(`${url}api/dogs/search/${this.state.search_input}`)
+                    .get(`${url}api/dogs/search/${this.state.search_dogs}`)
                     .then((res) => {
                         console.log(res.data)
                         this.setState({ ...this.state, search_dogs: res.data },
@@ -49,22 +49,45 @@ export class Search extends Component {
             .catch((err) => console.log(err))
     }
 
+    reset = (dog) => {
+        this.setState({search_dogs: {} }, ()=> console.log(this.state))
+        this.setState({search_dogs: dog }, ()=> console.log(this.state))
 
+        console.log('dog in reset', dog)
+        console.log('reset')
+    }
 
     render_search_list = () => {
 
+        if (Object.keys(this.state.search_dogs)[0] != 'id'){
+            
+            console.log('this,state,search_Dogs[0]',)
+            return Object.values(this.state.search_dogs).map((item) => {
 
+                let item_to_number = Number(item.id)
+                console.log('item', item)
+                if (typeof(item) != 'string'){
+                    console.log(typeof(item))
+                    return <div className='row align-items-center justify-content-center'>
+                    <button name={this.props.name} value={item_to_number}
+                        onClick={(e) => {
+                            this.props.onSearchClick(e)
+                            this.reset(item)
+                        }
+                        } value={item.id}
+                        className='btn btn-info text-lowercase search_results_text fade-in w-100'>
+                            {item.name}</button>
+    
+                </div>
+                }
+                
+    
+            })
+    
+    
+        }
 
-        return Object.values(this.state.search_dogs).map((item) => {
-
-            let item_to_number = Number(item.id)
-            console.log('item id to number', item_to_number, item.id)
-            return <button name={this.props.name} name={this.props.name} value={item_to_number}
-            onClick={(e) => this.props.onSearchClick(e)}  value={item.id} className='text-info text-capitalize search_results_text'>{item.name}</button>
-
-        })
         
-
 
     }
 
@@ -77,13 +100,17 @@ export class Search extends Component {
 
             <div>
                 <div className='row align-items-center justify-content-center'>
-                    <input type='search' name='search_input' value={this.state.search_input} onChange={(e) => this.onChange(e)} placeholder='Search for dog'></input>
-                    <button type='submit' className='btn btn-success' onClick={(e) => this.search(e)}>Search</button>
+                    <input type='search' name={this.props.name} value={this.state.search_dogs.name} onChange={(e) => this.onChange(e)} placeholder='Search for dog'></input>
+                    <button type='submit' className='btn btn-warning' onClick={(e) => this.search(e)}>Search</button>
 
 
                 </div>
                 <div className='row align-items-center justify-content-center search_results'>
-                    {this.render_search_list()}
+                    <div className='col-lg-12'>
+                    {Object.keys(this.state.search_dogs)[0] != 'id' ? 
+                            this.render_search_list(): null}
+
+                    </div>
 
                 </div>
 

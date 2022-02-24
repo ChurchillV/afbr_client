@@ -98,7 +98,7 @@ class RegisterForm extends Component {
                     </div>
                 </div>
 
-                <div class="form-row">
+                {/* <div class="form-row">
                     <div class="form-group col-md-">
                         <label for="inputSire">Registered Sire</label>
                         <select name='sire' onChange={this.props.handleChange} 
@@ -109,9 +109,19 @@ class RegisterForm extends Component {
                        </select>
                       
                     </div>
+                </div> */}
+                
+                <div class="form-row">
+                    <div class="form-group col-md-">
+                        <label for="inputSire">Registered Sire</label>
+                        <p class='small'>Enter Unkown Genealogy if dam did not appear in searchlist</p>
+
+                        <Search onSearchClick={this.props.handleChange} name='sire' />
+                      
+                    </div>
                 </div>
                
-                <div class="form-row">
+                {/* <div class="form-row">
                     <div class="form-group col-md-">
                         <label for="inputDam">Registered Dam</label>
                         <select name='dam' onChange={this.props.handleChange} id="inputDam" class="form-control">
@@ -120,6 +130,16 @@ class RegisterForm extends Component {
                             
                         </select>
                        
+                    </div>
+                </div> */}
+
+                 
+                <div class="form-row">
+                    <div class="form-group col-md-">
+                        <label for="inputSire">Registered Dam</label>
+                        <p class='small'>Enter Unkown Genealogy if dam did not appear in searchlist</p>
+                        <Search onSearchClick={this.props.handleChange} name='dam' />
+                      
                     </div>
                 </div>
             
