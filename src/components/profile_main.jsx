@@ -120,10 +120,10 @@ class ProfileMain extends Component {
         return (
             <div>
                 <Profile>
-                    <div className='row align-items-center justify-content-center' >
+                    {/* <div className='row align-items-center justify-content-center' >
                         <Search name='profile_search' onClick={this.props.searchClick} />
 
-                    </div>
+                    </div> */}
 
 
                     <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
