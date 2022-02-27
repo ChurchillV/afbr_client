@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css_files/breed.css';
 import { url } from "./weburl";
 import axios from 'axios'
+import { withRouter } from './pedigree_cards';
 
 
-export class Search extends Component {
+class Search extends Component {
 
     constructor(props) {
         super(props)
@@ -57,6 +58,18 @@ export class Search extends Component {
         console.log('reset')
     }
 
+    onClickFunc=(e, item)=>{
+        if(this.props.send_to){
+           this.props.navigate(`/my_dogs/${item.id}`)
+            console.log('send to ')
+        }
+        else{
+            this.props.onSearchClick(e)
+            this.reset(item)
+        }
+        
+    }
+
     render_search_list = () => {
 
         if (Object.keys(this.state.search_dogs)[0] != 'id'){
@@ -71,8 +84,7 @@ export class Search extends Component {
                     return <div className='row align-items-center justify-content-center'>
                     <button name={this.props.name} value={item_to_number}
                         onClick={(e) => {
-                            this.props.onSearchClick(e)
-                            this.reset(item)
+                           this.onClickFunc(e, item)
                         }
                         } value={item.id}
                         className='btn btn-info text-lowercase search_results_text fade-in w-100'>
@@ -107,8 +119,7 @@ export class Search extends Component {
                 </div>
                 <div className='row align-items-center justify-content-center search_results'>
                     <div className='col-lg-12'>
-                    {Object.keys(this.state.search_dogs)[0] != 'id' ? 
-                            this.render_search_list(): null}
+                            {this.render_search_list()}
 
                     </div>
 
@@ -119,3 +130,5 @@ export class Search extends Component {
         )
     }
 }
+
+export default withRouter(Search)

@@ -8,6 +8,9 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { Link, useLocation, useNavigate, useParams, Navigate } from 'react-router-dom';
 import { url } from "./weburl";
+import emailjs from '@emailjs/browser'
+import{ init } from '@emailjs/browser';
+import { PedShareForm } from "./pedshareus";
 
 
 export function withRouter(Child) {
@@ -109,35 +112,35 @@ class DogRegistration extends React.Component {
 
         //get all sires
 
-        axios
-            .get(`${url}api/dogs/sires`)
-            .then((res) => {
+        // axios
+        //     .get(`${url}api/dogs/sires`)
+        //     .then((res) => {
 
-                console.log(res.data);
-                this.setState({ ...this.state, sires: res.data }, () => console.log(this.state))
-                // console.log('data',data) 
-            })
-            .catch((err) => {
-                console.log("Error couldn't get sires");
-                console.log(err.message);
-            });
+        //         console.log(res.data);
+        //         this.setState({ ...this.state, sires: res.data }, () => console.log(this.state))
+        //         // console.log('data',data) 
+        //     })
+        //     .catch((err) => {
+        //         console.log("Error couldn't get sires");
+        //         console.log(err.message);
+        //     });
 
 
         //get all dams
 
-        axios
-            .get(`${url}api/dogs/dams`)
-            .then((res) => {
+        // axios
+        //     .get(`${url}api/dogs/dams`)
+        //     .then((res) => {
 
-                console.log(res.data);
-                this.setState({ ...this.state, dams: res.data }, () => console.log(this.state))
-                console.log('herre')
-                // console.log('data',data) 
-            })
-            .catch((err) => {
-                console.log("Error couldn't get dams");
-                console.log(err.message);
-            });
+        //         console.log(res.data);
+        //         this.setState({ ...this.state, dams: res.data }, () => console.log(this.state))
+        //         console.log('herre')
+        //         // console.log('data',data) 
+        //     })
+        //     .catch((err) => {
+        //         console.log("Error couldn't get dams");
+        //         console.log(err.message);
+        //     });
 
     }
 
@@ -330,13 +333,20 @@ class DogRegistration extends React.Component {
     }
 
     sendDogRegEmail = () => {
-        axios
-        .post(`${url}api/email/dog_registered`, { user: this.state.firebaseUser,
-                    dog: this.state.dog })
-        .then((res) => console.log('successfully sent email', res))
-        .catch((err) => console.log(err))
+        init("user_O5PFSLdanSpVoOM2bj1Yq");
 
-        console.log('sendmail')
+        emailjs.send("service_077k5fr","template_na8t6if",{
+            to_name: this.state.firebaseUser.name,
+            dog_name:this.state.dog.name,
+            to_email: this.state.firebaseUser.email,
+            }, "user_O5PFSLdanSpVoOM2bj1Yq")
+            .then((response)=>{
+                console.log(response)
+            })
+            .catch((err) => console.log(err))
+
+        console.log('sending email', this.state.firebaseUser.name, this.state.dog.name, 
+        this.state.firebaseUser.email)
     }
 
     submit = (e) => {
@@ -409,15 +419,14 @@ class DogRegistration extends React.Component {
                                     getnameofDog={this.props.getnameofDog}
                                     getnameofDog2={this.props.getnameofDog2}
                                     getnext_dog_id={this.props.getnext_dog_id}
-                                    saveAndEndHere={true}
-                                    saveAndContinue={true} />
+                                   />
 
 
                             }
 
                         </div>
                         <div className="col-md-3">
-                            <Link to='/dog_registrations/pedig-main'><p style={{ color: 'white' }}>Add pedigree manually</p></Link>
+                            <PedShareForm/>
                         </div>
 
 

@@ -11,7 +11,7 @@ import { set } from 'mongoose';
 import { setState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { url } from './weburl';
-import { Search } from './search';
+import  Search  from './search';
 
 
 
@@ -112,18 +112,19 @@ class ProfileMain extends Component {
 
 
 
-    searchClick = (e) => {
+    onSearchClick = (e) => {
         e.preventDefault()
+
     }
 
     render() {
         return (
             <div>
                 <Profile>
-                    {/* <div className='row align-items-center justify-content-center' >
-                        <Search name='profile_search' onClick={this.props.searchClick} />
+                    <div className='row align-items-center justify-content-center' >
+                        <Search name='profile_search' send_to={true} onSearchClick={this.onSearchClick} />
 
-                    </div> */}
+                    </div>
 
 
                     <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
