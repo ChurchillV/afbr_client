@@ -222,9 +222,9 @@
   display: flex;
   position: relative;
   animation-name: homestuff;
-  animation-duration: 15s;
+  animation-duration: 12s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease;
+  animation-timing-function: ease-out;
   
 }
 
@@ -246,7 +246,7 @@
   padding: 1%;
   font-size: 4vw;
   text-align: center;
-  color:  rgb(186, 129, 8);
+  color:  #ba8108;
   animation-name: enlarge;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -266,13 +266,9 @@
   font-size: 4vw;
   /* text-align: center; */
   color: white  ;
-  background-image: url('../images/frenchie1.jpg');
-  background-repeat: none;
-  background-position: center;
-  background-size: cover;
+  background-color: #918d83;
   border-left: 6px solid white;
   display: flex;
-  filter: brightness(0.8);
   height: 100%;
 
 }

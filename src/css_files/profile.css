@@ -26,22 +26,36 @@ a {
 
 @media screen and (min-width: 770px) {
     .profile_card_p{
-        color: black;
+        color: white;
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 770px) {
     .profile_card_p{
         color: white;
+        font-size: 1rem;
+
     }
 }
 .main_profile_img_dog{
     width: 100%;
+    border: 3px solid rgb(186, 129, 8);
+}
+
+.yellow{
+    background-color: rgb(186, 129, 8);
+
 }
 
 .profile_img_dog{
-    width: 10vw;
-    height: 10vw;
+    width: 5vw;
+    height: 5vw;
+    border: 2px solid rgb(186, 129, 8);
+}
+
+.profile_card_fluid{
+    background-color: rgb(186, 129, 8);
 }
 
 @media screen and (min-width: 770px) {
@@ -127,7 +141,6 @@ rgb(186, 129, 8) */
     display: flex;
     flex-direction: row;
     text-align: left;
-    background-color: inherit;
 }
 .card_ {
     background-color: inherit;

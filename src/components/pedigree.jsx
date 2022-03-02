@@ -63,7 +63,7 @@ class Pedigree extends React.Component {
             <div>
 
                 <div className='main'>
-                    <div className='sires_row'>
+                    <div className='sires_row w-100 py-5'>
                         <div className='sire'>
 
                             <div className=''>
@@ -118,7 +118,7 @@ class Pedigree extends React.Component {
 
                     </div>
 
-                    <div className='sires_row'>
+                    <div className='sires_row w-100'>
                         <div className='sire'>
 
                             <div className=''>

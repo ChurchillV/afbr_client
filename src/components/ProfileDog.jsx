@@ -119,9 +119,9 @@ class ProfileDog extends Component {
    
     render() {
         return (
-            <div className='profiledog'>
-                <Profile>
-                    <div className='row row_edit align-items-center justify-content-center'>
+            <div className='profiledog yellow'>
+                <Profile className_='yellow'>
+                    <div className='row yellow row_edit align-items-start justify-content-start'>
                     
                             <Link to={
                                 `/dog_registrations/edit/${this.props.params.dog_id}`
@@ -133,7 +133,7 @@ class ProfileDog extends Component {
 
                     </div>
 
-                    <div className='row align-items-center justify-content-center'>
+                    <div className='row yellow align-items-center justify-content-center'>
 
 
 
@@ -149,11 +149,6 @@ class ProfileDog extends Component {
                             />
                             : null }
                         </div>
-
-
-
-
-
 
 
                     </div>

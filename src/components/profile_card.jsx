@@ -29,10 +29,17 @@ class Profile_Card extends React.Component {
 
 
     info = () => {
-
+        let ignore = ['id']
         return Object.keys(this.props.dog).map((dog) => {
+            if (dog === 'id' || dog=='public_id' ||  dog=='user' ||
+            dog=='image_url'){
+                console.log(dog)
+                console.log(true)
+            }
+            else{
+                return <p className='profile_card_p text-capitalize' style={{ marginBottom: '0px' }}>{dog}:&nbsp;&nbsp;{this.props.dog[dog]}</p>
 
-            return <p className='profile_card_p text-capitalize' style={{ marginBottom: '0px' }}>{dog}:&nbsp;&nbsp;{this.props.dog[dog]}</p>
+            }
         })
 
     }
