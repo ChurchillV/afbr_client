@@ -56,24 +56,24 @@ class PersonalForm extends React.Component {
                 <form onSubmit={(e) => {
                 this.props.submit(e)
             }}
-                method='post' className='align-items-center justify-content-center FORM'>
+                method='post' className='text-dark align-items-center justify-content-center'>
 
             
                 <div className='form-row'>
-                    <div className='form-group'>
+                    <div className='form-group text-dark'>
                         <label for="inputimage">Upload image &nbsp;</label>
                         <input type='file' name='image' accept='image/*' id='inputimage' ></input>
                        
                     </div>
                 </div>
                 <div className='form-row'>
-                    <div class="form-group ">
+                    <div class="form-group text-dark">
                         <label for="inputName">Name</label>
                         <input name='name' value={this.state.user.username} type="text" class="form-control" id="inputName" placeholder="Name of User"></input>
                     </div>
                 </div>
                 <div className='form-row'>
-                    <div class="form-group col-md-">
+                    <div class="form-group col-md- text-dark">
                         <label for="inputAge">Phone Number</label>
                         <input name='age'  type="number" class="form-control"
                          id="inputAge" placeholder="Phone Number"></input>

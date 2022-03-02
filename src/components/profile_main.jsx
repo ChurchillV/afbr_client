@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from "react-router-dom";
 import Profile_pic from '../images/profile.jpg'
-import dogpic from '../images/dog.jfif'
+import dogpic from '../images/logo1.jpg'
 import '../css_files/profile.css'
 import DogCard from './dog_card';
 import Card from './card';
@@ -83,7 +83,7 @@ class ProfileMain extends Component {
         axios
             .get(`${url}api/dogs/getdoguser/${this.state.user}`)
             .then((res) => {
-                this.setState({ dogs: res.data }, () => (console.log(this.state)))
+                this.setState({ dogs: res.data }, () => ('b'*10, console.log(this.state)))
             }
             )
 
@@ -103,7 +103,7 @@ class ProfileMain extends Component {
             <div className='col-md-6 text-capitalize render_card'>
                 <Link to={`/my_dogs/${dog.id}`}>
                     <DogCard image_src={dogpic}
-                        dogname={dog.name} />
+                        dogname={dog.name} dog_public_id={dog.public_id} />
                 </Link>
             </div>
         ))

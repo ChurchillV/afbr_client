@@ -59,13 +59,13 @@ class Personal extends React.Component {
                         <Link to={`/profile/personal/edit/${this.props.params.uid}`}>Edit</Link>
                     </div>
                 </div>
-                <div className=' row align-items-center justify-content-center'>
+                <div className=' text-dark row align-items-center justify-content-center'>
 
                     <div className="col-lg-">
-                        <p>{this.state.user.username}</p>
-                        <p>{this.state.user.email}</p>
-                        <p>User.phonenumber</p>
-                        <p>User.address</p>
+                        <p>Username: &nbsp; &nbsp;{this.state.user.username}</p>
+                        <p>Email:  &nbsp; &nbsp;{this.state.user.email}</p>
+                        <p>Phone Number:  &nbsp; &nbsp;{this.state.user.phone_number}</p>
+                        <p>Contact Address:  &nbsp; &nbsp;{this.state.user.address}</p>
                     </div>
                 </div>
                 </Profile>

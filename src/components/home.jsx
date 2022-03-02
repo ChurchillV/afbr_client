@@ -117,6 +117,8 @@ class Home extends Component {
           <div className='col-sm-6 '>
             <h1 class='text-capitalize' style={{ color: 'white' }}>Register your bull dog with us today</h1>
             <h5 class='text-capitalize' style={{ color: 'white' }}>American Bull Dogs, Frenchiebuls</h5>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>American Bully </h5>
+
           </div>
         </div>
 
@@ -152,31 +154,34 @@ class Home extends Component {
 
         <div className='row  mt-5 card_row align-items-center justify-content-center'>
           <div className='container-fluid'>
-            <div className='row card_row align-items-center justify-content-center'>
-              < Card text1="Our Partners" className='partners' />
-            </div>
-            <div className='row  card_row align-items-center justify-content-center'>
+            <div className='row  card_row align-items-center justify-content-around'>
 
-              <div className='col-4'>
-                <Card image_src={logo1} image_class='partners_image' />
+
+            <div className='col-sm-1 '>
+                <h1>Our Partners</h1>
+              </div>
+              <div className='col-sm-3'>
+              < Carousel image_src1={logo4} image_src2={logo3} image_src3={dog3} />
 
               </div>
-              <div className='col-4'>
-                <Card image_src={logo4} image_class='partners_image' />
-              </div>
-              <div className='col-4'>
-                <Card image_src={logo3} image_class='partners_image' />
-              </div>
+             
             </div>
-          </div>
 
 
 
         </div>
 
 
+     
 
+      </div>
+      <div className='row  mt-5 text-white w-100 align-items-center justify-content-center'>
+        <div className='col-lg-'>
         <Footer />
+
+        </div>
+
+        </div>
 
       </div>
 

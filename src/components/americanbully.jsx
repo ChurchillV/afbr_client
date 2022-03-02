@@ -3,8 +3,10 @@ import Breeds from "./breeds"
 export const AmericanBully = () => {
     return (
         <Breeds>
-        <div  className='row breed_text align-items-center justify-content-center'>
-            GENERAL IMPRESSION
+        <div  className='row text-left breed_text align-items-center justify-content-center'>
+            
+            <h4>GENERAL IMPRESSION</h4>
+            <p>
             The American Bully should give the impression of great strength for its size. It is a compact and medium/large size dog with a muscular body and blocky head. The American Bully should have the appearance of heavy bone structure with a bulky build and look.
             CHARACTERISTICS
             The American Bully is a companion breed exhibiting confidence, a zest for life, along with an exuberant willingness to please and bond with their family, thus making the American Bully an excellent family companion. Despite the American Bully’s fierce and powerful appearance their demeanor is gentle. They are great with kids, and extremely friendly with strangers, other dogs, and other animals. Human or dog aggression, extreme shyness, or viciousness is very uncharacteristic of the American Bully and is highly undesirable.
@@ -24,6 +26,9 @@ export const AmericanBully = () => {
             • Upper Teeth- to meet tightly outside lower teeth in form or scissor bite.
             Faults: Level bite, overshot bite, undershot bite and wry bite. Serious Faults: Severely overshot or undershot bites, measuring 1/4 inch (0.6cm) or more.
             • Nose- Large with wide open nostrils. All colors/pigment acceptable except albinism (light pink in color).
+           
+            </p>
+            <p>
             NECK
             • Heavy, muscular, slightly arched, tapering from shoulder to back of skull. Compact to medium size should have minimal or no loose skin.
             Faults: Neck too thin or weak; neck too short or too long.
@@ -32,7 +37,14 @@ export const AmericanBully = () => {
             • Forelegs- straight, strong, and sturdy with large or round bones, pasterns are strong, short and nearly erect. Feet- straight forward.
             • Distance from the withers to the elbow is equal to the distance from the elbows to the bottom of the feet. Dogs that are slightly shorter in distance from the elbows to the bottom of the feet are acceptable but not desirable.
             Faults: Upright shoulders; steep and forward scapula (shoulder blade). Upper arm too short. Feet toeing either in or out; front legs bowed; down at the pasterns; splayed or flat feet; long toes.
-            BODY
+           
+            </p>
+            <p>
+
+            </p>
+            <div>
+                <p>
+                BODY
             • Heavily muscled, massive bulky body type of compact/medium length giving the impression of great power for its size and exemplifying the breed type of the American Bully.
             • Ribs well-rounded creating a barrel chest with all ribs close together; rib cage to extend to the elbow or slightly below.
             • Forelegs set rather wide apart to permit chest development.
@@ -123,6 +135,8 @@ export const AmericanBully = () => {
             • Screwed tail
             • Bobbed tail
             • Docked tail
+                </p>
+            </div>
         </div>
         </Breeds>
     )

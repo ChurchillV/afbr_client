@@ -49,7 +49,7 @@ class Profile_Card extends React.Component {
 
     render() {
         return (
-            <div className='container-fluid card_'>
+            <div className='container-fluid card_ profile_card_fluid'>
 
 
                 <div className='row justify-content-center align-items-center'>

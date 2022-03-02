@@ -68,7 +68,7 @@ class Pedigree extends React.Component {
 
                             <div className=''>
                                 {this.props.data.sire.public_id ?
-                                      <img class='profile_img_dog'
+                                      <img class='profile_img_dog2'
                                       src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.sire.public_id}.png`}></img>
                        :
                                     <img class='profile_img_dog' src={Profile_pic}
@@ -79,7 +79,7 @@ class Pedigree extends React.Component {
 
                                 }
                             </div>
-                            { this.props.data.sire.name == 'Unkown Genealogy' ? 
+                            { this.props.data.sire.name == 'Unknown Genealogy' ? 
                             <div className='sire_label'>
                                 <p className='text-capitalize'>{this.props.data.sire.name}</p>
                             </div>
@@ -87,7 +87,7 @@ class Pedigree extends React.Component {
                             : 
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                 <div className='sire_label'>
-                                    <p className='text-uppercase'>{this.props.data.sire.name}</p>
+                                    <p className='text-capitalize'>{this.props.data.sire.name}</p>
                                 </div>
                             </a>
 
@@ -123,7 +123,7 @@ class Pedigree extends React.Component {
 
                             <div className=''>
                                 {this.props.data.dam.public_id ?
-                                                 <img class='profile_img_dog'
+                                                 <img class='profile_img_dog2'
                                                  src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}></img>
                                :
                                     <img className='profile_img_dog' src={Profile_pic}
@@ -133,7 +133,7 @@ class Pedigree extends React.Component {
 
 
                                 }                            </div>
-                            { this.props.data.dam.name == 'Unkown Genealogy' ? 
+                            { this.props.data.dam.name == 'Unknown Genealogy' ? 
                             <div className='sire_label'>
                                 <p className='text-capitalize'>{this.props.data.dam.name}</p>
                             </div>
@@ -141,7 +141,7 @@ class Pedigree extends React.Component {
                             : 
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                 <div className='sire_label'>
-                                    <p className='text-uppercase'>{this.props.data.dam.name}</p>
+                                    <p className='text-capitalize'>{this.props.data.dam.name}</p>
                                 </div>
                             </a>
 

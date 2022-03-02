@@ -58,8 +58,9 @@ class Profile extends Component {
                 <Navbar color='black'/>
                 <div className={`${this.props.classname_} row profile align-items-center justify-content-center`}>
                     <div className='col-sm-2 align-self-start pro_nav_col'>
-                        <div className='row align-items-center justify-content-center pro_nav'>
+                        <div className='row text-dark align-items-center justify-content-center pro_nav'>
                             <img src={Profile_pic} height={'100px'} width={'100px'}></img>
+                            <p>Welcome, {this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</p>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             <Link to='/Home'>Home</Link>
