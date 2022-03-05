@@ -87,7 +87,7 @@ export class PedigreeDogCard extends Component {
         return (
 
             <div className='sire_sire_1'>
-                <div className='sire_sire_1'>
+                <div className=''>
                     {this.props.dog_publicId ?
                         <img class='profile_img_dog2'
                             src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog_publicId}.png`}></img>
@@ -99,14 +99,14 @@ export class PedigreeDogCard extends Component {
 
 
                     }                         </div>
-                <div className='sire_sire_1 label'>
+                <div className={`sire_sire_1 label justify-content-center ${this.props.class}`}> 
                     {this.props.dog_name == 'Unknown Genealogy'? 
 
-                    <p className='text-capitalize'>  {this.props.dog_name}</p>
+                    <p className='text-capitalize smallrem'>  {this.props.dog_name}</p>
                 :
                 <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.dog_id}`}>
 
-                        <p className='text-capitalize'>  {this.props.dog_name}</p>
+                        <p className='text-capitalize smallrem'>  {this.props.dog_name}</p>
                     </a>
                 }
                     

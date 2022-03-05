@@ -121,19 +121,19 @@ class ProfileDog extends Component {
         return (
             <div className='profiledog yellow'>
                 <Profile className_='yellow'>
-                    <div className='row yellow row_edit align-items-start justify-content-start'>
+                    <div className='row  row_edit align-items-start justify-content-start'>
                     
                             <Link to={
                                 `/dog_registrations/edit/${this.props.params.dog_id}`
                             }
-
+                                        className='btn btn-info to_be_hidden'
                             >Edit &nbsp;</Link>
 
-                            <div><Link to='/profile' onClick={this.handleDelete}>Delete</Link></div>
+                            <div><Link to='/profile'  className='btn btn-warning to_be_hidden' onClick={this.handleDelete}>Delete</Link></div>
 
                     </div>
 
-                    <div className='row yellow align-items-center justify-content-center'>
+                    <div className='row  align-items-center justify-content-center'>
 
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css_files/profile.css'
-import { Link } from 'react-router-dom';
-import { Image } from 'cloudinary-react'
+import $ from 'jquery'
 
 
 
@@ -26,6 +25,18 @@ class Profile_Card extends React.Component {
 
     }
 
+
+    componentDidMount = () => {
+        if (window.screen.width < 660){
+            console.log('hide the following')
+            $('.to_be_hidden').css('display', 'none')
+            $('_to_be_hidden').on(
+                'click', function(){
+                    $('_to_be_hidden').slideToggle()
+                }
+            )
+        }
+    }
 
 
     info = () => {
@@ -54,21 +65,23 @@ class Profile_Card extends React.Component {
 
                 <div className='row justify-content-center align-items-center'>
                     <div className='col-sm-6'>
-
+                        <h3>{this.props.dog.name}</h3>
                         {this.props.dog.public_id ?
                             <img class='main_profile_img_dog'
                                 src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}></img>
 
                             :
-                            <img class='profile_img_dog' style={{width: '100%'}} src={this.props.image_src}
+                            <img class='main_profile_img_dog'src={this.props.image_src}
                             >
                             </img>
+
+                            
 
 
 
                         }
                     </div>
-                    <div className='col-sm-6'>
+                    <div className='col-sm-6 to_be_hidden'>
                         <div>
                             {this.info()}
 

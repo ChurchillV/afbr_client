@@ -7,6 +7,7 @@ import DogCard from './dog_card';
 import Navbar from './navbar';
 import { auth, db, logout } from "./firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import $ from 'jquery'
 
 
 
@@ -28,6 +29,17 @@ class Profile extends Component {
 
     componentDidMount(){
         this.getcurrentuser()
+        
+            if (window.screen.width < 660){
+                console.log('hide the following')
+                $('.to_be_hidden_profile').css('display', 'none')
+                $('to_be_hidden_profile').on(
+                    'click', function(){
+                        $('to_be_hidden_profile').slideToggle()
+                    }
+                )
+            }
+        
     }
 
     getcurrentuser = (callback) => {
@@ -57,7 +69,7 @@ class Profile extends Component {
             <div className='container-fluid'>
                 <Navbar color='black'/>
                 <div className={`${this.props.classname_} row profile align-items-center justify-content-center`}>
-                    <div className='col-sm-2 align-self-start pro_nav_col'>
+                    <div className='col-sm-2 align-self-start pro_nav_col to_be_hidden_profile'>
                         <div className='row text-dark align-items-center justify-content-center pro_nav'>
                             <img src={Profile_pic} height={'100px'} width={'100px'}></img>
                             <p>Welcome, {this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</p>

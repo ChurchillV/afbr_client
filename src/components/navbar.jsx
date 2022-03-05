@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import logo1 from '../images/logo2.jpg'
+import $ from 'jquery'
 
 
 class Navbar extends Component {
     
+    componentDidMount = () => {
+        if (window.screen.width < 660){
+            console.log('hide the following')
+            $('.nav-link').css('color', 'white')
+           
+            $('nav').addClass('navbar-dark')
+
+            $('.navtitle').css('color', 'white')
+
+        }
+    }
 
     
     render() {

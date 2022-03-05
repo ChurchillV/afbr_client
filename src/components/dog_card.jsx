@@ -26,7 +26,7 @@ const DogCard = (props) => {
     // const { row_style,column_style, p_style } = colstyle;
     return (
         <div className='row align-items-center justify-content-start dog_card'>
-            <div className='col-sm-1'>
+            <div className='col-sm-'>
                 {props.dog_public_id ? 
                      <img  src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${props.dog_public_id}.png`}
                      height={props.height} width={props.width} className='render_card_image'></img>

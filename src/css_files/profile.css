@@ -37,26 +37,64 @@ a {
     }
 }
 .main_profile_img_dog{
-    width: 100%;
+    width: 50%;
     border: 3px solid rgb(186, 129, 8);
 }
+
+
 
 .yellow{
     background-color: rgb(186, 129, 8);
 
 }
 
+
+@media screen and (max-width: 770px) {
+    
 .profile_img_dog{
-    width: 5vw;
-    height: 5vw;
-    /* border: 2px solid rgb(186, 129, 8); */
+    width: 50px;
+    /* width: 5vw; */
+    height: 50px;
+    border: 2px solid rgb(186, 129, 8);
+    border-right: 0px;
+
+}
 }
 
-.profile_img_dog2{
-    width: 5vw;
-    height: 5vw;
+@media screen and (max-width: 770px) {
+    
+    .profile_img_dog2{
+        width: 50px;
+        /* width: 5vw; */
+        height: 50px;
     border: 2px solid rgb(186, 129, 8);
+    border-right: 0px;
+
+    }
+    }
+
+@media screen and (min-width: 770px) {
+    .profile_img_dog{
+        width: 140px;
+        /* width: 5vw; */
+        height: 140px;
+        border: 2px solid rgb(186, 129, 8);
+     
+
+    }  
 }
+  
+
+@media screen and (min-width: 770px) {
+    .profile_img_dog2{
+        width: 140px;
+        /* width: 5vw; */
+        height: 140px;
+        border: 2px solid rgb(186, 129, 8);
+    }
+}
+
+
 
 .profile_card_fluid{
     background-color: rgb(186, 129, 8);

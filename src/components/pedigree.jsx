@@ -63,7 +63,7 @@ class Pedigree extends React.Component {
             <div>
 
                 <div className='main'>
-                    <div className='sires_row w-100 py-5'>
+                    <div className='sires_row w-100 py-4'>
                         <div className='sire'>
 
                             <div className=''>
@@ -81,13 +81,13 @@ class Pedigree extends React.Component {
                             </div>
                             { this.props.data.sire.name == 'Unknown Genealogy' ? 
                             <div className='sire_label'>
-                                <p className='text-capitalize'>{this.props.data.sire.name}</p>
+                                <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
                             </div>
 
                             : 
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                 <div className='sire_label'>
-                                    <p className='text-capitalize'>{this.props.data.sire.name}</p>
+                                    <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
                                 </div>
                             </a>
 
@@ -106,13 +106,13 @@ class Pedigree extends React.Component {
 
                         <PedigreeFrame>
                             <PedigreeDogCard dog_id={this.props.data.siresiresire.id} dog_name={this.props.data.siresiresire.name}
-                                dog_publicId={this.props.data.siresiresire.public_id} />
+                                dog_publicId={this.props.data.siresiresire.public_id} class="no_label"/>
                             <PedigreeDogCard dog_id={this.props.data.siresiredam.id} dog_name={this.props.data.siresiredam.name}
-                                dog_publicId={this.props.data.siresiredam.public_id} />
+                                dog_publicId={this.props.data.siresiredam.public_id} class="no_label"/>
                             <PedigreeDogCard dog_id={this.props.data.siredamsire.id} dog_name={this.props.data.siredamsire.name}
-                                dog_publicId={this.props.data.siredamsire.public_id} />
+                                dog_publicId={this.props.data.siredamsire.public_id} class="no_label"/>
                             <PedigreeDogCard dog_id={this.props.data.siredamdam.id} dog_name={this.props.data.siredamdam.name}
-                                dog_publicId={this.props.data.siredamdam.public_id} />
+                                dog_publicId={this.props.data.siredamdam.public_id} class="no_label"/>
                         </PedigreeFrame> 
 
 
@@ -135,13 +135,13 @@ class Pedigree extends React.Component {
                                 }                            </div>
                             { this.props.data.dam.name == 'Unknown Genealogy' ? 
                             <div className='sire_label'>
-                                <p className='text-capitalize'>{this.props.data.dam.name}</p>
+                                <p className='text-capitalize smallrem' >{this.props.data.dam.name}</p>
                             </div>
 
                             : 
                             <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                 <div className='sire_label'>
-                                    <p className='text-capitalize'>{this.props.data.dam.name}</p>
+                                    <p className='text-capitalize smallrem'>{this.props.data.dam.name}</p>
                                 </div>
                             </a>
 
@@ -161,13 +161,13 @@ class Pedigree extends React.Component {
 
                         <PedigreeFrame>
                             <PedigreeDogCard dog_id={this.props.data.damsiresire.id} dog_name={this.props.data.damsiresire.name}
-                            dog_publicId={this.props.data.damsiresire.public_id}  />
+                            dog_publicId={this.props.data.damsiresire.public_id}  class="no_label"/>
                             <PedigreeDogCard dog_id={this.props.data.damsiredam.id} dog_name={this.props.data.damsiredam.name} 
-                            dog_publicId={this.props.data.damsiredam.public_id} />
+                            dog_publicId={this.props.data.damsiredam.public_id} class="no_label"/>
                             <PedigreeDogCard dog_id={this.props.data.damdamsire.id} dog_name={this.props.data.damdamsire.name} 
-                            dog_publicId={this.props.data.damdamsire.public_id} />
+                            dog_publicId={this.props.data.damdamsire.public_id} class="no_label"/>
                             <PedigreeDogCard dog_id={this.props.data.damdamdam.id} dog_name={this.props.data.damdamdam.name} 
-                            dog_publicId={this.props.data.damdamdam.public_id} />
+                            dog_publicId={this.props.data.damdamdam.public_id} class="no_label"/>
                         </PedigreeFrame>
  
 
