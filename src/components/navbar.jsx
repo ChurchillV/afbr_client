@@ -8,13 +8,20 @@ class Navbar extends Component {
     
     componentDidMount = () => {
         if (window.screen.width < 660){
-            console.log('hide the following')
-            $('.nav-link').css('color', 'white')
-           
-            $('nav').addClass('navbar-dark')
-
-            $('.navtitle').css('color', 'white')
-
+            console.log(window.location)
+            if (window.location.pathname.split('/').includes('my_dogs')){
+                console.log('hide the following')
+                $('.nav-link').css('color', 'white')
+               
+                $('nav').addClass('navbar-dark')
+    
+                $('.navtitle').css('color', 'white')
+    
+            }
+            else{
+                console.log('cnahging')
+            }
+          
         }
     }
 
