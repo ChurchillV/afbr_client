@@ -54,14 +54,17 @@ class Profile_Card extends React.Component {
 
         return <div className='text-capitalize align-items-center justify-content-center'>
             <div className='col-lg-'>
-                <p className='smallrem 'style={properties}>Registered Name: &nbsp;  <span className='font-weight-bold'>{this.props.dog['name']} </span></p>
+                <p className='smallrem '>Registered Name: &nbsp;  <span className='font-weight-bold'>{this.props.dog['name']} </span></p>
+                <p className='smallrem' style={properties}>AFBR_NO:  &nbsp;<span className='font-weight-bold'>{this.props.dog['afbr_no']}</span> </p>
+
                 <p className='smallrem'>Kennel Name:&nbsp; <span className='font-weight-bold' >{this.props.dog['kennel_name']}</span>  </p>
                 <p className='smallrem'>Current Owner: <span className='font-weight-bold'> &nbsp;{this.props.dog['current_owner']}</span> </p>
                 <p className='smallrem'>Sire:<span className='font-weight-bold'>&nbsp; {this.props.sire.name} </span> </p>
                 <p className='smallrem'style={properties} >Dam: <span className='font-weight-bold'>&nbsp; {this.props.dam.name} </span></p>
 
                 <p className='smallrem'>Age: &nbsp; <span className='font-weight-bold'>{this.props.dog['age']}</span> </p>
-                <p className='smallrem'>Breed:  &nbsp;<span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
+                <p className='smallrem ' >Breed:  &nbsp;<span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
+
                 <p className='smallrem'>Height: &nbsp; <span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
                 <p className='smallrem'>Weight:  &nbsp; <span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
                 <p className='smallrem' style={properties}>Color: &nbsp; <span className='font-weight-bold'>{this.props.dog['color']} </span></p>
