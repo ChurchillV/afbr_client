@@ -8,12 +8,17 @@
     height: 100%;
 }
 
+.breed_item{
+    font-weight: 400rem;
+    text-transform: capitalize;
 
+}
 
 
   
   .breed_text{
       color: black;
+      margin: 1%;
      
       
   }

@@ -93,20 +93,20 @@ class Breeds extends Component {
                                 <Search send_to={true} onSearchClick={this.onSearchClick}/>
 
                             </div>
-                            <div className='row align-items-center justify-content-center'>
-                                <div className='mx-2'>
+                            <div className='row align-items-center justify-content-center text-capitalize'>
+                                <div className='mx-2 breed_item'>
                                     <Link to='/breeds/americanbulldog'><h1>AmericanBulldog</h1></Link>
 
                                 </div>
-                                <div className='mx-2'>
+                                <div className='mx-2 breed_item'>
                                     <Link to='/breeds/americanbully'><h1>AmericanBully</h1></Link>
 
                                 </div>
-                                <div className='mx-2'>
+                                <div className='mx-2 breed_item'>
                                     <Link to='/breeds/frenchbulldog'><h1>FrenchBulldog</h1></Link>
 
                                 </div>
-                                <div className='mx-2'>
+                                <div className='mx-2 breed_item'>
                                     <Link to='/breeds/pitbull'><h1>Pittbull</h1></Link>
 
                                 </div>

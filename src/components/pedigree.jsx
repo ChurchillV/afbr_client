@@ -25,13 +25,7 @@ class Pedigree extends React.Component {
         console.log(this.props)
 
 
-        // Object.keys(this.props.dog).map((dog) => {
-        //     // console.log(this.props.dog[dog])
-        //     // console.log(dog)
-        //     console.log(dog)
 
-        // // console.log('this.prpos.sires', Object.values(this.props.dog.sires))
-        // })
     }
 
     // console.log('props in pedigree frane',this.props.params)
@@ -41,21 +35,12 @@ class Pedigree extends React.Component {
 
     componentDidMount() {
         console.log('this.prpos in pedisgrweee', this.props.data)
-        // this.getsire()
-        // this.getsire()
-        // this.getdam()
-
-        // console.log('this.prpos in pedigree', this.props.Profilestate)
-
-
-
-
 
     };
 
     // getsire = () => {
-    
-    
+
+
     // }
 
     render() {
@@ -66,54 +51,59 @@ class Pedigree extends React.Component {
                     <div className='sires_row w-100 py-4'>
                         <div className='sire'>
 
-                            <div className=''>
-                                {this.props.data.sire.public_id ?
-                                      <img class='profile_img_dog2'
-                                      src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.sire.public_id}.png`}></img>
-                       :
-                                    <img class='profile_img_dog' src={Profile_pic}
+
+                                    {this.props.data.sire.public_id ?
+                                        <img class='profile_img_sire'
+                                            src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.sire.public_id}.png`}></img>
+                                        :
+                                        <img class='profile_img_sire' src={Profile_pic}
                                         >
-                                    </img>
+                                        </img>
 
 
 
-                                }
-                            </div>
-                            { this.props.data.sire.name == 'Unknown Genealogy' ? 
-                            <div className='sire_label'>
-                                <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
-                            </div>
+                                    }
 
-                            : 
-                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
-                                <div className='sire_label'>
-                                    <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
-                                </div>
-                            </a>
+                                    {this.props.data.sire.name == 'Unknown Genealogy' ?
+                                        <div className='sire_label' >
+                                            <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
+                                        </div>
 
-                            }
-                            
+                                        :
+                                        <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
+                                            <div className='sire_label' >
+                                                <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
+                                            </div>
+                                        </a>
+
+                                    }
+
+
+
+
+
+
 
                         </div>
 
-                         <PedigreeFrame >
+                        <PedigreeFrame >
                             <PedigreeDogCard dog_id={this.props.data.siresire.id} dog_name={this.props.data.siresire.name}
-                                dog_publicId={this.props.data.siresire.public_id} />
+                                dog_publicId={this.props.data.siresire.public_id} image_class='profile_img_2nd'/>
                             <PedigreeDogCard dog_id={this.props.data.siredam.id} dog_name={this.props.data.siredam.name}
-                                dog_publicId={this.props.data.siredam.public_id} />
+                                dog_publicId={this.props.data.siredam.public_id} image_class='profile_img_2nd'/>
 
                         </PedigreeFrame>
 
                         <PedigreeFrame>
                             <PedigreeDogCard dog_id={this.props.data.siresiresire.id} dog_name={this.props.data.siresiresire.name}
-                                dog_publicId={this.props.data.siresiresire.public_id} class="no_label"/>
+                                dog_publicId={this.props.data.siresiresire.public_id} class="no_label" image_class='profile_img_3rd' />
                             <PedigreeDogCard dog_id={this.props.data.siresiredam.id} dog_name={this.props.data.siresiredam.name}
-                                dog_publicId={this.props.data.siresiredam.public_id} class="no_label"/>
+                                dog_publicId={this.props.data.siresiredam.public_id} class="no_label" image_class='profile_img_3rd'/>
                             <PedigreeDogCard dog_id={this.props.data.siredamsire.id} dog_name={this.props.data.siredamsire.name}
-                                dog_publicId={this.props.data.siredamsire.public_id} class="no_label"/>
+                                dog_publicId={this.props.data.siredamsire.public_id} class="no_label" image_class='profile_img_3rd'/>
                             <PedigreeDogCard dog_id={this.props.data.siredamdam.id} dog_name={this.props.data.siredamdam.name}
-                                dog_publicId={this.props.data.siredamdam.public_id} class="no_label"/>
-                        </PedigreeFrame> 
+                                dog_publicId={this.props.data.siredamdam.public_id} class="no_label" image_class='profile_img_3rd'/>
+                        </PedigreeFrame>
 
 
                     </div>
@@ -121,55 +111,57 @@ class Pedigree extends React.Component {
                     <div className='sires_row w-100'>
                         <div className='sire'>
 
-                            <div className=''>
-                                {this.props.data.dam.public_id ?
-                                                 <img class='profile_img_dog2'
-                                                 src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}></img>
-                               :
-                                    <img className='profile_img_dog' src={Profile_pic}
+                              
+                                    {this.props.data.dam.public_id ?
+                                        <img class='profile_img_sire'
+                                            src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.data.dam.public_id}.png`}></img>
+                                        :
+                                        <img className='profile_img_sire' src={Profile_pic}
                                         >
-                                    </img>
+                                        </img>
 
 
 
-                                }                            </div>
-                            { this.props.data.dam.name == 'Unknown Genealogy' ? 
-                            <div className='sire_label'>
-                                <p className='text-capitalize smallrem' >{this.props.data.dam.name}</p>
-                            </div>
+                                    }
 
-                            : 
-                            <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
-                                <div className='sire_label'>
-                                    <p className='text-capitalize smallrem'>{this.props.data.dam.name}</p>
-                                </div>
-                            </a>
+                                    {this.props.data.dam.name == 'Unknown Genealogy' ?
+                                        <div className='sire_label'>
+                                            <p className='text-capitalize smallrem' >{this.props.data.dam.name}</p>
+                                        </div>
 
-                            }
+                                        :
+                                        <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
+                                            <div className='sire_label'>
+                                                <p className='text-capitalize smallrem'>{this.props.data.dam.name}</p>
+                                            </div>
+                                        </a>
 
-                                
+                                    }
+                              
+
+
                         </div>
 
-                      <PedigreeFrame >
+                        <PedigreeFrame >
                             <PedigreeDogCard dog_id={this.props.data.damsire.id} dog_name={this.props.data.damsire.name}
-                            dog_publicId={this.props.data.damsire.public_id} />
+                                dog_publicId={this.props.data.damsire.public_id} image_class='profile_img_2nd' />
                             <PedigreeDogCard dog_id={this.props.data.damdam.id} dog_name={this.props.data.damdam.name}
-                            dog_publicId={this.props.data.damdam.public_id} 
-                             />
+                                dog_publicId={this.props.data.damdam.public_id} image_class='profile_img_2nd' 
+                            />
 
                         </PedigreeFrame>
 
                         <PedigreeFrame>
                             <PedigreeDogCard dog_id={this.props.data.damsiresire.id} dog_name={this.props.data.damsiresire.name}
-                            dog_publicId={this.props.data.damsiresire.public_id}  class="no_label"/>
-                            <PedigreeDogCard dog_id={this.props.data.damsiredam.id} dog_name={this.props.data.damsiredam.name} 
-                            dog_publicId={this.props.data.damsiredam.public_id} class="no_label"/>
-                            <PedigreeDogCard dog_id={this.props.data.damdamsire.id} dog_name={this.props.data.damdamsire.name} 
-                            dog_publicId={this.props.data.damdamsire.public_id} class="no_label"/>
-                            <PedigreeDogCard dog_id={this.props.data.damdamdam.id} dog_name={this.props.data.damdamdam.name} 
-                            dog_publicId={this.props.data.damdamdam.public_id} class="no_label"/>
+                                dog_publicId={this.props.data.damsiresire.public_id} class="no_label" image_class='profile_img_3rd' />
+                            <PedigreeDogCard dog_id={this.props.data.damsiredam.id} dog_name={this.props.data.damsiredam.name}
+                                dog_publicId={this.props.data.damsiredam.public_id} class="no_label" image_class='profile_img_3rd' />
+                            <PedigreeDogCard dog_id={this.props.data.damdamsire.id} dog_name={this.props.data.damdamsire.name}
+                                dog_publicId={this.props.data.damdamsire.public_id} class="no_label" image_class='profile_img_3rd' />
+                            <PedigreeDogCard dog_id={this.props.data.damdamdam.id} dog_name={this.props.data.damdamdam.name}
+                                dog_publicId={this.props.data.damdamdam.public_id} class="no_label" image_class='profile_img_3rd' />
                         </PedigreeFrame>
- 
+
 
                     </div>
 

@@ -42,11 +42,7 @@ class ProfileDog extends Component {
     constructor(props) {
         super(props)
 
-        // console.log('this.props', this.props.params)
-        // console.log(this.props.location.pathname.split('/'))
-
-
-
+    
         this.state = {
             specificdog: {
 
@@ -55,7 +51,7 @@ class ProfileDog extends Component {
             dog_sire_name: null,
             dog_dam_name: null,
             Pedigree: {
-                
+
             }
         }
 
@@ -64,11 +60,11 @@ class ProfileDog extends Component {
 
 
     componentDidMount() {
-        
+
         this.props.getdogpedigree(this.props.params.dog_id)
         this.getspecificdog()
         console.log(this.props)
- 
+
     };
 
 
@@ -79,30 +75,30 @@ class ProfileDog extends Component {
 
     getspecificdog = () => {
         axios
-        .get(`${url}api/dogs/${this.props.params.dog_id}`)
-        .then((res) => {
-            console.log(this.props.params.dog_id)
-            this.setState({ specificdog: res.data[0] }, () => {
-                console.log('finished setting state in profiledog', this.state)
-                
-            },
-            // this.getdogpic()
+            .get(`${url}api/dogs/${this.props.params.dog_id}`)
+            .then((res) => {
+                console.log(this.props.params.dog_id)
+                this.setState({ specificdog: res.data[0] }, () => {
+                    console.log('finished setting state in profiledog', this.state)
+
+                },
+                    // this.getdogpic()
+                )
+
+
+
+            }
+
             )
 
-            
-           
-        }
-    
-        )
-    
-        .catch((err) => {
-            console.log("Error couldnt get Dog");
-            console.log(err.message);
-        });
+            .catch((err) => {
+                console.log("Error couldnt get Dog");
+                console.log(err.message);
+            });
     }
 
-    
-    
+
+
 
     handleDelete = () => {
         axios
@@ -116,48 +112,62 @@ class ProfileDog extends Component {
 
     }
 
-   
+
     render() {
         return (
             <div className='profiledog yellow'>
-                <Profile className_='yellow'>
-                    <div className='row  row_edit align-items-start justify-content-start'>
-                    
-                            <Link to={
-                                `/dog_registrations/edit/${this.props.params.dog_id}`
-                            }
-                                        className='btn btn-info to_be_hidden'
-                            >Edit &nbsp;</Link>
+                <Profile class='profile' navbarcolor='white'>
+                    <div className='row  row_edit align-items-end justify-content-end'>
 
-                            <div><Link to='/profile'  className='btn btn-warning to_be_hidden' onClick={this.handleDelete}>Delete</Link></div>
+                        <div className='dropdown'>
+                            <button className='dropbtn smallrem'>Actions</button>
+                            <div className='dropdown-content'>
+                                <Link to={
+                                    `/dog_registrations/edit/${this.props.params.dog_id}`
+                                }
+                                    className='  smallrem'
+                                >Edit &nbsp;</Link>
+
+                            </div>
+                        </div>
+
+
+
 
                     </div>
 
-                    <div className='row  align-items-center justify-content-center'>
+                    <div className='row  align-items-start justify-content-start'>
 
 
 
 
                         <div className='col-sm-'>
-                            
-                  
+
+
                             {this.props.pedigree ? <Profile_Card image_src={Logo} height={height}
                                 width={width}
-                               dog={this.props.pedigree.maindog} 
-                              
-                            
+                                dog={this.props.pedigree.maindog}
+                                sire={this.props.pedigree.sire}
+                                dam={this.props.pedigree.dam}
+
                             />
-                            : null }
+                                : null}
                         </div>
 
 
                     </div>
-                
-               
+
+
 
                 </Profile>
                 {this.props.pedigree.maindog.name ? <Pedigree data={this.props.pedigree}
                 /> : null}
+
+
+                <div className='row  align-items-end justify-content-end my-5 px-5'>
+                <div><Link to='/profile' className='btn btn-danger smallrem px-5'  onClick={this.handleDelete}>Delete Dog</Link></div>
+
+                </div>
 
             </div>
 

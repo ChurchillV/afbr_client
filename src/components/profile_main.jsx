@@ -120,7 +120,7 @@ class ProfileMain extends Component {
     render() {
         return (
             <div>
-                <Profile>
+                <Profile class='profile_first' navbarcolor='black'>
                     <div className='row align-items-center justify-content-center' >
                         <Search name='profile_search' send_to={true} onSearchClick={this.onSearchClick} />
 

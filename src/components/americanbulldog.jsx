@@ -4,7 +4,7 @@ import Breeds from "./breeds"
 export const AmericanBulldog = () => {
     return (
         <Breeds>
-            <div className="text-capitalize text-left">
+            <div className="px-2 breed_text text-capitalize text-left">
                 <p>
                     The American Bulldog has a history that is traced back to 1121 BC and some would argue even thousands of years before that. We won’t get into every aspect of our history dating to 1121 BC… We will focus on what the modern American Bulldog is and what it represents.
 

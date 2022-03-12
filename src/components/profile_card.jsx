@@ -1,7 +1,20 @@
 import React from 'react';
 import '../css_files/profile.css'
 import $ from 'jquery'
+import axios from 'axios'
+import { url } from './weburl';
 
+
+const styles = {
+    properties : {
+        borderBottom: '2px solid white'
+    },
+    main_properties: {
+        fontWeight: 'bold'
+    }
+}
+const {properties} = styles
+const main_properties = styles
 
 
 //to be edited soon
@@ -15,43 +28,53 @@ class Profile_Card extends React.Component {
     constructor(props) {
         super(props)
         console.log('this.prpos', this.props)
-
-
-
-
-
-
-        // console.log('this.prpos.sires', Object.values(this.props.dog.sires))
-
-    }
-
-
-    componentDidMount = () => {
-        if (window.screen.width < 660){
-            console.log('hide the following')
-            $('.to_be_hidden').css('display', 'none')
-            $('_to_be_hidden').on(
-                'click', function(){
-                    $('_to_be_hidden').slideToggle()
-                }
-            )
+        this.state = {
+            sire: '',
+            dam: ''
         }
+
+  }
+    componentDidMount = () => {
+        // if (window.screen.width < 660) {
+        //     console.log('hide the following')
+        //     $('.show_details').on(
+        //         'click', function () {
+        //             console.log('show details clicked')
+        //             $('.to_be_hidden').slideToggle()
+        //         }
+        //     )
+        // }
     }
 
+  
 
+    
     info = () => {
-        let ignore = ['id']
-        return Object.keys(this.props.dog).map((dog) => {
-            if (dog === 'id' || dog=='public_id' ||  dog=='user' ||
-            dog=='image_url'){
-                console.log(dog)
-                console.log(true)
-            }
-            else{
-                return <p className='profile_card_p text-capitalize' style={{ marginBottom: '0px' }}>{dog}:&nbsp;&nbsp;{this.props.dog[dog]}</p>
+        
 
-            }
-        })
+        return <div className='text-capitalize align-items-center justify-content-center'>
+            <div className='col-lg-'>
+                <p className='smallrem 'style={properties}>Registered Name: &nbsp;  <span className='font-weight-bold'>{this.props.dog['name']} </span></p>
+                <p className='smallrem'>Kennel Name:&nbsp; <span className='font-weight-bold' >{this.props.dog['kennel_name']}</span>  </p>
+                <p className='smallrem'>Current Owner: <span className='font-weight-bold'> &nbsp;{this.props.dog['current_owner']}</span> </p>
+                <p className='smallrem'>Sire:<span className='font-weight-bold'>&nbsp; {this.props.sire.name} </span> </p>
+                <p className='smallrem'style={properties} >Dam: <span className='font-weight-bold'>&nbsp; {this.props.dam.name} </span></p>
+
+                <p className='smallrem'>Age: &nbsp; <span className='font-weight-bold'>{this.props.dog['age']}</span> </p>
+                <p className='smallrem'>Breed:  &nbsp;<span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
+                <p className='smallrem'>Height: &nbsp; <span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
+                <p className='smallrem'>Weight:  &nbsp; <span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
+                <p className='smallrem' style={properties}>Color: &nbsp; <span className='font-weight-bold'>{this.props.dog['color']} </span></p>
+
+                <p className='smallrem'>Land Of Standing: &nbsp; <span className='font-weight-bold'> {this.props.dog['land_of_standing']}</span> </p>
+                <p className='smallrem'>Place of Birth:  &nbsp; <span className='font-weight-bold'>{this.props.dog['place_of_birth']} </span></p>
+                <p className='smallrem'>Date of Birth:  &nbsp; <span className='font-weight-bold'>{this.props.dog['date_of_birth']} </span></p>
+
+
+
+
+            </div>
+        </div>
 
     }
 
@@ -64,24 +87,27 @@ class Profile_Card extends React.Component {
 
 
                 <div className='row justify-content-center align-items-center'>
-                    <div className='col-sm-6'>
+                    <div className='col-5'>
                         <h3>{this.props.dog.name}</h3>
                         {this.props.dog.public_id ?
                             <img class='main_profile_img_dog'
                                 src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.props.dog.public_id}.png`}></img>
 
                             :
-                            <img class='main_profile_img_dog'src={this.props.image_src}
+                            <img class='main_profile_img_dog' src={this.props.image_src}
                             >
                             </img>
 
-                            
+
 
 
 
                         }
-                    </div>
-                    <div className='col-sm-6 to_be_hidden'>
+                     
+
+                    </div >
+
+                    <div className='col-6 to_be_hidden' >
                         <div>
                             {this.info()}
 

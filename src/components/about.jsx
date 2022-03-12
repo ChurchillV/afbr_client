@@ -22,7 +22,7 @@ const About = () => {
 
 
 
-                    <div className="row align-items-center justify-content-center text-left">
+                    <div className="row align-items-center about_text_main justify-content-center text-left">
                         <div className='col-sm- about_text align-items-center justify-content-center'>
 
 

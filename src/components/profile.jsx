@@ -67,30 +67,30 @@ class Profile extends Component {
         return (
 
             <div className='container-fluid'>
-                <Navbar color='black'/>
-                <div className={`${this.props.classname_} row profile align-items-center justify-content-center`}>
+                <Navbar color={this.props.navbarcolor}/>
+                <div className={`${this.props.classname_} row ${this.props.class} align-items-center justify-content-center`}>
                     <div className='col-sm-2 align-self-start pro_nav_col to_be_hidden_profile'>
-                        <div className='row text-dark align-items-center justify-content-center pro_nav'>
+                        <div className='text-dark align-items-center justify-content-center pro_nav'>
                             <img src={Profile_pic} height={'100px'} width={'100px'}></img>
-                            <p>Welcome, {this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</p>
+                            <p  style={{color:this.props.navbarcolor}}>Welcome, {this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</p>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link to='/Home'>Home</Link>
+                            <Link to='/Home' style={{color:this.props.navbarcolor}}>Home</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                           {this.state.firebaseUser ? <Link to={`/profile/personal/${this.state.firebaseUser.uid}`}>Personal</Link> :  <Link to='/profile/personal/'>Personal</Link> }
+                           {this.state.firebaseUser ? <Link to={`/profile/personal/${this.state.firebaseUser.uid}`}  style={{color:this.props.navbarcolor}}>Personal</Link> :  <Link to='/profile/personal/'>Personal</Link> }
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link to='/my_dogs'>My dogs</Link>
+                            <Link  style={{color:this.props.navbarcolor}} to='/my_dogs'>My dogs</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link to='/registration'>Register</Link>
+                            <Link   style={{color:this.props.navbarcolor}} to='/registration'>Register</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link to='/profile/csandps'>Certificates and Pedigrees</Link>
+                            <Link  style={{color:this.props.navbarcolor}}  to='/profile/csandps'>Certificates and Pedigrees</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <button className='btn btn-default' onClick={logout}>Log Out</button>
+                            <button  style={{color:this.props.navbarcolor}}  className='btn btn-default' onClick={logout}>Log Out</button>
                         </div>
                     </div>
                     <div className='col-sm-10 align-items-center justify-content-center profile_main'>

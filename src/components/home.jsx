@@ -65,6 +65,7 @@ class Home extends Component {
           <div className='col-md-4 text-capitalize' >
             <HomeMessage />
           </div>
+          
 
         </div>
 
