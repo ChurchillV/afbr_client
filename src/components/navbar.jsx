@@ -29,7 +29,7 @@ class Navbar extends Component {
     render() {
         return (
             <div class='row align-content-center justify-content-center  '>
-                   <span className='navtitle'  style={{color: this.props.color}}> <p>THE AFRICAN BULLY REGSISTRY</p></span>
+                   <span className='navtitle'  style={{color: this.props.color}}> <p>THE AFRICAN BULLY REGISTRY</p></span>
         
             <nav class="navbar navbar-light navbar-expand-lg ">
                 <Link class="navbar-brand " to=""><img src={logo1} height='40px' width='40px'></img></Link>
