@@ -13,7 +13,7 @@ class Shows extends Component {
     render() {
         return (
             <div className='container_fluid'>
-                <div className='row align-items-center justify-content-center shows_full'>
+                <div className='row align-items-center justify-content-center '>
 
                     <div>
                     <Navbar />

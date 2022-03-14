@@ -9,11 +9,11 @@ const About = () => {
     return (
         <div className='row about_body align-items-center justify-content-center'>
             <Navbar />
-            <div className="container-fluid">
-                <div className='row align-items-center justify-content-center about_main'>
-                    <div className="container-fluid">
+            <div className="container">
+                <div className='row align-items-center justify-content-center '>
+                    <div className="container">
                         <div className="row align-items-center justify-content-center pic_row_about">
-                            <div className="about_heading text-capitalize">
+                            <div className="col-lg- about_heading text-capitalize">
                                 About us
                             </div>
                         </div>
@@ -23,7 +23,7 @@ const About = () => {
 
 
                     <div className="row align-items-center about_text_main justify-content-center text-left">
-                        <div className='col-sm- about_text align-items-center justify-content-center'>
+                        <div className='col-lg- about_text align-items-center justify-content-center'>
 
 
                             <p className=" text-uppercase afbr_heading">The African Bully Registry</p>

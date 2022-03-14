@@ -129,7 +129,9 @@ class Home extends Component {
 
           <div className='col-sm-6 '>
             <h1 class='text-capitalize' style={{ color: 'white' }}>Register your bull dog with us today</h1>
-            <h5 class='text-capitalize' style={{ color: 'white' }}>American Bull Dogs, Frenchiebuls</h5>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>American Bull Dogs</h5>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>Frenchiebuls</h5>
+
             <h5 class='text-capitalize' style={{ color: 'white' }}>American Bully </h5>
 
           </div>
@@ -143,15 +145,17 @@ class Home extends Component {
 
 
           <div className='col-sm-6'>
-            < Carousel image_src1={dog1} image_src2={dog2} image_src3={dog3} />
+          <Carousel image_src1={dog1} image_src2={dog2} image_src3={dog3}
+            image_src4={dog4} image_src5={dog5} image_src6={dog6} image_src7={dog7}
+            image_src8={mzv}/>
           </div>
         </div>
 
         <div className='row  mt-md-5 align-items-center justify-content-center'>
           <div className='col-sm-6 documented' style={{textAlign: 'center'}}>
-            <h1>Well documented pedigrees</h1>
-            <h1>Global certification</h1>
-            <h1>African Identity</h1>
+            <p className='text-warning'>Well documented pedigrees</p>
+            <p className='text-info'>Global certification</p>
+            <p className='text-dark'>African Identity</p>
 
           </div>
 
@@ -174,8 +178,8 @@ class Home extends Component {
                 <h1>Our Partners</h1>
               </div>
               <div className='col-sm-3'>
-              < Carousel image_src1={logo4} image_src2={logo3} image_src3={dog3} />
-
+    <Carousel image_src1={logo3} image_src2={logo1} image_src3={logo4}
+           />
               </div>
              
             </div>

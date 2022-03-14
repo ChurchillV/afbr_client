@@ -38,7 +38,7 @@
     /* width: 100%; */
     overflow: hidden;
     max-width: 100%;
-    max-height: 250px;
+    max-height: 200px;
     min-height: 100%;
     display: flex;
     justify-content: normal;
@@ -228,9 +228,10 @@
 @media screen and (max-width: 770px){
   .documented{
     margin-top: 10%;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
     padding-top: 5%;
-    padding-bottom: 5%;
+    /* padding-bottom: 5%; */
+    
     
   }
 }
