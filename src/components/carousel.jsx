@@ -25,6 +25,24 @@ class Carousel extends React.Component {
               <div class="carousel-item">
                 <img class="d-block img-fluid w-100" src={this.props.image_src3} alt="Second slide"></img>
               </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src={this.props.image_src4} alt="Second slide"></img>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src={this.props.image_src5} alt="Second slide"></img>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src={this.props.image_src6} alt="Second slide"></img>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src={this.props.image_src7} alt="Second slide"></img>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src={this.props.image_src8} alt="Second slide"></img>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block img-fluid w-100" src={this.props.image_src3} alt="Second slide"></img>
+              </div>
             </div>
             <Link class="carousel-control-prev" to="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

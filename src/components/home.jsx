@@ -8,10 +8,18 @@ import Card from './card'
 import Carousel from './carousel'
 import dog1 from '../images/dog1.jpg'
 import dog2 from '../images/dog2.jpg'
-import dog3 from '../images/dog3.jpg'
+import dog3 from '../images/dog8.jpg'
+import dog4 from '../images/dog9.jpg'
+import dog5 from '../images/dog10.jpg'
+import dog6 from '../images/dog11.jpeg'
+import dog7 from '../images/doga1.jpg'
+import mzv from '../images/mzv2.jpg'
+
+
+
+
 import logo4 from '../images/logo4.jfif'
 import logo3 from '../images/logo3.png'
-import mzv from '../images/mzv2.jpg'
 import Navbar from './navbar';
 import Footer from './footer';
 
@@ -60,10 +68,14 @@ class Home extends Component {
 
         </div>
         <div className='row  align-items-center justify-content-start homerow'>
-          {/* <Navbar toggle_sign_up={this.toggle_sign_up} toggle_login={this.toggle_login}/> */}
 
-          <div className='col-md-4 text-capitalize' >
+          <div className='col-sm-6 text-capitalize font-weight-bold' >
             <HomeMessage />
+          </div>
+          <div className='col-sm-6 carousel_to_be_hidden'>
+            <Carousel image_src1={dog1} image_src2={dog2} image_src3={dog3}
+            image_src4={dog4} image_src5={dog5} image_src6={dog6} image_src7={dog7}
+            image_src8={mzv}/>
           </div>
           
 

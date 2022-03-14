@@ -12,12 +12,10 @@
         /* padding: 1%; */
         background-color: var(--yellow);
         /* border-right: 10px solid  rgb(186, 129, 8); */
-      
-        visibility: hidden;
         font-weight: 500;
         text-align: center;
         color: white;
-        margin-top: 50%;
+        /* margin-top: 50%; */
        
         
         font-family:serif;
@@ -25,13 +23,44 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        /* height: 100%; */
-        
+        height: 100%;
+        display: none;
+
         /* visibility: hidden; */
        
       
       }
-}@media screen and (max-width: 770px) {
+}
+
+@media screen and (max-width: 770px) {
+  .carousel-inner {
+    position: relative;
+    /* width: 100%; */
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 250px;
+    min-height: 100%;
+    display: flex;
+    justify-content: normal;
+    border-radius: 0%;
+    border: 10px solid white;
+    align-items: center;
+    border-top: 0px;
+    border-bottom: 0px;
+  
+  }
+  
+}
+
+@media screen and (max-width: 770px) {
+  .carousel_to_be_hidden{
+    /* display: none; */
+  }
+  
+}
+
+
+@media screen and (max-width: 770px) {
   .pedigree{
     background-color: inherit;
     padding: 10%;
@@ -42,6 +71,24 @@
   }
   
 }
+
+@media screen and (max-width: 770px) {
+  .homerow{
+    background-image: url('../images/mzv2.jpg');
+    background-position: center;
+    background-repeat: no repeat;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    animation-name: homestuff;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    
+  }
+}
+
+
 @media screen and (max-width: 770px) {
   
 .gallery{
