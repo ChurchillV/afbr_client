@@ -164,10 +164,10 @@ class ProfileDog extends Component {
                 /> : null}
 
 
-                <div className='row  align-items-end justify-content-end my-5 px-5'>
+                {/* <div className='row  align-items-end justify-content-end my-5 px-5'>
                 <div><Link to='/profile' className='btn btn-danger smallrem px-5'  onClick={this.handleDelete}>Delete Dog</Link></div>
 
-                </div>
+                </div> */}
 
             </div>
 
