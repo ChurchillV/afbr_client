@@ -249,6 +249,7 @@
     background-repeat: no repeat;
     background-size: cover; */
     background-color: var(--yellow);
+    background-image: linear-gradient(to top, var(--yellow),#e4b144);
     display: flex;
     position: relative;
     /* animation-name: homestuff;

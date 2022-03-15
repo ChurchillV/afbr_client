@@ -2,10 +2,8 @@
 import React, { Component, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import '../css_files/registration.css'
-import { Auth, Hub } from 'aws-amplify'
 import {Image} from 'cloudinary-react'
 import axios from 'axios'
-import Amplify from 'aws-amplify'
 import Search from './search'
 // import {AmplifySignOut, withAuthenticator} from '@aws-amplify/ui-react'
 
