@@ -168,7 +168,7 @@ class Home extends Component {
         </div>
 
       
-
+{/* 
         <div className='row  mt-5 card_row align-items-center justify-content-center'>
           <div className='container-fluid'>
             <div className='row  card_row align-items-center justify-content-around'>
@@ -191,7 +191,7 @@ class Home extends Component {
 
      
 
-      </div>
+      </div> */}
       <div className='row  mt-5 text-white w-100 align-items-center justify-content-center'>
         <div className='col-lg-'>
         <Footer />
