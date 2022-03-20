@@ -16,7 +16,12 @@ import dog7 from '../images/doga1.jpg'
 import mzv from '../images/mzv2.jpg'
 
 
-
+import sendgrid from '../images/sendgrid-removebg-preview.png'
+import holden from '../images/holden-removebg-preview.png'
+import jumeirah from '../images/jumeirah-removebg-preview.png'
+import athletics from '../images/athletics-removebg-preview.png'
+import cubico from '../images/cubico-removebg-preview.png'
+import mates from '../images/mates-removebg-preview.png'
 
 import logo4 from '../images/logo4.jfif'
 import logo3 from '../images/logo3.png'
@@ -69,13 +74,12 @@ class Home extends Component {
         </div>
         <div className='row  align-items-center justify-content-start homerow'>
 
-          <div className='col-sm-6 text-capitalize font-weight-bold' >
+          <div className=' font-weight-bold homeMessaggehome' >
             <HomeMessage />
+
           </div>
-          <div className='col-sm-6 carousel_to_be_hidden'>
-            <Carousel image_src1={dog1} image_src2={dog2} image_src3={dog3}
-            image_src4={dog4} image_src5={dog5} image_src6={dog6} image_src7={dog7}
-            image_src8={mzv}/>
+          <div className='col-sm-12 carousel_to_be_hidden'>
+            <Carousel image_src1={mzv} image_src2={dog7} />
           </div>
           
 
@@ -109,20 +113,21 @@ class Home extends Component {
           </div>
         </div>
 
-
-        <div className='row mt-md-5 py-md-5 align-items-center justify-content-center'>
-
-          <div class='ml-md-1 mb-md-5 col-sm-1'>
-            <div>
+        <div className='row py-5 align-items-center justify-content center '>
+          <div className='col-sm-6'>
+          <div className=''>
               <img src={logo1} className='homelogo'></img>
 
             </div>
           </div>
-          <div className='col-sm-11'>
-            <h1 class='text-capitalize text-center px-md-3 py-md-3' >Uniting passionate, dedicated dog lovers and breeders</h1>
-            <h5 class='text-capitalize text-center px-md-3'>Right here in Africa</h5>
+          <div className='col-sm-6'>
+          <h2 class='text-capitalize text-center px-md-3 py-md-3' >Uniting passionate, dedicated dog lovers and breeders</h2>
+            <p class='text-capitalize text-center px-md-3'>Right here in Africa</p>
+       
           </div>
         </div>
+
+
 
         <div className='row  mt-md-5 register1 align-items-center justify-content-center'>
 
@@ -137,17 +142,28 @@ class Home extends Component {
           </div>
         </div>
 
-
-        <div className='row mt-md-5 align-items-center justify-content-center'>
-          <div className='col-sm-6'>
+        <div className='row  align-items-center justify-content-center' style={{display: 'none'}}>
+        <div className='col-lg-12'>
             < Card text1="Our Gallery" className='gallery' />
           </div>
+        </div>
+        <div className='row mt-md-5 card_row align-items-center justify-content-center'>
+        <div className='col-sm-3'>
+          <Carousel class='carousel-inner2' image_src1={dog5} image_src2={dog6}
+             />
+          </div>
 
-
-          <div className='col-sm-6'>
-          <Carousel image_src1={dog1} image_src2={dog2} image_src3={dog3}
-            image_src4={dog4} image_src5={dog5} image_src6={dog6} image_src7={dog7}
-            image_src8={mzv}/>
+          <div className='col-sm-3'>
+          <Carousel class='carousel-inner2' image_src1={dog7} image_src2={mzv}
+             />
+          </div>
+          <div className='col-sm-3'>
+          <Carousel class='carousel-inner2' image_src1={dog1} image_src2={dog2}
+             />
+          </div>
+          <div className='col-sm-3'>
+          <Carousel class='carousel-inner2'   image_src1={dog3} image_src2={dog4}
+             />
           </div>
         </div>
 
@@ -167,33 +183,45 @@ class Home extends Component {
             </div>         
         </div>
 
-      
 {/* 
-        <div className='row  mt-5 card_row align-items-center justify-content-center'>
-          <div className='container-fluid'>
-            <div className='row  card_row align-items-center justify-content-around'>
-
-
-            <div className='col-sm-1 '>
-                <h1>Our Partners</h1>
+      <div className='row mt-5 py-5 card_row align-items-center justify-content-center'>
+      <div className='col-lg-12 '>
+                <h1 className='text-white'>Our Partners</h1>
               </div>
-              <div className='col-sm-3'>
-    <Carousel image_src1={logo3} image_src2={logo1} image_src3={logo4}
-           />
+      </div>
+      
+
+        <div className='row  mt-5 px-5 partners_row align-items-center justify-content-center'>
+              <div className='col-sm-2 px-sm-5'>
+          <img src={holden}  className='partners_image'></img>
               </div>
+              <div className='col-sm-2 px-sm-5'>
+          <img src={jumeirah} className='partners_image'></img>
+              </div>
+              <div className='col-sm-2'>
+          <img src={sendgrid} className='partners_image'></img>
+              </div>
+              <div className='col-sm-2'>
+          <img src={athletics} className='partners_image'></img>
+              </div>
+              <div className='col-sm-2'>
+          <img src={cubico} className='partners_image'></img>
+              </div>
+              <div className='col-sm-2'>
+          <img src={mates} className='partners_image'></img>
+              </div>
+
              
-            </div>
 
 
 
-        </div>
 
 
      
 
       </div> */}
-      <div className='row  mt-5 text-white w-100 align-items-center justify-content-center'>
-        <div className='col-lg-'>
+      <div className='row  bg-dark mt-5 text-white w-100 align-items-center justify-content-center'>
+        <div className='col-lg-12'>
         <Footer />
 
         </div>
