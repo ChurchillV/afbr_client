@@ -5,7 +5,7 @@ import '../css_files/App.css'
 const Footer = (props) => {
     return (
    
-        <footer class="footer_full w-100 text-center text-lg-start">
+        <footer class="footer_full text-center text-lg-start">
           
           <section
             class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -16,24 +16,26 @@ const Footer = (props) => {
             </div>
           
             <div>
-              <Link to="" class="me-4 text-reset">
-                <i class="fab fa-facebook-f"></i>
+             
+            <div to="" class="smallrem me-4 text-reset">
+                <i class="fab fa-whatsapp">Whatsapp: + 233 24 233 1674 </i>
+              </div>
+              {/* <Link to="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f">Facebook</i>
               </Link>
               <Link to="" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
-              </Link>
-              <Link to="" class="me-4 text-reset">
-                <i class="fab fa-google"></i>
-              </Link>
-              <Link to="" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
-              </Link>
-              <Link to="" class="me-4 text-reset">
-                <i class="fab fa-linkedin"></i>
-              </Link>
-              <Link to="" class="me-4 text-reset">
-                <i class="fab fa-github"></i>
-              </Link>
+                <i class="fab fa-twitter">Twitter</i>
+              </Link> */}
+              <div to="" class="smallrem me-4 text-reset">
+                <i class="fab fa-google"> Gmail: africanbullyregistry@gmail.com </i>
+              </div>
+              {/* <Link to="" class="me-4 text-reset">
+                <i class="fab fa-instagram">Instagram: </i>
+              </Link> */}
+              <div to="" class="smallrem me-4 text-reset">
+                <i class="fab fa-linkedin">LinkedIn: AFRICAN BULLY REGISTRY</i>
+              </div>
+           
             </div>
            
           </section>
@@ -44,19 +46,18 @@ const Footer = (props) => {
             
               <div class="row mt-3">
              
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <div class="col-md-3  mx-auto mb-1">
              
-                  <h6 class="text-uppercase fw-bold mb-4">
+                  <h6 class="smallrem text-uppercase fw-bold mb-4">
                     <i class="fas fa-gem me-3"></i>AFRICAN BULLY REGISTRY
                   </h6>
-                  <p>
-                    Here you can use rows and columns to organize your footer content. Lorem ipsum
-                    dolor sit amet, consectetur adipisicing elit.
+                  <p className='smallrem'>
+                    Making the bully community well respected
                   </p>
                 </div>
                
                 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                {/* <div class="col-md-3 mx-auto mb-4">
                  
                   <h6 class="text-uppercase fw-bold mb-4">
                     Products
@@ -73,40 +74,40 @@ const Footer = (props) => {
                   <p>
                     <a to="#!" class="text-reset">Laravel</a>
                   </p>
-                </div>
+                </div> */}
                  
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <div class="smallremcol-md-3 mx-auto mb-4">
                
-                  <h6 class="text-uppercase fw-bold mb-4">
+                  <h6 class="smallrem text-uppercase fw-bold mb-4">
                     Useful links
                   </h6>
                   <p>
-                    <a to="#!" class="text-reset">Pricing</a>
+                    <a to="#!" class=" smallrem text-reset">Terms and Conditions</a>
                   </p>
                   <p>
-                    <a to="#!" class="text-reset">Settings</a>
+                    <a to="#!" class=" smallrem text-reset">Register</a>
                   </p>
-                  <p>
+                  {/* <p>
                     <a to="#!" class="text-reset">Orders</a>
                   </p>
                   <p>
                     <a to="#!" class="text-reset">Help</a>
-                  </p>
+                  </p> */}
                 </div>
               
      
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <div class="col-md-3 mb-md-0 mb-4">
               
-                  <h6 class="text-uppercase fw-bold mb-4">
-                    Contact
+                  <h6 class="smallrem text-uppercase fw-bold mb-4">
+                    Contact Us
                   </h6>
-                  <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                  <p>
-                    <i class="fas fa-envelope me-3"></i>
-                    info@example.com
+                  <p className='smallrem'><i class=" fas fa-home me-3"></i> Accra, Ghana</p>
+                  <p className='smallrem'>
+                    <i class=" fas fa-envelope me-3"></i>
+                    africanbullyregistry@gmail.com
                   </p>
-                  <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                  <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                  <p className='smallrem'><i class=" fas fa-phone me-3"></i> + 233 24 233 1674</p>
+                  <p  className='smallrem'><i class=" fas fa-print me-3"></i> + 233 20 377 5123</p>
                 </div>
              
               </div>
@@ -116,9 +117,9 @@ const Footer = (props) => {
           
         
          
-          <div class="text-center p-4" style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}>
+          <div class="smallrem text-center p-4" style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}>
             © 2021 Copyright:
-            <a class="text-reset fw-bold" to="https://mdbootstrap.com/">MDBootstrap.com</a>
+            <a class="smallrem text-reset fw-bold" to="https://mdbootstrap.com/">The African Bully Registry</a>
           </div>
           
         </footer>

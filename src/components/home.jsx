@@ -220,7 +220,7 @@ class Home extends Component {
      
 
       </div> */}
-      <div className='row  bg-dark mt-5 text-white w-100 align-items-center justify-content-center'>
+      <div className='row  bg-dark mt-5 text-white align-items-center justify-content-center'>
         <div className='col-lg-12'>
         <Footer />
 
