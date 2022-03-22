@@ -291,7 +291,7 @@ class App extends Component {
             />
 
 
-            <Route path='/adult_registrations' element={<AdultRegistration />} />
+            <Route path='/adult_registrations' element={<DogRegistration />} />
             <Route path='/profile' element={<ProfileMain />} />
 
             <Route path='/my_dogs' element={<ProfileMain />} />

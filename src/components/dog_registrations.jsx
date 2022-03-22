@@ -130,6 +130,7 @@ class DogRegistration extends React.Component {
             }
 
             if (this.state.loading) {
+                console.log('loading user')
                 this.setState({ loading: false });
             }
         });
@@ -345,7 +346,7 @@ class DogRegistration extends React.Component {
         return (
 
             <div className='row align-items-center justify-content-center dog_reg_full'>
-                {this.props.navbar ? <Navbar color='white' /> : null}
+                <Navbar color='white' /> 
 
                 <div className="container-fluid">
 

@@ -82,12 +82,7 @@ function Register() {
                     Already have an account? <Link to="/login">Login</Link> now.
                   </div>
                 </div>
-                <script type="text/javascript"
-                  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-                <script type="text/javascript">
-                  emailjs.init('user_O5PFSLdanSpVoOM2bj1Yq')
-                </script>
+            
               </div>
             </div>
 
