@@ -14,6 +14,13 @@ import dog5 from '../images/dog10.jpg'
 import dog6 from '../images/dog11.jpeg'
 import dog7 from '../images/doga1.jpg'
 import mzv from '../images/mzv2.jpg'
+import gallery_1 from '../images/gallery1.jpeg'
+import gallery_2 from '../images/gallery2.jpeg'
+import gallery_3 from '../images/gallery3.jpeg'
+import gallery_4 from '../images/gallery4.jpeg'
+import gallery_5 from '../images/gallery5.jpeg'
+
+
 
 
 import sendgrid from '../images/sendgrid-removebg-preview.png'
@@ -142,27 +149,27 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className='row  align-items-center justify-content-center' style={{display: 'none'}}>
+        <div className='row  align-items-center justify-content-center'>
         <div className='col-lg-12'>
             < Card text1="Our Gallery" className='gallery' />
           </div>
         </div>
         <div className='row mt-md-5 card_row align-items-center justify-content-center'>
         <div className='col-sm-3'>
-          <Carousel class='carousel-inner2' image_src1={dog5} image_src2={dog6}
+          <Carousel class='carousel-inner2' image_src1={dog5} image_src2={dog6} image_src3={gallery_2}
              />
           </div>
 
           <div className='col-sm-3'>
-          <Carousel class='carousel-inner2' image_src1={dog7} image_src2={mzv}
+          <Carousel class='carousel-inner2' image_src1={dog7} image_src2={gallery_1} image_src3={gallery_3}
              />
           </div>
           <div className='col-sm-3'>
-          <Carousel class='carousel-inner2' image_src1={dog1} image_src2={dog2}
+          <Carousel class='carousel-inner2' image_src1={gallery_4} image_src2={dog2} image_src3={dog1}
              />
           </div>
           <div className='col-sm-3'>
-          <Carousel class='carousel-inner2'   image_src1={dog3} image_src2={dog4}
+          <Carousel class='carousel-inner2'   image_src1={dog3} image_src2={dog4} image_src3={gallery_1}
              />
           </div>
         </div>

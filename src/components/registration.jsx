@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./navbar";
 import RegisterCard from "./registercard";
-import litter from '../images/doga2.jpg'
+import litter from '../images/litter1.jpeg'
 import puppy from '../images/doga4.jpeg'
 import dog from '../images/doga3.jpeg'
 import '../css_files/registration.css';
