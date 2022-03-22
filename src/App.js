@@ -35,8 +35,7 @@ import { AmericanBulldog } from './components/americanbulldog';
 import { AmericanBully } from './components/americanbully';
 import { FrenchBulldog } from './components/frenchbulldog';
 import { Pittbull } from './components/pitbull';
-
-
+import Terms from './components/terms';
 
 export const UserContext = React.createContext('default');
 // console.log(user,'kkkhhk')
@@ -302,6 +301,8 @@ class App extends Component {
             <Route path='/profile/personal/:uid' element={<Personal />} />
 
             <Route path='/profile/personal/edit/:uid' element={<PersonalForm />} />
+            
+            <Route path='/terms' element={< Terms />} />
 
           </Routes>
 

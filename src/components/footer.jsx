@@ -8,22 +8,22 @@ const Footer = (props) => {
         <footer class="footer_full text-center text-lg-start">
           
           <section
-            class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+            class="d-flex justify-content-center align-items-center p-4 border-bottom"
           >
             
-            <div class="me-5 d-none d-lg-block">
+            <div class="me-5 px-5 d-none d-lg-block">
               <span>Get connected with us on social networks:</span>
             </div>
           
             <div>
              
-            <div to="" class="smallrem me-4 text-reset">
+            <div to="" class="smallrem ">
                 <i class="fab fa-whatsapp">Whatsapp: + 233 24 233 1674 </i>
               </div>
+              <a href="https://www.facebook.com/groups/1103803533338705/?ref=share/" target='_blank' class="me-4 text-reset smallrem">
+                <i class="fab fa-facebook-f">Facebook <br /></i>
+              </a>
               {/* <Link to="" class="me-4 text-reset">
-                <i class="fab fa-facebook-f">Facebook</i>
-              </Link>
-              <Link to="" class="me-4 text-reset">
                 <i class="fab fa-twitter">Twitter</i>
               </Link> */}
               <div to="" class="smallrem me-4 text-reset">
@@ -32,8 +32,8 @@ const Footer = (props) => {
               {/* <Link to="" class="me-4 text-reset">
                 <i class="fab fa-instagram">Instagram: </i>
               </Link> */}
-              <div to="" class="smallrem me-4 text-reset">
-                <i class="fab fa-linkedin">LinkedIn: AFRICAN BULLY REGISTRY</i>
+              <div class="smallrem me-4 text-reset">
+                <a href="https://www.linkedin.com/company/african-bully-registry" className='smallrem text-white'><i class="fab fa-linkedin">LinkedIn</i></a>
               </div>
            
             </div>
@@ -82,10 +82,10 @@ const Footer = (props) => {
                     Useful links
                   </h6>
                   <p>
-                    <a to="#!" class=" smallrem text-reset">Terms and Conditions</a>
+                    <a href="/terms" class=" smallrem text-reset">Terms and Conditions</a>
                   </p>
                   <p>
-                    <a to="#!" class=" smallrem text-reset">Register</a>
+                    <a href="/registration" class=" smallrem text-reset">Register</a>
                   </p>
                   {/* <p>
                     <a to="#!" class="text-reset">Orders</a>
@@ -102,7 +102,7 @@ const Footer = (props) => {
                     Contact Us
                   </h6>
                   <p className='smallrem'><i class=" fas fa-home me-3"></i> Accra, Ghana</p>
-                  <p className='smallrem'>
+                  <p className='tsmallrem text-lowercase'>
                     <i class=" fas fa-envelope me-3"></i>
                     africanbullyregistry@gmail.com
                   </p>

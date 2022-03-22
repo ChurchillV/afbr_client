@@ -16,7 +16,7 @@ const RegisterCard = (props) => {
                 <div class="card w-100">
                     <img class="card-img-top" src={props.image_src} alt="Card image cap"></img>
                         <div class="card-body">
-                            <h5 class="card-title text-dark0">{props.title}</h5>
+                            <h5 class="card-title text-dark">{props.title}</h5>
                             <p class="card-text">{props.subtitle}</p>
                         </div>
                         <ul class="list-group list-group-flush">

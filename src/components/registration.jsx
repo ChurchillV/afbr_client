@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "./navbar";
 import RegisterCard from "./registercard";
-import puppies from '../images/doga2.jpg'
-import dog from '../images/dog.jfif'
-import adult from '../images/adult.jfif'
+import litter from '../images/doga2.jpg'
+import puppy from '../images/dog.jfif'
+import dog from '../images/doga3.jpeg'
 import '../css_files/registration.css';
 
 
@@ -28,14 +28,14 @@ const Registration = () => {
 
 
                 <div className="col-md-3 register-card my-2 ">
-                    <RegisterCard image_src={puppies} title='Litter Registation'
+                    <RegisterCard image_src={litter} title='Litter Registation'
                         className='puppies'
                         text1='Domestic: $20.00'
                         text2='International: $25.00'
                         url='/litter_registrations' />
                 </div>
                 <div className="col-md-3 register-card">
-                    <RegisterCard image_src={dog} title='Puppy Registation'
+                    <RegisterCard image_src={puppy} title='Puppy Registation'
                         className='puppies'
                         text1='Domestic: $20.00'
                         text2='International: $25.00'
@@ -44,7 +44,7 @@ const Registration = () => {
 
                 <div className="col-md-3 register-card">
 
-                    <RegisterCard image_src={adult} title='Dog Registration'
+                    <RegisterCard image_src={dog} title='Dog Registration'
                         className='puppies'
                         text1='Domestic: $35.00'
                         text2='International: $40.00'
