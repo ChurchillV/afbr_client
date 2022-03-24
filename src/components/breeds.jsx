@@ -98,8 +98,8 @@ class Breeds extends Component {
                                 </div>
                                 <div className='col-sm-10'>
                                     <div className='container-fluid'>
-                                        <div className='row '>
-                                            <div class="row">
+                                        <div className='row align-items-center justify-content-center'>
+                                            <div class="row align-items-center justify-content-center">
                                                 <div class="col-lg-12">
                                                     <div class="collapse multi-collapse" id="multiCollapseExample1">
                                                         <div class="card card-body">

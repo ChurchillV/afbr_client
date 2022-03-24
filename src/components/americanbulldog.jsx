@@ -6,7 +6,7 @@ export const AmericanBulldog = () => {
     return (
             <div className="px-2 breed_text text-capitalize text-left">
                 <h1>American BullDog</h1>
-                <img src={americanbulldog} alt="" ></img>
+                <img src={americanbulldog} className='img-fluid' alt="" ></img>
                 <p>
                     The American Bulldog has a history that is traced back to 1121 BC and some would argue even thousands of years before that. We won’t get into every aspect of our history dating to 1121 BC… We will focus on what the modern American Bulldog is and what it represents.
 

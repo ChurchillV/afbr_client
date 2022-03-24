@@ -8,7 +8,7 @@ export const AmericanBully = () => {
                 <div className='row text-left breed_text align-items-center justify-content-center'>
                     <div className="col-lg-12">
                     <h1>American Bully</h1>
-                    <img src={americanbully} alt=""></img>
+                    <img src={americanbully}  className='img-fluid' alt=""></img>
                     <h4>GENERAL IMPRESSION</h4>
                     <p>
                         The American Bully should give the impression of great strength for its size. It is a compact and medium/large size dog with a muscular body and blocky head. The American Bully should have the appearance of heavy bone structure with a bulky build and look.
