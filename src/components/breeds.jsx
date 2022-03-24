@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../css_files/breed.css';
 import { url } from "./weburl";
 import axios from 'axios'
-import Search  from './search'
+import Search from './search'
 import { AmericanBulldog } from './americanbulldog';
 import { AmericanBully } from './americanbully';
 import { FrenchBulldog } from './frenchbulldog';
@@ -14,71 +14,45 @@ import $ from 'jquery'
 
 class Breeds extends Component {
 
-    constructor(props){
-        super(props)
-        this.state = {
-            image:{
-
-            }
-        }
-    }
-    
     componentDidMount = () => {
-       
+        $('.americanbulldoglink').on('click',
+            function () {
+                $('#multiCollapseExample1').slideToggle()
+                $('#multiCollapseExample2').slideUp()
+                $('#multiCollapseExample3').slideUp()
+                $('#multiCollapseExample4').slideUp()
 
-    }
-
-    
-    handleImage = (e) => {
-        // console.log('e.')
-        console.log(e.target.files[0].name)
-        this.setState({ image: e.target.files[0] }
-        , ()=>{
-             console.log(this.state.image)
-            this.image_to_text(this.state.image)
-        }
-        )
-    }
-
-    uploadImage = (callback) => {
-        const formData = new FormData()
-        formData.append('file', this.state.image)
-        // // console.log(this.state.imageSelected)
-        formData.append('upload_preset', 'gwxgv5ii')
-
-        axios.post('https://api.cloudinary.com/v1_1/daurieb51/image/upload', formData)
-            .then((response) => {
-                
-                this.setState({
-                    
-                    
-                    public_id: response.data.public_id 
-                },
-                    () => {
-                        console.log(this.state.dog)
-                        console.log('responseeeee', response.data.public_id)
-
-                        callback(response.data.public_id)
-                        console.log('called the callback')
-
-                    })
-
-                    console.log('image successfuly uploaded thank you jehovah')
 
             })
+        $('.americanbullylink').on('click',
+            function () {
+                $('#multiCollapseExample1').slideUp()
+                $('#multiCollapseExample2').slideToggle()
+                $('#multiCollapseExample3').slideUp()
+                $('#multiCollapseExample4').slideUp()
 
-            .catch((err) => console.log(err.message))
-        // this.uploadImagetodb()
 
+            })
+        $('.frenchbullylink').on('click',
+            function () {
+                $('#multiCollapseExample1').slideUp()
+                $('#multiCollapseExample2').slideUp()
+                $('#multiCollapseExample3').slideToggle()
+                $('#multiCollapseExample4').slideUp()
+
+
+            })
+        $('.pitbulllink').on('click',
+            function () {
+                $('#multiCollapseExample1').slideUp()
+                $('#multiCollapseExample2').slideUp()
+                $('#multiCollapseExample3').slideUp()
+                $('#multiCollapseExample4').slideToggle()
+
+
+            })
     }
 
-
-        // this.uploadImagetodb()
-    onSearchClick = (e) => {
-        e.preventDefault()
-    }
-
- 
     render() {
         return (
             <div className='row align-items-center justify-content-center breed_full'>
@@ -89,45 +63,101 @@ class Breeds extends Component {
                     <div className='row breed_text align-items-center justify-content-center'>
                         <h1>Breeds</h1>
                         <div class='container-fluid'>
-                            <div className='row align-items-center justify-content-center'>
-                                <Search send_to={true} onSearchClick={this.onSearchClick}/>
-
-                            </div>
-                            <div className='row align-items-center justify-content-center text-capitalize'>
-                                <div className='mx-2 breed_item'>
-                                    <Link to='/breeds/americanbulldog'><h1>AmericanBulldog</h1></Link>
-
-                                </div>
-                                <div className='mx-2 breed_item'>
-                                    <Link to='/breeds/americanbully'><h1>AmericanBully</h1></Link>
-
-                                </div>
-                                <div className='mx-2 breed_item'>
-                                    <Link to='/breeds/frenchbulldog'><h1>FrenchBulldog</h1></Link>
-
-                                </div>
-                                <div className='mx-2 breed_item'>
-                                    <Link to='/breeds/pitbull'><h1>Pittbull</h1></Link>
-
-                                </div>
-
-
-
-                            </div>
 
                             <div className='row align-items-center justify-content-center'>
-                                <div className='col-lg-'>
-                                    {this.props.children}
-                                </div>
+                                <Search send_to={true} onSearchClick={this.onSearchClick} />
 
                             </div>
+                            <div className='row align-items-start justify-content-center'>
+                                <div className='col-sm-2'>
 
+                                    <div className='row align-items-center justify-content-center text-capitalize'>
+                                        <div className='w-100 breed_item list-group'>
+                                            <ol className='list-group w-100'>
+                                                <li className='w-100 list-group-item'>
+
+                                                    <a class="w-100 americanbulldoglink"
+                                                    >American BullDog</a>
+                                                </li>
+                                                <li className='list-group-item'><a class="americanbullylink"
+                                                >American Bully</a></li>
+                                                <li className='list-group-item'><a class="frenchbullylink"
+                                                >French BullDog</a></li>
+                                                <li className='list-group-item'>  <a class="pitbulllink"
+                                                >Pitbull</a></li>
+
+                                            </ol>
+
+
+                                            {/* <Link to='/breeds/americanbulldog'><h1 className='list-item'>AmericanBulldog</h1></Link> */}
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div className='col-sm-10'>
+                                    <div className='container-fluid'>
+                                        <div className='row '>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                                        <div class="card card-body">
+                                                            <AmericanBulldog />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div className='row'>
+                                                <div class="col-lg-12">
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                                        <div class="card card-body">
+                                                            <AmericanBully />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='row'>
+                                                <div class="col-lg-12">
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample3">
+                                                        <div class="card card-body">
+                                                            <FrenchBulldog />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='row'>
+
+                                                <div class="col-lg-12">
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample4">
+                                                        <div class="card card-body">
+                                                            <Pittbull />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
                         </div>
-
                     </div>
+
                 </div>
 
             </div>
+
+
+
+
+
         )
     }
 

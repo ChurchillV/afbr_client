@@ -1,11 +1,15 @@
 import Breeds from "./breeds"
+import pitbull from '../images/pitbull1.png'
+
 
 
 export const Pittbull = () => {
     return (
-        <Breeds>
             <div className='container'>
                 <div className='row breed_text text-left align-items-center justify-content-center'>
+                    <div className="col-lg-12">
+                    <h1>Pitbull</h1>
+                    <img src={pitbull} alt="" />
                     <h6>HISTORY:
                     </h6>
                     <p>
@@ -31,10 +35,11 @@ export const Pittbull = () => {
 
 
 
+                    </div>
+                   
                 </div>
             </div>
 
-        </Breeds>
     )
 
 }
