@@ -21,9 +21,10 @@ class Carousel extends React.Component {
               </div>
 
 
-              <div class="carousel-item">
-                <img class="d-block img-fluid w-100" src={this.props.image_src2} alt="Second slide"></img>
-              </div>
+              { this.props.image_src2 ? 
+               <div class="carousel-item">
+               <img class="d-block img-fluid w-100" src={this.props.image_src2} alt="imagesrc4"></img>
+             </div> : null}
               { this.props.image_src3 ? 
                <div class="carousel-item">
                <img class="d-block img-fluid w-100" src={this.props.image_src3} alt="imagesrc4"></img>

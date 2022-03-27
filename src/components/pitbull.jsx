@@ -6,7 +6,7 @@ import pitbull from '../images/pitbull1.png'
 export const Pittbull = () => {
     return (
             <div className='container'>
-                <div className='row breed_text text-left align-items-center justify-content-center'>
+                <div className='row  text-left align-items-center justify-content-center'>
                     <div className="col-lg-12">
                     <h1>Pitbull</h1>
                     <img src={pitbull}  className='img-fluid' alt="" />

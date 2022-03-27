@@ -61,7 +61,7 @@ class Breeds extends Component {
 
                 <div class='container'>
                     <div className='row breed_text align-items-center justify-content-center'>
-                        <h1>Breeds</h1>
+                        <h1 style={{fontWeight: '350'}}>Breeds</h1>
                         <div class='container-fluid'>
 
                             <div className='row align-items-center justify-content-center'>
@@ -102,7 +102,7 @@ class Breeds extends Component {
                                             <div class="row align-items-center justify-content-center">
                                                 <div class="col-lg-12">
                                                     <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                                        <div class="card card-body">
+                                                        <div class="card card-body list-group-item">
                                                             <AmericanBulldog />
                                                         </div>
                                                     </div>
@@ -113,7 +113,7 @@ class Breeds extends Component {
                                             <div className='row'>
                                                 <div class="col-lg-12">
                                                     <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                                        <div class="card card-body">
+                                                        <div class="card card-body list-group-item">
                                                             <AmericanBully />
                                                         </div>
                                                     </div>
@@ -122,7 +122,7 @@ class Breeds extends Component {
                                             <div className='row'>
                                                 <div class="col-lg-12">
                                                     <div class="collapse multi-collapse" id="multiCollapseExample3">
-                                                        <div class="card card-body">
+                                                        <div class="card card-body list-group-item">
                                                             <FrenchBulldog />
                                                         </div>
                                                     </div>
@@ -132,7 +132,7 @@ class Breeds extends Component {
 
                                                 <div class="col-lg-12">
                                                     <div class="collapse multi-collapse" id="multiCollapseExample4">
-                                                        <div class="card card-body">
+                                                        <div class="card card-body list-group-item">
                                                             <Pittbull />
                                                         </div>
                                                     </div>

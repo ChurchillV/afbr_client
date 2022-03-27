@@ -5,7 +5,7 @@ import americanbully from '../images/americanbully1.png'
 export const AmericanBully = () => {
     return (
             <div className="container">
-                <div className='row text-left breed_text align-items-center justify-content-center'>
+                <div className='row text-left  align-items-center justify-content-center'>
                     <div className="col-lg-12">
                     <h1>American Bully</h1>
                     <img src={americanbully}  className='img-fluid' alt=""></img>

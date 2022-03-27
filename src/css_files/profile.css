@@ -71,6 +71,19 @@ a {
 
 }
 
+.profile_pic_user{
+    border: 4px solid rgb(186, 129, 8);
+    border-radius: 5%;
+}
+
+
+.profile_pic_user2{
+    border: 4px solid rgb(186, 129, 8);
+    border-radius: 5%;
+    width: 100%;
+    height: auto;
+}
+
 @media screen and (max-width: 770px) {
     
     .profile_img_sire{
@@ -98,6 +111,8 @@ a {
         }
 
     }   
+
+
 
  @media screen and (max-width: 770px) {
     
@@ -355,7 +370,7 @@ a:hover{
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    padding: 3%;
+    padding: 1%;
     /* min-width: 160px; */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;

@@ -8,6 +8,8 @@ import Navbar from './navbar';
 import { auth, db, logout } from "./firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import $ from 'jquery'
+import axios from 'axios'
+import { url } from './weburl';
 
 
 
@@ -30,6 +32,7 @@ class Profile extends Component {
     componentDidMount(){
         this.getcurrentuser()
         
+        
             if (window.screen.width < 660){
                 console.log('hide the following')
                 $('.to_be_hidden_profile').css('display', 'none')
@@ -41,6 +44,26 @@ class Profile extends Component {
             }
         
     }
+    changeUserToId = () => {
+        axios
+            .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
+            .then((res) => {
+                console.log(res.data)
+                this.setState({
+                    ...this.state,
+                    user: res.data[0]
+                },
+                    () => {
+                        console.log('chaingn personal state after calling uid', this.state)
+
+                    })
+            })
+
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
 
     getcurrentuser = (callback) => {
         const auth = getAuth();
@@ -48,6 +71,7 @@ class Profile extends Component {
             if (user) {
                 this.setState({ ...this.state, firebaseUser: user }, () => {
                     console.log('on Authstate profile', this.state.firebaseUser)
+                    this.changeUserToId()
 
                 });
 
@@ -71,8 +95,12 @@ class Profile extends Component {
                 <div className={`${this.props.classname_} row ${this.props.class} align-items-center justify-content-center`}>
                     <div className='col-sm-2 align-self-start pro_nav_col to_be_hidden_profile'>
                         <div className='text-dark align-items-center justify-content-center pro_nav'>
-                            <img src={Profile_pic} height={'100px'} width={'100px'}></img>
-                            <p  style={{color:this.props.navbarcolor}}>Welcome, {this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</p>
+                            
+                            {this.state.user ? <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.state.user.public_id}.png`} className='profile_pic_user img-fluid' height='150px' width={'150'}></img>
+                            :<img src={Profile_pic} className='profile_pic_user img-fluid' height='150px' width='150px'></img>}
+
+                        
+                            <h6 style={{color: 'rgb(186, 129, 8'}}>Welcome, <span className='font-weight-bold'>{this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</span></h6>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             <Link to='/Home' style={{color:this.props.navbarcolor}}>Home</Link>

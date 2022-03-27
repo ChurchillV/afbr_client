@@ -203,7 +203,9 @@ display: flex; */
   position:relative;
 }
 }
-
+h1{
+  font-weight: 400;
+}
 
 @media screen and (max-width: 770px) {
   h1{

@@ -102,7 +102,7 @@ class ProfileMain extends Component {
         return this.state.dogs.map((dog) => (
             <div className='col-md-6 text-capitalize render_card'>
                 <Link to={`/my_dogs/${dog.id}`}>
-                    <DogCard image_src={dogpic}
+                    <DogCard image_src={dogpic} dog_id={dog.id}
                         dogname={dog.name} dog_public_id={dog.public_id} />
                 </Link>
             </div>

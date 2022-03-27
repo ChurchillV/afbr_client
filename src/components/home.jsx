@@ -86,7 +86,7 @@ class Home extends Component {
 
           </div>
           <div className='col-sm-12 carousel_to_be_hidden'>
-            <Carousel image_src1={mzv} image_src2={dog7} />
+            <Carousel image_src1={mzv}  />
           </div>
           
 

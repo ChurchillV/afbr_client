@@ -5,7 +5,7 @@ import frenchbulldog from '../images/frenchbulldog1.png'
 export const FrenchBulldog = () => {
     return (
             <div className="container">
-                <div className='row breed_text text-left align-items-center justify-content-center'>
+                <div className='row  text-left align-items-center justify-content-center'>
                     <div className="col-lg-12">
                         <h1>French BullDog</h1>
                         <img src={frenchbulldog}  className='img-fluid' alt="" />

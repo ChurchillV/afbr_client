@@ -119,17 +119,7 @@ class ProfileDog extends Component {
                 <Profile class='profile' navbarcolor='white'>
                     <div className='row  row_edit align-items-end justify-content-end'>
 
-                        <div className='dropdown'>
-                            <button className='dropbtn smallrem'>Actions</button>
-                            <div className='dropdown-content'>
-                                <Link to={
-                                    `/dog_registrations/edit/${this.props.params.dog_id}`
-                                }
-                                    className='  smallrem'
-                                >Edit &nbsp;</Link>
-
-                            </div>
-                        </div>
+                        
 
 
 
@@ -164,10 +154,6 @@ class ProfileDog extends Component {
                 /> : null}
 
 
-                {/* <div className='row  align-items-end justify-content-end my-5 px-5'>
-                <div><Link to='/profile' className='btn btn-danger smallrem px-5'  onClick={this.handleDelete}>Delete Dog</Link></div>
-
-                </div> */}
 
             </div>
 
