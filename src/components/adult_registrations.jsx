@@ -1,9 +1,6 @@
 import React from "react";
 import Navbar from "./navbar";
-import RegisterCard from "./registercard";
-import puppies from '../images/puppies.jfif'
-import dog from '../images/dog.jfif'
-import adult from '../images/adult.jfif'
+
 import RegisterForm from './register_form'
 
 import logo2 from '../images/logo2.jpg'

@@ -1,4 +1,3 @@
-import Breeds from "./breeds"
 import americanbully from '../images/americanbully1.png'
 
 

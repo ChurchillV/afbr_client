@@ -1,5 +1,4 @@
-import Breeds from "./breeds"
-import { withRouter } from './dog_registrations';
+
 import americanbulldog from '../images/americanbulldog1.png'
 
 export const AmericanBulldog = () => {
@@ -28,6 +27,7 @@ x1</p>  Used as an “estate dog” or a “farm utility dog” the modern Ameri
                 <h4>         General Appearance
                 </h4>
                 <p>
+                    
                     The Bully American Bulldogs is a short haired, heavy muscled dog. A well bred Bully American Bulldog should have a compact sturdy frame. They should exude strength, health and function. The males are more masculine in appearance then the females.
                     Temperament
                     American Bulldogs should be alert, outgoing and confident. Aloofness with strangers is acceptable. An American Bulldog may show dominance/assertiveness towards other dogs, however dogs may be dismissed at the judge’s discretion for disrupting their class. A dog showing weak nerves or showing to be overly aggressive will be excused from the confirmation ring. Dismissal is at the Judge’s discretion ONLY!

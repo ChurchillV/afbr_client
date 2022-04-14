@@ -1,6 +1,5 @@
 import React from "react";
-import Image from './image'
-import pic1 from '../images/dog12.jpeg'
+
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from "./navbar";
 import '../css_files/about.css';

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css_files/breed.css';

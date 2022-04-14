@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from "react-router-dom";
-import Profile_pic from '../images/profile.jpg'
-import dog from '../images/dog.jfif'
-import '../css_files/profile.css'
-import DogCard from './dog_card';
+
 import Card from './card';
 import Profile from './profile';
 
