@@ -9,7 +9,7 @@
     width: 100%;
     font-weight: 500;
 
-    background-color: rgba(218, 165, 32);
+    background-color: #ba8108;
     /* box-shadow: 1px 2px 2px; */
   
   }
@@ -50,13 +50,13 @@
 
 
   .registration_title{
-    background-color: rgba(218, 165, 32);
+    background-color:  #ba8108;
     width: 100%;
     color: white;
   }
 
   .registration_text{
-    background-color: rgba(218, 165, 32);
+    background-color: #ba8108;
 
   }
 
@@ -78,7 +78,7 @@
     width: 100%;
     color: s;
     padding: 5%;
-    border: 1px solid rgba(218, 165, 32);
+    border: 1px solid  #ba8108;
   
     
   }

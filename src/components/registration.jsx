@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+
+import {BounceLoader,BarLoader, BeatLoader} from 'react-spinners'
 import Navbar from "./navbar";
 import RegisterCard from "./registercard";
 import litter from '../images/litter1.jpeg'
@@ -13,7 +15,8 @@ class Registration extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            dpo: ''
+            dpo: '', 
+            loaded: false,
         }
     
     }
@@ -28,8 +31,8 @@ class Registration extends React.Component {
         axios.get(`${url}api/dpo/transact`)
         .then((res)=> {
             console.log(res.data)
-            this.setState({dpo: res.data}, ()=>{
-                console.log(this.state.dpo)
+            this.setState({dpo: res.data, loaded: true}, ()=>{
+                console.log(this.state)
             })
 
             })
@@ -48,23 +51,39 @@ class Registration extends React.Component {
     
                 </div>
                 <div className='row align-items-center justify-content-center py-5 registration_text'>
-                <div className='row align-items-center justify-content-center py-5'>
+                    <div className="container">
+                    <div className='row align-items-center justify-content-center py-5'>
                         <div className='col-lg- registration_title py-2'>
                             <h1>Register your dog with the African Bully Registry</h1>
                         </div>
     
                     </div>
+                    </div>
+
+
+              
                 <div className='row text-left  align-items-center justify-content-center'>
+                   
+                    <div className="col-lg- text-white">
+                    {!this.state.loaded && <p>Just a second. Hold on for us</p> }
     
-    
-                    <div className="col-md-3 register-card my-2 ">
+                    </div>
+                  
+                    {
+                        this.state.loaded ?  <div className="col-md-3 register-card my-2 ">
                         <RegisterCard image_src={litter} title='Litter Registation'
                             className='puppies'
                             text1='Domestic: $20.00'
                             text2='International: $25.00'
-                            url='/litter_registrations' />
+                            url={this.state.dpo} />
+                    </div> 
+                    : <div>
+                           <BeatLoader loading color='yellow' />
                     </div>
-                    <div className="col-md-3 register-card">
+                 
+                    }
+                   
+                    {this.state.loaded ?  <div className="col-md-3 register-card">
                         <RegisterCard image_src={puppy} title='Puppy Registation'
                             className='puppies'
                             text1='Domestic: $20.00'
@@ -72,15 +91,28 @@ class Registration extends React.Component {
                             url={this.state.dpo}
                              />
                     </div >
-    
-                    <div className="col-md-3 register-card">
+                    : <div className="col-md-">
+                    <BeatLoader loading color='yellow' />
+             </div>
+                    }
+
+                  
+                   
+                    {
+                        this.state.loaded ? 
+                        <div className="col-md-3 register-card">
     
                         <RegisterCard image_src={dog} title='Dog Registration'
                             className='puppies'
                             text1='Domestic: $35.00'
                             text2='International: $40.00'
-                             url='/adult_registrations' />
+                            url={this.state.dpo}/>
                     </div>
+                        : <div>
+                        <BeatLoader loading color='yellow' />
+                 </div>
+                    }
+                    
     
                 </div>
                 </div>
