@@ -69,7 +69,7 @@ export const Register_Success = () => {
         <Navbar />
         <div className='registration_success_full'>
 
-            <div className='row align-items-center justify-content-center'>
+            <div className='row align-items-center justify-content-center py-5'>
                 <div className='col-lg-'>
                     <h1 className='text-capitalize'>Dog successfully created</h1>
 
@@ -84,7 +84,7 @@ export const Register_Success = () => {
                 </div>
 
             </div>
-            <div className='row align-items-center justify-content-center'>
+            <div className='row align-items-center justify-content-center py-5'>
                 <div className='col-lg-'>
 
                     <p>Click Okay to Complete PRocess</p>
