@@ -1,13 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { url } from './weburl'
 import { useNavigate } from 'react-router-dom'
+import Navbar from './navbar'
+import '../css_files/registration_success.css'
+
 
 
 export const Register_Success = () => {
 
-    const [ dog, setDog ] = useState({})
-    const [ user, setUser ] = useState({})
+    const [dog, setDog] = useState({})
+    const [user, setUser] = useState({})
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -19,12 +22,22 @@ export const Register_Success = () => {
 
         console.log(localStorage.user)
     }, [])
-    
+
+    const sendDogRegEmail = () => {
+        axios
+            .post(`${url}api/email/dog_registered`, {
+                user: this.state.firebaseUser,
+                dog: this.state.dog
+            })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
+    }
+
 
     const sendDogInfo = () => {
         console.log('calling sendDogInfo')
-         axios
-            .post(`${url}api/dogs`, {dog:dog, user:user})
+        axios
+            .post(`${url}api/dogs`, { dog: dog, user: user })
             .then((res) => {
 
                 console.log(res.data.message);
@@ -32,6 +45,8 @@ export const Register_Success = () => {
 
                 localStorage.clear()
                 navigate('/profile')
+
+                sendDogRegEmail()
 
             })
 
@@ -43,18 +58,43 @@ export const Register_Success = () => {
     }
 
     const dogDetails = () => {
-      
-        return Object.keys(dog).map((key)=>
+
+        return Object.keys(dog).map((key) =>
             <p className='text-capitalize'>{key}: {dog[key]}</p>
-            )
+        )
     }
 
 
     return <div className='container'>
-        <h1>Dog successfully created</h1>
-        {dogDetails()}
+        <Navbar />
+        <div className='registration_success_full'>
 
-        <h1>Click Okay to Complete PRocess</h1>
-        <button className='btn btn-success' onClick={sendDogInfo}>OK</button>
+            <div className='row align-items-center justify-content-center'>
+                <div className='col-lg-'>
+                    <h1 className='text-capitalize'>Dog successfully created</h1>
+
+                </div>
+
+            </div>
+            <div className='row align-items-center justify-content-center'>
+                <div className='col-lg-'>
+
+                    {dogDetails()}
+
+                </div>
+
+            </div>
+            <div className='row align-items-center justify-content-center'>
+                <div className='col-lg-'>
+
+                    <p>Click Okay to Complete PRocess</p>
+                    <button className='btn btn-success' onClick={sendDogInfo}>OK</button>
+
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
 }

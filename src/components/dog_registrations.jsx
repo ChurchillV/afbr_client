@@ -332,13 +332,7 @@ class DogRegistration extends React.Component {
 
     }
 
-    sendDogRegEmail = () => {
-        axios
-        .post(`${url}api/email/dog_registered`, {user: this.state.firebaseUser,
-             dog: this.state.dog})
-        .then((res)=> console.log(res))
-        .catch((err)=> console.log(err))
-    }
+    
 
     submit = (e) => {
 
@@ -366,7 +360,6 @@ class DogRegistration extends React.Component {
 
             console.log('no image url present')
         }
-        this.sendDogRegEmail()
 
 
     }
