@@ -54,6 +54,8 @@ class DogRegistration extends React.Component {
 
             },
             edit: false,
+            dpo: '',
+            loaded: false,
 
 
         }
@@ -85,7 +87,7 @@ class DogRegistration extends React.Component {
 
 
     componentDidMount = () => {
-
+        this.getTransactUrl()
         this.getcurrentuser()
 
         // const user =  this.context
@@ -232,6 +234,18 @@ class DogRegistration extends React.Component {
 
     }
 
+    getTransactUrl = () => {
+        axios.get(`${url}api/dpo/transact`)
+            .then((res) => {
+                console.log(res.data)
+                this.setState({ dpo: res.data, loaded: true }, () => {
+                    console.log(this.state)
+                })
+
+            })
+
+            .catch((err) => console.log(err))
+    }
 
     onSearchChange = (e) => {
 
@@ -277,28 +291,44 @@ class DogRegistration extends React.Component {
     }
 
     sendDogInfo = () => {
-        axios
-            .post(`${url}api/dogs`, {dog:this.state.dog, user:this.state.firebaseUser})
-            .then((res) => {
 
-                console.log(res.data.message);
-                console.log('dog created/editted')
+            localStorage.setItem("dog",
 
-                //new dog is used when filling the manual pedigree section
-                if (this.props.newdog) {
-                    this.props.getdogid()
-                }
-                if (this.props.appenddog) {
-                    this.props.getnext_dog_id(this.props.appendto)
-                }
+             JSON.stringify(this.state.dog)
 
-            })
+             )
+        
+             localStorage.setItem("user",
+
+             JSON.stringify(this.state.firebaseUser)
+
+             )
 
 
-            .catch((err) => {
-                console.log("Error couldn't create Dog");
-                console.log(err.message);
-            });
+        console.log('localstorage',localStorage.user)
+
+        // axios
+        //     .post(`${url}api/dogs_trial`, {dog:this.state.dog, user:this.state.firebaseUser})
+        //     .then((res) => {
+
+        //         console.log(res.data.message);
+        //         console.log('dog created/editted and put in trial mode')
+
+        //         //new dog is used when filling the manual pedigree section
+        //         if (this.props.newdog) {
+        //             this.props.getdogid()
+        //         }
+        //         if (this.props.appenddog) {
+        //             this.props.getnext_dog_id(this.props.appendto)
+        //         }
+
+        //     })
+
+
+        //     .catch((err) => {
+        //         console.log("Error couldn't create Dog");
+        //         console.log(err.message);
+        //     });
 
     }
 
@@ -332,7 +362,7 @@ class DogRegistration extends React.Component {
             this.sendDogInfo()
             console.log('navigating to profile')
 
-            this.props.navigate('/profile')
+            window.location = this.state.dpo
 
             console.log('no image url present')
         }

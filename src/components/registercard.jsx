@@ -26,7 +26,7 @@ const RegisterCard = (props) => {
                         </ul>
                         <div class="card-body">
                             <a href="#" class="card-link">{props.link1}</a>
-                            <a target='_blank' href={props.url} class="card-link">Register</a>
+                            <a href={props.url} class="card-link">Register</a>
                         </div>
                 </div>
 
