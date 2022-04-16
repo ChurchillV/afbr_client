@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { BounceLoader, BarLoader, BeatLoader } from 'react-spinners'
 import Navbar from "./navbar";
 import RegisterCard from "./registercard";
 import litter from '../images/litter1.jpeg'
@@ -21,11 +20,11 @@ class Registration extends React.Component {
 
     }
 
-  
 
 
 
-    
+
+
 
     render() {
         return (
@@ -51,37 +50,19 @@ class Registration extends React.Component {
 
                     <div className='row text-left  align-items-center justify-content-center'>
 
-                        <div className="col-lg- text-white">
-                            {!this.state.loaded && <p>Just a second. Hold on for us</p>}
 
-                        </div>
 
-                        {/* {
-                            this.state.loaded ? <div className="col-md-3 register-card my-2 ">
-                                <RegisterCard image_src={litter} title='Litter Registation'
-                                    className='puppies'
-                                    text1='Domestic: $20.00'
-                                    text2='International: $25.00'
-                                    url={this.state.dpo} />
-                            </div>
-                                : <div>
-                                    <BeatLoader loading color='yellow' />
-                                </div>
-
-                        } */}
-
-                        {/* {this.state.loaded ? <div className="col-md-3 register-card">
-                            <RegisterCard image_src={puppy} title='Puppy Registation'
+                        <div className="col-md-3 register-card my-2 ">
+                            <RegisterCard image_src={litter} title='Litter Registation'
                                 className='puppies'
                                 text1='Domestic: $20.00'
                                 text2='International: $25.00'
-                                url={this.state.dpo}
-                            />
-                        </div >
-                            : <div className="col-md-">
-                                <BeatLoader loading color='yellow' />
-                            </div>
-                        } */}
+                                url='/litter_registrations'/>
+                        </div>
+
+
+
+
 
                         <div className="col-md-3 register-card">
                             <RegisterCard image_src={puppy} title='Puppy Registation'
@@ -92,22 +73,16 @@ class Registration extends React.Component {
                             />
                         </div>
 
+                        <div className="col-md-3 register-card">
+
+                            <RegisterCard image_src={dog} title='Dog Registration'
+                                className='puppies'
+                                text1='Domestic: $35.00'
+                                text2='International: $40.00'
+                                url='/adult_registrations' />
+                        </div>
 
 
-                        {/* {
-                            this.state.loaded ?
-                                <div className="col-md-3 register-card">
-
-                                    <RegisterCard image_src={dog} title='Dog Registration'
-                                        className='puppies'
-                                        text1='Domestic: $35.00'
-                                        text2='International: $40.00'
-                                        url={this.state.dpo} />
-                                </div>
-                                : <div>
-                                    <BeatLoader loading color='yellow' />
-                                </div>
-                        } */}
 
 
                     </div>

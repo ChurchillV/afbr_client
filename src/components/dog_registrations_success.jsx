@@ -4,6 +4,7 @@ import { url } from './weburl'
 import { useNavigate } from 'react-router-dom'
 import Navbar from './navbar'
 import '../css_files/registration_success.css'
+import logo from '../images/logo2.jpg'
 
 
 
@@ -65,30 +66,47 @@ export const Register_Success = () => {
     }
 
 
-    return <div className='container'>
+    return <div className='container-fluid'>
         <Navbar />
-        <div className='registration_success_full'>
+        <div className='container-fluid w-100 registration_success_full'>
 
-            <div className='row align-items-center justify-content-center py-5'>
+
+            <div className='row align-items-center justify-content-center p1 py-5'>
                 <div className='col-lg-'>
-                    <h1 className='text-capitalize'>Dog successfully created</h1>
+                    <p className='text-capitalize text-white'>Hello {user.displayName}, you have 
+                    successfully registered {dog.name}</p>
 
                 </div>
 
             </div>
-            <div className='row align-items-center justify-content-center'>
-                <div className='col-lg-'>
+            <div className='row align-items-center justify-content-center p2 my-3'>
+                <div className='col-sm-6 my-5'>
 
-                    {dogDetails()}
+                    {dog.public_id ?
+                        <img class='profile_img_sire'
+                            src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${dog.public_id}.png`}></img>
+                        :
+                        <img class='profile_img_sire' src={logo}
+                        >
+                        </img>
 
+
+
+                    }
+                  
                 </div>
+                <div className='col-sm-6'>
+                        {dogDetails()}
+
+                    </div>
+
 
             </div>
-            <div className='row align-items-center justify-content-center py-5'>
-                <div className='col-lg-'>
+            <div className='row align-items-center justify-content-center p3 '>
+                <div className='col-sm-'>
 
                     <p>Click Okay to Complete PRocess</p>
-                    <button className='btn btn-success' onClick={sendDogInfo}>OK</button>
+                    <button className='btn btn-success w-100 ok' onClick={sendDogInfo}>OK</button>
 
 
                 </div>

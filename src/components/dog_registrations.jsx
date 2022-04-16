@@ -3,13 +3,15 @@ import Navbar from "./navbar";
 
 import RegisterForm from './register_form'
 import axios from 'axios';
+import { BounceLoader, BarLoader, BeatLoader } from 'react-spinners'
+
 import UserContext from '../App'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { Link, useLocation, useNavigate, useParams, Navigate } from 'react-router-dom';
 import { url } from "./weburl";
 import emailjs from '@emailjs/browser'
-import{ init } from '@emailjs/browser';
+import { init } from '@emailjs/browser';
 import { PedShareForm } from "./pedshareus";
 
 
@@ -56,6 +58,7 @@ class DogRegistration extends React.Component {
             edit: false,
             dpo: '',
             loaded: false,
+            image_urls:''
 
 
         }
@@ -93,7 +96,7 @@ class DogRegistration extends React.Component {
         // const user =  this.context
         // console.log('user',this.props.user.uid)
         console.log('dog registrations state', this.state)
-        
+
 
 
         //do so that this is only called when it is to be editted
@@ -103,7 +106,7 @@ class DogRegistration extends React.Component {
 
                 console.log(res.data);
                 this.setState({ dog: res.data[0] }, () => console.log(this.state))
-                // console.log('data',data) 
+                // console.log('data',data)
             })
             .catch((err) => {
                 console.log("Error couldn't create Dog");
@@ -111,29 +114,31 @@ class DogRegistration extends React.Component {
             });
         this.check_if_to_edit()
 
-       
+
 
     }
 
 
-    getcurrentuser = (callback) =>{
+    getcurrentuser = (callback) => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 this.setState({ ...this.state, firebaseUser: user }, () => {
                     console.log('on Authstate dog reg', this.state.firebaseUser)
                     // this.changeUserToId(callback)
+                    this.setState({ loaded: true })
                 });
-              
+
             } else {
                 this.setState({ user: null });
                 console.log('usershmm')
+                this.setState({ loaded: false })
 
             }
 
             if (this.state.loading) {
                 console.log('loading user')
-                this.setState({ loading: false });
+                this.setState({ loaded: false });
             }
         });
     }
@@ -149,9 +154,9 @@ class DogRegistration extends React.Component {
 
         axios.post('https://api.cloudinary.com/v1_1/daurieb51/image/upload', formData)
             .then((response) => {
-                
+
                 this.setState({
-                    
+
                     ...this.state,
                     dog: { ...this.state.dog, public_id: response.data.public_id }
                 },
@@ -163,8 +168,8 @@ class DogRegistration extends React.Component {
 
                     })
 
-                    console.log('responseeeee', response.data.public_id)
-                    console.log('image successfuly uploaded thank you jehovah')
+                console.log('responseeeee', response.data.public_id)
+                console.log('image successfuly uploaded thank you jehovah')
             })
 
 
@@ -238,7 +243,7 @@ class DogRegistration extends React.Component {
         axios.get(`${url}api/dpo/transact`)
             .then((res) => {
                 console.log(res.data)
-                this.setState({ dpo: res.data, loaded: true }, () => {
+                this.setState({ dpo: res.data, dpo_loaded: true }, () => {
                     console.log(this.state)
                 })
 
@@ -257,7 +262,7 @@ class DogRegistration extends React.Component {
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
-        
+
 
 
         if (this.state.imageSelected) {
@@ -292,47 +297,26 @@ class DogRegistration extends React.Component {
 
     sendDogInfo = () => {
 
-            localStorage.setItem("dog",
+        localStorage.setItem("dog",
 
-             JSON.stringify(this.state.dog)
+            JSON.stringify(this.state.dog)
 
-             )
-        
-             localStorage.setItem("user",
+        )
 
-             JSON.stringify(this.state.firebaseUser)
+        localStorage.setItem("user",
 
-             )
+            JSON.stringify(this.state.firebaseUser)
 
-
-        console.log('localstorage',localStorage.user)
-
-        // axios
-        //     .post(`${url}api/dogs_trial`, {dog:this.state.dog, user:this.state.firebaseUser})
-        //     .then((res) => {
-
-        //         console.log(res.data.message);
-        //         console.log('dog created/editted and put in trial mode')
-
-        //         //new dog is used when filling the manual pedigree section
-        //         if (this.props.newdog) {
-        //             this.props.getdogid()
-        //         }
-        //         if (this.props.appenddog) {
-        //             this.props.getnext_dog_id(this.props.appendto)
-        //         }
-
-        //     })
+        )
 
 
-        //     .catch((err) => {
-        //         console.log("Error couldn't create Dog");
-        //         console.log(err.message);
-        //     });
+        console.log('localstorage', localStorage.user)
+
+
 
     }
 
-    
+
 
     submit = (e) => {
 
@@ -340,7 +324,7 @@ class DogRegistration extends React.Component {
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
-        
+
 
 
 
@@ -348,7 +332,7 @@ class DogRegistration extends React.Component {
 
         if (this.state.dog.image_url) {
             this.uploadImage(this.sendDogInfo)
-            
+
             console.log('image url  presnet')
 
         }
@@ -369,14 +353,13 @@ class DogRegistration extends React.Component {
         return (
 
             <div className='row align-items-center justify-content-center dog_reg_full'>
-                <Navbar color='white' /> 
+                <Navbar color='white' />
 
                 <div className="container-fluid">
 
                     <div className="row align-items-center justify-content-center">
 
-
-                        <div className="col-md-9">
+                        {this.state.loaded && <div className="col-md-9">
                             {this.state.edit ?
                                 <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                     dams={this.state.dams} submit={this.edit}
@@ -388,10 +371,6 @@ class DogRegistration extends React.Component {
                                 :
                                 <RegisterForm dog={this.state} to_sires_first={this.props.to_sires_first}
                                     to_dams_first={this.props.to_dams_first}
-                                    // to_sires_sires_firstgen={this.props.to_sires_sires_firstgen}
-                                    // to_sires_dams_firstgen={this.props.to_sires_dams_firstgen}
-                                    // to_dams_sires_firstgen={this.props.to_dams_sires_firstgen}
-                                    // to_dams_dams_firstgen={this.props.to_dams_dams_firstgen}
                                     image_urls={this.state.image_urls}
                                     handleImageChange={this.handleImageChange}
                                     sires={this.state.sires}
@@ -403,16 +382,23 @@ class DogRegistration extends React.Component {
                                     getnameofDog={this.props.getnameofDog}
                                     getnameofDog2={this.props.getnameofDog2}
                                     getnext_dog_id={this.props.getnext_dog_id}
-                                   />
+                                />
 
 
                             }
+                            <div className="col-md-3">
+                                <PedShareForm />
+                            </div>
+                        </div>}
 
-                        </div>
-                        <div className="col-md-3">
-                            <PedShareForm/>
-                        </div>
 
+                        {!this.state.loaded &&
+                            <div >
+                                <p>Getting ready, please make sure you are logged in/signed up</p>
+                                <BeatLoader loading size={30} color={'white'} />
+
+                            </div>
+                        }
 
                     </div>
 

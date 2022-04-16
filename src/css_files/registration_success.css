@@ -1,5 +1,25 @@
 .registration_success_full{
     background-color: #ba8108;
-    width: 100%;
+    color: black;
+}
+
+.p1{
+    background-color: rgb(21, 90, 24);
+}
+
+.p2{
+    /* border: 3px solid #ba8108; */
+    border-top: 0%;
+    border-bottom: 0%;
+    background-color: white;
+}
+
+.p3{
+    background-color: #ba8108;
     color: white;
+}
+
+.ok{
+    background-color: rgb(21, 90, 24);
+
 }
