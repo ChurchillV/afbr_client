@@ -6,8 +6,6 @@ import Navbar from './navbar'
 import '../css_files/registration_success.css'
 import logo from '../images/logo2.jpg'
 
-
-
 export const Register_Success = () => {
 
     const [dog, setDog] = useState({})
@@ -15,48 +13,42 @@ export const Register_Success = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        localStorage.getItem('dog')
-        console.log(localStorage.dog)
-
-        setDog(JSON.parse(localStorage.getItem('dog')))
-        setUser(JSON.parse(localStorage.getItem('user')))
-
-        console.log(localStorage.user)
+        this.getcurrentuser()
+        sendLitRegEmail(localStorage.getItem('user'))
+        
     }, [])
 
-    const sendDogRegEmail = () => {
+    const sendLitRegEmail = () => {
         axios
-            .post(`${url}api/email/dog_registered`, {
-                user: this.state.firebaseUser,
-                dog: this.state.dog
+            .post(`${url}api/email/litter`, {
+                user: user,
+                
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
     }
 
-
-    const sendDogInfo = () => {
-        console.log('calling sendDogInfo')
-        axios
-            .post(`${url}api/dogs`, { dog: dog, user: user })
-            .then((res) => {
-
-                sendDogRegEmail()
-                console.log(res.data.message);
-                console.log('dog created/editted in congrats page')
-
-                localStorage.clear()
-                navigate('/profile')
-
+    const getcurrentuser = (callback) => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user)
+                callback()
                 
 
-            })
+            } else {
+                setUser(user)
+            }
+
+            if (loading) {
+                setUser(user)
+            }
+        });
+    }
 
 
-            .catch((err) => {
-                console.log("Error couldn't create Dog");
-                console.log(err.message);
-            });
+    const okay = ()=>{
+        sendLitRegEmail()
     }
 
     const dogDetails = () => {
@@ -75,7 +67,7 @@ export const Register_Success = () => {
             <div className='row align-items-center justify-content-center p1 py-5'>
                 <div className='col-lg-'>
                     <p className='text-capitalize text-white'>Hello {user.displayName}, you have 
-                    successfully registered {dog.name}</p>
+                    successfully registered completed a litter registration form</p>
 
                 </div>
 
@@ -83,17 +75,6 @@ export const Register_Success = () => {
             <div className='row align-items-center justify-content-center p2 my-3'>
                 <div className='col-sm-6 my-5'>
 
-                    {dog.public_id ?
-                        <img class='profile_img_sire'
-                            src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${dog.public_id}.png`}></img>
-                        :
-                        <img class='profile_img_sire' src={logo}
-                        >
-                        </img>
-
-
-
-                    }
                   
                 </div>
                 <div className='col-sm-6'>
@@ -107,7 +88,7 @@ export const Register_Success = () => {
                 <div className='col-sm-'>
 
                     <p>Click Okay to Complete PRocess</p>
-                    <button className='btn btn-success w-100 ok' onClick={sendDogInfo}>OK</button>
+                    <button className='btn btn-success w-100 ok' onClick={okay}>OK</button>
 
 
                 </div>

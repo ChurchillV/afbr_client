@@ -58,7 +58,7 @@ class DogRegistration extends React.Component {
             edit: false,
             dpo: '',
             loaded: false,
-            image_urls:'',
+            image_urls: '',
             dpo_loaded: false,
 
 
@@ -241,9 +241,11 @@ class DogRegistration extends React.Component {
     }
 
     getTransactUrl = () => {
-        
-        axios.post(`${url}api/dpo/transact`, {transaction_name: 'Dog Registrations',
-            transaction_cost: 0.02})
+
+        axios.post(`${url}api/dpo/transact`, {
+            transaction_name: 'Dog Registrations',
+            transaction_cost: 0.02
+        })
             .then((res) => {
                 console.log(res.data)
                 this.setState({ dpo: res.data, dpo_loaded: true }, () => {
@@ -364,7 +366,7 @@ class DogRegistration extends React.Component {
 
                     <div className="row align-items-center justify-content-center">
 
-                        {this.state.loaded && <div className="col-md-9">
+                        {this.state.loaded && <div className="col-sm-9">
                             {this.state.edit ?
                                 <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                     dams={this.state.dams} submit={this.edit}
@@ -372,9 +374,9 @@ class DogRegistration extends React.Component {
                                     image_urls={this.state.image_urls}
                                     uploadImagetodb={this.uploadImagetodb}
                                     uploadImage={this.uploadImage}
-                                    handleImageChange={this.handleImageChange} 
+                                    handleImageChange={this.handleImageChange}
                                     dpo_loaded={this.state.dpo_loaded}
-                                    />
+                                />
                                 :
                                 <RegisterForm dog={this.state} to_sires_first={this.props.to_sires_first}
                                     to_dams_first={this.props.to_dams_first}
@@ -394,8 +396,8 @@ class DogRegistration extends React.Component {
 
 
                             }
-                            <div className="col-md-3">
-                                <PedShareForm />
+                            <div className="col-sm-3">
+                                <PedShareForm label='Upload Pedigree so that we fill it for you' />
                             </div>
                         </div>}
 
