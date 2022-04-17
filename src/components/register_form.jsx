@@ -5,6 +5,7 @@ import '../css_files/registration.css'
 import {Image} from 'cloudinary-react'
 import axios from 'axios'
 import Search from './search'
+import { BarLoader, BeatLoader } from 'react-spinners';
 // import {AmplifySignOut, withAuthenticator} from '@aws-amplify/ui-react'
 
 
@@ -200,7 +201,9 @@ class RegisterForm extends Component {
                 </div>
 
                
-                <button type="submit" class="btn btn-success">Register</button>
+                {this.props.dpo_loaded && <button type="submit" class="btn btn-success">Register</button>}
+                {!this.props.dpo_loaded && <BeatLoader color='white' size={30}/>}
+
                 {this.props.to_sires_first ? <Link to='/dog_registrations/pedig-sirefirst' class="btn btn-primary">Save and continue to sire's 1st gen</Link> : null}
                 {this.props.to_dams_first ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to dam's 1st gen</Link> : null}
                 {this.props.to_sires_sires_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to Sire's sires first gen</Link> : null}

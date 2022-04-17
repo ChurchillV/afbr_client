@@ -58,7 +58,8 @@ class DogRegistration extends React.Component {
             edit: false,
             dpo: '',
             loaded: false,
-            image_urls:''
+            image_urls:'',
+            dpo_loaded: false,
 
 
         }
@@ -240,7 +241,9 @@ class DogRegistration extends React.Component {
     }
 
     getTransactUrl = () => {
-        axios.get(`${url}api/dpo/transact`)
+        
+        axios.post(`${url}api/dpo/transact`, {transaction_name: 'Dog Registrations',
+            transaction_cost: 0.02})
             .then((res) => {
                 console.log(res.data)
                 this.setState({ dpo: res.data, dpo_loaded: true }, () => {
@@ -311,6 +314,8 @@ class DogRegistration extends React.Component {
 
 
         console.log('localstorage', localStorage.user)
+        console.log('localstorage', localStorage.dog)
+
 
 
 
@@ -340,7 +345,7 @@ class DogRegistration extends React.Component {
             this.sendDogInfo()
             console.log('navigating to profile')
 
-            window.location = this.state.dpo
+            window.open(this.state.dpo, '_blank')
 
             console.log('no image url present')
         }
@@ -367,12 +372,15 @@ class DogRegistration extends React.Component {
                                     image_urls={this.state.image_urls}
                                     uploadImagetodb={this.uploadImagetodb}
                                     uploadImage={this.uploadImage}
-                                    handleImageChange={this.handleImageChange} />
+                                    handleImageChange={this.handleImageChange} 
+                                    dpo_loaded={this.state.dpo_loaded}
+                                    />
                                 :
                                 <RegisterForm dog={this.state} to_sires_first={this.props.to_sires_first}
                                     to_dams_first={this.props.to_dams_first}
                                     image_urls={this.state.image_urls}
                                     handleImageChange={this.handleImageChange}
+                                    dpo_loaded={this.state.dpo_loaded}
                                     sires={this.state.sires}
                                     dams={this.state.dams}
                                     uploadImagetodb={this.uploadImagetodb}
