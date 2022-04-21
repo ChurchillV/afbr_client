@@ -22,13 +22,15 @@ export const Register_Success = () => {
         setUser(JSON.parse(localStorage.getItem('user')))
 
         console.log(localStorage.user)
+        
+        sendDogInfo()
     }, [])
 
     const sendDogRegEmail = () => {
         axios
             .post(`${url}api/email/dog_registered`, {
-                user: this.state.firebaseUser,
-                dog: this.state.dog
+                user: user,
+                dog: dog
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
@@ -46,7 +48,6 @@ export const Register_Success = () => {
                 console.log('dog created/editted in congrats page')
 
                 localStorage.clear()
-                navigate('/profile')
 
                 
 
@@ -57,6 +58,12 @@ export const Register_Success = () => {
                 console.log("Error couldn't create Dog");
                 console.log(err.message);
             });
+    }
+
+    const okay = (e) => {
+        e.preventDefault()
+        navigate('/profile')
+
     }
 
     const dogDetails = () => {
@@ -107,7 +114,7 @@ export const Register_Success = () => {
                 <div className='col-sm-'>
 
                     <p>Click Okay to Complete PRocess</p>
-                    <button className='btn btn-success w-100 ok' onClick={sendDogInfo}>OK</button>
+                    <button className='btn btn-success w-100 ok' onClick={(e)=> okay}>OK</button>
 
 
                 </div>

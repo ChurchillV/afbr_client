@@ -63,7 +63,7 @@ const LitterRegistration = () => {
                 <div className="row justify-content-center align-items-center my-3">
                     <div className="col-sm-6">
                     <p>3. Submit the Form to us</p>
-                    <PedShareForm label='Upload Filled Document Here' />
+                    <PedShareForm label='Upload Filled Document Here' litter_registrations={true} />
                    
                     </div>
                    

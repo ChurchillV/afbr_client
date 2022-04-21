@@ -71,6 +71,19 @@ export class PedShareForm extends React.Component {
         });
     }
 
+    sendtolocal = () => {
+        localStorage.setItem("public_id",
+
+            JSON.stringify(this.state.public_id)
+
+        )
+
+        localStorage.setItem("user",
+
+            JSON.stringify(this.state.firebaseUser)
+
+        )
+    }
 
     //trial
     sendLitRegEmail = () => {
@@ -110,8 +123,14 @@ export class PedShareForm extends React.Component {
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
+        this.props.litter_registrations && this.sendtolocal()
 
-        this.sendLitRegEmail()
+
+        if (this.props.litter_registrations){
+            window.location = this.state.dpo
+        }
+
+
         // window.open(this.state.dpo, '_blank')
     }
     render() {

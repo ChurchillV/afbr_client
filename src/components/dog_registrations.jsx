@@ -347,7 +347,10 @@ class DogRegistration extends React.Component {
             this.sendDogInfo()
             console.log('navigating to profile')
 
-            window.open(this.state.dpo, '_blank')
+            //changing this to avoid the user registering for free
+
+            // window.open(this.state.dpo, '_blank')
+            window.location = this.state.dpo
 
             console.log('no image url present')
         }

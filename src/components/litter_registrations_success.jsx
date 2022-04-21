@@ -6,49 +6,36 @@ import Navbar from './navbar'
 import '../css_files/registration_success.css'
 import logo from '../images/logo2.jpg'
 
-export const Register_Success = () => {
+
+export const Litter_Register_Success = () => {
 
     const [dog, setDog] = useState({})
     const [user, setUser] = useState({})
     const navigate = useNavigate()
 
     useEffect(() => {
-        this.getcurrentuser()
-        sendLitRegEmail(localStorage.getItem('user'))
-        
+        let user_ = JSON.parse(localStorage.getItem('user'))
+        let public_id_ = JSON.parse(localStorage.getItem('public_id'))
+
+        sendLitRegEmail(user_, public_id_)
+
     }, [])
 
-    const sendLitRegEmail = () => {
+    const sendLitRegEmail = (user, public_id) => {
         axios
             .post(`${url}api/email/litter`, {
                 user: user,
+                public_id: public_id
                 
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
     }
 
-    const getcurrentuser = (callback) => {
-        const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                setUser(user)
-                callback()
-                
-
-            } else {
-                setUser(user)
-            }
-
-            if (loading) {
-                setUser(user)
-            }
-        });
-    }
-
+    
 
     const okay = ()=>{
-        sendLitRegEmail()
+       navigate('/profile')
     }
 
     const dogDetails = () => {

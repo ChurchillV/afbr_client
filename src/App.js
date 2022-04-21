@@ -37,6 +37,7 @@ import { FrenchBulldog } from './components/frenchbulldog';
 import { Pittbull } from './components/pitbull';
 import Terms from './components/terms';
 import { Register_Success } from './components/dog_registrations_success';
+import { Litter_Register_Success } from './components/litter_registrations_success';
 
 export const UserContext = React.createContext('default');
 // console.log(user,'kkkhhk')
@@ -221,6 +222,8 @@ class App extends Component {
             <Route path='/dashboard' element={< Dashboard />} />
 
             <Route path='/litter_registrations' element={<LitterRegistration />} />
+            <Route path='/litter_registrations_success' element={<Litter_Register_Success />} />
+
             <Route path='/dog_registrations' element={<DogRegistration
               navbar={true} user={this.state.user} />} />
                <Route path='/dog_registrations_success' element={<Register_Success
