@@ -21,7 +21,7 @@ export const Register_Success = () => {
         setDog(JSON.parse(localStorage.getItem('dog')))
         setUser(JSON.parse(localStorage.getItem('user')))
 
-        console.log(localStorage.user)
+        // console.log(localStorage.user)
         
         sendDogInfo()
     }, [])
@@ -29,7 +29,7 @@ export const Register_Success = () => {
     const sendDogRegEmail = () => {
         axios
             .post(`${url}api/email/dog_registered`, {
-                user: user,
+                user:  user,
                 dog: dog
             })
             .then((res) => console.log(res))
@@ -114,7 +114,7 @@ export const Register_Success = () => {
                 <div className='col-sm-'>
 
                     <p>Click Okay to Complete PRocess</p>
-                    <button className='btn btn-success w-100 ok' onClick={(e)=> okay}>OK</button>
+                    <button className='btn btn-success w-100 ok' onClick={(e)=> okay(e)}>OK</button>
 
 
                 </div>
