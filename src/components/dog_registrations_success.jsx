@@ -12,25 +12,29 @@ export const Register_Success = () => {
 
     const [dog, setDog] = useState({})
     const [user, setUser] = useState({})
+
+    let dog_ = JSON.parse(localStorage.getItem('dog'))
+    let user_ = JSON.parse(localStorage.getItem('user'))
+
     const navigate = useNavigate()
 
     useEffect(() => {
         localStorage.getItem('dog')
         console.log(localStorage.dog)
 
+      
         setDog(JSON.parse(localStorage.getItem('dog')))
         setUser(JSON.parse(localStorage.getItem('user')))
 
         // console.log(localStorage.user)
-        
         sendDogInfo()
     }, [])
 
-    const sendDogRegEmail = () => {
+    const sendDogRegEmail = ( ) => {
         axios
             .post(`${url}api/email/dog_registered`, {
-                user:  user,
-                dog: dog
+                user:  user_,
+                dog: dog_
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
@@ -40,14 +44,14 @@ export const Register_Success = () => {
     const sendDogInfo = () => {
         console.log('calling sendDogInfo')
         axios
-            .post(`${url}api/dogs`, { dog: dog, user: user })
+            .post(`${url}api/dogs`, { dog: dog_, user: user_ })
             .then((res) => {
 
                 sendDogRegEmail()
                 console.log(res.data.message);
                 console.log('dog created/editted in congrats page')
 
-                localStorage.clear()
+                // localStorage.clear()
 
                 
 
