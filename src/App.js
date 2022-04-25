@@ -36,6 +36,8 @@ import { AmericanBully } from './components/americanbully';
 import { FrenchBulldog } from './components/frenchbulldog';
 import { Pittbull } from './components/pitbull';
 import Terms from './components/terms';
+import Register_Special from './components/dog_registrations_special';
+
 import { Register_Success } from './components/dog_registrations_success';
 import { Litter_Register_Success } from './components/litter_registrations_success';
 
@@ -74,7 +76,7 @@ class App extends Component {
   }
 
 
- 
+
 
   componentDidMount() {
     const auth = getAuth();
@@ -226,8 +228,11 @@ class App extends Component {
 
             <Route path='/dog_registrations' element={<DogRegistration
               navbar={true} user={this.state.user} />} />
-               <Route path='/dog_registrations_success' element={<Register_Success
+            <Route path='/dog_registrations_success' element={<Register_Success
               navbar={true} />} />
+              <Route path='/dog_registrations_special' element={<Register_Special
+              navbar={true} />} />
+              
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
             <Route path='/dog_registrations/pedig-main'
               element={<PedigMain getnameofDog={this.getnameofDog}
@@ -307,7 +312,7 @@ class App extends Component {
             <Route path='/profile/personal/:uid' element={<Personal />} />
 
             <Route path='/profile/personal/edit/:uid' element={<PersonalForm />} />
-            
+
             <Route path='/terms' element={< Terms />} />
 
           </Routes>

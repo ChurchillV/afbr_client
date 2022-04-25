@@ -203,14 +203,8 @@ class RegisterForm extends Component {
                
                 {this.props.dpo_loaded && <button type="submit" class="btn btn-success">Register</button>}
                 {!this.props.dpo_loaded && <BeatLoader color='white' size={30}/>}
-
-                {this.props.to_sires_first ? <Link to='/dog_registrations/pedig-sirefirst' class="btn btn-primary">Save and continue to sire's 1st gen</Link> : null}
-                {this.props.to_dams_first ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to dam's 1st gen</Link> : null}
-                {this.props.to_sires_sires_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to Sire's sires first gen</Link> : null}
-                {this.props.to_sires_dams_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to sire's dam's 1st gen</Link> : null}
-                {this.props.to_dams_sires_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to Dam's sire's s 1st gen</Link> : null}
-                {this.props.to_dams_dams_firstgen ? <Link to='/dog_registrations/pedig-damfirst' class="btn btn-primary">Save and continue to Dam's dam's 1st gen</Link> : null}
-                
+                { this.props.special && <button type="submit" class="btn btn-success">Special Register</button>}
+               
                 {this.props.saveAndContinue ? <Link onClick={(e) => {
                     this.props.submit(e)
                     // window.location.push('/dog_registrations/save_and_here')
