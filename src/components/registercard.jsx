@@ -20,11 +20,17 @@ const RegisterCard = (props) => {
                             <p class="card-text">{props.subtitle}</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{props.text1}</li>
-                            <li class="list-group-item">{props.text2}</li>
-                            <li class="list-group-item">{props.text3}</li>
+                            <li class="list-group-item text-small" style={{fontSize: '0.7rem'}}>{props.text1}</li>
+                            
+                            <li class="list-group-item text-small" style={{fontSize: '0.7rem'}}>{props.text2}</li>
+                            {props.text2 && <li class="list-group-item text-small">{props.text3}</li> }
+                            {props.text4  &&<li class="list-group-item text-small">{props.text4}</li> }
+                            {props.text_price &&   <li class="list-group-item text-small">{props.text_price}</li> }
+                            {props.text_price2 &&  <li class="list-group-item text-small">{props.text_price2}</li> }
+
+
                         </ul>
-                        <div class="card-body">
+                        <div class="card-body bg-success">
                             <a href="#" class="card-link">{props.link1}</a>
                             <a href={props.url} class="card-link">Register</a>
                         </div>

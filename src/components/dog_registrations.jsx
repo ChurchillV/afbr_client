@@ -244,7 +244,7 @@ class DogRegistration extends React.Component {
 
         axios.post(`${url}api/dpo/transact`, {
             transaction_name: 'Dog Registrations',
-            transaction_cost: 0.02
+            transaction_cost: 0.01
         })
             .then((res) => {
                 console.log(res.data)

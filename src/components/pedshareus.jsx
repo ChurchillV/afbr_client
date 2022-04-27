@@ -2,7 +2,9 @@ import React from "react";
 import axios from 'axios'
 import { url } from "./weburl";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { BeatLoader } from "react-spinners";
+// import { BeatLoader } from "react-spinners";
+import { BounceLoader, BarLoader, BeatLoader } from 'react-spinners'
+
 
 
 export class PedShareForm extends React.Component {
@@ -34,7 +36,7 @@ export class PedShareForm extends React.Component {
 
         axios.post(`${url}api/dpo/transact`, {
             transaction_name: 'Litter Registrations',
-            transaction_cost: 0.02
+            transaction_cost: 0.01
         })
             .then((res) => {
                 console.log(res.data)
@@ -151,7 +153,13 @@ export class PedShareForm extends React.Component {
 
                             </div>
                                 
-                            <input type='submit' className='btn btn-success' onClick={this.submit}></input>
+                           {this.state.dpo ?  <input type='submit' className='btn btn-success' onClick={this.submit}></input> :
+                           <div>
+                               <BeatLoader color="white"/>
+                                <p>Loading payment link. Just a sec</p>
+                           </div> }
+                           {!this.props.litter_registrations && <input type='submit' className='btn btn-success' onClick={this.submit}></input>} 
+
                         </div>
                     </form>
                 </div>

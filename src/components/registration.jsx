@@ -36,10 +36,10 @@ class Registration extends React.Component {
                     </div>
 
                 </div>
-                <div className='row align-items-center justify-content-center py-5 registration_text'>
+                <div className='row align-items-center justify-content-center pt-1 registration_text'>
                     <div className="container">
                         <div className='row align-items-center justify-content-center py-5'>
-                            <div className='col-lg- registration_title py-2'>
+                            <div className='col-lg- registration_title py-1'>
                                 <h1>Register your dog with the African Bully Registry</h1>
                             </div>
 
@@ -55,8 +55,9 @@ class Registration extends React.Component {
                         <div className="col-md-3 register-card my-2 ">
                             <RegisterCard image_src={litter} title='Litter Registation'
                                 className='puppies'
-                                text1='Domestic: $20.00'
-                                text2='International: $25.00'
+                                text1='Register a collection of puppies with us'
+                                text_price='Domestic: $20.00'
+                                text_price1='International: $25.00'
                                 url='/litter_registrations'/>
                         </div>
 
@@ -67,8 +68,10 @@ class Registration extends React.Component {
                         <div className="col-md-3 register-card">
                             <RegisterCard image_src={puppy} title='Puppy Registation'
                                 className='puppies'
-                                text1='Domestic: $20.00'
-                                text2='International: $25.00'
+                                text1='Register your puppy with us'
+                                text2='Age: less than 12 months old'
+                                text_price='Domestic: $20.00'
+                                text_price2='International: $25.00'
                                 url='/dog_registrations'
                             />
                         </div>
@@ -77,8 +80,10 @@ class Registration extends React.Component {
 
                             <RegisterCard image_src={dog} title='Dog Registration'
                                 className='puppies'
-                                text1='Domestic: $35.00'
-                                text2='International: $40.00'
+                                text1='Register an adult dog with us'
+                                text2='Age: above 12 months old'
+                                text_price='Domestic: $35.00'
+                                text_price2='International: $40.00'
                                 url='/adult_registrations' />
                         </div>
 
