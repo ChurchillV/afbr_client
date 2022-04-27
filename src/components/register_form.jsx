@@ -202,20 +202,13 @@ class RegisterForm extends Component {
 
                
                 {this.props.dpo_loaded && <button type="submit" class="btn btn-success">Register</button>}
-                {!this.props.dpo_loaded && <BeatLoader color='white' size={30}/>}
+                {!this.props.dpo_loaded && 
+                <div>
+                    <p className='text-white'>Generating payment link. Just a sec</p>
+                    <BeatLoader color='white' size={30}/>
+                </div>}
                 { this.props.special && <button type="submit" class="btn btn-success">Special Register</button>}
-               
-                {this.props.saveAndContinue ? <Link onClick={(e) => {
-                    this.props.submit(e)
-                    // window.location.push('/dog_registrations/save_and_here')
-                    }} to='/dog_registrations/save_and_end_here' class="btn btn-secondary">Save and Continue</Link> : null}
-
-
-                {this.props.saveAndEndHere ? <Link onClick={(e) => {
-                    this.props.submit(e)
-                    // window.location.push('/dog_registrations/save_and_here')
-                    }} to='/dog_registrations/save_and_end_here' class="btn btn-primary">Save and End Here</Link> : null}
-
+       
             </form>
         )
     }

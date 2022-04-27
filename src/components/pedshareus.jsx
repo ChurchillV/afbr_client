@@ -158,7 +158,7 @@ export class PedShareForm extends React.Component {
                                <BeatLoader color="white"/>
                                 <p>Loading payment link. Just a sec</p>
                            </div> }
-                           {!this.props.litter_registrations && <input type='submit' className='btn btn-success' onClick={this.submit}></input>} 
+                           {/* {!this.props.litter_registrations && <input type='submit' className='btn btn-success' onClick={this.submit}></input>}  */}
 
                         </div>
                     </form>

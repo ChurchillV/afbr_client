@@ -108,7 +108,7 @@ class Home extends Component {
         <div className='row  mt-5 pt-5 card_row align-items-center justify-content-center'>
           <div className='col-sm-6 '>
             <h1 class='text-capitalize' style={{ color: 'white' }}>Join the community of bull dog owners today</h1>
-            <h5 class='text-capitalize' style={{ color: 'white' }}>Connect with dog owners acros Africa and the globe</h5>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>Connect with dog owners across Africa and the globe</h5>
           </div>
           <div className='col-sm-6 '>
             <div>

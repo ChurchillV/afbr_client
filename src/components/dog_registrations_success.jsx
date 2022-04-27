@@ -25,6 +25,7 @@ export const Register_Success = () => {
       
         setDog(JSON.parse(localStorage.getItem('dog')))
         setUser(JSON.parse(localStorage.getItem('user')))
+        // localStorage.clear()
 
         // console.log(localStorage.user)
         sendDogInfo()
@@ -51,7 +52,7 @@ export const Register_Success = () => {
                 console.log(res.data.message);
                 console.log('dog created/editted in congrats page')
 
-                // localStorage.clear()
+                localStorage.clear()
 
                 
 

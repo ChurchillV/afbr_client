@@ -30,7 +30,7 @@ const RegisterCard = (props) => {
 
 
                         </ul>
-                        <div class="card-body bg-success">
+                        <div class="card-body ">
                             <a href="#" class="card-link">{props.link1}</a>
                             <a href={props.url} class="card-link">Register</a>
                         </div>

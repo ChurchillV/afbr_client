@@ -52,14 +52,14 @@ class Registration extends React.Component {
 
 
 
-                        <div className="col-md-3 register-card my-2 ">
+                        {/* <div className="col-md-3 register-card my-2 ">
                             <RegisterCard image_src={litter} title='Litter Registation'
                                 className='puppies'
                                 text1='Register a collection of puppies with us'
                                 text_price='Domestic: $20.00'
                                 text_price1='International: $25.00'
                                 url='/litter_registrations'/>
-                        </div>
+                        </div> */}
 
 
 
