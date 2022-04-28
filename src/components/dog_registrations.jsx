@@ -399,9 +399,9 @@ class DogRegistration extends React.Component {
 
 
                             }
-                            <div className="col-sm-3">
+                            {/* <div className="col-sm-3">
                                 <PedShareForm label='Upload Pedigree so that we fill it for you' />
-                            </div>
+                            </div> */}
                         </div>}
 
 
