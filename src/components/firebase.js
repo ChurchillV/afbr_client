@@ -53,26 +53,36 @@ const signInWithGoogle = async () => {
     const q = query(collection(db, "users"), where("uid", "==", user.uid));
     const docs = await getDocs(q);
     if (docs.docs.length === 0) {
+
       await addDoc(collection(db, "users"), {
         uid: user.uid,
         name: user.displayName,
         authProvider: "google",
         email: user.email,
+      },
 
 
-      });
+      )
+        .then(() => {
+          axios
+            .post(`${url}api/users`, { uid: user.uid, username: user.displayName, email: user.email })
+            .then((res) => console.log('success', res))
+            .catch((err) => console.log(err))
 
-      await axios
-        .post(`${url}api/users`, { uid: user.uid, username: user.displayName, email: user.email })
-        .then((res) => console.log('success', res))
-        .catch((err) => console.log(err))
+          
+          axios
+            .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
+            .then((res) => console.log('successfully sent email', res))
+            .catch((err) => console.log(err))
+        });
 
-      // await axios
-      //   .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
-      //   .then((res) => console.log('successfully sent email', res))
-      //   .catch((err) => console.log(err))
+
     }
-  } catch (err) {
+
+  }
+
+
+  catch (err) {
     console.error(err);
     alert(err.message);
   }
@@ -96,17 +106,21 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: "local",
       email,
-    });
+    })
+    .then(() => {
+          axios
+            .post(`${url}api/users`, { uid: user.uid, username: name, email: email })
+            .then((res) => console.log('success', res))
+            .catch((err) => console.log(err))
 
-    axios
-      .post(`${url}api/users`, { uid: user.uid, username: name, email: email })
-      .then((res) => console.log('success', res))
-      .catch((err) => console.log(err))
+          
+          axios
+            .post(`${url}api/email/email_register`, { uid: user.uid, username: name, email: email })
+            .then((res) => console.log('successfully sent email', res))
+            .catch((err) => console.log(err))
+        })
 
-      // await axios
-      // .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
-      // .then((res) => console.log('successfully sent email', res))
-      // .catch((err) => console.log(err))
+    
   } catch (err) {
     console.error(err);
     alert(err.message);
