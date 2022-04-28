@@ -67,10 +67,10 @@ const signInWithGoogle = async () => {
         .then((res) => console.log('success', res))
         .catch((err) => console.log(err))
 
-      await axios
-        .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
-        .then((res) => console.log('successfully sent email', res))
-        .catch((err) => console.log(err))
+      // await axios
+      //   .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
+      //   .then((res) => console.log('successfully sent email', res))
+      //   .catch((err) => console.log(err))
     }
   } catch (err) {
     console.error(err);
@@ -103,10 +103,10 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       .then((res) => console.log('success', res))
       .catch((err) => console.log(err))
 
-      await axios
-      .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
-      .then((res) => console.log('successfully sent email', res))
-      .catch((err) => console.log(err))
+      // await axios
+      // .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
+      // .then((res) => console.log('successfully sent email', res))
+      // .catch((err) => console.log(err))
   } catch (err) {
     console.error(err);
     alert(err.message);
