@@ -16,8 +16,9 @@ export const Litter_Register_Success = () => {
     useEffect(() => {
         let user_ = JSON.parse(localStorage.getItem('user'))
         let public_id_ = JSON.parse(localStorage.getItem('public_id'))
-
+        console.log(user_, public_id_)
         sendLitRegEmail(user_, public_id_)
+        console.log('just sending email')
 
     }, [])
 

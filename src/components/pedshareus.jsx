@@ -128,7 +128,7 @@ export class PedShareForm extends React.Component {
         this.props.litter_registrations && this.sendtolocal()
 
 
-        if (this.props.litter_registrations){
+        if (this.props.litter_registrations) {
             window.location = this.state.dpo
         }
 
@@ -152,18 +152,26 @@ export class PedShareForm extends React.Component {
                                 }
 
                             </div>
-                                
-                           {this.state.dpo ?  <input type='submit' className='btn btn-success' onClick={this.submit}></input> :
-                           <div>
-                               <BeatLoader color="white"/>
-                                <p>Loading payment link. Just a sec</p>
-                           </div> }
-                           {/* {!this.props.litter_registrations && <input type='submit' className='btn btn-success' onClick={this.submit}></input>}  */}
+
+                            {this.state.dpo ?
+                                <input type='submit' className='btn btn-success' onClick={this.submit}></input> :
+                                <div>
+                                    <p>Loading payment link. Just a sec</p>
+
+                                    <BeatLoader color="white" />
+                                </div>}
+                            {/* {!this.props.litter_registrations && <input type='submit' className='btn btn-success' onClick={this.submit}></input>}  */}
 
                         </div>
                     </form>
                 </div>
-                    : <BeatLoader color="white" />
+                    :
+                    <div>
+                        <p className="text-warning">Please signup/login before you can proceed</p>
+
+                        <BeatLoader color="white" />
+                    </div>
+
                 }
 
             </div>

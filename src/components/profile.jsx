@@ -5,7 +5,7 @@ import dog from '../images/dog.jfif'
 import '../css_files/profile.css'
 import DogCard from './dog_card';
 import Navbar from './navbar';
-import { auth, db, logout } from "./firebase";
+import { auth, db, Logout } from "./firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import $ from 'jquery'
 import axios from 'axios'
@@ -118,7 +118,7 @@ class Profile extends Component {
                             <Link  style={{color:this.props.navbarcolor}}  to='/profile/csandps'>Certificates and Pedigrees</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <button  style={{color:this.props.navbarcolor}}  className='btn btn-default' onClick={logout}>Log Out</button>
+                            <button  style={{color:this.props.navbarcolor}}  className='btn btn-default' onClick={Logout}>Log Out</button>
                         </div>
                     </div>
                     <div className='col-sm-10 align-items-center justify-content-center profile_main'>

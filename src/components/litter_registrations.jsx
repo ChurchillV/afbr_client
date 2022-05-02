@@ -35,7 +35,7 @@ const LitterRegistration = () => {
 
             <div className="container bgyellow dog_reg_full">
                 <div className="row justify-content-center align-items-center">
-                    <Navbar color='white' />
+                    <Navbar color='white' navbar_dark='navbar-dark'/>
                 </div>
                 <div className="row align-items-center justify-content-center  my-3">
                         <p>Please follow the following three steps 
@@ -63,6 +63,7 @@ const LitterRegistration = () => {
                 <div className="row justify-content-center align-items-center my-3">
                     <div className="col-sm-6">
                     <p>3. Submit the Form to us</p>
+
                     <PedShareForm label='Upload Filled Document Here' litter_registrations={true} />
                    
                     </div>

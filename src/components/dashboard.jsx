@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import "../css_files/dashboard.css";
-import { auth, db, logout } from "./firebase";
+import { auth, db, Logout } from "./firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 function Dashboard() {
   const [user, loading, error] = useAuthState(auth);
@@ -30,7 +30,7 @@ function Dashboard() {
         Logged in as
          <div>{name}</div>
          <div>{user?.email}</div>
-         <button className="dashboard__btn" onClick={logout}>
+         <button className="dashboard__btn" onClick={Logout}>
           Logout
          </button>
        </div>

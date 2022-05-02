@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
 import axios from 'axios';
-
 import {
   getFirestore,
   query,
@@ -24,6 +23,7 @@ import { url } from "./weburl";
 
 // Import the functions you need from the SDKs you need
 import { getAnalytics } from "firebase/analytics";
+import { useNavigate } from "react-router-dom";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -137,8 +137,9 @@ const sendPasswordReset = async (email) => {
   }
 };
 
-const logout = () => {
+const Logout = () => {
   signOut(auth);
+  window.location = '/login'
 };
 
 export {
@@ -148,5 +149,5 @@ export {
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordReset,
-  logout,
+  Logout,
 };
