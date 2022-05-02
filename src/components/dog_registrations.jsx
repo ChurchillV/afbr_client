@@ -144,7 +144,7 @@ class DogRegistration extends React.Component {
         });
     }
 
-
+   
 
     uploadImage = (callback) => {
         // console.log(files[0])
@@ -363,7 +363,7 @@ class DogRegistration extends React.Component {
         return (
 
             <div className='row align-items-center justify-content-center dog_reg_full'>
-                <Navbar color='white' navbar_dark={'navbar-dark'}/>
+                <Navbar color='white' navbar_dark={'navbar-dark'} />
 
                 <div className="container-fluid">
 
@@ -400,7 +400,7 @@ class DogRegistration extends React.Component {
 
                             }
                             <div className="col-sm-3">
-                                <PedShareForm label='Upload Pedigree so that we fill it for you' pedigree={true}/>
+                                <PedShareForm label='Upload Pedigree so that we fill it for you' pedigree={true} />
                             </div>
                         </div>}
 

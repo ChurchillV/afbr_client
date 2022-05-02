@@ -8,6 +8,7 @@ import puppy from '../images/doga4.jpeg'
 import dog from '../images/doga3.jpeg'
 import '../css_files/registration.css';
 import { url } from "./weburl";
+import dog_registrations from "./dog_registrations";
 
 
 class Registration extends React.Component {
@@ -16,10 +17,47 @@ class Registration extends React.Component {
         this.state = {
             dpo: '',
             loaded: false,
+            location: '',
+            price: '',
+            litter_registrations_price:'',
+            puppy_registrations_price:'',
+            dog_registrations_price:''
         }
 
     }
 
+    componentDidMount =()=>{
+        this.getcurrentuserLocation()
+    }
+
+
+    getPrices = () => {
+        if (this.state.location = 'Ghana'){
+
+            //local
+            this.setState({litter_registrations_price : '$20.00'})
+            this.setState({puppy_registrations_price : '$30.00'})
+            this.setState({dog_registrations_price : '$35.00'})
+
+        }
+        else{
+                     //international prices
+            this.setState({litter_registrations_price : '$25.00'})
+            this.setState({puppy_registrations_price : '$35.00'})
+            this.setState({dog_registrations_price : '$40.00'})
+
+        }
+    }
+    getcurrentuserLocation = () => {
+        axios.get('https://ipapi.co/json/') 
+        
+        .then((res)=> {
+            console.log(res.data)
+            this.setState({location: res.data.country_name},
+                 ()=>this.getPrices())
+        })
+        .then((err)=> console.log(err))
+    }
 
 
 
@@ -56,8 +94,8 @@ class Registration extends React.Component {
                             <RegisterCard image_src={litter} title='Litter Registation'
                                 className='puppies'
                                 text1='Register a collection of puppies with us'
-                                text_price='Domestic: $20.00'
-                                text_price2='International: $25.00'
+                                text_price={`Price: ${this.state.litter_registrations_price}`}
+                                // text_price2={`International: ${this.litter_registrations_price}`}
                                 url='/litter_registrations'/>
                         </div>
 
@@ -70,8 +108,7 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register your puppy with us'
                                 text2='Age: less than 12 months old'
-                                text_price='Domestic: $20.00'
-                                text_price2='International: $25.00'
+                                text_price={`Price: ${this.state.puppy_registrations_price}`}
                                 url='/dog_registrations'
                             />
                         </div>
@@ -82,8 +119,7 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register an adult dog with us'
                                 text2='Age: above 12 months old'
-                                text_price='Domestic: $35.00'
-                                text_price2='International: $40.00'
+                                text_price={`Price: ${this.state.dog_registrations_price}`}
                                 url='/adult_registrations' />
                         </div>
 
