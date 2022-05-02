@@ -20,7 +20,8 @@ export class PedShareForm extends React.Component {
     }
 
     componentDidMount = () => {
-        this.getTransactUrl()
+
+        !this.props.pedigree && this.getTransactUrl()
         this.getcurrentuser()
     }
     handleImage = (e) => {
@@ -35,7 +36,7 @@ export class PedShareForm extends React.Component {
     getTransactUrl = () => {
 
         axios.post(`${url}api/dpo/transact`, {
-            transaction_name: 'Litter Registrations',
+            transaction_name: 'Litter_Registrations',
             transaction_cost: 0.01
         })
             .then((res) => {
@@ -99,6 +100,16 @@ export class PedShareForm extends React.Component {
             .catch((err) => console.log(err))
     }
 
+    sendPedRegEmail = () => {
+        axios
+            .post(`${url}api/email/pedigree`, {
+                user: this.state.firebaseUser,
+                public_id: this.state.public_id
+
+            })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
+    }
     uploadImage = () => {
         const formData = new FormData()
         formData.append('file', this.state.imageSelected)
@@ -125,7 +136,13 @@ export class PedShareForm extends React.Component {
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
-        this.props.litter_registrations && this.sendtolocal()
+        if (this.props.litter_registrations) {
+            this.sendtolocal()
+
+        }
+        if (this.props.pedigree) {
+            this.sendPedRegEmail()
+        }
 
 
         if (this.props.litter_registrations) {
@@ -153,13 +170,26 @@ export class PedShareForm extends React.Component {
 
                             </div>
 
-                            {this.state.dpo ?
+                            {this.state.dpo && !this.props.pedigree ?
                                 <input type='submit' className='btn btn-success' onClick={this.submit}></input> :
-                                <div>
-                                    <p>Loading payment link. Just a sec</p>
+                                <div>{
+                                    !this.props.pedigree ?
+                                        <div>
+                                            <p>Loading payment link. Just a sec</p>
 
-                                    <BeatLoader color="white" />
+                                            <BeatLoader color="white" />
+
+                                        </div>
+                                        : <p></p>
+
+                                }
+
                                 </div>}
+
+                            {this.props.pedigree &&
+                                <input type='submit' className='btn btn-success' onClick={this.submit}></input>
+
+                            }
                             {/* {!this.props.litter_registrations && <input type='submit' className='btn btn-success' onClick={this.submit}></input>}  */}
 
                         </div>

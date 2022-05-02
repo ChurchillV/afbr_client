@@ -243,7 +243,7 @@ class DogRegistration extends React.Component {
     getTransactUrl = () => {
 
         axios.post(`${url}api/dpo/transact`, {
-            transaction_name: 'Dog Registrations',
+            transaction_name: 'Dog_Registrations',
             transaction_cost: 0.01
         })
             .then((res) => {
@@ -363,7 +363,7 @@ class DogRegistration extends React.Component {
         return (
 
             <div className='row align-items-center justify-content-center dog_reg_full'>
-                <Navbar color='white' />
+                <Navbar color='white' navbar_dark={'navbar-dark'}/>
 
                 <div className="container-fluid">
 
@@ -399,9 +399,9 @@ class DogRegistration extends React.Component {
 
 
                             }
-                            {/* <div className="col-sm-3">
-                                <PedShareForm label='Upload Pedigree so that we fill it for you' />
-                            </div> */}
+                            <div className="col-sm-3">
+                                <PedShareForm label='Upload Pedigree so that we fill it for you' pedigree={true}/>
+                            </div>
                         </div>}
 
 
