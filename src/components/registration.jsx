@@ -9,6 +9,7 @@ import dog from '../images/doga3.jpeg'
 import '../css_files/registration.css';
 import { url } from "./weburl";
 import dog_registrations from "./dog_registrations";
+import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
 
 
 class Registration extends React.Component {
@@ -32,7 +33,7 @@ class Registration extends React.Component {
 
 
     getPrices = () => {
-        if (this.state.location = 'Ghana'){
+        if (this.state.location == 'Ghana'){
 
             //local
             this.setState({litter_registrations_price : '$20.00'})
@@ -96,7 +97,12 @@ class Registration extends React.Component {
                                 text1='Register a collection of puppies with us'
                                 text_price={`Price: ${this.state.litter_registrations_price}`}
                                 // text_price2={`International: ${this.litter_registrations_price}`}
-                                url='/litter_registrations'/>
+                                url='/litter_registrations'
+                                litter_price={this.state.litter_registrations_price}
+                                puppy_price={this.state.puppy_registrations_price}
+                                dog_price={this.state.dog_registrations_price}
+
+                                />
                         </div>
 
 

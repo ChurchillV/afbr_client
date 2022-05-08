@@ -17,11 +17,43 @@ import { PedShareForm } from "./pedshareus";
 const LitterRegistration = () => {
     const [dog, setDog] = useState({})
     const [image_urls, setImage_Urls] = useState()
+    const [price, setPrice] = useState()
+    const [location, setLocation] = useState()
 
     const test = 'test'
 
+
+
     useEffect(() => {
+        getcurrentuserLocation()
     }, [])
+
+    const getPrices = () => {
+        if (location !== 'Ghana'){
+            setPrice('$20.00')
+            console.log(price)
+            //local
+        }
+        else{
+            setPrice('$25.00')
+            console.log(price)
+
+
+                     //international prices
+         
+        }
+    }
+    const getcurrentuserLocation = () => {
+        axios.get('https://ipapi.co/json/') 
+        
+        .then((res)=> {
+            console.log(res.data)
+            setLocation(res.data.country_name)
+            getPrices()
+            console.log(location)
+        })
+        .then((err)=> console.log(err))
+    }
 
 
 
@@ -64,7 +96,7 @@ const LitterRegistration = () => {
                     <div className="col-sm-6">
                     <p>3. Submit the Form to us</p>
 
-                    <PedShareForm label='Upload Filled Document Here' litter_registrations={true} />
+                    <PedShareForm label='Upload Filled Document Here' litter_registrations={true} price={price}/>
                    
                     </div>
                    
