@@ -37,7 +37,7 @@ export class PedShareForm extends React.Component {
 
         axios.post(`${url}api/dpo/transact`, {
             transaction_name: 'Litter_Registrations',
-            transaction_cost: 0.20
+            transaction_cost: 0.01
         })
             .then((res) => {
                 console.log(res.data)

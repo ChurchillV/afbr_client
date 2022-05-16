@@ -33,7 +33,7 @@ class Registration extends React.Component {
 
 
     getPrices = () => {
-        if (this.state.location == 'Ghana'){
+        if (this.state.location === 'Ghana'){
 
             //local
             this.setState({litter_registrations_price : '$20.00'})
