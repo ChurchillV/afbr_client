@@ -160,7 +160,18 @@ class RegisterForm extends Component {
                         </div>
                     </div>
                 </div>
-
+                <div class="form-row">
+                    <div class="form-group col-md-">
+                        <label for="inputDate">Height</label>
+                        <input name='height' value={this.props.dog.height} onChange={this.props.handleChange} 
+                        class="form-date" type="text" id="Date"></input>
+                    </div>
+                    <div class="form-group col-md-">
+                        <label for="inputDate">Weight</label>
+                        <input name='weight' value={this.props.dog.weight}
+                         onChange={this.props.handleChange} class="form-date" type="text" id="Date"></input>
+                    </div>
+                </div>
                 <div class="form-row">
                     <div class="form-group col-md-">
                         <label for="inputDate">Date of Birth</label>
