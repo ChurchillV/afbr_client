@@ -65,8 +65,8 @@ class Profile_Card extends React.Component {
                 <p className='smallrem'>Age: &nbsp; <span className='font-weight-bold'>{this.props.dog['age']}</span> </p>
                 <p className='smallrem ' >Breed:  &nbsp;<span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
 
-                <p className='smallrem'>Height: &nbsp; <span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
-                <p className='smallrem'>Weight:  &nbsp; <span className='font-weight-bold'>{this.props.dog['breed']}</span> </p>
+                <p className='smallrem'>Height: &nbsp; <span className='font-weight-bold'>{this.props.dog['height']}</span> </p>
+                <p className='smallrem'>Weight:  &nbsp; <span className='font-weight-bold'>{this.props.dog['weight']}</span> </p>
                 <p className='smallrem' style={properties}>Color: &nbsp; <span className='font-weight-bold'>{this.props.dog['color']} </span></p>
 
                 <p className='smallrem'>Land Of Standing: &nbsp; <span className='font-weight-bold'> {this.props.dog['land_of_standing']}</span> </p>
