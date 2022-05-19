@@ -3,42 +3,44 @@ import { Link } from 'react-router-dom'
 import '../css_files/App.css'
 
 const Footer = (props) => {
-    return (
-   
-        <footer class="footer_full text-center text-lg-start">
-          
-          <section
-            class="d-flex justify-content-center align-items-center p-4 border-bottom"
-          >
-            
-            <div class="me-5 px-5 d-none d-lg-block">
-              <span>Get connected with us on social networks:</span>
-            </div>
-          
-            <div>
-             
-            <div to="" class="smallrem ">
-                <i class="fab fa-whatsapp">Whatsapp: + 233 24 233 1674 </i>
-              </div>
-              <a href="https://www.facebook.com/groups/1103803533338705/?ref=share/" target='_blank' class="me-4 text-reset smallrem">
-                <i class="fab fa-facebook-f">Facebook <br /></i>
-              </a>
-              {/* <Link to="" class="me-4 text-reset">
+  return (
+
+    <footer class="footer_full text-center text-lg-start">
+
+      <section
+        class="d-flex justify-content-center align-items-center p-4 border-bottom"
+      >
+
+        <div class="me-5 px-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+
+        <div>
+
+          <div to="" class="smallrem ">
+            <i class="fab fa-whatsapp">Whatsapp: + 233 24 233 1674 , +233 20 377 5123</i>
+          </div>
+          <a href="https://www.facebook.com/groups/1103803533338705/?ref=share/" target='_blank' class="me-4 text-reset smallrem">
+            <i class="fab fa-facebook-f">Facebook <br /></i>
+          </a>
+          {/* <Link to="" class="me-4 text-reset">
                 <i class="fab fa-twitter">Twitter</i>
               </Link> */}
-              <div to="" class="smallrem me-4 text-reset">
-                <i class="fab fa-google"> Gmail: africanbullyregistry@gmail.com </i>
-              </div>
-              {/* <Link to="" class="me-4 text-reset">
+          <div to="" class="smallrem me-4 text-reset">
+            <i class="fab fa-google "> Gmail :<a className='text-white text-lowercase' href="mailto:africanbullyregistry@gmail.com">africanbullyregistry@gmail.com</a>
+                                              
+        </i>
+      </div>
+      {/* <Link to="" class="me-4 text-reset">
                 <i class="fab fa-instagram">Instagram: </i>
               </Link> */}
-              <div class="smallrem me-4 text-reset">
-                <a href="https://www.linkedin.com/company/african-bully-registry" className='smallrem text-white'><i class="fab fa-linkedin">LinkedIn</i></a>
-              </div>
+      <div class="smallrem me-4 text-reset">
+        <a href="https://www.linkedin.com/company/african-bully-registry" className='smallrem text-white'><i class="fab fa-linkedin">LinkedIn</i></a>
+      </div>
+
+    </div>
            
-            </div>
-           
-          </section>
+          </section >
          
         
           <section class="">
@@ -122,7 +124,7 @@ const Footer = (props) => {
             <a class="smallrem text-reset fw-bold" to="https://mdbootstrap.com/">The African Bully Registry</a>
           </div>
           
-        </footer>
+        </footer >
        
     )
 }

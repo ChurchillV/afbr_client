@@ -4,11 +4,50 @@ import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css_files/contact.css';
 
-
-
+import { send } from 'emailjs-com';
+import axios from 'axios';
+import { url } from './weburl';
 
 
 class Contact extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            from_name: '',
+            from_message: '',
+            from_email: ''
+        }
+
+    }
+
+    componentDidMount = () => {
+
+    }
+
+    handleChange = (e) => {
+        const { name, value } = e.target
+
+
+        this.setState({
+            ...this.state,
+            [name]: value
+        }, () => {
+            console.log(this.state)
+        })
+    }
+
+    sendemail = (e) => {
+        e.preventDefault()
+        axios
+            .post(`${url}api/email/contact`, {
+                from_email: this.state.from_email,
+                from_name: this.state.from_name,
+                message: this.state.from_message
+            })
+        .then((res)=>console.log(res))
+        .catch((err)=> console.log(err))
+            
+    }
 
     render() {
         return (
@@ -31,29 +70,29 @@ class Contact extends Component {
                                     <div className='form-row align-items-center justify-content-center'>
                                         <div class="form-group col-md-">
                                             <label for="inputName">Name</label>
-                                            <input name='kennel_name' 
-                                                type="text" class="form-control" id="inputName" placeholder="Name"></input>
+                                            <input name='from_name'
+                                                onChange={this.handleChange} type="text" class="form-control" id="inputName" placeholder="Name"></input>
                                         </div>
-                                        
+
                                     </div>
                                     <div className='form-row align-items-center justify-content-center'>
-                                    <div class="form-group col-md-">
-                                            <label for="inputName">Email</label>
-                                            <input name='current_owner' 
-                                                type="email" class="form-control" id="inputName" placeholder="Email"></input>
+                                        <div class="form-group col-md-">
+                                            <label for="inputName">Email Address</label>
+                                            <input name='from_email'
+                                                onChange={this.handleChange} type="email" class="form-control" id="inputName" placeholder="Email"></input>
                                         </div>
                                     </div>
                                     <div className='form-row align-items-center justify-content-center'>
                                         <div class="form-group col-md-">
                                             <label for="inputName">Message</label>
-                                            <textarea name='kennel_name' 
-                                                type="textArea" class="form-control" id="inputName" rows='4' 
+                                            <textarea name='from_message'
+                                                onChange={this.handleChange}
+                                                type="textArea" class="form-control" id="inputName" rows='4'
                                                 cols='25'
-                                                 placeholder="Message"></textarea>
+                                                placeholder="Message"></textarea>
                                         </div>
-                                        
-                                    </div>
-                                    <input type='submit' value='Send' className='btn btn-success'></input>
+                                        <p><a href="mailto:africanbullyregistry@gmail.com">Send email</a></p>                                    </div>
+                                    <input type='submit' onClick={(e) => this.sendemail(e)} value='Send' className='btn btn-success'></input>
                                 </form>
                             </div>
                         </div>

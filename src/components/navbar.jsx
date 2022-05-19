@@ -62,11 +62,11 @@ class Navbar extends Component {
                             </Link>
                             
                         </li>
-                        <li class="nav-item ">
+                        {/* <li class="nav-item ">
                             <Link class="nav-link"   style={{color: this.props.color}} to="/contact">Contact
                             </Link>
                             
-                        </li>
+                        </li> */}
                         <li class="nav-item">
                             <Link   style={{color: this.props.color}} class="nav-link" to="/sign_up">Sign Up</Link>
                         </li>

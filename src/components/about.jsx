@@ -3,6 +3,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from "./navbar";
 import '../css_files/about.css';
+import Footer from "./footer";
 
 const About = () => {
     return (
@@ -50,6 +51,9 @@ const About = () => {
 
 
 
+            </div>
+            <div className="container-fluid">
+                <Footer/>
             </div>
             </div>
 
