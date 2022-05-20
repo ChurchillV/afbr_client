@@ -17,13 +17,15 @@ class CsAndPs extends Component {
 
     render() {
         return (
-            <Profile>
+            <Profile class='profile_first'>
             
                 
 
                         <div className='row align-items-center justify-content-center profile_main' style={{ padding: '1%' }}>
                             < Card 
-                            text1='Certificates and Pedigrees' className='title'/>
+                            text1='Certificates and Pedigrees' 
+                            text2='Coming soon'
+                            className='title'/>
 
                         </div>
 

@@ -44,7 +44,7 @@ const DogCard = (props) => {
                 <h4 style={{ fontWeight: '400' }} className='smallrem'> {props.dogname}</h4>
 
             </div>
-            <div className='col-2 dropdown'>
+            <div className='col-2 px-2 dropdown'>
                     <button className='dropbtn smallrem'>Actions</button>
                     <div className='dropdown-content smallrem'>
                         <Link to={

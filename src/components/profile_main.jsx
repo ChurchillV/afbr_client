@@ -13,6 +13,9 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { url } from './weburl';
 import  Search  from './search';
 
+import $ from 'jquery'
+import { ProfileFooter } from './profile_footer';
+import { BeatLoader } from 'react-spinners';
 
 
 
@@ -31,6 +34,13 @@ class ProfileMain extends Component {
     componentDidMount = () => {
         this.getcurrentuser(this.refreshList
         )
+        
+        
+        if (window.screen.width < 660){
+            console.log('hide the following')
+            $('.bottom_profile').css('display', 'visible')
+           
+        }
 
     }
 
@@ -122,19 +132,24 @@ class ProfileMain extends Component {
             <div>
                 <Profile class='profile_first' navbarcolor='black'>
                     <div className='row align-items-center justify-content-center' >
+                        <div className='col-sm-12'>
                         <Search name='profile_search' send_to={true} onSearchClick={this.onSearchClick} />
+
+                        </div>
 
                     </div>
 
 
                     <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
-
-
+                        {/* check on this later , add a load spinner */}
+                        {!this.state.dogs && <BeatLoader size='large'/>}
                         {this.render_dog_list()}
                         {console.log('hey')}
                     </div>
 
                 </Profile>
+                {/* profile at the bottom for mobile view */}
+                {window.screen.width < 660 && <ProfileFooter navbarcolor='white'/>}
             </div>
 
 

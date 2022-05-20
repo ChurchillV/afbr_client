@@ -8,7 +8,7 @@ export const FrenchBulldog = () => {
                 <div className='row  text-left align-items-center justify-content-center'>
                     <div className="col-lg-12">
                         <h1>French BullDog</h1>
-                        <img src={frenchbulldog}  className='img-fluid' alt="" />
+                        <img src={frenchbulldog}  className='img-fluid w-50' alt="" />
                         <h4 className='text-left'> General Appearance </h4>
                         <p>
                             The French Bulldog has the appearance of an active, intelligent, muscular dog of heavy bone, smooth coat, compactly built, and of medium or small structure. Expression alert, curious, and interested.

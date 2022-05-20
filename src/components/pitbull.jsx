@@ -9,7 +9,7 @@ export const Pittbull = () => {
                 <div className='row  text-left align-items-center justify-content-center'>
                     <div className="col-lg-12">
                     <h1>Pitbull</h1>
-                    <img src={pitbull}  className='img-fluid' alt="" />
+                    <img src={pitbull}  className='img-fluid w-50' alt="" />
                     <h6>HISTORY:
                     </h6>
                     <p>

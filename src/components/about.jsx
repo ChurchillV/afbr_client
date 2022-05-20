@@ -9,8 +9,8 @@ const About = () => {
     return (
         <div className='row about_body align-items-center justify-content-center'>
             <Navbar />
-            <div className="container">
-                <div className='row align-items-center justify-content-center '>
+            <div className="container-fluid about_darken">
+                <div className='row  align-items-center justify-content-center '>
                     <div className="container">
                         <div className="row align-items-center justify-content-center pic_row_about">
                             <div className="col-lg- about_heading text-capitalize">

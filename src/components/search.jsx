@@ -112,8 +112,8 @@ class Search extends Component {
 
             <div>
                 <div className='row align-items-center justify-content-center'>
-                    <input type='search' name={this.props.name} value={this.state.search_dogs.name} onChange={(e) => this.onChange(e)} placeholder='Search for dog'></input>
-                    <button type='submit' className='btn btn-warning' onClick={(e) => this.search(e)}>Search</button>
+                    <input type='search' class='search_input' name={this.props.name} value={this.state.search_dogs.name} onChange={(e) => this.onChange(e)} placeholder='Search for dog'></input>
+                    <button type='submit' className='btn btn-warning' style={{fontSize:'small'}} onClick={(e) => this.search(e)}>Search</button>
 
 
                 </div>

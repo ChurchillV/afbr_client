@@ -239,11 +239,11 @@
     overflow: hidden;
     /* max-width: 80%; */
     max-height: 500px;
-    min-height: 500px;
+    min-height: 250px;
     width: 100%;
     display: flex;
     /* border-radius: 0%; */
-    border: 1px solid white;
+    /* border: 1px solid white; */
     align-items: center;
     border-top: 0px;
     border-bottom: 0px;
@@ -307,12 +307,12 @@
     
 .register1{
   background-color: inherit;
-  padding: 10%;
+  /* padding: 10%; */
   margin-top: 10%;
   font-size: 4vw;
   /* text-align: center; */
   color: white  ;
-  background-color: #918d83;
+  background-color: #353330;
   border-left: 6px solid white;
   display: flex;
   height: 100%;
@@ -428,6 +428,16 @@
   }
 }
 
+@media screen and (min-width: 770px){
+  .tree{
+    /* margin-top:5%;
+    margin-bottom: 5%; */
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 75%;
+  }
+  }
+
 .card_row{
   padding: 2%;
   background-color: #ba8108;
@@ -442,7 +452,9 @@
   background-size: cover;
   color: white;
 }
-
+.profile_footer_full{
+  background-color: #353330;
+}
 
 .col-sm-6{
   display: flex;

@@ -136,13 +136,13 @@ class Home extends Component {
 
 
 
-        <div className='row  mt-md-5 register1 align-items-center justify-content-center'>
+        <div className='row  mt-md-5 p-md-5 register1 align-items-center justify-content-center'>
 
 
           <div className='col-sm-6 '>
-            <h1 class='text-capitalize' style={{ color: 'white' }}>Register your bull dog with us today</h1>
+            <h1 class='text-capitalize mb-5' style={{ color: 'white' }}>Register your bull dog with us today</h1>
             <h5 class='text-capitalize' style={{ color: 'white' }}>American Bull Dogs</h5>
-            <h5 class='text-capitalize' style={{ color: 'white' }}>Frenchiebuls</h5>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>Frenchiebulls</h5>
 
             <h5 class='text-capitalize' style={{ color: 'white' }}>American Bully </h5>
 

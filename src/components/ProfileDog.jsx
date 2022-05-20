@@ -16,6 +16,7 @@ import { url } from './weburl';
 
 import Profile from './profile';
 import Pedigree from './pedigree';
+import { ProfileFooter } from './profile_footer';
 
 
 
@@ -153,7 +154,9 @@ class ProfileDog extends Component {
                 {this.props.pedigree.maindog.name ? <Pedigree data={this.props.pedigree}
                 /> : null}
 
-
+                    {/* profile at the bottom for mobile views */}
+                    {window.screen.width < 660 && <ProfileFooter navbarcolor='white'/>}
+            
 
             </div>
 
