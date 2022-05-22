@@ -82,19 +82,19 @@ export class ProfileFooter extends React.Component {
         return <div className='profile_footer_full mt-5'>
           
                         <div className='row align-items-center justify-content-center py-1 '>
-                           {this.state.firebaseUser ? <Link to={`/profile/personal/${this.state.firebaseUser.uid}`}  style={{color:this.props.navbarcolor}}>Personal</Link> :  <Link to='/profile/personal/'>Personal</Link> }
+                           {this.state.firebaseUser ? <Link className='smallrem' to={`/profile/personal/${this.state.firebaseUser.uid}`}  style={{color:this.props.navbarcolor}}>Personal</Link> :  <Link className='smallrem' to='/profile/personal/'>Personal</Link> }
                         </div>
                         <div className='row align-items-center justify-content-center py-1 '>
-                            <Link  style={{color:this.props.navbarcolor}} to='/my_dogs'>My dogs</Link>
+                            <Link className='smallrem' style={{color:this.props.navbarcolor}} to='/my_dogs'>My dogs</Link>
                         </div>
                         <div className='row align-items-center justify-content-center py-1 '>
-                            <Link   style={{color:this.props.navbarcolor}} to='/registration'>Register</Link>
+                            <Link  className='smallrem' style={{color:this.props.navbarcolor}} to='/registration'>Register</Link>
                         </div>
                         <div className='row align-items-center justify-content-center py-1'>
-                            <Link  style={{color:this.props.navbarcolor}}  to='/profile/csandps'>Certificates and Pedigrees</Link>
+                            <Link className='smallrem' style={{color:this.props.navbarcolor}}  to='/profile/csandps'>Certificates and Pedigrees</Link>
                         </div>
                         <div className='row align-items-center justify-content-center py-1'>
-                            <button  style={{color:this.props.navbarcolor}}  className='btn btn-default' onClick={Logout}>Log Out</button>
+                            <button style={{color:this.props.navbarcolor}}  className='btn btn-default smallrem' onClick={Logout}>Log Out</button>
                         </div>
 
     </div>

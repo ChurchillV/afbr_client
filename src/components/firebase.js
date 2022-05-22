@@ -99,13 +99,14 @@ const logInWithEmailAndPassword = async (email, password) => {
 
 const registerWithEmailAndPassword = async (name, email, password) => {
   try {
-    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const res = await createUserWithEmailAndPassword(auth,  email, password);
     const user = res.user;
+    user.displayName = name
     await addDoc(collection(db, "users"), {
       uid: user.uid,
-      name,
+      name: name,
       authProvider: "local",
-      email,
+      email
     })
     .then(() => {
           axios

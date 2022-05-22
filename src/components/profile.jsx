@@ -48,6 +48,7 @@ class Profile extends Component {
         axios
             .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
             .then((res) => {
+                console.log('fetching...', this.state.firebaseUser.uid)
                 console.log(res.data)
                 this.setState({
                     ...this.state,
