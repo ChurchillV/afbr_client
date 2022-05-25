@@ -28,39 +28,11 @@ class Registration extends React.Component {
     }
 
     componentDidMount =()=>{
-        this.getcurrentuserLocation()
+        // this.getcurrentuserLocation()
     }
 
 
-    getPrices = () => {
-        if (this.state.location === 'Ghana'){
-
-            //local
-            console.log(this.state.location)
-            console.log(this.state.location === 'Ghana')
-            this.setState({litter_registrations_price : '$20.00'})
-            this.setState({puppy_registrations_price : '$30.00'})
-            this.setState({dog_registrations_price : '$35.00'})
-
-        }
-        else{
-                     //international prices
-            this.setState({litter_registrations_price : '$25.00'})
-            this.setState({puppy_registrations_price : '$35.00'})
-            this.setState({dog_registrations_price : '$40.00'})
-
-        }
-    }
-    getcurrentuserLocation = () => {
-        axios.get('https://ipapi.co/json/') 
-        
-        .then((res)=> {
-            console.log(res.data)
-            this.setState({location: res.data.country_name},
-                 ()=>this.getPrices())
-        })
-        .then((err)=> console.log(err))
-    }
+  
 
 
 
@@ -97,7 +69,7 @@ class Registration extends React.Component {
                             <RegisterCard image_src={litter} title='Litter Registation'
                                 className='puppies'
                                 text1='Register a collection of puppies with us'
-                                text_price={`Price: ${this.state.litter_registrations_price}`}
+                                text_price={`Price: $${this.props.litter_registrations_price}.00`}
                                 // text_price2={`International: ${this.litter_registrations_price}`}
                                 url='/litter_registrations'
                                 litter_price={this.state.litter_registrations_price}
@@ -116,7 +88,7 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register your puppy with us'
                                 text2='Age: less than 12 months old'
-                                text_price={`Price: ${this.state.puppy_registrations_price}`}
+                                text_price={`Price: $${this.props.puppy_registrations_price}.00`}
                                 url='/dog_registrations'
                             />
                         </div>
@@ -127,7 +99,7 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register an adult dog with us'
                                 text2='Age: above 12 months old'
-                                text_price={`Price: ${this.state.dog_registrations_price}`}
+                                text_price={`Price: $${this.props.dog_registrations_price}.00`}
                                 url='/adult_registrations' />
                         </div>
 

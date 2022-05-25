@@ -14,46 +14,27 @@ import { PedShareForm } from "./pedshareus";
 
 
 
-const LitterRegistration = () => {
-    const [dog, setDog] = useState({})
-    const [image_urls, setImage_Urls] = useState()
-    const [price, setPrice] = useState()
-    const [location, setLocation] = useState()
 
-    const test = 'test'
-
-
-
-    useEffect(() => {
-        getcurrentuserLocation()
-    }, [])
-
-    const getPrices = () => {
-        if (location !== 'Ghana'){
-            setPrice('$20.00')
-            console.log(price)
-            //local
-        }
-        else{
-            setPrice('$25.00')
-            console.log(price)
-
-
-                     //international prices
-         
+class LitterRegistration extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            price: this.props.litter_registrations_price
         }
     }
-    const getcurrentuserLocation = () => {
-        axios.get('https://ipapi.co/json/') 
+    
+    componentDidMount = () => {
+        console.log(this.props)
+    }
+
+
+    componentDidUpdate(prevProps){
+        if(prevProps.litter_registrations_price !== this.props.litter_registrations_price){
+            this.setState({...this.state, price:this.props.litter_registrations_price}, ()=>
+            console.log(this.state))
+        }
         
-        .then((res)=> {
-            console.log(res.data)
-            setLocation(res.data.country_name)
-            getPrices()
-            console.log(location)
-        })
-        .then((err)=> console.log(err))
-    }
+     }
 
 
 
@@ -61,55 +42,57 @@ const LitterRegistration = () => {
 
 
 
-
-    return (
-        <div className="bgyellow">
-
-            <div className="container bgyellow dog_reg_full">
-                <div className="row justify-content-center align-items-center">
-                    <Navbar color='white' navbar_dark='navbar-dark'/>
-                </div>
-                <div className="row align-items-center justify-content-center  my-3">
-                        <p>Please follow the following three steps 
-                            to complete litter registration with us
-                        </p>
-                </div>
-                <div className="row align-items-center justify-content-center  my-3">
-                    <div className="col-sm-6">
-
-                        <a href={litter_file} className="text-white" download>1. Download
-                            the litter registration form here</a>
-
-                            <img src='https://res.cloudinary.com/daurieb51/image/upload/v1642082142/iztl3avchjiannfl0yim.png'
-                            width={'10%'} />
-                    
-
-
+    render(){
+        return (
+            <div className="bgyellow">
+    
+                <div className="container bgyellow dog_reg_full">
+                    <div className="row justify-content-center align-items-center">
+                        <Navbar color='white' navbar_dark='navbar-dark'/>
                     </div>
-                    
-                </div>
-
-                <div className="row align-items-center justify-content-center  my-3">
-                    2. Fill the form at your convenience
-                </div>
-                <div className="row justify-content-center align-items-center my-3">
-                    <div className="col-sm-6">
-                    <p>3. Submit the Form to us</p>
-
-                    <PedShareForm label='Upload Filled Document Here' litter_registrations={true} price={price}/>
-                   
+                    <div className="row align-items-center justify-content-center  my-3">
+                            <p>Please follow the following three steps 
+                                to complete litter registration with us
+                            </p>
                     </div>
-                   
+                    <div className="row align-items-center justify-content-center  my-3">
+                        <div className="col-sm-6">
+    
+                            <a href={litter_file} className="text-white" download>1. Download
+                                the litter registration form here</a>
+    
+                                <img src='https://res.cloudinary.com/daurieb51/image/upload/v1642082142/iztl3avchjiannfl0yim.png'
+                                width={'10%'} />
+                        
+    
+    
+                        </div>
+                        
+                    </div>
+    
+                    <div className="row align-items-center justify-content-center  my-3">
+                        2. Fill the form at your convenience
+                    </div>
+                    <div className="row justify-content-center align-items-center my-3">
+                        <div className="col-sm-6">
+                        <p>3. Submit the Form to us</p>
+    
+                        <PedShareForm label='Upload Filled Document Here' litter_registrations={true} price={this.state.price}/>
+                       
+                        </div>
+                       
+                    </div>
+    
+    
                 </div>
-
-
+    
+    
+    
+    
             </div>
-
-
-
-
-        </div>
-    )
+        )
+    }
+    
 }
 
 export default LitterRegistration;

@@ -67,6 +67,8 @@ class DogRegistration extends React.Component {
 
     }
 
+
+
     check_if_to_edit = () => {
         for (let i = 0; i < this.props.location.pathname.split('/').length; i++) {
             // console.log('bingo')
@@ -87,13 +89,26 @@ class DogRegistration extends React.Component {
 
 
     // useEffect(() => getData, console.log('hello'))
+    componentDidUpdate(prevProps){
+        if(prevProps.puppy_registrations_price !== this.props.puppy_registrations_price){
+            this.setState({...this.state, price:this.props.puppy_registrations_price}, ()=>
+            this.getTransactUrl()
+            )
 
+        }
+        if(prevProps.dog_registrations_price !== this.props.dog_registrations_price){
+            this.setState({...this.state, price:this.props.dog_registrations_price}, ()=>
+            this.getTransactUrl()
+            )
+
+        }
+        console.log(prevProps.puppy_registrations_price)
+     }
 
 
     componentDidMount = () => {
-        this.getTransactUrl()
         this.getcurrentuser()
-
+        console.log(this.props)
         // const user =  this.context
         // console.log('user',this.props.user.uid)
         console.log('dog registrations state', this.state)
@@ -145,6 +160,8 @@ class DogRegistration extends React.Component {
     }
 
    
+    
+    
 
     uploadImage = (callback) => {
         // console.log(files[0])
@@ -244,7 +261,7 @@ class DogRegistration extends React.Component {
 
         axios.post(`${url}api/dpo/transact`, {
             transaction_name: 'Dog_Registrations',
-            transaction_cost: 0.01
+            transaction_cost: this.state.price
         })
             .then((res) => {
                 console.log(res.data)

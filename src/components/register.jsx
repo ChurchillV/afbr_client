@@ -28,11 +28,13 @@ function Register() {
     <div className="container-fluid" style={{ position: 'relative' }}>
       <Navbar />
 
-
       <div className="row">
+        <div className="row">
 
-        <div className="col-lg-12 text-capitalize text-center ">
-          <h1>Sign Up with us today</h1>
+          <div className="col-lg-12 text-capitalize text-center ">
+            <h1>Sign Up with us today</h1>
+          </div>
+
         </div>
 
         <div className="container-fluid register_text">
@@ -82,12 +84,13 @@ function Register() {
                     Already have an account? <Link to="/login">Login</Link> now.
                   </div>
                 </div>
-            
+
               </div>
             </div>
 
           </div>
         </div>
+
 
       </div>
 

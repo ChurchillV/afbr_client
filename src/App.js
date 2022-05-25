@@ -79,6 +79,7 @@ class App extends Component {
 
 
   componentDidMount() {
+    this.getcurrentuserLocation()
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -197,6 +198,35 @@ class App extends Component {
       });
   }
 
+  getcurrentuserLocation = () => {
+    axios.get('https://ipapi.co/json/') 
+    
+    .then((res)=> {
+        console.log(res.data)
+        this.setState({...this.state, location: res.data.country_name},
+             ()=>{
+              if (this.state.location === 'Ghana'){
+
+                //local
+                console.log(this.state.location)
+                console.log(this.state.location === 'Ghana')
+                this.setState({litter_registrations_price : 20.00})
+                this.setState({puppy_registrations_price : 30.00})
+                this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
+    
+            }
+            else{
+                         //international prices
+                this.setState({litter_registrations_price : 25.00})
+                this.setState({puppy_registrations_price : 35.00})
+                this.setState({dog_registrations_price : 40.00})
+    
+            }
+             })
+    })
+    .catch((err)=> console.log(err))
+}
+
   render() {
     return (
 
@@ -207,7 +237,9 @@ class App extends Component {
             <Route exact path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/registration' element={<Registration />} />
+            <Route path='/registration' element={<Registration litter_registrations_price={this.state.litter_registrations_price}
+            puppy_registrations_price={this.state.puppy_registrations_price} 
+            dog_registrations_price={this.state.dog_registrations_price}/>} />
             <Route path='/breeds' element={<Breeds />} />
             <Route path='/breeds/americanbulldog' element={<AmericanBulldog />} />
             <Route path='/breeds/americanbully' element={<AmericanBully />} />
@@ -223,86 +255,23 @@ class App extends Component {
             <Route path='/reset' element={< Reset />} />
             <Route path='/dashboard' element={< Dashboard />} />
 
-            <Route path='/litter_registrations' element={<LitterRegistration />} />
+            <Route path='/litter_registrations' element={<LitterRegistration 
+            litter_registrations_price={this.state.litter_registrations_price}/>} />
+
             <Route path='/litter_registrations_success' element={<Litter_Register_Success />} />
 
             <Route path='/dog_registrations' element={<DogRegistration
-              navbar={true} user={this.state.user} />} />
+              navbar={true} user={this.state.user} 
+              puppy_registrations_price={this.state.puppy_registrations_price}/>} />
             <Route path='/dog_registrations_success' element={<Register_Success
               navbar={true} />} />
               <Route path='/dog_registrations_special' element={<Register_Special
               navbar={true} />} />
               
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
-            <Route path='/dog_registrations/pedig-main'
-              element={<PedigMain getnameofDog={this.getnameofDog}
-                pedigree={this.state.pedigree} getdogid={this.getdogid} />} />
-            <Route path='/dog_registrations/pedigsire' element={<PedigSire getnameofDog2={this.getnameofDog2} getnext_dog_id={this.getnext_dog_id}
-              refresh_pedigree={this.getdogpedigree}
-              dog_id={this.state.dog_id}
-              pedigree={this.state.pedigree}
-              next_dog_id={this.state.next_dog_id} />} />
-            <Route path='/dog_registrations/pedigdam' element={<PedigDam getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              pedigree={this.state.pedigree} getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} />} />
-            <Route path='/dog_registrations/pedigsiresire' element={<PedigSireSire getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigsiredam' element={<PedigSireDam getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigdamsire' element={<PedigDamSire getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigdamdam' element={<PedigDamDam getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-
-            <Route path='/dog_registrations/pedigsiresiresire' element={<PedigSireSireSire getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigsiresiredam' element={<PedigSireSireDam getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigsiredamsire' element={<PedigSireDamSire getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigsiredamdam' element={<PedigSireDamDam getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-
-            <Route path='/dog_registrations/pedigdamsiresire' element={<PedigDamSireSire getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigdamsiredam' element={<PedigDamSireDam getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigdamdamsire' element={<PedigDamDamSire getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-            <Route path='/dog_registrations/pedigdamdamdam' element={<PedigDamDamDam getnameofDog2={this.getnameofDog2}
-              refresh_pedigree={this.getdogpedigree}
-              getnext_dog_id={this.getnext_dog_id} dog_id={this.state.dog_id}
-              next_dog_id={this.state.next_dog_id} pedigree={this.state.pedigree} />} />
-
-            <Route path='/dog_registrations/save_and_end_here'
-              element={<PedigSuccess pedigree={this.props.pedigree} />}
-            />
-
-
-            <Route path='/adult_registrations' element={<DogRegistration />} />
+        
+            <Route path='/adult_registrations' element={<DogRegistration 
+            dog_registrations_price={this.state.dog_registrations_price} />} />
             <Route path='/profile' element={<ProfileMain />} />
 
             <Route path='/my_dogs' element={<ProfileMain />} />

@@ -21,7 +21,7 @@ export class PedShareForm extends React.Component {
 
     componentDidMount = () => {
 
-        !this.props.pedigree && this.getTransactUrl()
+        // !this.props.pedigree && this.getTransactUrl()
         this.getcurrentuser()
     }
     handleImage = (e) => {
@@ -33,11 +33,22 @@ export class PedShareForm extends React.Component {
 
 
     }
-    getTransactUrl = () => {
 
+    componentDidUpdate(prevProps){
+        if(prevProps.price !== this.props.price){
+            this.setState({...this.state, price:this.props.price}, ()=>
+            this.getTransactUrl()
+            )
+        }
+        console.log(prevProps.price)
+        console.log(this.props)
+     }
+
+    getTransactUrl = () => {
+        console.log(this.props.price,'this.props.price')
         axios.post(`${url}api/dpo/transact`, {
             transaction_name: 'Litter_Registrations',
-            transaction_cost: 0.01
+            transaction_cost: this.state.price
         })
             .then((res) => {
                 console.log(res.data)
