@@ -207,13 +207,13 @@ class RegisterForm extends Component {
 
 
                 {this.props.dpo_loaded && <button type="submit" class="btn btn-success">Register</button>}
-                {!this.props.dpo_loaded &&
+                {!this.props.dpo_loaded && ! this.props.edit && 
                     <div>
                         <p className='text-white'>Generating payment link. Just a sec</p>
                         <BeatLoader color='white' size={30} />
                     </div>}
                 {this.props.special && <button type="submit" class="btn btn-success">Special Register</button>}
-
+                {this.props.edit && <button type="submit" className='btn btn-success'>Edit</button>}
             </form>
         )
     }

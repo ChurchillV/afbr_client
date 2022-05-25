@@ -396,6 +396,7 @@ class DogRegistration extends React.Component {
                                     uploadImage={this.uploadImage}
                                     handleImageChange={this.handleImageChange}
                                     dpo_loaded={this.state.dpo_loaded}
+                                    edit={true}
                                 />
                                 :
                                 <RegisterForm dog={this.state} to_sires_first={this.props.to_sires_first}
