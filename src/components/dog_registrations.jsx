@@ -182,7 +182,7 @@ class DogRegistration extends React.Component {
                         console.log(this.state.dog)
                         callback()
                         console.log('called the callback')
-                        this.props.navigate('/profile')
+                        // this.props.navigate('/profile')
 
                     })
 
@@ -357,7 +357,7 @@ class DogRegistration extends React.Component {
         if (this.state.dog.image_url) {
             this.uploadImage(this.sendDogInfo)
 
-            console.log('image url  presnet')
+            console.log('image url  presnet  and navigating to dpo')
             window.location = this.state.dpo
 
         }
