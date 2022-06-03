@@ -59,10 +59,7 @@ const signInWithGoogle = async () => {
         name: user.displayName,
         authProvider: "google",
         email: user.email,
-      },
-
-
-      )
+      })
         .then(() => {
           axios
             .post(`${url}api/users`, { uid: user.uid, username: user.displayName, email: user.email })

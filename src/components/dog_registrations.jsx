@@ -358,6 +358,7 @@ class DogRegistration extends React.Component {
             this.uploadImage(this.sendDogInfo)
 
             console.log('image url  presnet')
+            window.location = this.state.dpo
 
         }
         else {
