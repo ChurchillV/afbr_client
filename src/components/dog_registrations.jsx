@@ -289,14 +289,13 @@ class DogRegistration extends React.Component {
 
         if (this.state.imageSelected) {
             this.uploadImage(this.updateDogInfo)
-            this.props.navigate('/profile')
-
+            
             console.log('image url  presnet, ready to eedit')
 
         }
         else {
             this.updateDogInfo()
-            this.props.navigate('/profile')
+            // this.props.navigate('/profile')
 
             console.log('no image url present, ready to edit')
         }
@@ -312,6 +311,8 @@ class DogRegistration extends React.Component {
 
                 console.log(res.data.message);
                 console.log('editeed')
+                this.props.navigate('/profile')
+
             })
             .catch((err) => {
                 console.log("Error couldn't edit Dog");
