@@ -289,6 +289,8 @@ class DogRegistration extends React.Component {
 
         if (this.state.imageSelected) {
             this.uploadImage(this.updateDogInfo)
+            this.props.navigate('/profile')
+
             console.log('image url  presnet, ready to eedit')
 
         }
