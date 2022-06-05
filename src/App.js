@@ -40,6 +40,8 @@ import Register_Special from './components/dog_registrations_special';
 
 import { Register_Success } from './components/dog_registrations_success';
 import { Litter_Register_Success } from './components/litter_registrations_success';
+import { Community_Main } from './components/community/community_main';
+import { Newly } from './components/community/newly_registered';
 
 export const UserContext = React.createContext('default');
 // console.log(user,'kkkhhk')
@@ -248,6 +250,8 @@ class App extends Component {
             <Route path='/shows_and_events' element={<Shows />} />
             <Route path='/judges' element={<Judges />} />
             <Route path='/contact' element={<Contact />} />
+            <Route path='/community' element={<Community_Main />} />
+            <Route path='/newly_registered' element={<Newly />} />
 
             <Route path='/sign_up' element={< Register />} />
             <Route path='/login' element={< Login />} />

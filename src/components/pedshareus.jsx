@@ -132,7 +132,7 @@ export class PedShareForm extends React.Component {
 
                 this.setState({
                     ...this.state,
-                    public_id: response.data.public_id
+                    public_id: response.data.public_id,
                 }, () => console.log(this.state)
                 )
 
