@@ -119,9 +119,11 @@ const Footer = (props) => {
           
         
          
-          <div class="smallrem text-center p-4" style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}>
+          <div class="smallrem text-center p-4 " style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}>
             © 2021 Copyright:
-            <a class="smallrem text-reset fw-bold" to="https://mdbootstrap.com/">The African Bully Registry</a>
+            <a class="smallrem text-reset fw-bold" to="/">The African Bully Registry</a>
+            <a class="d-block smallrem text-reset fw-bold" href="https://yawotuo.herokuapp.com/">This website was built by Yaw Otuo</a>
+        
           </div>
           
         </footer >

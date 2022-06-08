@@ -47,9 +47,13 @@ const db = getFirestore(app)
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
+  var error = false
+  var res;
+  var user;
+
   try {
-    const res = await signInWithPopup(auth, googleProvider);
-    const user = res.user;
+    res = await signInWithPopup(auth, googleProvider);
+    user = res.user;
     const q = query(collection(db, "users"), where("uid", "==", user.uid));
     const docs = await getDocs(q);
     if (docs.docs.length === 0) {
@@ -60,29 +64,34 @@ const signInWithGoogle = async () => {
         authProvider: "google",
         email: user.email,
       })
-        .then(() => {
-          axios
-            .post(`${url}api/users`, { uid: user.uid, username: user.displayName, email: user.email })
-            .then((res) => console.log('success', res))
-            .catch((err) => console.log(err))
-
-          
-          axios
-            .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
-            .then((res) => console.log('successfully sent email', res))
-            .catch((err) => console.log(err))
-        });
-
-
     }
-
   }
-
-
   catch (err) {
+    error = true
     console.error(err);
     alert(err.message);
   }
+
+  finally {
+    if (!error) {
+      axios
+      .post(`${url}api/users`, { uid: user.uid, username: user.displayName, email: user.email })
+      .then((res) => console.log('success', res))
+      .catch((err) => console.log(err))
+
+
+      axios
+      .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
+      .then((res) => console.log('successfully sent email', res))
+      .catch((err) => console.log(err))
+  
+    if (error){
+
+    }
+    }
+      
+  }
+
 };
 
 const logInWithEmailAndPassword = async (email, password) => {
@@ -95,9 +104,13 @@ const logInWithEmailAndPassword = async (email, password) => {
 };
 
 const registerWithEmailAndPassword = async (name, email, password) => {
+  var error = false
+  var res;
+  var user;
+
   try {
-    const res = await createUserWithEmailAndPassword(auth,  email, password);
-    const user = res.user;
+    res = await createUserWithEmailAndPassword(auth, email, password);
+    user = res.user;
     user.displayName = name
     await addDoc(collection(db, "users"), {
       uid: user.uid,
@@ -105,23 +118,28 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       authProvider: "local",
       email
     })
-    .then(() => {
-          axios
-            .post(`${url}api/users`, { uid: user.uid, username: name, email: email })
-            .then((res) => console.log('success', res))
-            .catch((err) => console.log(err))
+      
 
-          
-          axios
-            .post(`${url}api/email/email_register`, { uid: user.uid, username: name, email: email })
-            .then((res) => console.log('successfully sent email', res))
-            .catch((err) => console.log(err))
-        })
 
-    
   } catch (err) {
     console.error(err);
     alert(err.message);
+  }
+
+  finally {
+    if (!error){
+        axios
+          .post(`${url}api/users`, { uid: user.uid, username: name, email: email })
+          .then((res) => console.log('success', res))
+          .catch((err) => console.log(err))
+
+
+        axios
+          .post(`${url}api/email/email_register`, { uid: user.uid, username: name, email: email })
+          .then((res) => console.log('successfully sent email', res))
+          .catch((err) => console.log(err))
+    
+    }
   }
 };
 
