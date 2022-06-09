@@ -165,7 +165,7 @@ class Register_Special extends React.Component {
                         console.log(this.state.dog)
                         callback()
                         console.log('called the callback')
-                        this.props.navigate('/profile')
+                        // this.props.navigate('/profile')
 
                     })
 
