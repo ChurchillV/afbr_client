@@ -321,6 +321,7 @@ class Register_Special extends React.Component {
 
                 // localStorage.clear()
 
+                this.props.navigate('/profile')
 
 
             })
@@ -331,7 +332,6 @@ class Register_Special extends React.Component {
                 console.log(err.message);
             });
 
-        this.props.navigate('/profile')
     }
 
     okay = (e) => {
@@ -366,7 +366,6 @@ class Register_Special extends React.Component {
             //changing this to avoid the user registering for free
 
             // window.open(this.state.dpo, '_blank')
-            window.location = this.state.dpo
 
             console.log('no image url present')
         }
