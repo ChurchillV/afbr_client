@@ -60,13 +60,15 @@ class Registration extends React.Component {
                             
 
                         </div>
-                        <div className='row align-items-center justify-content-center py-1 mb-2 mx-5 bg-success promo_row'>
+                        <div className='row align-items-center justify-content-center py-2 mb-2 mx-5 bg-success promo_row'>
                         <div className='col-lg-3'>
                                 <img src={promotion} alt="" width={'150px'}/>
                             </div>
                             <div className='col-lg-6'>
-                                <h5 className="promo text-white font-weight-bold text-capitalize text-italic">
-                                    PROMO: Discounted prices last until June 20th</h5>
+                                <h5 className="promo text-white font-weight-bold text-uppercase text-italic">
+                                    PROMO: Discounted prices last until June 20th.&nbsp; 
+                                    <span className="text-capitalize font-weight-normal"> First 10 registrations only. <hr /> &nbsp;</span>
+                                    <span className="text-capitalize font-weight-normal">(10 remaining)</span></h5>
                             </div>
                             
 
