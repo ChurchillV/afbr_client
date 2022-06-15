@@ -69,41 +69,25 @@ class DogRegistration extends React.Component {
 
 
 
-    check_if_to_edit = () => {
-        for (let i = 0; i < this.props.location.pathname.split('/').length; i++) {
-            // console.log('bingo')
-            console.log(this.props.location.pathname.split('/').length)
-            // console.log(this.props.location.pathname.split())
-            console.log('..........', this.props.location.pathname.split('/')[i])
-            if (this.props.location.pathname.split('/')[i] === 'edit') {
-                console.log('bingo')
-                this.setState({ edit: true })
-            } else {
-                console.log('banjo')
-            }
-        }
-    }
-
-
 
 
 
     // useEffect(() => getData, console.log('hello'))
-    componentDidUpdate(prevProps){
-        if(prevProps.puppy_registrations_price !== this.props.puppy_registrations_price){
-            this.setState({...this.state, price:this.props.puppy_registrations_price}, ()=>
-            this.getTransactUrl()
+    componentDidUpdate(prevProps) {
+        if (prevProps.puppy_registrations_price !== this.props.puppy_registrations_price) {
+            this.setState({ ...this.state, price: this.props.puppy_registrations_price }, () =>
+                this.getTransactUrl()
             )
 
         }
-        if(prevProps.dog_registrations_price !== this.props.dog_registrations_price){
-            this.setState({...this.state, price:this.props.dog_registrations_price}, ()=>
-            this.getTransactUrl()
+        if (prevProps.dog_registrations_price !== this.props.dog_registrations_price) {
+            this.setState({ ...this.state, price: this.props.dog_registrations_price }, () =>
+                this.getTransactUrl()
             )
 
         }
         console.log(prevProps.puppy_registrations_price)
-     }
+    }
 
 
     componentDidMount = () => {
@@ -116,20 +100,41 @@ class DogRegistration extends React.Component {
 
 
         //do so that this is only called when it is to be editted
-        axios
-            .get(`${url}api/dogs/${this.props.params.dog_id}`)
-            .then((res) => {
 
-                console.log(res.data);
-                this.setState({ dog: res.data[0] }, () => console.log(this.state))
-                // console.log('data',data)
-            })
-            .catch((err) => {
-                console.log("Error couldn't create Dog");
-                console.log(err.message);
-            });
         this.check_if_to_edit()
 
+
+
+    }
+
+
+
+    check_if_to_edit = () => {
+        for (let i = 0; i < this.props.location.pathname.split('/').length; i++) {
+            // console.log('bingo')
+            console.log(this.props.location.pathname.split('/').length)
+            // console.log(this.props.location.pathname.split())
+            console.log('..........', this.props.location.pathname.split('/')[i])
+            if (this.props.location.pathname.split('/')[i] === 'edit') {
+                console.log('bingo')
+                this.setState({ edit: true }, () => {
+                    axios
+                        .get(`${url}api/dogs/${this.props.params.dog_id}`)
+                        .then((res) => {
+
+                            console.log(res.data);
+                            this.setState({ dog: res.data[0] }, () => console.log(this.state))
+                            // console.log('data',data)
+                        })
+                        .catch((err) => {
+                            console.log("Error couldn't create Dog");
+                            console.log(err.message);
+                        });
+                })
+            } else {
+                console.log('banjo')
+            }
+        }
 
 
     }
@@ -159,9 +164,9 @@ class DogRegistration extends React.Component {
         });
     }
 
-   
-    
-    
+
+
+
 
     uploadImage = (callback) => {
         // console.log(files[0])
@@ -289,7 +294,7 @@ class DogRegistration extends React.Component {
 
         if (this.state.imageSelected) {
             this.uploadImage(this.updateDogInfo)
-            
+
             console.log('image url  presnet, ready to eedit')
 
         }

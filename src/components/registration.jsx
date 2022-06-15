@@ -6,6 +6,8 @@ import RegisterCard from "./registercard";
 import litter from '../images/litter1.jpeg'
 import puppy from '../images/doga4.jpeg'
 import dog from '../images/doga3.jpeg'
+import promotion from '../images/promotion.png'
+
 import '../css_files/registration.css';
 import { url } from "./weburl";
 import dog_registrations from "./dog_registrations";
@@ -51,10 +53,22 @@ class Registration extends React.Component {
                 </div>
                 <div className='row align-items-center justify-content-center pt-1 registration_text'>
                     <div className="container">
-                        <div className='row align-items-center justify-content-center py-5'>
+                        <div className='row align-items-center justify-content-center pt-2'>
                             <div className='col-lg- registration_title py-1'>
-                                <h1>Register your dog with the African Bully Registry</h1>
+                                <p>Register your dog with the African Bully Registry</p>
                             </div>
+                            
+
+                        </div>
+                        <div className='row align-items-center justify-content-center py-1 mb-2 mx-5 bg-success promo_row'>
+                        <div className='col-lg-3'>
+                                <img src={promotion} alt="" width={'150px'}/>
+                            </div>
+                            <div className='col-lg-6'>
+                                <h5 className="promo text-white font-weight-bold text-capitalize text-italic">
+                                    PROMO: Discounted prices last until June 20th</h5>
+                            </div>
+                            
 
                         </div>
                     </div>
@@ -69,10 +83,11 @@ class Registration extends React.Component {
                             <RegisterCard image_src={litter} title='Litter Registation'
                                 className='puppies'
                                 text1='Register a collection of puppies with us'
-                                text_price={`Price: $${this.props.litter_registrations_price}.00`}
+                                text_price={` $${this.props.litter_registrations_price}.00`}
                                 // text_price2={`International: ${this.litter_registrations_price}`}
                                 url='/litter_registrations'
                                 litter_price={this.state.litter_registrations_price}
+                                cancelled_text={'$25.00'}
                                 puppy_price={this.state.puppy_registrations_price}
                                 dog_price={this.state.dog_registrations_price}
 
@@ -88,7 +103,9 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register your puppy with us'
                                 text2='Age: less than 12 months old'
-                                text_price={`Price: $${this.props.puppy_registrations_price}.00`}
+                                cancelled_text={'$30.00'}
+
+                                text_price={` $${this.props.puppy_registrations_price}.00`}
                                 url='/dog_registrations'
                             />
                         </div>
@@ -99,7 +116,9 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register an adult dog with us'
                                 text2='Age: above 12 months old'
-                                text_price={`Price: $${this.props.dog_registrations_price}.00`}
+                                cancelled_text={'$35.00'}
+
+                                text_price={` $${this.props.dog_registrations_price}.00`}
                                 url='/adult_registrations' />
                         </div>
 

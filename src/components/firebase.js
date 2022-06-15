@@ -95,6 +95,8 @@ const signInWithGoogle = async () => {
 
 };
 
+
+
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -103,6 +105,8 @@ const logInWithEmailAndPassword = async (email, password) => {
     alert(err.message);
   }
 };
+
+
 
 const registerWithEmailAndPassword = async (name, email, password) => {
   var error = false
