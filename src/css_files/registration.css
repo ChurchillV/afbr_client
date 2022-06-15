@@ -43,6 +43,7 @@
 .card{
   background-image: linear-gradient(to right, green, #ba8108);
   color: white;
+  border: 2px solid white;
 
 }
 

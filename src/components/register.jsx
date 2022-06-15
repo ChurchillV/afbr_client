@@ -29,13 +29,16 @@ function Register() {
       <Navbar />
 
       <div className="row">
-        <div className="row">
+        {/* <div className="container">
+          <div className="row">
 
-          <div className="col-lg-12 text-capitalize text-center ">
-            <h1>Sign Up with us today</h1>
+            <div className="col-lg-12 text-capitalize text-center ">
+              <h1>Sign Up with us today</h1>
+            </div>
+
           </div>
+        </div> */}
 
-        </div>
 
         <div className="container-fluid register_text">
 
