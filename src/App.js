@@ -222,7 +222,7 @@ class App extends Component {
             }
             else{
                          //international prices
-                this.setState({litter_registrations_price : 25.00})
+                this.setState({litter_registrations_price : 20.00})
                 // this.setState({puppy_registrations_price : 35.00})
                 // this.setState({dog_registrations_price : 40.00})
                 this.setState({puppy_registrations_price : 20.00})
