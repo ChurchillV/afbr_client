@@ -37,15 +37,7 @@ class DogRegistration extends React.Component {
         this.state = {
             dog: {
                 'name': '',
-                'sex': '',
-                'breed': '',
-                'sire': '',
-                'dam': '',
-                'age': '',
-                'date_of_birth': '',
-                'image_url': '',
-                'public_id': '',
-                'user': ''
+               
             },
 
             sires: {
@@ -377,7 +369,7 @@ class DogRegistration extends React.Component {
 
             // window.open(this.state.dpo, '_blank')
             window.location = this.state.dpo
-
+            // window.location = '/dog_registrations_success'
             console.log('no image url present')
         }
 
