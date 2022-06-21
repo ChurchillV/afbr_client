@@ -255,7 +255,7 @@ class DogRegistration extends React.Component {
     }
 
     getTransactUrl = () => {
-
+        
         axios.post(`${url}api/dpo/transact`, {
             transaction_name: 'Dog_Registrations',
             transaction_cost: this.state.price,
@@ -330,7 +330,9 @@ class DogRegistration extends React.Component {
                 console.log('dog created/editted in congrats page')
 
 
-                
+
+                window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
+
 
             })
 
@@ -359,7 +361,7 @@ class DogRegistration extends React.Component {
             this.uploadImage(this.sendDogInfo)
 
             console.log('image url  presnet  and navigating to dpo')
-            window.location = this.state.dpo
+            // window.location = this.state.dpo
             // window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
 
 
@@ -371,8 +373,7 @@ class DogRegistration extends React.Component {
             //changing this to avoid the user registering for free
 
             // window.open(this.state.dpo, '_blank')
-            window.location = this.state.dpo
-            window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
+            // window.location = this.state.dpo
             console.log('no image url present')
         }
 
