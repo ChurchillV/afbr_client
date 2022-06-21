@@ -331,8 +331,8 @@ class DogRegistration extends React.Component {
 
 
 
-                window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
-
+                // window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
+                window.location = this.state.dpo
 
             })
 
