@@ -36,21 +36,19 @@
 
 
 .card-title{
-  color: white;
+  color: blaxk;
 }
 
   }
 .card{
-  background-image: linear-gradient(to right, green, #ba8108);
-  color: white;
+  color: black;
   border: 2px solid white;
 
 }
 
 
 .list-group-item{
-  color: white;
-  background-image: linear-gradient(to right, green, #ba8108);
+  color: black;
 
 }
   .register-card-p{

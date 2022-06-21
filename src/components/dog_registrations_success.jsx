@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { url } from './weburl'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate , useParams} from 'react-router-dom'
 import Navbar from './navbar'
 import '../css_files/registration_success.css'
 import logo from '../images/logo2.jpg'
@@ -10,60 +10,52 @@ import logo from '../images/logo2.jpg'
 
 export const Register_Success = () => {
 
+    const params = useParams()
+    let dog_name = params.dog_name
+    let username = params.username
     const [dog, setDog] = useState({})
     const [user, setUser] = useState({})
 
-    let dog_ = JSON.parse(localStorage.getItem('dog'))
-    let user_ = JSON.parse(localStorage.getItem('user'))
+  
 
     const navigate = useNavigate()
 
     useEffect(() => {
-        localStorage.getItem('dog')
-        console.log(localStorage.dog)
-
-      
-        setDog(JSON.parse(localStorage.getItem('dog')))
-        setUser(JSON.parse(localStorage.getItem('user')))
-        // localStorage.clear()
-
-        // console.log(localStorage.user)
-        sendDogInfo()
+       
+        setHasBeenPaidFor()
     }, [])
 
+    const setHasBeenPaidFor = () => {
+        axios
+        .post(`${url}api/dogs/has_paid`, {
+            dog:{
+                name: dog_name
+            }
+        })
+        .then((res) => {
+            console.log(res)
+            sendDogRegEmail()
+        }
+            )
+        .catch((err) => console.log(err))
+
+    }
     const sendDogRegEmail = ( ) => {
         axios
             .post(`${url}api/email/dog_registered`, {
-                user:  user_,
-                dog: dog_
+                user:  {
+                    displayName: username
+                },
+                dog: {
+                    name: dog_name
+                }
             })
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
     }
 
 
-    const sendDogInfo = () => {
-        console.log('calling sendDogInfo')
-        axios
-            .post(`${url}api/dogs`, { dog: dog_, user: user_ })
-            .then((res) => {
-
-                sendDogRegEmail()
-                console.log(res.data.message);
-                console.log('dog created/editted in congrats page')
-
-                localStorage.clear()
-
-                
-
-            })
-
-
-            .catch((err) => {
-                console.log("Error couldn't create Dog");
-                console.log(err.message);
-            });
-    }
+    
 
     const okay = (e) => {
         e.preventDefault()
@@ -86,8 +78,8 @@ export const Register_Success = () => {
 
             <div className='row align-items-center justify-content-center p1 py-5'>
                 <div className='col-lg-'>
-                    <p className='text-capitalize text-white'>Hello {user.displayName}, you have 
-                    successfully registered {dog.name}</p>
+                    <p className='text-capitalize text-white'>Hello {username}, you have 
+                    successfully registered {dog_name}</p>
 
                 </div>
 

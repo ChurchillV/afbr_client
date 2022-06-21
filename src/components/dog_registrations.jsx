@@ -258,7 +258,9 @@ class DogRegistration extends React.Component {
 
         axios.post(`${url}api/dpo/transact`, {
             transaction_name: 'Dog_Registrations',
-            transaction_cost: this.state.price
+            transaction_cost: this.state.price,
+            dog_name: this.state.dog.name,
+            username: this.state.firebaseUser.displayName
         })
             .then((res) => {
                 console.log(res.data)
@@ -318,26 +320,25 @@ class DogRegistration extends React.Component {
     }
 
     sendDogInfo = () => {
+        console.log('calling sendDogInfo')
+        axios
+            .post(`${url}api/dogs`, { dog: this.state.dog, user: this.state.firebaseUser })
+            .then((res) => {
 
-        localStorage.setItem("dog",
-
-            JSON.stringify(this.state.dog)
-
-        )
-
-        localStorage.setItem("user",
-
-            JSON.stringify(this.state.firebaseUser)
-
-        )
+                // sendDogRegEmail()
+                console.log(res.data.message);
+                console.log('dog created/editted in congrats page')
 
 
-        console.log('localstorage', localStorage.user)
-        console.log('localstorage', localStorage.dog)
+                
+
+            })
 
 
-
-
+            .catch((err) => {
+                console.log("Error couldn't create Dog");
+                console.log(err.message);
+            });
     }
 
 
@@ -359,6 +360,8 @@ class DogRegistration extends React.Component {
 
             console.log('image url  presnet  and navigating to dpo')
             window.location = this.state.dpo
+            // window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
+
 
         }
         else {
@@ -369,7 +372,7 @@ class DogRegistration extends React.Component {
 
             // window.open(this.state.dpo, '_blank')
             window.location = this.state.dpo
-            // window.location = '/dog_registrations_success'
+            window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
             console.log('no image url present')
         }
 

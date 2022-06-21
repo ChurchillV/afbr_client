@@ -16,25 +16,25 @@ const RegisterCard = (props) => {
                 <div class="card w-100">
                     <img class="card-img-top" src={props.image_src} alt="Card image cap"></img>
                         <div class="card-body">
-                            <h5 class="card-title text-white">{props.title}</h5>
+                            <h5 class="card-title text-black">{props.title}</h5>
                             <p class="card-text">{props.subtitle}</p>
                         </div>
-                        <ul class="list-group list-group-flush grad_color">
-                            <li class="list-group-item text-small " style={{fontSize: '0.7rem'}}>{props.text1}</li>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-small " style={{fontSize: '1rem'}}>{props.text1}</li>
                             
-                            <li class="list-group-item text-small " style={{fontSize: '0.7rem'}}>{props.text2}</li>
-                            {props.text2 && <li class="list-group-item text-small">{props.text3}</li> }
+                            <li class="list-group-item text-small " style={{fontSize: '1rem'}}>{props.text2}</li>
+                            {/* {props.text2 && <li class="list-group-item text-small">{props.text3}</li> }
                             {props.text4  &&<li class="list-group-item text-small">{props.text4}</li> }
-                            
+                             */}
                             {props.text_price &&   <li class="list-group-item text-small">Price : <strike><span className='text-small text-primary'>{props.cancelled_text} </span></strike> &nbsp;
                             <span className='font-weight-bold text-warning'>{props.text_price}</span></li> }
                             {props.text_price2 &&  <li class="list-group-item text-small">{props.text_price2}</li> }
 
 
                         </ul>
-                        <div class="card-body ">
+                        <div class="card-body bg-warning">
                             <a href="#" class="card-link">{props.link1}</a>
-                            <a href={props.url} class="card-link text-white">Register</a>
+                            <a href={props.url} class="card-link text-black font-weight-bold">Register</a>
                         </div>
                 </div>
 

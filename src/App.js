@@ -213,9 +213,9 @@ class App extends Component {
                 console.log(this.state.location)
                 console.log(this.state.location === 'Ghana')
                 this.setState({litter_registrations_price : 20.00})
-                // this.setState({puppy_registrations_price : 30.00})
+                this.setState({puppy_registrations_price : 30.00})
                 // this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
-                this.setState({puppy_registrations_price : 20.00})
+                this.setState({puppy_registrations_price : 1.00})
                 this.setState({dog_registrations_price : 20.00}, ()=>console.log(this.state))
                 
     
@@ -223,10 +223,10 @@ class App extends Component {
             else{
                          //international prices
                 this.setState({litter_registrations_price : 20.00})
-                // this.setState({puppy_registrations_price : 35.00})
-                // this.setState({dog_registrations_price : 40.00})
-                this.setState({puppy_registrations_price : 20.00})
-                this.setState({dog_registrations_price : 20.00}, ()=>console.log(this.state))
+                this.setState({puppy_registrations_price : 35.00})
+                this.setState({dog_registrations_price : 40.00})
+                // this.setState({puppy_registrations_price : 20.00})
+                // this.setState({dog_registrations_price : 20.00}, ()=>console.log(this.state))
     
             }
              })
@@ -272,7 +272,7 @@ class App extends Component {
             <Route path='/dog_registrations' element={<DogRegistration
               navbar={true} user={this.state.user} 
               puppy_registrations_price={this.state.puppy_registrations_price}/>} />
-            <Route path='/dog_registrations_success' element={<Register_Success
+            <Route path='/dog_registrations_success/:dog_name/:username/:public_id' element={<Register_Success
               navbar={true} />} />
               <Route path='/dog_registrations_special' element={<Register_Special
               navbar={true} />} />

@@ -60,7 +60,7 @@ class Registration extends React.Component {
                             
 
                         </div>
-                        <div className='row align-items-center justify-content-center py-2 mb-2 mx-5 bg-success promo_row'>
+                        {/* <div className='row align-items-center justify-content-center py-2 mb-2 mx-5 bg-success promo_row'>
                         <div className='col-lg-3'>
                                 <img src={promotion} alt="" width={'150px'}/>
                             </div>
@@ -72,7 +72,7 @@ class Registration extends React.Component {
                             </div>
                             
 
-                        </div>
+                        </div> */}
                     </div>
 
 
@@ -89,7 +89,7 @@ class Registration extends React.Component {
                                 // text_price2={`International: ${this.litter_registrations_price}`}
                                 url='/litter_registrations'
                                 litter_price={this.state.litter_registrations_price}
-                                cancelled_text={'$25.00'}
+                                // cancelled_text={'$25.00'}
                                 puppy_price={this.state.puppy_registrations_price}
                                 dog_price={this.state.dog_registrations_price}
 
@@ -105,7 +105,7 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register your puppy with us'
                                 text2='Age: less than 12 months old'
-                                cancelled_text={'$30.00'}
+                                // cancelled_text={'$30.00'}
 
                                 text_price={` $${this.props.puppy_registrations_price}.00`}
                                 url='/dog_registrations'
@@ -118,7 +118,7 @@ class Registration extends React.Component {
                                 className='puppies'
                                 text1='Register an adult dog with us'
                                 text2='Age: above 12 months old'
-                                cancelled_text={'$35.00'}
+                                // cancelled_text={'$35.00'}
 
                                 text_price={` $${this.props.dog_registrations_price}.00`}
                                 url='/adult_registrations' />
