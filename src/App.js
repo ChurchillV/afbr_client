@@ -213,7 +213,7 @@ class App extends Component {
                 console.log(this.state.location)
                 console.log(this.state.location === 'Ghana')
                 this.setState({litter_registrations_price : 20.00})
-                this.setState({puppy_registrations_price : 1.00})
+                this.setState({puppy_registrations_price : 30.00})
                 // this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
                 // this.setState({puppy_registrations_price : 20.00})
                 this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
@@ -271,7 +271,7 @@ class App extends Component {
 
             <Route path='/dog_registrations' element={<DogRegistration
               navbar={true} user={this.state.user} 
-              puppy_registrations_price={this.state.puppy_registrations_price}/>} />
+              puppy_registrations_price={this.state.puppy_registrations_price} transaction_name={'Test'} />} />
             <Route path='/dog_registrations_success/:dog_name/:username/:email/' element={<Register_Success
               navbar={true} />} />
               <Route path='/dog_registrations_special' element={<Register_Special
@@ -280,7 +280,7 @@ class App extends Component {
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
         
             <Route path='/adult_registrations' element={<DogRegistration 
-            dog_registrations_price={this.state.dog_registrations_price} />} />
+            dog_registrations_price={this.state.dog_registrations_price} transaction_name={'adult_registrations'}/>} />
             <Route path='/profile' element={<ProfileMain />} />
 
             <Route path='/my_dogs' element={<ProfileMain />} />

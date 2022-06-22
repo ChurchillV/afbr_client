@@ -257,7 +257,7 @@ class DogRegistration extends React.Component {
     getTransactUrl = () => {
         
         axios.post(`${url}api/dpo/transact`, {
-            transaction_name: 'Test',
+            transaction_name: this.props.transaction_name,
             transaction_cost: this.state.price,
             dog_name: this.state.dog.name,
             username: this.state.firebaseUser.displayName,

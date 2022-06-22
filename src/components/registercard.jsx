@@ -13,14 +13,14 @@ const RegisterCard = (props) => {
             </div>
 
             <div className='container-fluid'>
-                <div class="card w-100">
+                <div class="card w-100 ">
                     <img class="card-img-top" src={props.image_src} alt="Card image cap"></img>
                         <div class="card-body">
                             <h5 class="card-title text-black">{props.title}</h5>
                             <p class="card-text">{props.subtitle}</p>
                         </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item text-small " style={{fontSize: '1rem'}}>{props.text1}</li>
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item text-small  " style={{fontSize: '1rem'}}>{props.text1}</li>
                             
                             <li class="list-group-item text-small " style={{fontSize: '1rem'}}>{props.text2}</li>
                             {/* {props.text2 && <li class="list-group-item text-small">{props.text3}</li> }
@@ -32,9 +32,9 @@ const RegisterCard = (props) => {
 
 
                         </ul>
-                        <div class="card-body bg-warning">
+                        <div class="card-body bg-grad-g-y">
                             <a href="#" class="card-link">{props.link1}</a>
-                            <a href={props.url} class="card-link text-black font-weight-bold">Register</a>
+                            <a href={props.url} class="card-link text-black font-weight-bold text-uppercase">Register</a>
                         </div>
                 </div>
 

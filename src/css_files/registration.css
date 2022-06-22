@@ -134,3 +134,7 @@
   background-image: linear-gradient(to right, red, green);
 
 }
+
+.bg-grad-g-y {
+  background-image: linear-gradient(to bottom, white, #d9d9d9);
+}
