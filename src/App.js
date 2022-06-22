@@ -215,14 +215,14 @@ class App extends Component {
                 this.setState({litter_registrations_price : 20.00})
                 this.setState({puppy_registrations_price : 30.00})
                 // this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
-                this.setState({puppy_registrations_price : 0.10})
-                this.setState({dog_registrations_price : 20.00}, ()=>console.log(this.state))
+                // this.setState({puppy_registrations_price : 20.00})
+                this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
                 
     
             }
             else{
                          //international prices
-                this.setState({litter_registrations_price : 20.00})
+                this.setState({litter_registrations_price : 25.00})
                 this.setState({puppy_registrations_price : 35.00})
                 this.setState({dog_registrations_price : 40.00})
                 // this.setState({puppy_registrations_price : 20.00})
