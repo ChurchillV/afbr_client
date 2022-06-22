@@ -14,7 +14,7 @@ const RegisterCard = (props) => {
 
             <div className='container-fluid'>
                 <div class="card w-100  ">
-                    <img class={props.className} src={props.image_src} walt="Card image cap"></img>
+                    <img class={props.className} src={props.image_src} alt="Card image cap"></img>
                         <div class="card-body py-2 border-yellow">
                             <h5 class="card-title text-black   text-capitalize">{props.title}</h5>
                         </div>
