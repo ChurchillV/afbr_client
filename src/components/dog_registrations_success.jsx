@@ -81,11 +81,12 @@ export const Register_Success = () => {
         <div className='container-fluid w-100 registration_success_full bg-d9'>
 
 
-            <div className='row align-items-center justify-content-center p1 py-5 mt-5'>
+            <div className='row align-items-center justify-content-center p1 py-5 '>
                 <div className='col-sm-6'>
                     <h2 className='text-capitalize text-white'>Congratulations <span className='text-uppercase font-weight-bold'>{username}</span> , you have
                         successfully registered <span className='font-weight-bold text-uppercase'>{dog_name}</span> with the AFBR</h2>
 
+                    <br />
                     <p className='text-white'><span className='font-weight-bold text-uppercase'>{dog_name}</span> should appear under your profile within 6 hours of registration</p>
 
                 </div>
