@@ -240,26 +240,7 @@ class Register_Special extends React.Component {
 
     }
 
-    getTransactUrl = () => {
-
-        axios.post(`${url}api/dpo/transact`, {
-            transaction_name: 'Dog Registrations',
-            transaction_cost: 0.02
-        })
-            .then((res) => {
-                console.log(res.data)
-                this.setState({ dpo: res.data, dpo_loaded: true }, () => {
-                    console.log(this.state)
-                })
-
-            })
-
-            .catch((err) => console.log(err))
-    }
-
-    onSearchChange = (e) => {
-
-    }
+    
 
     edit = (e) => {
 

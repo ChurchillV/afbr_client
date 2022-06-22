@@ -65,21 +65,21 @@ class DogRegistration extends React.Component {
 
 
     // useEffect(() => getData, console.log('hello'))
-    componentDidUpdate(prevProps) {
-        if (prevProps.puppy_registrations_price !== this.props.puppy_registrations_price) {
-            this.setState({ ...this.state, price: this.props.puppy_registrations_price }, () =>
-                this.getTransactUrl()
-            )
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.puppy_registrations_price !== this.props.puppy_registrations_price) {
+    //         this.setState({ ...this.state, price: this.props.puppy_registrations_price }, () =>
+    //             this.getTransactUrl()
+    //         )
 
-        }
-        if (prevProps.dog_registrations_price !== this.props.dog_registrations_price) {
-            this.setState({ ...this.state, price: this.props.dog_registrations_price }, () =>
-                this.getTransactUrl()
-            )
+    //     }
+    //     if (prevProps.dog_registrations_price !== this.props.dog_registrations_price) {
+    //         this.setState({ ...this.state, price: this.props.dog_registrations_price }, () =>
+    //             this.getTransactUrl()
+    //         )
 
-        }
-        console.log(prevProps.puppy_registrations_price)
-    }
+    //     }
+    //     console.log(prevProps.puppy_registrations_price)
+    // }
 
 
     componentDidMount = () => {
@@ -257,15 +257,18 @@ class DogRegistration extends React.Component {
     getTransactUrl = () => {
         
         axios.post(`${url}api/dpo/transact`, {
-            transaction_name: 'Dog_Registrations',
+            transaction_name: 'Test',
             transaction_cost: this.state.price,
             dog_name: this.state.dog.name,
-            username: this.state.firebaseUser.displayName
+            username: this.state.firebaseUser.displayName,
+            email: this.state.firebaseUser.email
         })
             .then((res) => {
                 console.log(res.data)
                 this.setState({ dpo: res.data, dpo_loaded: true }, () => {
                     console.log(this.state)
+                    window.location = this.state.dpo
+
                 })
 
             })
@@ -329,10 +332,9 @@ class DogRegistration extends React.Component {
                 console.log(res.data.message);
                 console.log('dog created/editted in congrats page')
 
-
+                this.getTransactUrl()
 
                 // window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
-                window.location = this.state.dpo
 
             })
 
@@ -416,8 +418,9 @@ class DogRegistration extends React.Component {
                                     submit={this.submit} handleChange={this.handleChange}
                                     getdogid={this.props.getdogid}
                                     getnameofDog={this.props.getnameofDog}
-                                    getnameofDog2={this.props.getnameofDog2}
-                                    getnext_dog_id={this.props.getnext_dog_id}
+                                    
+
+
                                 />
 
 

@@ -272,7 +272,7 @@ class App extends Component {
             <Route path='/dog_registrations' element={<DogRegistration
               navbar={true} user={this.state.user} 
               puppy_registrations_price={this.state.puppy_registrations_price}/>} />
-            <Route path='/dog_registrations_success/:dog_name/:username/' element={<Register_Success
+            <Route path='/dog_registrations_success/:dog_name/:username/:email/' element={<Register_Success
               navbar={true} />} />
               <Route path='/dog_registrations_special' element={<Register_Special
               navbar={true} />} />

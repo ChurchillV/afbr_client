@@ -1,5 +1,5 @@
 .registration_success_full{
-    background-color: #ba8108;
+    background-color: #d9d9d9;
     color: black;
 }
 
@@ -22,4 +22,8 @@
 .ok{
     background-color: rgb(21, 90, 24);
 
+}
+
+.bg-d9{
+    background-color: #d9d9d9;
 }
