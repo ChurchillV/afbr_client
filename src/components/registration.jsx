@@ -43,9 +43,9 @@ class Registration extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid registration_full">
+            <div className="container-fluid">
                 <div className='row align-items-center justify-content-center'>
-                    <div className="col-lg-">
+                    <div className="col-lg-12">
                         <Navbar />
 
                     </div>
@@ -54,7 +54,7 @@ class Registration extends React.Component {
                 <div className='row align-items-center justify-content-center pt-1 registration_text'>
                     <div className="container">
                         <div className='row align-items-center justify-content-center pt-2'>
-                            <div className='col-lg- registration_title py-1'>
+                            <div className='col-lg-12 registration_title py-1'>
                                 <p>Register your dog with the African Bully Registry</p>
                             </div>
                             

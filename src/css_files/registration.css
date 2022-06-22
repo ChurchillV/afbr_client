@@ -84,6 +84,14 @@
 .puppies{
   width: 100%;
 }
+
+@media screen and (min-width: 770px) {
+  .puppies{
+    max-height: 200px;
+    min-height: 200px;
+    
+  }
+}
   .FORM {
     background-color: inherit;
     width: 100%;
@@ -137,4 +145,20 @@
 
 .bg-grad-g-y {
   background-image: linear-gradient(to bottom, white, #d9d9d9);
+}
+
+.bg-grad-w-y {
+  background-image: linear-gradient(to right, rgb(31, 9, 9), #d8bb84);
+}
+
+.card-body{
+    padding: 0 ;
+}
+
+.border-yellow{
+  border-bottom: 2px dashed #ba8108;
+}
+
+.border-none {
+  border :  0px solid white
 }
