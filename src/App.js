@@ -213,7 +213,7 @@ class App extends Component {
                 console.log(this.state.location)
                 console.log(this.state.location === 'Ghana')
                 this.setState({litter_registrations_price : 20.00})
-                this.setState({puppy_registrations_price : 30.00})
+                this.setState({puppy_registrations_price : 1.00})
                 // this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
                 // this.setState({puppy_registrations_price : 20.00})
                 this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
