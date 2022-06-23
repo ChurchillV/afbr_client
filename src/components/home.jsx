@@ -79,7 +79,7 @@ class Home extends Component {
           { }
 
         </div>
-        <div className='row  align-items-center justify-content-start homerow'>
+        <div className='row  align-items-center justify-content-center homerow'>
 
           <div className=' font-weight-bold homeMessaggehome' >
             <HomeMessage />
