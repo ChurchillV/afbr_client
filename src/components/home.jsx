@@ -11,8 +11,8 @@ import dog2 from '../images/dog2.jpg'
 import dog3 from '../images/dog8.jpg'
 import dog4 from '../images/dog9.jpg'
 import dog5 from '../images/dog10.jpg'
-import dog6 from '../images/dog11.jpeg'
-import dog7 from '../images/doga1.jpg'
+import dog6 from '../images/dog9a.jpg'
+import dog7 from '../images/doga2.jpg'
 import mzv from '../images/mzv2.jpg'
 import gallery_1 from '../images/gallery1.jpeg'
 import gallery_2 from '../images/gallery2.jpeg'
@@ -86,7 +86,7 @@ class Home extends Component {
 
           </div>
           <div className='col-sm-12 carousel_to_be_hidden'>
-            <Carousel image_src1={mzv}  />
+            <Carousel image_src1={mzv} image_src2={dog5}/>
           </div>
           
 

@@ -181,8 +181,10 @@
 @media screen and (min-width: 768px) {
   .homeMessage {
   padding: 7%;
-  padding-bottom: 4%;
-  background-color: rgba(209, 155, 53, 0.8);
+  padding-bottom: 13%;
+  padding-top: 12%;
+  /* background-color: rgba(21, 20, 19, 0.8); */
+  background-image: linear-gradient(to right, black, rgb(63, 46, 11), transparent)
   ;
   /* border-right: 10px solid  rgb(186, 129, 8); */
 
@@ -195,10 +197,12 @@
   /* padding-left: 10%;
   padding-top: 50%;
   padding-bottom: 50%; */
-  padding-left : 10%;
+  padding-left : 3%;
+  margin-left: 1%;
   position: absolute;
-  border-top-right-radius: 90%;
-  top: 50%;
+  
+  /* border-top-right-radius: 90%; */
+  top: 0%;
   z-index: 2;
   width: 50%;
   font-family:serif;
