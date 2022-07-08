@@ -42,6 +42,8 @@ import { Register_Success } from './components/dog_registrations_success';
 import { Litter_Register_Success } from './components/litter_registrations_success';
 import { Community_Main } from './components/community/community_main';
 import { Newly } from './components/community/newly_registered';
+import { Post } from './components/community/posts';
+import { Ads } from './components/community/advertissements';
 
 export const UserContext = React.createContext('default');
 // console.log(user,'kkkhhk')
@@ -257,6 +259,11 @@ class App extends Component {
             <Route path='/contact' element={<Contact />} />
             <Route path='/community' element={<Community_Main />} />
             <Route path='/newly_registered' element={<Newly />} />
+            <Route path='/community/posts' element={< Post />} />
+            <Route path='/community/posts_mock' element={< Post />} />
+            <Route path='/community/advertissements_mock' element={< Ads />} />
+
+
 
             <Route path='/sign_up' element={< Register />} />
             <Route path='/login' element={< Login />} />
