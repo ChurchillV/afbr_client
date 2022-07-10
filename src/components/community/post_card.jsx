@@ -21,7 +21,7 @@ export class PostCard extends React.Component {
 
     render() {
         return (
-            <div className='container   text-left bg-white mb-md-5 mb-sm-5 animate__animated animate__fadeInUp animate__slow'>
+            <div className='container   text-left bg-white mb-md-5 mb-sm-5 animate__animated animate__fadeInUp animate__slower'>
 
                 <div className='row align-items-center justify-content-center my-2 pt-2'>
                     <div className='col-sm-10'>
