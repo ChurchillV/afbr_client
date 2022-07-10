@@ -3,7 +3,7 @@ import axios from 'axios'
 import Navbar from '../navbar';
 import comment_image from './images/comment.png'
 import love_image from './images/love.png'
-
+import 'animate.css'
 
 const url = 'http://localhost:5000/'
 
@@ -21,7 +21,7 @@ export class PostCard extends React.Component {
 
     render() {
         return (
-            <div className='container   text-left bg-white mb-md-5 mb-sm-5'>
+            <div className='container   text-left bg-white mb-md-5 mb-sm-5 animate__animated animate__fadeInUp animate__slow'>
 
                 <div className='row align-items-center justify-content-center my-2 pt-2'>
                     <div className='col-sm-10'>
@@ -55,11 +55,11 @@ export class PostCard extends React.Component {
                                 data-toggle="modal" data-target="#commentAdder"><img src={comment_image} alt="" width={'50px'} /></button>
 
 
-                            <span> <img src={love_image} alt="" width={'30px'} className='mx-1' />
+                            <span className=''> <img src={love_image} alt="" width={'30px'} className='mx-1 animate__animated animate__tada animate__slow animate__infinite' />
                                 10 likes</span>
 
                             <div>
-                                <a class="btn btn-default" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <a class="btn btn-default " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                     10 comments
                                 </a>
 

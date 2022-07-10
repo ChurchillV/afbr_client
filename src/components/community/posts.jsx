@@ -78,7 +78,7 @@ export class Post extends React.Component {
 
                     </div>
                     <div className='col-sm-6'>
-                        <p className='text-uppercase font-weight-bold mt-2'>AFBR's latest posts</p>
+                        <p className='text-uppercase font-weight-bold mt-2 animate__animated animate__fadeInDown animate__slow'>AFBR's latest posts</p>
                         {this.state.posts_loaded && this.displayPosts()}
 
                         <PostCard username='Corporate Love Pets' post_content='
@@ -97,7 +97,7 @@ export class Post extends React.Component {
                           HOld them their hand' post_image='https://res.cloudinary.com/daurieb51/image/upload/v1655742937/khaki_mizhr9.jpg'
                         />
                     </div>
-                    <div className='col-sm-2 mt-5'>
+                    <div className='col-sm-2 mt-5 animate__animated animate__fadeInRight animate__slow'>
                         {/* <p className='text-uppercase  py-3 font-weight-bold'> Profile</p> */}
                         {this.state.posts_loaded && this.displayPosts()}
                         {/* <PostProfile /> */}

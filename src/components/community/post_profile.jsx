@@ -17,7 +17,7 @@ export class PostProfile extends React.Component {
 
     render() {
         return (
-            <div className='container   text-left bg-white position-sticky'>
+            <div className='container   text-left bg-white position-sticky animate__animated animate__fadeInLeft animate__slow'>
                 <div className='row align-items-center justify-content-center'>
                     <div className='col-sm-12 text-center'>
                         <img 
