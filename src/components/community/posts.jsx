@@ -4,6 +4,9 @@ import Navbar from '../navbar';
 import { PostCard } from './post_card';
 import { PostProfile } from './post_profile';
 import postpng from './images/post.png'
+import image_svg from './images/image_svg.png'
+import video_svg from './images/video_svg.png'
+
 
 const url = 'http://localhost:5000/'
 
@@ -12,7 +15,8 @@ export class Post extends React.Component {
         super(props)
         this.state = {
             posts: {},
-            posts_loaded: false
+            posts_loaded: false,
+            modal: false
         }
     }
 
@@ -91,9 +95,58 @@ export class Post extends React.Component {
                         {/* <p className='text-uppercase  py-3 font-weight-bold'> Profile</p> */}
                         {this.state.posts_loaded && this.displayPosts()}
                         {/* <PostProfile /> */}
-                        <img src={postpng} alt="" width={'50px'}/>
-                        <p className='font-italic font-weight-light'>Share your thoughts with the community!!</p>
+
+                        <button type="button" class="btn btn-deafault"
+                            onClick={() => this.setState({ modal: !this.state.modal })} data-toggle="modal" data-target="#exampleModalCenter">
+                            <img src={postpng} alt="" width={'50px'} />
+                        </button>
+                        <p className=' font-italic font-weight-light'>
+                            Share your thoughts with the community!!</p>
                     </div>
+
+                    {/* modal */}
+                    {this.state.modal ?
+
+
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Add a Post</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div className='container-fluid'>
+                                            <div className='row align-items-center justify-content-start'>
+                                                <div className='col-sm-10'>
+                                                    <form className='text-dark' action="
+                                                    ">
+                                                        <div class="form-group text-left" >
+                                                            <label className='text-dark ' for="postContent">Add a post</label>
+                                                            <textarea class="form-control" id="postContent"  placeholder='Feel free!!!' rows="3"></textarea>
+                                                        </div>
+                                                        <div class="form-group text-dark  text-left">
+                                                            <label className='text-dark'  for="sendfile"><img src={image_svg} alt="" width={'5%'} /> Post an image</label>
+                                                            <input type="file" class="form-control-file" id="sendfile"></input>
+                                                        </div>
+                                                        <div class="form-group  text-left ">
+                                                            <label  className='text-dark' for="exampleFormControlFile1"><img src={video_svg} alt="" width={'5%'}/>  post a video</label>
+                                                            <input type="file" class="form-control-file" id="exampleFormControlFile1"></input>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-success">Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> : null}
 
                 </div>
                 <div className='row align-items-center justify-content-center'>
