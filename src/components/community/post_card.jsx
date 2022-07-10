@@ -22,6 +22,7 @@ export class PostCard extends React.Component {
     render() {
         return (
             <div className='container   text-left bg-white mb-md-5 mb-sm-5'>
+
                 <div className='row align-items-center justify-content-center my-2 pt-2'>
                     <div className='col-sm-10'>
                         <p className='fs-6 font-monospace font-large'>Post by: <span className='text-info font-weight-bold'>
@@ -32,23 +33,26 @@ export class PostCard extends React.Component {
                             12:00</span></p>
                     </div>
                 </div>
+
                 <div className='row align-items-start justify-content-start my-1'>
                     <div className='col-sm-10 '>
                         <p className='fs-1'>{this.props.post_content}</p>
                     </div>
                 </div>
+
                 <div className='row align-items-center justify-content-center'>
-                    <div className='col-sm-12'>
+                    <div className='col-sm-'>
                         <img src={this.props.post_image} alt="" width={'100%'} />
                     </div>
                 </div>
+
                 <div className='row align-items-center justify-content-center'>
                     <div className='col-sm-12'>
                         <div className='row align-items-center justify-content-between mx-2'>
 
                             <button className='btn btn-default'
-                            onClick={() => this.setState({ comment_modal: !this.state.comment_modal })} 
-                            data-toggle="modal" data-target="#commentAdder"><img src={comment_image} alt="" width={'50px'} /></button>
+                                onClick={() => this.setState({ comment_modal: !this.state.comment_modal })}
+                                data-toggle="modal" data-target="#commentAdder"><img src={comment_image} alt="" width={'50px'} /></button>
 
 
                             <span> <img src={love_image} alt="" width={'30px'} className='mx-1' />
@@ -108,7 +112,7 @@ export class PostCard extends React.Component {
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-success">Comment</button>
+                                    <button type="button" class="btn btn-success">Comment   </button>
                                 </div>
                             </div>
                         </div>

@@ -77,17 +77,23 @@ export class Post extends React.Component {
                         <PostProfile />
 
                     </div>
-                    <div className='col-sm-7'>
-                        <p className='text-uppercase font-weight-bold mt-2'>Latest Posts</p>
+                    <div className='col-sm-6'>
+                        <p className='text-uppercase font-weight-bold mt-2'>AFBR's latest posts</p>
                         {this.state.posts_loaded && this.displayPosts()}
+
                         <PostCard username='Corporate Love Pets' post_content='
                         Have you seen these really cute dogs' post_image='https://res.cloudinary.com/daurieb51/image/upload/v1655788535/tffvxybvnhjrhq4otzmd.jpg'
                         />
+
                         <PostCard username='Takyi Otou' post_content='
                         These puppies are the best' post_image='https://res.cloudinary.com/daurieb51/image/upload/v1654276166/u8yrvlfplyj99pgszp2t.jpg'
-                        /><PostCard username='Corporate Love Pets' post_content='
+                        />
+                        
+                        <PostCard username='Corporate Love Pets' post_content='
                          Sad neews today' post_image='https://res.cloudinary.com/daurieb51/image/upload/v1655659705/r2qz4pncsw2ckcs1xvnl.jpg'
-                        /><PostCard username='Bravewealth Kennels' post_content='
+                        />
+                        
+                        <PostCard username='Bravewealth Kennels' post_content='
                           HOld them their hand' post_image='https://res.cloudinary.com/daurieb51/image/upload/v1655742937/khaki_mizhr9.jpg'
                         />
                     </div>
