@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeMessage = () => {
     return (
-        <div className='homeMessage row align-items-center justify-content-center'>
+        <div className='animate__animated animate__fadeInLeft animate__slow homeMessage row align-items-center justify-content-center'>
             <div className='col-sm-12'>
                 <div className='text-left'>
                     <h1 className='text-uppercase font-weight-bold text-left' >The AFBR</h1>

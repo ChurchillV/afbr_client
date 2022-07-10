@@ -19,7 +19,8 @@ import gallery_2 from '../images/gallery2.jpeg'
 import gallery_3 from '../images/gallery3.jpeg'
 import gallery_4 from '../images/gallery4.jpeg'
 import gallery_5 from '../images/gallery5.jpeg'
-
+import tick from '../images/tick.png'
+import 'animate.css'
 
 
 
@@ -107,8 +108,10 @@ class Home extends Component {
         </div>
         <div className='row  mt-5 pt-5 card_row align-items-center justify-content-center'>
           <div className='col-sm-6 '>
-            <h1 class='text-capitalize' style={{ color: 'white' }}>Join the community of bull dog owners today</h1>
-            <h5 class='text-capitalize' style={{ color: 'white' }}>Connect with dog owners across Africa and the globe</h5>
+            <h1 class='text-capitalize animate__animated animate__fadeInRight animate__slow' 
+            style={{ color: 'white' }}>Join the community of bull dog owners today</h1>
+            <h5 class='text-capitalize animate__animated animate__fadeInRight animate__slow'
+             style={{ color: 'white' }}>Connect with dog owners across Africa and the globe</h5>
           </div>
           <div className='col-sm-6 '>
             <div>
@@ -128,30 +131,35 @@ class Home extends Component {
             </div>
           </div>
           <div className='col-sm-6'>
-          <h2 class='text-capitalize text-center px-md-3 py-md-3' >Uniting passionate, dedicated dog lovers and breeders</h2>
-            <p class='text-capitalize text-center px-md-3'>Right here in Africa</p>
+          <h2 class='text-capitalize text-center px-md-3 py-md-3 animate__animated 
+          animate__fadeInDown animate__slow' >Uniting passionate, dedicated dog lovers and breeders</h2>
+            <p class='text-capitalize text-center px-md-3 animate__animated
+             animate__fadeInDown animate__slow font-weight-bold'>Right here in Africa</p>
        
           </div>
         </div>
 
 
 
-        <div className='row  mt-md-5 p-md-5 register1 align-items-center justify-content-center'>
+        <div className='row  mt-md-5 p-md-5 py-5 register1 align-items-center justify-content-center'>
 
 
-          <div className='col-sm-6 '>
-            <h1 class='text-capitalize mb-5' style={{ color: 'white' }}>Register your bull dog with us today</h1>
-            <h5 class='text-capitalize' style={{ color: 'white' }}>American Bull Dogs</h5>
-            <h5 class='text-capitalize' style={{ color: 'white' }}>Frenchiebulls</h5>
+          <div className='col-sm-6 py-5'>
+            <h1 class='text-capitalize mb-5 font-weight-bold' style={{ color: 'white' }}><span className='text-warning text-uppercase'> Register </span>your bull dog with us today</h1>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>
+              <img src={tick} alt="" width={'10%'}/> American Bull Dogs</h5>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>
+            <img src={tick} alt="" width={'10%'}/>Frenchiebulls</h5>
 
-            <h5 class='text-capitalize' style={{ color: 'white' }}>American Bully </h5>
+            <h5 class='text-capitalize' style={{ color: 'white' }}>
+            <img src={tick} alt="" width={'10%'}/>American Bully </h5>
 
           </div>
         </div>
 
         <div className='row  align-items-center justify-content-center'>
-        <div className='col-lg-12'>
-            < Card text1="Our Gallery" className='gallery' />
+        <div className='col-lg-12 '>
+            < Card text1="Our Gallery" className='gallery ' />
           </div>
         </div>
         <div className='row mt-md-5 card_row align-items-center justify-content-center'>
@@ -176,9 +184,9 @@ class Home extends Component {
 
         <div className='row  mt-md-5 align-items-center justify-content-center'>
           <div className='col-sm-6 documented' style={{textAlign: 'center'}}>
-            <p className='text-warning'>Well documented pedigrees</p>
-            <p className='text-info'>Global certification</p>
-            <p className='text-dark'>African Identity</p>
+            <h3 className='text-warning '><img src={tick} alt="" width={'10%'}/>Well documented pedigrees</h3>
+            <h3 className='text-info '><img src={tick} alt="" width={'10%'}/>Global certification</h3>
+            <h3 className='text-dark font-large'><img src={tick} alt="" width={'10%'}/>African Identity</h3>
 
           </div>
 
@@ -190,44 +198,8 @@ class Home extends Component {
             </div>         
         </div>
 
-{/* 
-      <div className='row mt-5 py-5 card_row align-items-center justify-content-center'>
-      <div className='col-lg-12 '>
-                <h1 className='text-white'>Our Partners</h1>
-              </div>
-      </div>
-      
 
-        <div className='row  mt-5 px-5 partners_row align-items-center justify-content-center'>
-              <div className='col-sm-2 px-sm-5'>
-          <img src={holden}  className='partners_image'></img>
-              </div>
-              <div className='col-sm-2 px-sm-5'>
-          <img src={jumeirah} className='partners_image'></img>
-              </div>
-              <div className='col-sm-2'>
-          <img src={sendgrid} className='partners_image'></img>
-              </div>
-              <div className='col-sm-2'>
-          <img src={athletics} className='partners_image'></img>
-              </div>
-              <div className='col-sm-2'>
-          <img src={cubico} className='partners_image'></img>
-              </div>
-              <div className='col-sm-2'>
-          <img src={mates} className='partners_image'></img>
-              </div>
-
-             
-
-
-
-
-
-     
-
-      </div> */}
-      <div className='row  bg-dark mt-5 text-white align-items-center justify-content-center'>
+      <div className='row  bg-dark mt-4 text-white align-items-center justify-content-center'>
         <div className='col-lg-12'>
         <Footer />
 

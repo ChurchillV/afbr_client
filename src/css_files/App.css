@@ -182,7 +182,7 @@
   .homeMessage {
   padding: 7%;
   padding-bottom: 13%;
-  padding-top: 12%;
+  padding-top: 15%;
   /* background-color: rgba(21, 20, 19, 0.8); */
   background-image: linear-gradient(to right, black, rgb(63, 46, 11), transparent)
   ;
@@ -209,7 +209,7 @@
   
   display: flex;
   flex-direction: column;
-  /* height: 100%; */
+  height: 100%;
   
   /* visibility: hidden; */
  
@@ -316,8 +316,13 @@
   font-size: 4vw;
   /* text-align: center; */
   color: white  ;
-  background-color: #353330;
-  border-left: 6px solid white;
+  background-color: #1e1e1d;
+  background-image: url('../images/logo2e.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode:hard-light;
+  background-size: cover;
+  border-left: 6px solid rgba(255, 255, 255, 0.249);
   display: flex;
   height: 100%;
 
@@ -330,15 +335,15 @@
   
 .gallery{
   background-color: inherit;
-  padding: 10%;
+  padding:5%;
 
   font-size: 4vw;
   text-align: center;
   color: #ba8108;
-  animation-name: enlarge;
+  /* animation-name: enlarge;
   animation-duration: 10s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease; 
+  animation-timing-function: ease;  */
   /* border-bottom: 6px solid black;
   display: flex; */
 

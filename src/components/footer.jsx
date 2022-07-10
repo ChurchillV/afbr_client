@@ -5,10 +5,11 @@ import '../css_files/App.css'
 const Footer = (props) => {
   return (
 
-    <footer class="footer_full text-center text-lg-start">
+    <footer class="footer_full text-center text-lg-center 
+    row justify-content-center align-items-center">
 
       <section
-        class="d-flex justify-content-center align-items-center p-4 border-bottom"
+        class="row justify-content-center align-items-center py-4 border-bottom"
       >
 
         <div class="me-5 px-5 d-none d-lg-block">
