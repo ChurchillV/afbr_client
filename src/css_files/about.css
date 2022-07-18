@@ -17,6 +17,12 @@
 
 }
 
+@media screen and (min-width: 770px) {
+    .border_left_yellow{
+        border-left: 5px solid #ba8018;
+    }
+}
+
 .about_heading{
    padding-top: 5%;
    padding-bottom: 5%;
