@@ -87,7 +87,7 @@ class Search extends Component {
                            this.onClickFunc(e, item)
                         }
                         } value={item.id}
-                        className='btn btn-info text-lowercase search_results_text fade-in w-100'>
+                        className='btn btn-info text-capitalize search_results_text fade-in w-100'>
                             {item.name}</button>
     
                 </div>
