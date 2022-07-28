@@ -240,7 +240,7 @@ class Register_Special extends React.Component {
 
     }
 
-    
+
 
     edit = (e) => {
 
@@ -299,11 +299,7 @@ class Register_Special extends React.Component {
                 this.sendDogRegEmail()
                 console.log(res.data.message);
                 console.log('dog created/editted in congrats page')
-
-                // localStorage.clear()
-
-                this.props.navigate('/profile')
-
+                this.setHasBeenPaidFor()
 
             })
 
@@ -312,6 +308,22 @@ class Register_Special extends React.Component {
                 console.log("Error couldn't create Dog");
                 console.log(err.message);
             });
+
+    }
+
+    setHasBeenPaidFor = () => {
+        axios
+            .post(`${url}api/dogs/has_paid`, {
+                dog: {
+                    name: this.state.dog.name || 'no name supplied'
+                }
+            })
+            .then((res) => {
+                console.log(res)
+                this.props.navigate('/profile')
+            }
+            )
+            .catch((err) => console.log(err))
 
     }
 

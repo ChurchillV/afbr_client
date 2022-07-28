@@ -18,7 +18,9 @@ class RegisterForm extends Component {
         console.log('this.prpos.sires', this.props)
         this.state = {
             imageSelected: '',
-            register_text: 'Register'
+            register_text: 'Register',
+            special_register_text: 'Special Register',
+            edit_text: 'Edit'
         }
         // console.log('this.prpos.dams', Object.values(this.props.dams))
 
@@ -41,6 +43,10 @@ class RegisterForm extends Component {
 
     changeToLoading = () => {
         this.setState({register_text: 'Loading, just a sec'})
+        this.setState({special_register_text: 'Loading, just a sec'})
+
+        this.setState({edit_text: 'Loading, just a sec'})
+
     }
 
     render() {
@@ -212,15 +218,15 @@ class RegisterForm extends Component {
 
 
                 {/* {this.props.dpo_loaded && <button type="submit" class="btn btn-success">Register</button>} */}
-                {!this.props.edit && <button type="submit" class="btn btn-success" onClick={()=> this.changeToLoading()}>{this.state.register_text}</button>}
+                {(!this.props.edit &&  !this.props.special) && <button type="submit" class="btn btn-success" onClick={()=> this.changeToLoading()}>{this.state.register_text}</button>}
 {/* 
                 {!this.props.dpo_loaded && ! this.props.edit && 
                     <div>
                         <p className='text-white'>Generating payment link. Just a sec</p>
                         <BeatLoader color='white' size={30} />
                     </div>} */}
-                {this.props.special && <button type="submit" class="btn btn-success">Special Register</button>}
-                {this.props.edit && <button type="submit" className='btn btn-success'>Edit</button>}
+                {this.props.special && <button type="submit" class="btn btn-success"onClick={()=> this.changeToLoading()}>{this.state.special_register_text}</button>}
+                {this.props.edit && <button type="submit" className='btn btn-success'onClick={()=> this.changeToLoading()}>{this.state.edit_text}</button>}
             </form>
         )
     }
