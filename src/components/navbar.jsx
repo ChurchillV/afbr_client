@@ -39,8 +39,8 @@ class Navbar extends Component {
                             <span class="navbar-toggler-icon"></span>
                         </button>
 
-                        <div class="w-100 align-content-center justify-content-center collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul class="navbar-nav ">
+                        <div class="w-100 align-items-center justify-content-center collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav text-center d-none d-sm-block">
                                 <li class="nav-item active" style={{ color: this.props.color }}>
                                     <span className='navtitle' style={{ color: this.props.color }}>THE AFRICAN BULLY REGISTRY</span>
 
