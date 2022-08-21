@@ -6,12 +6,7 @@ import '../css_files/App2.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Card from './card'
 import Carousel from './carousel'
-// import dog1 from '../images/dog1.jpg'
-// import dog2 from '../images/dog2.jpg'
-// import dog3 from '../images/dog8.jpg'
-// import dog4 from '../images/dog9.jpg'
-// import dog5 from '../images/dog10.jpg'
-// import dog6 from '../images/dog9a.jpg'
+
 import dispdog1 from '../images/dispdog1.jpeg'
 import organogram from '../images/organogram1.jfif'
 

@@ -257,10 +257,12 @@ class App extends Component {
             <Route path='/shows_and_events' element={<Shows />} />
             <Route path='/judges' element={<Judges />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/community' element={<Community_Main />} />
-            <Route path='/newly_registered' element={<Newly />} />
-            <Route path='/community/posts' element={< Post />} />
-            <Route path='/community/posts_mock' element={< Post />} />
+            <Route path='/community' element={<Post />} />
+            <Route path='/newly_registered' element={<Post />} />
+
+            {/* <Route path='/newly_registered' element={<Newly />} /> */}
+            {/* <Route path='/community/posts' element={< Post />} />
+            <Route path='/community/posts_mock' element={< Post />} /> */}
             <Route path='/community/advertissements_mock' element={< Ads />} />
 
 

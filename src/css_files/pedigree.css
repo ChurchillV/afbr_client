@@ -25,7 +25,7 @@
     background-color: inherit;
     display: flex;
     align-content: center;
-    justify-content: end;
+    justify-content: center;
     flex-direction: row;
     /* width: 100%; */
     align-items: center;

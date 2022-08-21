@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const Community_Nav = () => {
     return <div className='container-fluid'>
-        <div className='row align-items-center justify-content-center'>
+        <div className='row align-items-center justify-content-center my-2'>
             <div className='col-sm-1'>
             <Link class=""  to="/">Home</Link>
 

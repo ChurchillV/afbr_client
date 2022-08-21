@@ -47,7 +47,7 @@ class Pedigree extends React.Component {
         return (
             <div>
 
-                <div className='main'>
+                <div className='main m-2 m-sm-5'>
                     <div className='sires_row w-100 py-4'>
                         <div className='sire'>
 
@@ -66,11 +66,11 @@ class Pedigree extends React.Component {
 
                                     {this.props.data.sire.name == 'Unknown Genealogy' ?
                                         <div className='sire_label' >
-                                            <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
+                                            <span className='text-capitalize smallrem'>{this.props.data.sire.name}</span>
                                         </div>
 
                                         :
-                                        <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.sire.id}`}>
+                                        <a style={{ color: 'whitesmoke', width: '70%' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                             <div className='sire_label' >
                                                 <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
                                             </div>
@@ -130,7 +130,7 @@ class Pedigree extends React.Component {
                                         </div>
 
                                         :
-                                        <a style={{ color: 'whitesmoke' }} href={`/my_dogs/${this.props.data.dam.id}`}>
+                                        <a style={{ color: 'whitesmoke',  width: '70%'  }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                             <div className='sire_label'>
                                                 <p className='text-capitalize smallrem'>{this.props.data.dam.name}</p>
                                             </div>

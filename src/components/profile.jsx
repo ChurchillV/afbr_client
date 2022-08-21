@@ -106,9 +106,9 @@ class Profile extends Component {
                         <div className='row align-items-center justify-content-center pro_nav'>
                             <Link to='/Home' style={{color:this.props.navbarcolor}}>Home</Link>
                         </div>
-                        <div className='row align-items-center justify-content-center pro_nav'>
+                        {/* <div className='row align-items-center justify-content-center pro_nav'>
                            {this.state.firebaseUser ? <Link to={`/profile/personal/${this.state.firebaseUser.uid}`}  style={{color:this.props.navbarcolor}}>Personal</Link> :  <Link to='/profile/personal/'>Personal</Link> }
-                        </div>
+                        </div> */}
                         <div className='row align-items-center justify-content-center pro_nav'>
                             <Link  style={{color:this.props.navbarcolor}} to='/my_dogs'>My dogs</Link>
                         </div>

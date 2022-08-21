@@ -6,6 +6,9 @@ import { PostProfile } from './post_profile';
 import postpng from './images/post.png'
 import image_svg from './images/image_svg.png'
 import video_svg from './images/video_svg.png'
+import padlock from './images/padlock.png'
+import { Community_Nav } from './community_nav';
+
 
 
 const url = 'http://localhost:5000/'
@@ -70,6 +73,11 @@ export class Post extends React.Component {
         return (
             <div className='container-fluid '>
                 <Navbar />
+                <Community_Nav/>
+                <div className='position-fixed padlock'>
+                        <img src={padlock} alt="" />
+                        <p className='text-uppercase font-weight-bold'>coming soon</p>
+                    </div>
                 <div className='row justify-content-center align-items-start comm_body'>
                     <div className='col-sm-2 mt-5'>
                         {/* <p className='text-uppercase  py-3 font-weight-bold'> Profile</p> */}
@@ -77,6 +85,8 @@ export class Post extends React.Component {
                         <PostProfile />
 
                     </div>
+
+                   
                     <div className='col-sm-6'>
                         <p className='text-uppercase font-weight-bold mt-2 animate__animated animate__fadeInDown animate__slower'>AFBR's latest posts</p>
                         {this.state.posts_loaded && this.displayPosts()}

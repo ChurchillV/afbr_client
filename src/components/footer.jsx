@@ -6,7 +6,7 @@ const Footer = (props) => {
   return (
 
     <div class=" container">
-      <div className='row my-5 align-items-center justify-content-center'>
+      <div className='row my-5 mt-0 align-items-center justify-content-center'>
 
 
         <div class="col-sm-3">
@@ -15,32 +15,34 @@ const Footer = (props) => {
 
       </div>
       <div
-        class="row justify-content-center align-items-center py-4 border-bottom"
+        class="row justify-content-center align-items-center py-1 border-bottom"
       >
 
 
 
 
-        <div class="smallrem col-sm-3">
-          <p class="smallrem fab fa-whatsapp">Whatsapp: + 233 24 233 1674 , +233 20 377 5123</p>
+        <div class="smallrem col-sm-2">
+          <p class=""><span className='fa fa-whatsapp'></span>+ 233 24 233 1674 , +233 20 377 5123</p>
         </div>
 
-        <div className='col-sm-3 smallrem'>
+        <div className='col-sm-2 smallrem'>
           <a href="https://www.facebook.com/groups/1103803533338705/?ref=share/" target='_blank' class="me-4 text-reset smallrem">
-            <p class="fab fa-facebook-f"><span className='smallrem'>Facebook</span>  </p>
+            <p class="fa fa-facebook">
+             </p>
           </a>
+         
         </div>
 
-        <div to="" class="smallrem col-sm-3">
-          <i class="fab fa-google "> Gmail :<a className='text-white text-lowercase' href="mailto:africanbullyregistry@gmail.com">africanbullyregistry@gmail.com</a>
-
-          </i>
+        <div class="smallrem  col-sm-2">
+          <a href="" className='smallrem text-white'><span className='fa fa-twitter'></span> </a>
         </div>
 
-        <div class="smallrem  col-sm-3">
-          <a href="https://www.linkedin.com/company/african-bully-registry" className='smallrem text-white'><i class="fab fa-linkedin">LinkedIn</i></a>
+        <div class="smallrem  col-sm-2">
+          <a href="https://www.linkedin.com/company/african-bully-registry" className='smallrem text-white'><span className='fa fa-linkedin'></span> </a>
         </div>
-
+        <div class="smallrem  col-sm-2">
+          <a href="" className='smallrem text-white'><span className='fa fa-instagram'></span> </a>
+        </div>
 
 
       </div >
@@ -74,7 +76,7 @@ const Footer = (props) => {
               <p>
                 <a href="/registration" class=" smallrem text-reset">Register</a>
               </p>
-             
+
             </div>
 
 
