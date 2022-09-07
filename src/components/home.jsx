@@ -126,13 +126,14 @@ class Home extends Component {
             <h3 class='text-uppercase font-weight-normal' >
               <span className=' font-weight-bold text-uppercase'> Register
               </span> your bull dog with us today</h3>
-            <p class='text-capitalize mt-5' >
-              <img src={tick} alt="" width={'5%'} /> American Bull Dogs</p>
-            <p class='text-capitalize'>
-              <img src={tick} alt="" width={'5%'} />Frenchiebulls</p>
-
-            <p class='text-capitalize mb-5'>
+            <p class='text-capitalize mt-5'>
               <img src={tick} alt="" width={'5%'} />American Bully </p>
+            <p class='text-capitalize ' >
+              <img src={tick} alt="" width={'5%'} /> American Bull Dogs</p>
+            <p class='text-capitalize  mb-5'>
+              <img src={tick} alt="" width={'5%'} />Frenchbulldogs</p>
+
+
 
 
           </div>
