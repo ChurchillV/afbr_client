@@ -13,8 +13,8 @@ import { url } from "./weburl";
 import emailjs from '@emailjs/browser'
 import { init } from '@emailjs/browser';
 import { PedShareForm } from "./pedshareus";
-
-
+import { getLocation } from "./confetti";
+import CountryContext from "./country_context";
 export function withRouter(Child) {
     return (props) => {
         const location = useLocation();
@@ -26,79 +26,38 @@ export function withRouter(Child) {
 }
 
 class DogRegistration extends React.Component {
+    static contextType = CountryContext
 
     constructor(props) {
         super(props)
 
-        console.log('this.props', this.props.location)
-        // console.log(this.props.location.pathname.split('/'))
-
-
         this.state = {
             dog: {
                 'name': '',
-               
             },
-
             sires: {
-
             },
-
             dams: {
-
             },
             edit: false,
             dpo: '',
             loaded: false,
             image_urls: '',
             dpo_loaded: false,
-
-
         }
-
-
     }
 
-
-
-
-
-
-    // useEffect(() => getData, console.log('hello'))
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.puppy_registrations_price !== this.props.puppy_registrations_price) {
-    //         this.setState({ ...this.state, price: this.props.puppy_registrations_price }, () =>
-    //             this.getTransactUrl()
-    //         )
-
-    //     }
-    //     if (prevProps.dog_registrations_price !== this.props.dog_registrations_price) {
-    //         this.setState({ ...this.state, price: this.props.dog_registrations_price }, () =>
-    //             this.getTransactUrl()
-    //         )
-
-    //     }
-    //     console.log(prevProps.puppy_registrations_price)
-    // }
 
 
     componentDidMount = () => {
-        this.getcurrentuser()
-        console.log(this.props)
-        // const user =  this.context
-        // console.log('user',this.props.user.uid)
-        console.log('dog registrations state', this.state)
-
-
-
-        //do so that this is only called when it is to be editted
+        console.log('contenxt comes here',this.context)
+        // this.getcurrentuser()
+        if (this.context.user){
+            this.setState({loaded: true})
+        }
 
         this.check_if_to_edit()
-
-
-
     }
-
 
 
     check_if_to_edit = () => {
@@ -130,34 +89,6 @@ class DogRegistration extends React.Component {
 
 
     }
-
-
-    getcurrentuser = (callback) => {
-        const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                this.setState({ ...this.state, firebaseUser: user }, () => {
-                    console.log('on Authstate dog reg', this.state.firebaseUser)
-                    // this.changeUserToId(callback)
-                    this.setState({ loaded: true })
-                });
-
-            } else {
-                this.setState({ user: null });
-                console.log('usershmm')
-                this.setState({ loaded: false })
-
-            }
-
-            if (this.state.loading) {
-                console.log('loading user')
-                this.setState({ loaded: false });
-            }
-        });
-    }
-
-
-
 
 
     uploadImage = (callback) => {
@@ -202,8 +133,7 @@ class DogRegistration extends React.Component {
 
     }
     handleImageChange = (e) => {
-        // const {  value } = e.target.files[0]
-        // console.log('e.')
+        
         console.log(e.target.files[0].name)
 
 
@@ -257,16 +187,19 @@ class DogRegistration extends React.Component {
     getTransactUrl = () => {
         
         axios.post(`${url}api/dpo/transact`, {
+            location: this.context.location,
             transaction_name: this.props.transaction_name,
             transaction_cost: this.state.price,
             dog_name: this.state.dog.name,
-            username: this.state.firebaseUser.displayName,
-            email: this.state.firebaseUser.email
+            // username: this.state.firebaseUser.displayName,
+            username: this.context.user.displayName,
+            // email: this.state.firebaseUser.email
+            email: this.context.user.email
         })
             .then((res) => {
                 console.log(res.data)
                 this.setState({ dpo: res.data, dpo_loaded: true }, () => {
-                    console.log(this.state)
+                    
                     window.location = this.state.dpo
 
                 })
@@ -283,12 +216,6 @@ class DogRegistration extends React.Component {
     edit = (e) => {
 
         e.preventDefault()
-
-        // setData((data) => ({...data, [e.target.name]: e.target.value }))
-        console.log(this.state)
-
-
-
         if (this.state.imageSelected) {
             this.uploadImage(this.updateDogInfo)
 
@@ -297,8 +224,6 @@ class DogRegistration extends React.Component {
         }
         else {
             this.updateDogInfo()
-            // this.props.navigate('/profile')
-
             console.log('no image url present, ready to edit')
         }
 
@@ -325,7 +250,7 @@ class DogRegistration extends React.Component {
     sendDogInfo = () => {
         console.log('calling sendDogInfo')
         axios
-            .post(`${url}api/dogs`, { dog: this.state.dog, user: this.state.firebaseUser })
+            .post(`${url}api/dogs`, { dog: this.state.dog, user: this.context.user })
             .then((res) => {
 
                 // sendDogRegEmail()
@@ -372,10 +297,7 @@ class DogRegistration extends React.Component {
             this.sendDogInfo()
             console.log('navigating to profile')
 
-            //changing this to avoid the user registering for free
-
-            // window.open(this.state.dpo, '_blank')
-            // window.location = this.state.dpo
+      
             console.log('no image url present')
         }
 
@@ -390,10 +312,9 @@ class DogRegistration extends React.Component {
                 <Navbar color='white' navbar_dark={'navbar-dark'} />
 
                 <div className="container-fluid">
-
                     <div className="row align-items-center justify-content-center">
 
-                        {this.state.loaded && <div className="col-sm-9">
+                        {this.context.user && <div className="col-sm-9">
                             {this.state.edit ?
                                 <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                     dams={this.state.dams} submit={this.edit}
@@ -431,7 +352,7 @@ class DogRegistration extends React.Component {
                         </div>}
 
 
-                        {!this.state.loaded &&
+                        {!this.context.user &&
                             <div >
                                 <p>Getting ready, please make sure you are logged in/signed up</p>
                                 <BeatLoader loading size={30} color={'white'} />

@@ -70,7 +70,7 @@ class Pedigree extends React.Component {
                                         </div>
 
                                         :
-                                        <a style={{ color: 'whitesmoke', width: '70%' }} href={`/my_dogs/${this.props.data.sire.id}`}>
+                                        <a style={{ color: 'whitesmoke', width: '100%' }} href={`/my_dogs/${this.props.data.sire.id}`}>
                                             <div className='sire_label' >
                                                 <p className='text-capitalize smallrem'>{this.props.data.sire.name}</p>
                                             </div>
@@ -130,7 +130,7 @@ class Pedigree extends React.Component {
                                         </div>
 
                                         :
-                                        <a style={{ color: 'whitesmoke',  width: '70%'  }} href={`/my_dogs/${this.props.data.dam.id}`}>
+                                        <a style={{ color: 'whitesmoke',  width: '100%'  }} href={`/my_dogs/${this.props.data.dam.id}`}>
                                             <div className='sire_label'>
                                                 <p className='text-capitalize smallrem'>{this.props.data.dam.name}</p>
                                             </div>

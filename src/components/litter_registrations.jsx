@@ -19,28 +19,11 @@ class LitterRegistration extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            price: this.props.litter_registrations_price
         }
     }
     
     componentDidMount = () => {
-        console.log(this.props)
     }
-
-
-    componentDidUpdate(prevProps){
-        if(prevProps.litter_registrations_price !== this.props.litter_registrations_price){
-            this.setState({...this.state, price:this.props.litter_registrations_price}, ()=>
-            console.log(this.state))
-        }
-        
-     }
-
-
-
-
-
-
 
     render(){
         return (
@@ -77,7 +60,7 @@ class LitterRegistration extends React.Component {
                         <div className="col-sm-6">
                         <p>3. Submit the Form to us</p>
     
-                        <PedShareForm label='Upload Filled Document Here' litter_registrations={true} price={this.state.price}/>
+                        <PedShareForm label='Upload Filled Document Here' litter_registrations={true} />
                        
                         </div>
                        

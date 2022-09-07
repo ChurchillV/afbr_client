@@ -4,10 +4,14 @@ import { url } from "./weburl";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 // import { BeatLoader } from "react-spinners";
 import { BounceLoader, BarLoader, BeatLoader } from 'react-spinners'
+import CountryContext from "./country_context";
 
 
 
 export class PedShareForm extends React.Component {
+
+    static contextType = CountryContext
+
     constructor(props) {
         super(props)
         this.state = {
@@ -15,45 +19,37 @@ export class PedShareForm extends React.Component {
             imageSelected: '',
             public_id: '',
             user: '',
-            loaded: false
+            loaded: false,
+            submit_button: 'Submit'
         }
     }
 
     componentDidMount = () => {
 
-        // !this.props.pedigree && this.getTransactUrl()
-        this.getcurrentuser()
+        // this.getcurrentuser()
+        // this.props.litter_registrations && this.getTransactUrl()
     }
     handleImage = (e) => {
         this.setState({ imageSelected: e.target.files[0] },
             () => {
-                console.log(this.state)
                 this.uploadImage()
             })
 
 
     }
 
-    componentDidUpdate(prevProps){
-        if(prevProps.price !== this.props.price){
-            this.setState({...this.state, price:this.props.price}, ()=>
-            this.getTransactUrl()
-            )
-        }
-        console.log(prevProps.price)
-        console.log(this.props)
-     }
 
     getTransactUrl = () => {
-        console.log(this.props.price,'this.props.price')
+        console.log('hi im being called')
         axios.post(`${url}api/dpo/transact`, {
-            transaction_name: 'Litter_Registrations',
-            transaction_cost: this.state.price
+            location: this.context.location,
+            transaction_name: 'litter_registrations',
         })
             .then((res) => {
-                console.log(res.data)
+                // console.log(res.data)
                 this.setState({ dpo: res.data, dpo_loaded: true }, () => {
-                    console.log(this.state)
+                    window.location = this.state.dpo
+
                 })
 
             })
@@ -61,29 +57,7 @@ export class PedShareForm extends React.Component {
             .catch((err) => console.log(err))
     }
 
-    getcurrentuser = (callback) => {
-        const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                this.setState({ ...this.state, firebaseUser: user }, () => {
-                    console.log('on Authstate dog reg', this.state.firebaseUser)
-                    // this.changeUserToId(callback)
-                    this.setState({ loaded: true })
-                });
 
-            } else {
-                this.setState({ user: null });
-                console.log('usershmm')
-                this.setState({ loaded: false })
-
-            }
-
-            if (this.state.loading) {
-                console.log('loading user')
-                this.setState({ loaded: false });
-            }
-        });
-    }
 
     sendtolocal = () => {
         localStorage.setItem("public_id",
@@ -94,7 +68,9 @@ export class PedShareForm extends React.Component {
 
         localStorage.setItem("user",
 
-            JSON.stringify(this.state.firebaseUser)
+            // JSON.stringify(this.state.firebaseUser)
+            JSON.stringify(this.context.user)
+
 
         )
     }
@@ -103,7 +79,9 @@ export class PedShareForm extends React.Component {
     sendLitRegEmail = () => {
         axios
             .post(`${url}api/email/litter`, {
-                user: this.state.firebaseUser,
+                // user: this.state.firebaseUser,
+                user: this.context.user,
+
                 public_id: this.state.public_id
 
             })
@@ -114,7 +92,9 @@ export class PedShareForm extends React.Component {
     sendPedRegEmail = () => {
         axios
             .post(`${url}api/email/pedigree`, {
-                user: this.state.firebaseUser,
+                // user: this.state.firebaseUser,
+                user: this.context.user,
+
                 public_id: this.state.public_id
 
             })
@@ -144,10 +124,9 @@ export class PedShareForm extends React.Component {
 
     submit = (e) => {
         e.preventDefault()
-
-        // setData((data) => ({...data, [e.target.name]: e.target.value }))
-        console.log(this.state)
+        this.setState({submit_button: 'Loading just a sec'})
         if (this.props.litter_registrations) {
+            this.getTransactUrl()
             this.sendtolocal()
 
         }
@@ -156,17 +135,13 @@ export class PedShareForm extends React.Component {
         }
 
 
-        if (this.props.litter_registrations) {
-            window.location = this.state.dpo
-        }
-
 
         // window.open(this.state.dpo, '_blank')
     }
     render() {
         return (
             <div className="row align-items-center justify-content-center">
-                {this.state.loaded ? <div className='row align-items-center justidy-content-center'>
+                {this.context.user ? <div className='row align-items-center justidy-content-center'>
                     <form onSubmit={(e) => {
                         e.preventDefault()
                         this.uploadImage()
@@ -181,8 +156,8 @@ export class PedShareForm extends React.Component {
 
                             </div>
 
-                            {this.state.dpo && !this.props.pedigree ?
-                                <input type='submit' className='btn btn-success' onClick={this.submit}></input> :
+                            {!this.props.pedigree ?
+                                <input type='submit' value={this.state.submit_button} className='btn btn-success' onClick={this.submit}></input> :
                                 <div>{
                                     !this.props.pedigree ?
                                         <div>

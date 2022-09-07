@@ -42,11 +42,11 @@ function Register() {
 
         <div className="container-fluid register_text">
 
-          <div className="row align-items-center justify-content-center">
+          <div className="row align-items-center justify-content-center my-5 my-sm-0">
             <div className="col-sm-5">
-              <h1 className="text-capitalize text-white">Sign up with the African Bully Registry</h1>
-              <h4 className="text-capitalize">Free of charge</h4>
-              <h4 className="text-capitalize"> Join the global community of bulldog owners</h4>
+              <h1 className="text-capitalize text-white my-5 my-sm-5">Sign up with the African Bully Registry</h1>
+              <p className="text-capitalize text-white "></p>
+              <p className=" text-white "> Join the Global Community of Bulldog Owners today, at no cost</p>
 
             </div>
             <div className="col-md-5 align-items-center justify-content-center">

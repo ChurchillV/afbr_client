@@ -24,10 +24,6 @@ import CsAndPs from './components/csandps'
 import SignOut from './components/signout'
 import Personal from './components/personal';
 import PersonalForm from './components/personal2';
-import { PedigDam, PedigDamDam, PedigMain, PedigSire, PedigSireDam, PedigDamSire, PedigSireSire } from './components/pedig-manual-components/pedigcomponents';
-import { PedigSireDamDam, PedigSireDamSire, PedigSireSireDam, PedigSireSireSire } from './components/pedig-manual-components/pedigcomponents2';
-import { PedigDamDamDam, PedigDamDamSire, PedigDamSireDam, PedigDamSireSire } from './components/pedig-manual-components/pedigcomponents3';
-import { PedigSuccess } from './components/pedig-manual-components/pedigsuccess';
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { url } from './components/weburl';
@@ -45,8 +41,7 @@ import { Newly } from './components/community/newly_registered';
 import { Post } from './components/community/posts';
 import { Ads } from './components/community/advertissements';
 
-export const UserContext = React.createContext('default');
-// console.log(user,'kkkhhk')
+import { CountryProvider } from './components/country_context';
 
 
 
@@ -73,10 +68,10 @@ class App extends Component {
         damsiredam: { id: 404 },
         damdamsire: { id: 404 },
         damdamdam: { id: 404 }
-      }
+      },
+      location:''
 
     }
-    console.log('App .js state', this.state)
   }
 
 
@@ -101,68 +96,7 @@ class App extends Component {
     });
   }
 
-
-
-
-  getnameofDog = (name) => {
-    this.setState({ dog_name: name }, () => {
-      console.log(this.state)
-
-    })
-  }
-
-  getnameofDog2 = (name) => {
-    this.setState({ next_dog_name: name }, () => {
-      console.log(this.state)
-
-    })
-  }
-
-  getdogid = () => {
-
-    axios
-      .get(`${url}api/dogs/getbyname/${this.state.dog_name}`)
-      .then((res) => {
-
-        console.log(res.data);
-        this.setState({ dog_id: res.data[0] }, () => {
-          console.log(this.state)
-          this.getdogpedigree()
-        })
-        // console.log('data',data)
-      })
-      .catch((err) => {
-        console.log("Error couldn't get dog id");
-        console.log(err.message);
-      });
-
-
-  }
-
-  getnext_dog_id = (callback_func) => {
-
-    axios
-      .get(`${url}api/dogs/getbyname/${this.state.next_dog_name}`)
-      .then((res) => {
-
-        console.log(res.data);
-        this.setState({ next_dog_id: res.data[0] }, () => {
-          console.log(this.state)
-          //  this.getdogpedigree()
-          callback_func()
-        })
-        // console.log('data',data)
-      })
-      .catch((err) => {
-        console.log("Error couldn't get dog id");
-        console.log(err.message);
-      });
-
-
-  }
-
-
-
+  
 
   getdogpedigree = (id) => {
     if (id) {
@@ -203,43 +137,39 @@ class App extends Component {
   }
 
   getcurrentuserLocation = () => {
-    axios.get('https://ipapi.co/json/') 
-    
-    .then((res)=> {
-        console.log(res.data)
-        this.setState({...this.state, location: res.data.country_name},
-             ()=>{
-              if (this.state.location === 'Ghana'){
+    axios.get('https://ipapi.co/json/')
 
-                //local
-                console.log(this.state.location)
-                console.log(this.state.location === 'Ghana')
-                this.setState({litter_registrations_price : 20.00})
-                this.setState({puppy_registrations_price : 30.00})
-                // this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
-                // this.setState({puppy_registrations_price : 20.00})
-                this.setState({dog_registrations_price : 35.00}, ()=>console.log(this.state))
-                
-    
+      .then((res) => {
+        console.log(res.data)
+        this.setState({ ...this.state, location: res.data.country_name },
+          () => {
+
+            if (this.state.location === 'Ghana') {
+
+              this.setState({ litter_registrations_price: 20.00 })
+              this.setState({ puppy_registrations_price: 30.00 })
+              this.setState({ dog_registrations_price: 35.00 }, () => console.log(this.state))
+
+
             }
-            else{
-                         //international prices
-                this.setState({litter_registrations_price : 25.00})
-                this.setState({puppy_registrations_price : 35.00})
-                this.setState({dog_registrations_price : 40.00})
-                // this.setState({puppy_registrations_price : 20.00})
-                // this.setState({dog_registrations_price : 20.00}, ()=>console.log(this.state))
-    
+            else {
+              //international prices
+              this.setState({ litter_registrations_price: 25.00 })
+              this.setState({ puppy_registrations_price: 35.00 })
+              this.setState({ dog_registrations_price: 40.00 })
+              // this.setState({puppy_registrations_price : 20.00})
+              // this.setState({dog_registrations_price : 20.00}, ()=>console.log(this.state))
+
             }
-             })
-    })
-    .catch((err)=> console.log(err))
-}
+          })
+      })
+      .catch((err) => console.log(err))
+  }
 
   render() {
     return (
 
-      <UserContext.Provider value={this.state.user}>
+      <CountryProvider value={{location:this.state.location, user:this.state.user}}>
 
         <BrowserRouter>
           <Routes>
@@ -247,8 +177,8 @@ class App extends Component {
             <Route path='/home' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/registration' element={<Registration litter_registrations_price={this.state.litter_registrations_price}
-            puppy_registrations_price={this.state.puppy_registrations_price} 
-            dog_registrations_price={this.state.dog_registrations_price}/>} />
+              puppy_registrations_price={this.state.puppy_registrations_price}
+              dog_registrations_price={this.state.dog_registrations_price} country_name={this.state.location} />} />
             <Route path='/breeds' element={<Breeds />} />
             <Route path='/breeds/americanbulldog' element={<AmericanBulldog />} />
             <Route path='/breeds/americanbully' element={<AmericanBully />} />
@@ -273,23 +203,24 @@ class App extends Component {
             <Route path='/reset' element={< Reset />} />
             <Route path='/dashboard' element={< Dashboard />} />
 
-            <Route path='/litter_registrations' element={<LitterRegistration 
-            litter_registrations_price={this.state.litter_registrations_price}/>} />
+            <Route path='/litter_registrations' element={<LitterRegistration />} />
 
             <Route path='/litter_registrations_success' element={<Litter_Register_Success />} />
 
             <Route path='/dog_registrations' element={<DogRegistration
               navbar={true} user={this.state.user} 
-              puppy_registrations_price={this.state.puppy_registrations_price} transaction_name={'dog_registrations'} />} />
+              puppy_registrations_price={this.state.puppy_registrations_price}
+              transaction_name={'dog_registrations'} />} />
+
             <Route path='/dog_registrations_success/:dog_name/:username/:email/' element={<Register_Success
               navbar={true} />} />
-              <Route path='/dog_registrations_special' element={<Register_Special
+            <Route path='/dog_registrations_special' element={<Register_Special
               navbar={true} />} />
-              
+
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
-        
+
             <Route path='/adult_registrations' element={<DogRegistration 
-            dog_registrations_price={this.state.dog_registrations_price} transaction_name={'adult_registrations'}/>} />
+              dog_registrations_price={this.state.dog_registrations_price} transaction_name={'adult_registrations'} />} />
             <Route path='/profile' element={<ProfileMain />} />
 
             <Route path='/my_dogs' element={<ProfileMain />} />
@@ -305,7 +236,7 @@ class App extends Component {
           </Routes>
 
         </BrowserRouter>
-      </UserContext.Provider>
+      </ CountryProvider>
 
     );
   }

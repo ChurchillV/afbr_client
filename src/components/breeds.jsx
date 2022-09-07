@@ -55,13 +55,13 @@ class Breeds extends Component {
     render() {
         return (
             <div className='container-fluid'>
-                <div className='row align-items-center justify-content-center breed_full'>
+                <div className='row align-items-center justify-content-center '>
 
                     <Navbar />
 
                     <div class='container-fluid   '>
                         <div className='row breed_text align-items-center justify-content-center'>
-                            <h1 style={{ fontWeight: '350' }}>Breeds</h1>
+                            <h6 style={{ fontWeight: '400' }}>Breeds</h6>
                             <div class='container-fluid'>
 
                                 <div className='row align-items-center justify-content-center'>
@@ -97,7 +97,7 @@ class Breeds extends Component {
 
                                         </div>
                                     </div>
-                                    <div className='col-sm-10'>
+                                    <div className='col-sm-8'>
                                         <div className='container-fluid'>
                                             <div className='row align-items-center justify-content-center'>
                                                 <div class="row align-items-center justify-content-center">
