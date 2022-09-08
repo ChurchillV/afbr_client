@@ -5,12 +5,12 @@ import '../css_files/App.css'
 const Footer = (props) => {
   return (
 
-    <div class=" container">
-      <div className='row my-5 mt-0 align-items-center justify-content-center'>
+    <div class=" container mt-5">
+      <div className='row mt-5 align-items-center justify-content-center'>
 
 
-        <div class="col-sm-3">
-          <span className='smallrem'>Get connected with us on social networks:</span>
+        <div class="col-sm-">
+          <span className='smallrem text-warning'>Get connected with us on social networks:</span>
         </div>
 
       </div>
@@ -21,41 +21,42 @@ const Footer = (props) => {
 
 
 
-        <div class="smallrem col-sm-2">
-          <p class=""><span className='fa fa-whatsapp'></span>+ 233 24 233 1674 , +233 20 377 5123</p>
-        </div>
+       
 
-        <div className='col-sm-2 smallrem'>
-          <a href="https://www.facebook.com/groups/1103803533338705/?ref=share/" target='_blank' class="me-4 text-reset smallrem">
-            <p class="fa fa-facebook">
+        <div className='col-2 smallrem'>
+          <a href="https://www.facebook.com/groups/1103803533338705/?ref=share/" target='_blank' 
+          class="text-reset smallrem text-warning">
+            <p class="fa fa-facebook smallrem text-warning">
              </p>
           </a>
          
         </div>
 
-        <div class="smallrem  col-sm-2">
-          <a href="" className='smallrem text-white'><span className='fa fa-twitter'></span> </a>
+        <div class="smallrem  col-2">
+          <a href="" className='smallrem text-warning'><span className='fa fa-twitter smallrem'></span> </a>
         </div>
 
-        <div class="smallrem  col-sm-2">
-          <a href="https://www.linkedin.com/company/african-bully-registry" className='smallrem text-white'><span className='fa fa-linkedin'></span> </a>
+        <div class="smallrem  col-2">
+          <a href="https://www.linkedin.com/company/african-bully-registry" className='smallrem text-warning'><span className='fa fa-linkedin smallrem'></span> </a>
         </div>
-        <div class="smallrem  col-sm-2">
-          <a href="" className='smallrem text-white'><span className='fa fa-instagram'></span> </a>
+        <div class="smallrem  col-2">
+          <a href="" className='smallrem text-warning'><span className='fa fa-instagram smallrem'></span> </a>
         </div>
-
+        <div class="smallrem col-sm-2">
+          <p class=""><span className='fa fa-whatsapp smallrem text-warning'></span><span className='smallrem text-warning'>+ 233 24 233 1674 , +233 20 377 5123</span></p>
+        </div>
 
       </div >
 
 
       <section class="">
-        <div class="container text-center text-md-start mt-5">
+        <div class="container text-center text-sm-start mt-5 mt-sm-5">
 
-          <div class="row mt-3">
+          <div class="row mt-0 mt-sm-3">
 
             <div class="col-md-3  mx-auto mb-1">
 
-              <h6 class="smallrem text-uppercase fw-bold mb-4">
+              <h6 class="smallrem text-uppercase fw-bold mb-1 mb-sm-4">
                 <i class="fas fa-gem me-3"></i>AFRICAN BULLY REGISTRY
               </h6>
               <p className='smallrem'>
@@ -65,9 +66,9 @@ const Footer = (props) => {
 
 
 
-            <div class="smallremcol-md-3 mx-auto mb-4">
+            <div class="smallremcol-md-3 mx-auto mt-4 mt-sm-0">
 
-              <h6 class="smallrem text-uppercase fw-bold mb-4">
+              <h6 class="smallrem text-uppercase fw-bold mb-3 mb-sm-4">
                 Useful links
               </h6>
               <p>
@@ -80,7 +81,7 @@ const Footer = (props) => {
             </div>
 
 
-            <div class="col-md-3 mb-md-0 mb-4">
+            <div class="col-md-3 mb-md-0 ">
 
               <h6 class="smallrem text-uppercase fw-bold mb-4">
                 Contact Us
@@ -90,8 +91,7 @@ const Footer = (props) => {
                 <i class=" fas fa-envelope me-3"></i>
                 <span className='smallrem'> africanbullyregistry@gmail.com</span>
               </p>
-              <p className='smallrem'><i class=" fas fa-phone me-3"></i> + 233 24 233 1674</p>
-              <p className='smallrem'><i class=" fas fa-print me-3"></i> + 233 20 377 5123</p>
+
             </div>
 
           </div>
@@ -101,7 +101,7 @@ const Footer = (props) => {
 
 
 
-      <div class="smallrem text-center " >
+      <div class="smallrem text-center my-5" >
         © 2021 Copyright:
         <a class="smallrem text-reset fw-bold" to="/">The African Bully Registry</a>
         <a class="d-block smallrem text-reset fw-bold" href="https://yawotuo.herokuapp.com/">This website was built by Yaw Otuo</a>

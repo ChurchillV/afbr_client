@@ -173,14 +173,14 @@ class Home extends Component {
 
         <div className='row  gallery_row align-items-center justify-content-center'>
           <div className='col-lg-12 '>
-            < h3 className='text-capitalize py-5 my-3 mb-2 pb-2'>Our gallery</h3>
+            < h3 className='text-capitalize py-5 my-3 '>Our gallery</h3>
           </div>
         </div>
 
-        <div className='row  gallery_row align-items-center justify-content-center'>
+        <div className='row  gallery_row align-items-center justify-content-center pb-5'>
 
 
-          <div className='col-sm-8  py-5 '>
+          <div className='col-sm-8  py-4 '>
             <SliderC galleryImages={true} />
 
           </div>
