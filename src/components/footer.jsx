@@ -33,7 +33,7 @@ const Footer = (props) => {
         </div>
 
         <div class="smallrem  col-2">
-          <a href="" className='smallrem text-warning'><span className='fa fa-twitter smallrem'></span> </a>
+          <a href="" className='smallrem text-warning'><span className='fa fa-twitter smallrem'></span></a>
         </div>
 
         <div class="smallrem  col-2">

@@ -11,15 +11,18 @@ import { set } from 'mongoose';
 import { setState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { url } from './weburl';
-import  Search  from './search';
+import Search from './search';
 
 import $ from 'jquery'
 import { ProfileFooter } from './profile_footer';
 import { BeatLoader } from 'react-spinners';
-
+import CountryContext from './country_context';
+import { Profile_Not_Logged_In } from './profile_not_logged_in';
+import Footer from './footer';
 
 
 class ProfileMain extends Component {
+    static contextType = CountryContext
 
     constructor(props) {
         super(props);
@@ -34,12 +37,12 @@ class ProfileMain extends Component {
     componentDidMount = () => {
         this.getcurrentuser(this.refreshList
         )
-        
-        
-        if (window.screen.width < 660){
+
+
+        if (window.screen.width < 660) {
             console.log('hide the following')
             $('.bottom_profile').css('display', 'visible')
-           
+
         }
 
     }
@@ -89,11 +92,11 @@ class ProfileMain extends Component {
     }
     refreshList = () => {
 
-        
+
         axios
             .get(`${url}api/dogs/getdoguser/${this.state.user}`)
             .then((res) => {
-                this.setState({ dogs: res.data }, () => ('b'*10, console.log(this.state)))
+                this.setState({ dogs: res.data }, () => ('b' * 10, console.log(this.state)))
             }
             )
 
@@ -130,26 +133,39 @@ class ProfileMain extends Component {
     render() {
         return (
             <div>
-                <Profile class='profile_first' navbarcolor='black'>
-                    <div className='row align-items-center justify-content-center' >
-                        <div className='col-sm-12'>
-                        <Search name='profile_search' send_to={true} onSearchClick={this.onSearchClick} />
+                {this.context.user ?
+                    <div>
+                        <Profile class='profile_first' navbarcolor='black'>
+                            <div className='row align-items-center justify-content-center' >
+                                <div className='col-sm-12'>
+                                    <Search name='profile_search' send_to={true} onSearchClick={this.onSearchClick} />
 
-                        </div>
+                                </div>
 
+                            </div>
+
+
+                            <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
+                                {/* check on this later , add a load spinner */}
+                                {!this.state.dogs[0] && <BeatLoader size='large' color='black' />}
+                                {this.render_dog_list()}
+                                {console.log('hey')}
+                                {!this.state.dogs[0] &&
+                                    <div className='nice_font my-5 py-5 text-left mx-5'>
+                                        <h3 className='text-dark'>You have no registered dogs yet.</h3>
+                                        <p className='m-0 text-dark '>&#128517;Like to
+                                            <Link class="text-warning" to="/registration"> register </Link>
+                                             one with us?</p>
+                                        {/* <small className='text-warning mt-5' style={{fontSize: "1rem"}}>Please reach out to our support team if this is a mistake.</small> */}
+                                    </div>}
+                            </div>
+
+                        </Profile>
+                        {/* profile at the bottom for mobile view */}
+                        {window.screen.width < 660 && <ProfileFooter navbarcolor='white' />}
                     </div>
-
-
-                    <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
-                        {/* check on this later , add a load spinner */}
-                        {!this.state.dogs && <BeatLoader size='large'/>}
-                        {this.render_dog_list()}
-                        {console.log('hey')}
-                    </div>
-
-                </Profile>
-                {/* profile at the bottom for mobile view */}
-                {window.screen.width < 660 && <ProfileFooter navbarcolor='white'/>}
+                    : <Profile_Not_Logged_In />
+                }
             </div>
 
 

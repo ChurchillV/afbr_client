@@ -340,6 +340,9 @@ rgb(186, 129, 8) */
 /* a {
     color: white
 } */
+.nice_font {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 a:hover{
     color: rgb(186, 129, 8);
 }

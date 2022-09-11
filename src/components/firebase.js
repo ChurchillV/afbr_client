@@ -80,12 +80,6 @@ const signInWithGoogle = async () => {
       .then((res) => console.log('success', res))
       .catch((err) => console.log(err))
 
-
-      // axios
-      // .post(`${url}api/email/email_register`, { uid: user.uid, username: user.displayName, email: user.email })
-      // .then((res) => console.log('successfully sent email', res))
-      // .catch((err) => console.log(err))
-  
     if (error){
 
     }
@@ -139,11 +133,6 @@ const registerWithEmailAndPassword = async (name, email, password) => {
           .catch((err) => console.log(err))
 
 
-        // axios
-        //   .post(`${url}api/email/email_register`, { uid: user.uid, username: name, email: email })
-        //   .then((res) => console.log('successfully sent email', res))
-        //   .catch((err) => console.log(err))
-    
     }
   }
 };
