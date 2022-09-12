@@ -35,15 +35,7 @@ class Profile_Card extends React.Component {
 
   }
     componentDidMount = () => {
-        // if (window.screen.width < 660) {
-        //     console.log('hide the following')
-        //     $('.show_details').on(
-        //         'click', function () {
-        //             console.log('show details clicked')
-        //             $('.to_be_hidden').slideToggle()
-        //         }
-        //     )
-        // }
+
     }
 
   
@@ -113,7 +105,6 @@ class Profile_Card extends React.Component {
                     <div className='col-6 to_be_hidden' >
                         <div>
                             {this.info()}
-
                         </div>
                     </div>
                 </div>

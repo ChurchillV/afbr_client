@@ -6,7 +6,7 @@ import '../css_files/breed.css';
 import { url } from "./weburl";
 import axios from 'axios'
 import { withRouter } from './pedigree_cards';
-
+import logo from '../images/logo2.jpg'
 
 class Search extends Component {
 
@@ -51,55 +51,56 @@ class Search extends Component {
     }
 
     reset = (dog) => {
-        this.setState({search_dogs: {} }, ()=> console.log(this.state))
-        this.setState({search_dogs: dog }, ()=> console.log(this.state))
+        this.setState({ search_dogs: {} }, () => console.log(this.state))
+        this.setState({ search_dogs: dog }, () => console.log(this.state))
 
-        console.log('dog in reset', dog)
-        console.log('reset')
+        // console.log('dog in reset', dog)
+        // console.log('reset')
     }
 
-    onClickFunc=(e, item)=>{
-        if(this.props.send_to){
-           this.props.navigate(`/my_dogs/${item.id}`)
-            console.log('send to ')
+    onClickFunc = (e, item) => {
+        if (this.props.send_to) {
+            this.props.navigate(`/my_dogs/${item.id}`)
+            // console.log('send to ')
         }
-        else{
+        else {
             this.props.onSearchClick(e)
             this.reset(item)
         }
-        
+
     }
 
     render_search_list = () => {
 
-        if (Object.keys(this.state.search_dogs)[0] != 'id'){
-            
+        if (Object.keys(this.state.search_dogs)[0] != 'id') {
+
             console.log('this,state,search_Dogs[0]',)
             return Object.values(this.state.search_dogs).map((item) => {
 
                 let item_to_number = Number(item.id)
                 console.log('item', item)
-                if (typeof(item) != 'string'){
-                    console.log(typeof(item))
+                if (typeof (item) != 'string') {
+                    console.log(typeof (item))
                     return <div className='row align-items-center justify-content-center'>
-                    <button name={this.props.name} value={item_to_number}
-                        onClick={(e) => {
-                           this.onClickFunc(e, item)
-                        }
-                        } value={item.id}
-                        className='btn btn-info text-capitalize search_results_text fade-in w-100'>
-                            {item.name}</button>
-    
-                </div>
+                        <button name={this.props.name} value={item_to_number}
+                            onClick={(e) => {
+                                this.onClickFunc(e, item)
+                            }
+                            } value={item.id}
+                            className='btn btn-info text-capitalize search_results_text fade-in w-100'>
+                            {/* <img src={logo} alt="" height='1%' className='float-left text-center'/> */}
+                            <span className=''>{item.name}</span></button>
+
+                    </div>
                 }
-                
-    
+
+
             })
-    
-    
+
+
         }
 
-        
+
 
     }
 
@@ -113,13 +114,13 @@ class Search extends Component {
             <div>
                 <div className='row align-items-center justify-content-center'>
                     <input type='search' class='search_input' name={this.props.name} value={this.state.search_dogs.name} onChange={(e) => this.onChange(e)} placeholder='Search for dog'></input>
-                    <button type='submit' className='btn btn-warning' style={{fontSize:'small'}} onClick={(e) => this.search(e)}>Search</button>
+                    <button type='submit' className='btn btn-warning' style={{ fontSize: 'small' }} onClick={(e) => this.search(e)}>Search</button>
 
 
                 </div>
                 <div className='row align-items-center justify-content-center search_results'>
                     <div className='col-lg-12'>
-                            {this.render_search_list()}
+                        {this.render_search_list()}
 
                     </div>
 

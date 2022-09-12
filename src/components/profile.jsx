@@ -10,6 +10,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import $ from 'jquery'
 import axios from 'axios'
 import { url } from './weburl';
+import CountryContext from './country_context';
 
 
 
@@ -21,28 +22,29 @@ const dogcard_style = {
 const { height, width } = dogcard_style
 
 class Profile extends Component {
+    static contextType = CountryContext
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-
+            profile_incomplete: true
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getcurrentuser()
-        
-        
-            if (window.screen.width < 660){
-                console.log('hide the following')
-                $('.to_be_hidden_profile').css('display', 'none')
-                $('to_be_hidden_profile').on(
+        this.profile_incomplete()
+
+        if (window.screen.width < 660) {
+            console.log('hide the following')
+            $('.to_be_hidden_profile').css('display', 'none')
+            $('to_be_hidden_profile').on(
                     'click', function(){
-                        $('to_be_hidden_profile').slideToggle()
-                    }
-                )
-            }
-        
+                    $('to_be_hidden_profile').slideToggle()
+                }
+            )
+        }
+
     }
     changeUserToId = () => {
         axios
@@ -88,43 +90,65 @@ class Profile extends Component {
         });
     }
 
+    profile_incomplete = () => {
+        for (var detail in this.context.user_sql_details) {
+            if (!this.context.user_sql_details[detail]) {
+                console.log('false')
+                // console.log(detail)
+                this.setState({ profile_incomplete: true })
+            }
+        }
+
+    }
     render() {
         return (
 
             <div className='container-fluid'>
-                <Navbar color={this.props.navbarcolor}/>
+                <Navbar color={this.props.navbarcolor} />
                 <div className={`${this.props.classname_} row ${this.props.class} align-items-center justify-content-center`}>
                     <div className='col-sm-2 align-self-start pro_nav_col to_be_hidden_profile'>
                         <div className='text-dark align-items-center justify-content-center pro_nav'>
-                            
-                            {this.state.user ? <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.state.user.public_id}.png`} className='profile_pic_user img-fluid' height='150px' width={'150'}></img>
-                            :<img src={Profile_pic} className='profile_pic_user img-fluid' height='150px' width='150px'></img>}
 
-                        
-                            <h6 style={{color: 'rgb(186, 129, 8'}}>Welcome, <span className='font-weight-bold'>{this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</span></h6>
+                        {this.context.user_sql_details && this.context.user_sql_details.public_id ? <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.context.user_sql_details.public_id}.png`} 
+                            className='img-fluid profile_pic_user2'></img> : <img src={Profile_pic} className='img-fluid profile_pic_user'></img>}
+                            
+                            <h6 style={{ color: 'rgb(186, 129, 8' }}>Welcome, <span className='font-weight-bold'>{this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</span></h6>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link to='/Home' style={{color:this.props.navbarcolor}}>Home</Link>
+                            <Link to='/Home' style={{ color: this.props.navbarcolor }}>Home</Link>
                         </div>
                         {/* <div className='row align-items-center justify-content-center pro_nav'>
                            {this.state.firebaseUser ? <Link to={`/profile/personal/${this.state.firebaseUser.uid}`}  style={{color:this.props.navbarcolor}}>Personal</Link> :  <Link to='/profile/personal/'>Personal</Link> }
                         </div> */}
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link  style={{color:this.props.navbarcolor}} to='/my_dogs'>My dogs</Link>
+                            <Link style={{ color: this.props.navbarcolor }} to='/my_dogs'>My dogs</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link   style={{color:this.props.navbarcolor}} to='/registration'>Register</Link>
+                            <Link style={{ color: this.props.navbarcolor }} to='/registration'>Register</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link  style={{color:this.props.navbarcolor}}  to='/profile/csandps'>Certificates and Pedigrees</Link>
+                            {this.state.profile_incomplete ?
+                                <Link class=' text-dark' style={{ color: this.props.navbarcolor }} 
+                                to={`/profile/personal`} >
+                                    Personal</Link>
+                                :
+                                <Link style={{ color: this.props.navbarcolor }} to={`/profile/personal/${this.context.user.uid}`}>Personal
+                                   </Link>
+
+                            }
+                        </div>
+
+                        <div className='row align-items-center justify-content-center pro_nav'>
+
+                            <Link style={{ color: this.props.navbarcolor }} to='/profile/csandps'>Certificates and Pedigrees</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <button  style={{color:this.props.navbarcolor}}  className='btn btn-default' onClick={Logout}>Log Out</button>
+                            <button style={{ color: this.props.navbarcolor }} className='btn btn-default' onClick={Logout}>Log Out</button>
                         </div>
                     </div>
                     <div className='col-sm-10 align-items-center justify-content-center profile_main'>
 
-                        
+
                         {this.props.children}
 
 

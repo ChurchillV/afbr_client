@@ -130,6 +130,17 @@ class ProfileMain extends Component {
 
     }
 
+    // profile_incomplete = () => {
+    //     for (var detail in this.context.user_sql_details) {
+    //         if (!this.context.user_sql_details[detail]) {
+    //             console.log('false')
+    //             // console.log(detail)
+    //             this.setState({ profile_incomplete: true })
+    //         }
+    //     }
+
+    // }
+
     render() {
         return (
             <div>
@@ -143,11 +154,15 @@ class ProfileMain extends Component {
                                 </div>
 
                             </div>
-
+                            {/* <div className='row align-items-center justify-content-center'>
+                                <div className='col-sm-'>
+                                    <p><small className='text-dark'> Please complete your profile details for us</small></p>
+                                </div>
+                            </div> */}
 
                             <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
                                 {/* check on this later , add a load spinner */}
-                                {!this.state.dogs[0] && <BeatLoader size='large' color='black' />}
+                                {/* {!this.state.dogs[0] && <BeatLoader size='large' color='black' />} */}
                                 {this.render_dog_list()}
                                 {console.log('hey')}
                                 {!this.state.dogs[0] &&

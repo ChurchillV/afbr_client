@@ -50,7 +50,7 @@ const DogCard = (props) => {
                         <Link to={
                             `/dog_registrations/edit/${props.dog_id}`
                         }
-                            className='smallrem'
+                            className='smallrem pb-2'
                         >Edit &nbsp;</Link>
 
                             <div><button className='btn btn-danger smallrem ' onClick={(e) => handleDelete(e)}>Delete </button></div>

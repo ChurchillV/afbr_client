@@ -69,7 +69,10 @@ class App extends Component {
         damdamsire: { id: 404 },
         damdamdam: { id: 404 }
       },
-      location:''
+      location:'',
+      litter_registrations_price: 20,
+      puppy_registrations_price: 30,
+      dog_registrations_price: 35
 
     }
   }
@@ -79,11 +82,15 @@ class App extends Component {
 
   componentDidMount() {
     this.getcurrentuserLocation()
+    // console.log('calling this function')
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        this.setState({ ...this.state, user }, () => console.log(this.state.user));
-        console.log('onAuthState', user.displayName, user.uid, user.email)
+        this.setState({ ...this.state, user }, () => {
+          this.get_user_sql_details()
+        }
+          );
+        // console.log('onAuthState', user.displayName, user.uid, user.email)
       } else {
         this.setState({ user: null });
         console.log('usershmm')
@@ -104,10 +111,10 @@ class App extends Component {
         .get(`${url}api/dogs/pedigree/${id}`)
         .then((res) => {
 
-          console.log(res.data);
+          // console.log(res.data);
           this.setState({ pedigree: res.data }, () => {
-            console.log('getting pedigree for profile main')
-            console.log(this.state.pedigree)
+            // console.log('getting pedigree for profile main')
+            // console.log(this.state.pedigree)
 
 
           })
@@ -122,10 +129,10 @@ class App extends Component {
       .get(`${url}api/dogs/pedigree/${this.state.dog_id.id}`)
       .then((res) => {
 
-        console.log(res.data);
+        // console.log(res.data);
         this.setState({ pedigree: res.data }, () => {
-          console.log('getting pedigree')
-          console.log(this.state.pedigree)
+          // console.log('getting pedigree')
+          // console.log(this.state.pedigree)
 
         })
         // console.log('data',data)
@@ -137,10 +144,12 @@ class App extends Component {
   }
 
   getcurrentuserLocation = () => {
+    // console.log('calling this function actually')
+
     axios.get('https://ipapi.co/json/')
 
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         this.setState({ ...this.state, location: res.data.country_name },
           () => {
 
@@ -149,7 +158,7 @@ class App extends Component {
               this.setState({ litter_registrations_price: 20.00 })
               this.setState({ puppy_registrations_price: 30.00 })
               this.setState({ dog_registrations_price: 35.00 }, () => console.log(this.state))
-
+              // console.log(this.state.location)
 
             }
             else {
@@ -166,10 +175,32 @@ class App extends Component {
       .catch((err) => console.log(err))
   }
 
+  get_user_sql_details = () => {
+    console.log('calling from profile sql')
+    axios
+        .get(`${url}api/users/getUserByUid/${this.state.user.uid}`)
+        .then((res) => {
+            // console.log(res.data)
+            this.setState({
+                ...this.state,
+                user_sql_details: res.data[0]
+            },
+                () => {
+                    console.log('getting user details', this.state.user_sql_details)
+
+                })
+        })
+
+        .catch((err) => {
+            console.log(err)
+        })
+}
+
   render() {
     return (
 
-      <CountryProvider value={{location:this.state.location, user:this.state.user}}>
+      <CountryProvider value={{location:this.state.location,
+       user:this.state.user, user_sql_details:this.state.user_sql_details}}>
 
         <BrowserRouter>
           <Routes>
@@ -227,9 +258,9 @@ class App extends Component {
             <Route path='/my_dogs/:dog_id' element={<ProfileDog pedigree={this.state.pedigree} getdogpedigree={this.getdogpedigree} />} />
             <Route path='/profile/csandps' element={<CsAndPs />} />
             <Route path='/profile/signout' element={<SignOut />} />
-            <Route path='/profile/personal/:uid' element={<Personal />} />
+            <Route path='/profile/personal' element={<Personal user_sql_details={this.state.user_sql_details}/>} />
 
-            <Route path='/profile/personal/edit/:uid' element={<PersonalForm />} />
+            <Route path='/profile/personal/edit' element={<PersonalForm />} />
 
             <Route path='/terms' element={< Terms />} />
 

@@ -341,11 +341,6 @@ class Register_Special extends React.Component {
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
 
-
-
-
-
-
         if (this.state.dog.image_url) {
             this.uploadImage(this.sendDogInfo)
 
@@ -362,8 +357,6 @@ class Register_Special extends React.Component {
 
             console.log('no image url present')
         }
-
-
     }
 
 
@@ -375,17 +368,15 @@ class Register_Special extends React.Component {
 
                     <div className="container-fluid">
 
-                        <div className="row align-items-center py-5 justify-content-center">
+                        <div className="row align-items-center py-5 justify-content-center d9d9d9">
                             <div className="col-lg-">
-                                <h1>This is a special dog registration form</h1>
-                                <p>Allowed email addresses: <ul>
-                                    <li>yotuo2003@gmail.com</li>
-                                    <li>takyiotuo.to@gmail.com</li>
-                                </ul></p>
+                                <h1 className="text-capitalize">special dog registration form</h1>
+                                <p>Allowed email addresses: yotuo2003@gmail.com, takyiotuo.to@gmail.com, special_users
+                                   </p>
                             </div>
                         </div>
 
-                        <div className="row align-items-center justify-content-center">
+                        <div className="row align-items-center justify-content-center ">
 
                             {this.state.loaded && <div className="col-sm-9">
                                 {this.state.edit ?

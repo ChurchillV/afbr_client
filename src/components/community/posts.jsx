@@ -111,9 +111,7 @@ export class Post extends React.Component {
                         />
                     </div>
                     <div className='col-sm-2 mt-5 '>
-                        {/* <p className='text-uppercase  py-3 font-weight-bold'> Profile</p> */}
-                        {/* {this.state.posts_loaded && this.displayPosts()} */}
-                        {/* <PostProfile /> */}
+
                         <div className='animate__animated animate__fadeInDown animate__slower'>
                             <button type="button" class="btn btn-deafault"
                                 onClick={() => this.setState({ modal: !this.state.modal })} data-toggle="modal" data-target="#exampleModalCenter">
