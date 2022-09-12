@@ -12,28 +12,27 @@ import { url } from './weburl';
 
 
 export class ProfileFooter extends React.Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props)
         this.state = {
 
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getcurrentuser()
-        
-        
-            if (window.screen.width < 660){
-                console.log('hide the following')
-                $('.to_be_hidden_profile').css('display', 'none')
-                $('to_be_hidden_profile').on(
-                    'click', function(){
-                        $('to_be_hidden_profile').slideToggle()
-                    }
-                )
-            }
-        
+        this.profile_incomplete()
+        if (window.screen.width < 660) {
+            console.log('hide the following')
+            $('.to_be_hidden_profile').css('display', 'none')
+            $('to_be_hidden_profile').on(
+                'click', function () {
+                    $('to_be_hidden_profile').slideToggle()
+                }
+            )
+        }
+
     }
     changeUserToId = () => {
         axios
@@ -45,7 +44,6 @@ export class ProfileFooter extends React.Component {
                     user: res.data[0]
                 },
                     () => {
-                        console.log('chaingn personal state after calling uid', this.state)
 
                     })
             })
@@ -78,26 +76,45 @@ export class ProfileFooter extends React.Component {
         });
     }
 
-    render(){
-        return <div className='profile_footer_full mt-5'>
-          
-                        <div className='row align-items-center justify-content-center py-1 '>
-                           {this.state.firebaseUser ? <Link className='smallrem' to={`/profile/personal/${this.state.firebaseUser.uid}`}  style={{color:this.props.navbarcolor}}>Personal</Link> :  <Link className='smallrem' to='/profile/personal/'>Personal</Link> }
-                        </div>
-                        <div className='row align-items-center justify-content-center py-1 '>
-                            <Link className='smallrem' style={{color:this.props.navbarcolor}} to='/my_dogs'>My dogs</Link>
-                        </div>
-                        <div className='row align-items-center justify-content-center py-1 '>
-                            <Link  className='smallrem' style={{color:this.props.navbarcolor}} to='/registration'>Register</Link>
-                        </div>
-                        <div className='row align-items-center justify-content-center py-1'>
-                            <Link className='smallrem' style={{color:this.props.navbarcolor}}  to='/profile/csandps'>Certificates and Pedigrees</Link>
-                        </div>
-                        <div className='row align-items-center justify-content-center py-1'>
-                            <button style={{color:this.props.navbarcolor}}  className='btn btn-default smallrem' onClick={Logout}>Log Out</button>
-                        </div>
+    profile_incomplete = () => {
+        for (var detail in this.context.user_sql_details) {
+            if (!this.context.user_sql_details[detail]) {
+                console.log('false')
+                // console.log(detail)
+                this.setState({ profile_incomplete: true })
+            }
+        }
 
-    </div>
     }
-    
+    render() {
+        return <div className='profile_footer_full mt-5 d9d9d9 py-5'>
+
+            <div className='row align-items-center justify-content-center py-1'>
+                {this.state.profile_incomplete ?
+                    <Link class='smallrem' style={{ color: this.props.navbarcolor }}
+                        to={`/profile/personal`} >
+                        Personal</Link>
+                    :
+                    <Link className='smallrem' style={{ color: this.props.navbarcolor }}
+                     to={`/profile/personal`}>Personal
+                    </Link>
+
+                }
+            </div>
+            <div className='row align-items-center justify-content-center py-1 '>
+                <Link className='smallrem' style={{ color: this.props.navbarcolor }} to='/my_dogs'>My dogs</Link>
+            </div>
+            <div className='row align-items-center justify-content-center py-1 '>
+                <Link className='smallrem' style={{ color: this.props.navbarcolor }} to='/registration'>Register</Link>
+            </div>
+            <div className='row align-items-center justify-content-center py-1'>
+                <Link className='smallrem' style={{ color: this.props.navbarcolor }} to='/profile/csandps'>Certificates and Pedigrees</Link>
+            </div>
+            <div className='row align-items-center justify-content-center py-1'>
+                <button style={{ color: this.props.navbarcolor }} className='btn btn-default smallrem' onClick={Logout}>Log Out</button>
+            </div>
+
+        </div>
+    }
+
 }

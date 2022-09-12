@@ -132,7 +132,8 @@ class Profile extends Component {
                                 to={`/profile/personal`} >
                                     Personal</Link>
                                 :
-                                <Link style={{ color: this.props.navbarcolor }} to={`/profile/personal/${this.context.user.uid}`}>Personal
+                                <Link style={{ color: this.props.navbarcolor }} 
+                                to={`/profile/personal`}>Personal
                                    </Link>
 
                             }

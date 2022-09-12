@@ -130,16 +130,6 @@ class ProfileMain extends Component {
 
     }
 
-    // profile_incomplete = () => {
-    //     for (var detail in this.context.user_sql_details) {
-    //         if (!this.context.user_sql_details[detail]) {
-    //             console.log('false')
-    //             // console.log(detail)
-    //             this.setState({ profile_incomplete: true })
-    //         }
-    //     }
-
-    // }
 
     render() {
         return (
