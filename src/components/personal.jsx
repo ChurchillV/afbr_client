@@ -29,7 +29,7 @@ class Personal extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid nice_font1">
+            <div className="container-fluid">
                 <Profile class='profile_first'>
 
                     <div className='row align-items-start justify-content-start text-dark personal_nav mt-2 mt-sm-0'>
@@ -45,7 +45,7 @@ class Personal extends React.Component {
                         </div>
 
                     </div>
-                    <div className=' text-dark row align-items-end justify-content-center my-5 mt-0 text-left'>
+                    <div className=' text-dark row align-items-end justify-content-start my-5 mt-0 text-left'>
 
                         <div className="col-md-4 smallrem">
                             {this.context.user_sql_details && this.context.user_sql_details.public_id ? <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.context.user_sql_details.public_id}.png`} 
