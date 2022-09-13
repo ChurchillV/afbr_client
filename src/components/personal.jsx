@@ -34,7 +34,7 @@ class Personal extends React.Component {
 
                     <div className='row align-items-start justify-content-start text-dark personal_nav mt-2 mt-sm-0'>
                         <div className='col-sm-'>
-                            <small className='text-dark '>Dogs Registered <span className='font-weight-bold'>0</span> &nbsp;&nbsp;&nbsp;</small>
+                            <small className='text-dark '>Dogs Registered: <span className='font-weight-bold'>0</span> &nbsp;&nbsp;&nbsp;</small>
                         </div>
                         <div className='col-sm-'>
                             <small className='text-dark '>Posts: <span className='font-weight-bold'>0</span>&nbsp;&nbsp;&nbsp;</small>
