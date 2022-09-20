@@ -1,45 +1,14 @@
 
 
-@media screen and (max-width: 770px) {
-  .register-card{
-    margin: 5%;
 
-  
-    color: white;
-    text-align: center;
-    font-weight: 300;
-    width: 100%;
-    font-weight: 500;
-
-
-    background-color: #ba8108;
-    /* box-shadow: 1px 2px 2px; */
-  
-  }
-}
-
-  @media screen and (min-width: 770px) {
-    .register-card{
-          
-      color: black;
-      text-align: center;
-      font-weight: 300;
-      width: 100%;
-      font-weight: 500;
-      
-      
-  
-      /* background-color: rgba(218, 165, 32); */
-      /* box-shadow: 1px 2px 2px; */
-    
-    }
+ 
 
 
 .card-title{
   color: blaxk;
 }
 
-  }
+  
 .card{
   color: black;
   border: 2px solid white;

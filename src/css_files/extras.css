@@ -1,0 +1,9 @@
+.box_shadow{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media screen and (min-width: 770px) {
+    .border_right_yellow{
+        border-right: 3px solid #ba8108;
+    }
+}

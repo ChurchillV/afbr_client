@@ -10,7 +10,7 @@ export const Profile_Not_Logged_In = () => {
     return (
         <div className=''>
             <Navbar />
-            <div className='d9d9d9 '>
+            <div className='d9d9d9 nice_font1 font-weight-normal'>
 
                 <div className='container py-5 py-sm-0 mt-2 mt-sm-0 ' >
                     <div className='row align-items-center justify-content-center py-5 my-0 my-sm-5'>

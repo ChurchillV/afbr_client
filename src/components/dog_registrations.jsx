@@ -188,7 +188,7 @@ class DogRegistration extends React.Component {
 
     getTransactUrl = () => {
         
-        axios.post(`${url}api/dpo/transact`, {
+        axios.post(`${url}api/expresspaygh/transact`, {
             location: this.context.location,
             transaction_name: this.props.transaction_name,
             transaction_cost: this.state.price,
@@ -200,9 +200,9 @@ class DogRegistration extends React.Component {
         })
             .then((res) => {
                 console.log(res.data)
-                this.setState({ dpo: res.data, dpo_loaded: true }, () => {
+                this.setState({ expresspaygh: res.data, dpo_loaded: true }, () => {
                     
-                    window.location = this.state.dpo
+                    window.location = this.state.expresspaygh
 
                 })
 
