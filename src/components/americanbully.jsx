@@ -3,82 +3,117 @@ import americanbully from '../images/americanbully1.png'
 
 export const AmericanBully = () => {
     return (
-            <div className="container">
-                <div className='row text-left  align-items-center justify-content-center'>
-                    <div className="col-lg-12">
-                    <h1>American Bully</h1>
-                    <img src={americanbully}  className='img-fluid w-50' alt=""></img>
-                    <h4>GENERAL IMPRESSION</h4>
+        <div className="container">
+            <div className='row text-left  align-items-center justify-content-center'>
+                <div className="col-lg-12">
+                    <h3>American Bully</h3>
+                    <img src={americanbully} className='img-fluid w-50' alt=""></img>
+                    <h5>GENERAL IMPRESSION</h5>
                     <p>
                         The American Bully should give the impression of great strength for its size. It is a compact and medium/large size dog with a muscular body and blocky head. The American Bully should have the appearance of heavy bone structure with a bulky build and look.
-                        CHARACTERISTICS
+                    </p>
+                    <h5> CHARACTERISTICS</h5>
+                    <p>
                         The American Bully is a companion breed exhibiting confidence, a zest for life, along with an exuberant willingness to please and bond with their family, thus making the American Bully an excellent family companion. Despite the American Bully’s fierce and powerful appearance their demeanor is gentle. They are great with kids, and extremely friendly with strangers, other dogs, and other animals. Human or dog aggression, extreme shyness, or viciousness is very uncharacteristic of the American Bully and is highly undesirable.
-                        HEAD
-                        •The distinct heavy, large and broad head of the American Bully exemplifies breed type.
-                        • Medium in length, deep throughout, broad skull, well chiseled with very pronounced cheek muscles, distinct and deep stop.
-                        • Ears- Set high and can be either natural or cropped.
-                        • Eyes- All colors equally accepted except albinism (pinkish to red) which is a disqualification. Blue eyes, lack of pigment around the eyes are undesirable.
-                        • Eye shape is oval to almond shape, low down in skull and set far apart. Round eyes are undesirable, and bulging or protruding eyes are a fault.
-                        • Visibility of the haw should be minimal.
-                        Faults: Overly visible haw. Both eyes not matched in color. Bulging or protruding eyes.Disqualifying Faults: Albinism eyes.
-                        • Muzzle- Short-Medium in length and broad in width. Length to be shorter than the length of the skull with distance from the tip of the nose to the stop approximately one- third of the distance from the tip of the nose to the occiput; but not so short as to interfere with normal breathing. The muzzle is blocky or slightly squared to fall away abruptly below eyes. The topline of the muzzle is to be straight with nose neither pointed nor turned up in profile.
-                        • Jaws- well defined.
-                        • Under jaw- to be strong and parallel to muzzle, never turning upward.
-                        • Lips- semi close and even, minimal looseness accepted but not preferred.
-                        Faults: Muzzle too long or snipey; muzzle so short as to interfere with normal breathing; lack of pronounced cheek and deep stop; weak under jaw; under jaw turning up; nose turning up or pushed back; excessive flews.
-                        • Upper Teeth- to meet tightly outside lower teeth in form or scissor bite.
-                        Faults: Level bite, overshot bite, undershot bite and wry bite. Serious Faults: Severely overshot or undershot bites, measuring 1/4 inch (0.6cm) or more.
-                        • Nose- Large with wide open nostrils. All colors/pigment acceptable except albinism (light pink in color).
+                        <span className='font-weight bold'>HEAD</span>
+                        <ul>
+                            <li>The distinct heavy, large and broad head of the American Bully exemplifies breed type.
+                            </li>
+                            <li> Medium in length, deep throughout, broad skull, well chiseled with very pronounced cheek muscles, distinct and deep stop.</li>
+                            <li> Ears- Set high and can be either natural or cropped.</li>
+                            <li> Eyes- All colors equally accepted except albinism (pinkish to red) which is a disqualification. Blue eyes, lack of pigment around the eyes are undesirable.</li>
+                            <li> Eye shape is oval to almond shape, low down in skull and set far apart. Round eyes are undesirable, and bulging or protruding eyes are a fault.</li>
+                            <li> Visibility of the haw should be minimal.</li>
+                            <li>Faults: Overly visible haw. Both eyes not matched in color. Bulging or protruding eyes.Disqualifying Faults: Albinism eyes.</li>
+                            <li>Muzzle- Short-Medium in length and broad in width. Length to be shorter than the length of the skull with distance from the tip of the nose to the stop approximately one- third of the distance from the tip of the nose to the occiput; but not so short as to interfere with normal breathing. The muzzle is blocky or slightly squared to fall away abruptly below eyes. The topline of the muzzle is to be straight with nose neither pointed nor turned up in profile.</li>
+                            <li>Jaws- well defined.</li>
+                            <li>Under jaw- to be strong and parallel to muzzle, never turning upward.</li>
+                            <li> Lips- semi close and even, minimal looseness accepted but not preferred.</li>
+                            <li>Faults: Muzzle too long or snipey; muzzle so short as to interfere with normal breathing; lack of pronounced cheek and deep stop; weak under jaw; under jaw turning up; nose turning up or pushed back; excessive flews.</li>
+                            <li>Upper Teeth- to meet tightly outside lower teeth in form or scissor bite.</li>
+                            <li>Faults: Level bite, overshot bite, undershot bite and wry bite. Serious Faults: Severely overshot or undershot bites, measuring 1/4 inch (0.6cm) or more.</li>
+                            <li> Nose- Large with wide open nostrils. All colors/pigment acceptable except albinism (light pink in color).</li>
+                        </ul>
 
                     </p>
                     <p>
-                        NECK
-                        • Heavy, muscular, slightly arched, tapering from shoulder to back of skull. Compact to medium size should have minimal or no loose skin.
-                        Faults: Neck too thin or weak; neck too short or too long.
-                        FOREQUARTERS
-                        • Shoulders to be strong and muscular with wide blades set wide; and well laid back. The upper arm is approximately equal to the length of the shoulder blade and joined at an angle of approximately 35 to 45 degrees.
-                        • Forelegs- straight, strong, and sturdy with large or round bones, pasterns are strong, short and nearly erect. Feet- straight forward.
-                        • Distance from the withers to the elbow is equal to the distance from the elbows to the bottom of the feet. Dogs that are slightly shorter in distance from the elbows to the bottom of the feet are acceptable but not desirable.
-                        Faults: Upright shoulders; steep and forward scapula (shoulder blade). Upper arm too short. Feet toeing either in or out; front legs bowed; down at the pasterns; splayed or flat feet; long toes.
+                        <span className='font-weight-bold'>NECK</span>
+                        <ul>
+                            <li> Heavy, muscular, slightly arched, tapering from shoulder to back of skull. Compact to medium size should have minimal or no loose skin. </li>
+                            <li> Faults: Neck too thin or weak; neck too short or too long. </li>
+                        </ul>
+
+                        <span className='font-weight-bold'>FOREQUARTERS</span>
+                        <ul>
+                            <li> Shoulders to be strong and muscular with wide blades set wide; and well laid back. The upper arm is approximately equal to the length of the shoulder blade and joined at an angle of approximately 35 to 45 degrees.</li>
+                            <li> Forelegs- straight, strong, and sturdy with large or round bones, pasterns are strong, short and nearly erect. Feet- straight forward.</li>
+                            <li> Distance from the withers to the elbow is equal to the distance from the elbows to the bottom of the feet. Dogs that are slightly shorter in distance from the elbows to the bottom of the feet are acceptable but not desirable.
+                                Faults: Upright shoulders; steep and forward scapula (shoulder blade). Upper arm too short. Feet toeing either in or out; front legs bowed; down at the pasterns; splayed or flat feet; long toes. </li>
+                        </ul>
+
 
                     </p>
-                    <p>
 
-                    </p>
                     <div>
                         <p>
-                            BODY
-                            • Heavily muscled, massive bulky body type of compact/medium length giving the impression of great power for its size and exemplifying the breed type of the American Bully.
-                            • Ribs well-rounded creating a barrel chest with all ribs close together; rib cage to extend to the elbow or slightly below.
-                            • Forelegs set rather wide apart to permit chest development.
-                            • Chest- should be broad, deep, and well filled in; but should not be exaggerated as to interfere with normal movement.
+                            <span className='font-weight-bold'>BODY</span>
+                            <ul>
+                                <li>Heavily muscled, massive bulky body type of compact/medium length giving the impression of great power for its size and exemplifying the breed type of the American Bully.</li>
+
+                            <li>Ribs well-rounded creating a barrel chest with all ribs close together; rib cage to extend to the elbow or slightly below.</li>
+                            <li>Forelegs set rather wide apart to permit chest development.</li>
+                            <li>                            Chest- should be broad, deep, and well filled in; but should not be exaggerated as to interfere with normal movement.
+                            </li>
+                            </ul>
+
                             BACK
-                            • Fairly short to medium back, slight sloping from withers to rump or straight accepted with gentle short slope at rump to base of tail. The American Bully should give the appearance of a square body, equal in length when measured from point of shoulder to point of buttocks and from the withers to the ground.
-                            Faults: Back too long; rear higher than withers; weak or swayed topline; roached or wheel back.
+                            <ul>
+                                <li>Fairly short to medium back, slight sloping from withers to rump or straight accepted with gentle short slope at rump to base of tail. The American Bully should give the appearance of a square body, equal in length when measured from point of shoulder to point of buttocks and from the withers to the ground.
+                                    Faults: Back too long; rear higher than withers; weak or swayed topline; roached or wheel back.</li>
+                            </ul>
                             HINDQUARTERS
-                            • Well muscled, let down at hocks, turning neither in nor out.
-                            • Muscular development, angulation and width of the hindquarters should be in balance with that of the forequarters.
-                            • When viewed from the rear legs are to be straight and parallel.
-                            • Croup should have a slight downward angle.
-                            Faults: Hocks turning in or out; cow hocks; sickle hocks; narrow hindquarters; straight or over-angulated stifle joints; bowed legs.
+                            <ul>
+                                <li>Well muscled, let down at hocks, turning neither in nor out.</li>
+
+                            <li>                            Muscular development, angulation and width of the hindquarters should be in balance with that of the forequarters.
+                            </li>
+                            <li>When viewed from the rear legs are to be straight and parallel.</li>
+
+
+                            <li>Croup should have a slight downward angle.</li>
+                            <li>Faults: Hocks turning in or out; cow hocks; sickle hocks; narrow hindquarters; straight or over-angulated stifle joints; bowed legs.</li>
+                            </ul>
+
                             TAIL
-                            • Medium in comparison to size, low set, tapering to a fine point and extending approximately to the hock.
-                            • When relaxed tail is to be carried low. When moving tail is carried level with the topline or in a raised position when excited (challenge tail), but should never be carried curled over, breaking the plane of the back (gay tail).
-                            • Tail to be clear of any kinks, knots or any curvature.
-                            Faults: Tail to long or too short approximately up to an inch above or below point of the hock. Gay tail (carried over the plane of the back). Serious Faults: Kinked, knotted, or fused tail. Extremely short tail. Disqualifying Faults: Screwed, bobbed, or docked tail.
-                            FEET
-                            • Should be rounded and of moderate size in proportion to the dog, compact, well arched and tight.
-                            Faults: Splayed or flat feet, long toes.
+                            <ul>
+                                <li>Medium in comparison to size, low set, tapering to a fine point and extending approximately to the hock.</li>
+                                <li>When relaxed tail is to be carried low. When moving tail is carried level with the topline or in a raised position when excited (challenge tail), but should never be carried curled over, breaking the plane of the back (gay tail).</li>
+
+                                <li>                            Tail to be clear of any kinks, knots or any curvature.
+                                </li>
+
+                                <li>Faults: Tail to long or too short approximately up to an inch above or below point of the hock. Gay tail (carried over the plane of the back). Serious Faults: Kinked, knotted, or fused tail. Extremely short tail. Disqualifying Faults: Screwed, bobbed, or docked tail.</li>
+                                FEET
+                                <li>Should be rounded and of moderate size in proportion to the dog, compact, well arched and tight.
+                                    Faults: Splayed or flat feet, long toes.</li>
+                            </ul>
                             COAT
-                            • Short, glossy, close, stiff to smooth to the touch.
-                            • Coat no longer than ½ inch (1.27 cm) in length.
-                            Faults: Curly or wavy coat. Serious Faults: Long coat.
+                            <ul>
+                                <li>Short, glossy, close, stiff to smooth to the touch.</li>
+                                <li>Coat no longer than ½ inch (1.27 cm) in length.</li>
+                                <li>                            Faults: Curly or wavy coat. Serious Faults: Long coat.
+                                </li>
+                            </ul>
                             COLOR AND PATTERN
-                            • All colors and patterns are permissible except the pattern Merle/blotched per competition.
-                            Disqualifying Faults: Merle pattern/Blotched per competition
+                            <ul>
+                                <li>All colors and patterns are permissible except the pattern Merle/blotched per competition.
+                                    Disqualifying Faults: Merle pattern/Blotched per competition</li>
+                            </ul>
                             SIZE
-                            • Dogs should be healthy and should NOT reach the point where it is considered obese.
-                            • Weight- There is no particular weight for the breed.
+                            <ul>
+                                <li>Dogs should be healthy and should NOT reach the point where it is considered obese.</li>
+                                <li>Weight- There is no particular weight for the breed.</li>
+                            </ul>
                             • Height and weight should be in proportion of the body frame.
                             • Height-Please see Variety Amendments.
                             • All varieties to exhibit “Bully” characteristics and breed type traits as described in the American Bully Standard, which are key elements of breed type for the American Bully breed.
@@ -139,11 +174,11 @@ export const AmericanBully = () => {
                             • Bobbed tail
                             • Docked tail
                         </p>
- 
+
                     </div>
-                                     </div>
                 </div>
             </div>
+        </div>
 
     )
 }
