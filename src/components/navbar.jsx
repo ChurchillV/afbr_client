@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import logo1 from '../images/logo2.jpg'
+import logo1 from '../images/logo2eee.png'
 import $ from 'jquery'
 
 
