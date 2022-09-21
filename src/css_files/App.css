@@ -162,7 +162,7 @@
 
 .nav-link:hover{
   /* font-size: 2vw; */
-  background-color: rgb(135, 120, 88);
+  background-color: rgb(182, 151, 84);
   color: white;
 }
 
@@ -174,7 +174,10 @@
   font-weight: 450;
   /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
-
+.nav-item:hover{
+  /* font-size: 2vw; */
+  color: white;
+}
 
 
 

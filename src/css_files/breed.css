@@ -23,13 +23,13 @@
   .breed_text{
       /* background-color:  rgb(186, 129, 8);; */
       color: black;
-      margin: 1%;
-      background-color: rgba(212, 205, 205, 0.212);
-
-     
-      
+      /* background-color: rgba(212, 205, 205, 0.212); */
   }
-
+.fixed_Search{
+    right: 2%;
+    bottom: 5%;
+    z-index: 2;
+}
   .search_results{
       margin: 1%;
       border: 1px solid rgb(186, 129, 8);

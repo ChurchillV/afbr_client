@@ -59,21 +59,65 @@ class Breeds extends Component {
 
                     <Navbar />
 
-                    <div class='container-fluid   '>
+                    <div class='container-fluid  mx-3'>
                         <div className='row breed_text align-items-center justify-content-center'>
-                            <h6 style={{ fontWeight: '400' }}>Breeds</h6>
                             <div class='container-fluid'>
-
-                                <div className='row align-items-center justify-content-center'>
-                                    <Search send_to={true} onSearchClick={this.onSearchClick} />
-
-                                </div>
                                 <div className='row align-items-start justify-content-center'>
+                                    
+                                    <div className='col-sm-9'>
+                                        <div className='container-fluid'>
+                                            <div className='row align-items-center justify-content-center'>
+                                                <div class="col-lg-12">
+
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                                        <div class="card card-body list-group-item">
+                                                            <AmericanBulldog />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div className='row'>
+                                                <div class="col-lg-12">
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                                        <div class="card card-body list-group-item">
+                                                            <AmericanBully />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='row'>
+                                                <div class="col-lg-12">
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample3">
+                                                        <div class="card card-body list-group-item">
+                                                            <FrenchBulldog />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='row'>
+
+                                                <div class="col-lg-12">
+                                                    <div class="collapse multi-collapse" id="multiCollapseExample4">
+                                                        <div class="card card-body list-group-item">
+                                                            <Pittbull />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div>
                                     <div className='col-sm-2'>
 
-                                        <div className='row align-items-center justify-content-center text-capitalize'>
+                                        <div className='row align-items-center justify-content-center'>
                                             <div className='w-100 breed_item list-group'>
-                                                <p className='text-small'>Click on a breed to read more</p>
+                                                <p className=''>Click on a breed to read more</p>
                                                 <ol className='list-group w-100'>
                                                     <li className='w-100 list-group-item'>
 
@@ -97,55 +141,8 @@ class Breeds extends Component {
 
                                         </div>
                                     </div>
-                                    <div className='col-sm-8'>
-                                        <div className='container-fluid'>
-                                            <div className='row align-items-center justify-content-center'>
-                                                <div class="row align-items-center justify-content-center">
-                                                    <div class="col-lg-12">
-
-                                                        <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                                            <div class="card card-body list-group-item">
-                                                                <AmericanBulldog />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-                                                <div className='row'>
-                                                    <div class="col-lg-12">
-                                                        <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                                            <div class="card card-body list-group-item">
-                                                                <AmericanBully />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className='row'>
-                                                    <div class="col-lg-12">
-                                                        <div class="collapse multi-collapse" id="multiCollapseExample3">
-                                                            <div class="card card-body list-group-item">
-                                                                <FrenchBulldog />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className='row'>
-
-                                                    <div class="col-lg-12">
-                                                        <div class="collapse multi-collapse" id="multiCollapseExample4">
-                                                            <div class="card card-body list-group-item">
-                                                                <Pittbull />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                        </div>
-
+                                    <div className='col-sm-2 position-fixed z-indez fixed_Search'>
+                                    <Search send_to={true} onSearchClick={this.onSearchClick} />
 
                                     </div>
                                 </div>
