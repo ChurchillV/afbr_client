@@ -28,7 +28,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <div class='row  position-sticky align-content-center justify-content-center  w-100' style={{zIndex: '30'}}>
+            <div class='row  position-sticky align-content-center justify-content-center  w-100' style={{ zIndex: '30' }}>
                 {/* <span className='navtitle font-weight-bold' style={{ color: this.props.color }}>THE AFRICAN BULLY REGISTRY</span> */}
 
                 <div className='w-100'>
@@ -50,33 +50,19 @@ class Navbar extends Component {
                                 <li class="nav-item active" style={{ color: this.props.color }}>
                                     <Link class="nav-link" style={{ color: this.props.color }} to="/home">Home </Link>
                                 </li>
+
                                 {/* <li class="nav-item active">
-                                    <Link class="nav-link" style={{ color: this.props.color }} to="/about">About Us</Link>
-                                </li> */}
-                                <li class="nav-item active">
                                     <Link class="nav-link" style={{ color: this.props.color }} to="/breeds">Breeds</Link>
-                                </li>
+                                </li> */}
                                 <li class="nav-item active">
                                     <Link class="nav-link" style={{ color: this.props.color }} to="/community">Community</Link>
                                 </li>
-                                {/* <li class="nav-item active">
-                            <Link class="nav-link"   style={{color: this.props.color}}to="/shows_and_events">Shows And Events</Link>
-                        </li> */}
-                                {/* <li class="nav-item active">
-                            <Link class="nav-link"  style={{color: this.props.color}} to="/judges">Judges</Link>
-                        </li> */}
-
 
                                 <li class="nav-item active">
                                     <Link class="nav-link" style={{ color: this.props.color }} to="/registration" id="navbarDropdownMenuLink">Register Dog
                                     </Link>
 
                                 </li>
-                                {/* <li class="nav-item ">
-                            <Link class="nav-link"   style={{color: this.props.color}} to="/contact">Contact
-                            </Link>
-                            
-                        </li> */}
                                 <li class="nav-item active">
                                     <Link style={{ color: this.props.color }} class="nav-link" to="/sign_up">Sign Up</Link>
                                 </li>
