@@ -113,7 +113,7 @@ class Profile extends Component {
                         {this.context.user_sql_details && this.context.user_sql_details.public_id ? <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.context.user_sql_details.public_id}.png`} 
                             className='img-fluid profile_pic_user2'></img> : <img src={Profile_pic} className='img-fluid profile_pic_user'></img>}
                             
-                            <h6 style={{ color: 'rgb(186, 129, 8' }}>Welcome, <span className='font-weight-bold'>{this.state.firebaseUser ? this.context.user_sql_details.username : null}</span></h6>
+                            <h6 style={{ color: 'rgb(186, 129, 8' }}>Welcome, <span className='font-weight-bold'>{this.context.user_sql_details ? this.context.user_sql_details.username : null}</span></h6>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             <Link to='/Home' style={{ color: this.props.navbarcolor }}>Home</Link>
