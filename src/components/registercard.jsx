@@ -7,7 +7,7 @@ const RegisterCard = (props) => {
         <div className='row align-items-center justify-content-center border_right_yellow' >
 
 
-            <div class="col-sm-3 align-items-center align-items-sm-start justify-content-center text-left">
+            <div class="col-sm-4 align-items-center align-items-sm-start justify-content-center text-left">
 
                 <img class={props.className} src={props.image_src} alt="Card image cap"></img>
 
@@ -28,7 +28,7 @@ const RegisterCard = (props) => {
 
 
             </div>
-            <div class="col-sm-3 align-items-center align-items-sm-start 
+            <div class="col-sm-2 align-items-center align-items-sm-start 
             justify-content-center text-center text-sm-left py-3">
                 <a href="#" class="card-link">{props.link1}</a>
                 <a href={props.url} class="text-success  text-uppercase font-weight-bold">Register</a>

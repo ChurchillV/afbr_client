@@ -36,7 +36,7 @@ class Profile extends Component {
         this.profile_incomplete()
 
         if (window.screen.width < 660) {
-            console.log('hide the following')
+            // console.log('hide the following')
             $('.to_be_hidden_profile').css('display', 'none')
             $('to_be_hidden_profile').on(
                     'click', function(){
@@ -57,7 +57,7 @@ class Profile extends Component {
                     user: res.data[0]
                 },
                     () => {
-                        console.log('chaingn personal state after calling uid', this.state)
+                        // console.log('chaingn personal state after calling uid', this.state)
 
                     })
             })
@@ -73,14 +73,14 @@ class Profile extends Component {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 this.setState({ ...this.state, firebaseUser: user }, () => {
-                    console.log('on Authstate profile', this.state.firebaseUser)
+                    // console.log('on Authstate profile', this.state.firebaseUser)
                     this.changeUserToId()
 
                 });
 
             } else {
                 this.setState({ user: null });
-                console.log('displatyin data from profile')
+                // console.log('displatyin data from profile')
 
             }
 
@@ -92,7 +92,8 @@ class Profile extends Component {
 
     profile_incomplete = () => {
         for (var detail in this.context.user_sql_details) {
-            if (!this.context.user_sql_details[detail]) {
+            if (!this.context.user_sql_details[detail] && detail in ['username', 
+        "email", "contact_address", "phone_number"]) {
                 console.log('false')
                 // console.log(detail)
                 this.setState({ profile_incomplete: true })
@@ -112,7 +113,7 @@ class Profile extends Component {
                         {this.context.user_sql_details && this.context.user_sql_details.public_id ? <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.context.user_sql_details.public_id}.png`} 
                             className='img-fluid profile_pic_user2'></img> : <img src={Profile_pic} className='img-fluid profile_pic_user'></img>}
                             
-                            <h6 style={{ color: 'rgb(186, 129, 8' }}>Welcome, <span className='font-weight-bold'>{this.state.firebaseUser ? this.state.firebaseUser.displayName : null}</span></h6>
+                            <h6 style={{ color: 'rgb(186, 129, 8' }}>Welcome, <span className='font-weight-bold'>{this.state.firebaseUser ? this.context.user_sql_details.username : null}</span></h6>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             <Link to='/Home' style={{ color: this.props.navbarcolor }}>Home</Link>
@@ -128,7 +129,7 @@ class Profile extends Component {
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             {this.state.profile_incomplete ?
-                                <Link class=' text-dark' style={{ color: this.props.navbarcolor }} 
+                                <Link class=' text-warning' style={{ color: this.props.navbarcolor }} 
                                 to={`/profile/personal`} >
                                     Personal</Link>
                                 :
@@ -144,7 +145,7 @@ class Profile extends Component {
                             <Link style={{ color: this.props.navbarcolor }} to='/profile/csandps'>Certificates and Pedigrees</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <button style={{ color: this.props.navbarcolor }} className='btn btn-default' onClick={Logout}>Log Out</button>
+                            <button style={{ color: this.props.navbarcolor }} className='btn btn-outline-warning' onClick={Logout}>Log Out</button>
                         </div>
                     </div>
                     <div className='col-sm-10 align-items-center justify-content-center profile_main'>

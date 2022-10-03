@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import "../css_files/registration.css";
 import "../css_files/extras.css";
 
-class Registration extends React.Component {
+class RegistrationInternational extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,12 +41,12 @@ class Registration extends React.Component {
             <div className="container">
               <div className="row py-4">
                 <div className="col-sm-6 border_right_yellow">
-                  <Link class="font-weight-bold text-uppercase text-warning" to="/registration/domestic">
+                  <Link class="font-weight-bold text-uppercase " to="/registration/domestic">
                     DOMESTIC (GHANAIAN)
                   </Link>
                 </div>
                 <div className="col-sm-6">
-                  <Link class="font-weight-bold text-uppercase" to="/registration/international">
+                  <Link class="font-weight-bold text-uppercase text-warning" to="/registration/international">
                     INTERNATIONAL
                   </Link>
                 </div>
@@ -66,8 +66,8 @@ class Registration extends React.Component {
                     title="Litter Registration"
                     className="puppies "
                     text1="Register a collection of puppies with us"
-                    text_price={` 20.00`}
-                    url="/litter_registrations/20"
+                    text_price={` 25.00`}
+                    url="/litter_registrations/25"
                   />
                 </div>
               </div>
@@ -82,8 +82,8 @@ class Registration extends React.Component {
                     text2="Age: less than 12 months old"
                     // cancelled_text={'$30.00'}
 
-                    text_price={` 25.00`}
-                    url="/dog_registrations/25"
+                    text_price={` 30.00`}
+                    url="/dog_registrations/30"
                   />
                 </div>
               </div>
@@ -98,8 +98,8 @@ class Registration extends React.Component {
                     text2="Age: above 12 months old"
                     // cancelled_text={'$35.00'}
 
-                    text_price={` 30.00`}
-                    url="/adult_registrations/30"
+                    text_price={` 40.00`}
+                    url="/adult_registrations/40"
                   />
                 </div>
               </div>
@@ -111,4 +111,4 @@ class Registration extends React.Component {
   }
 }
 
-export default Registration;
+export default RegistrationInternational;

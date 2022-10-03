@@ -66,11 +66,11 @@ class Personal extends React.Component {
 
                             </div>
                         }
-                        {/* <div className="col-md-2 smallrem btn btn-secondary mb-3 text-white w-100">
-                        <Link className="text-white" to={`/profile/personal/edit`}>Edit Details</Link>
+                        <div className="col-md-2 smallrem btn btn-outline-warning mb-3 text-white w-100">
+                        <Link className="text-dark" to={`/profile/personal/edit`}>Edit Details</Link>
 
 
-                        </div> */}
+                        </div>
                        
                     </div>
                 </Profile>

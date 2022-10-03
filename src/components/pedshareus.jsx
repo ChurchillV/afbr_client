@@ -24,11 +24,6 @@ export class PedShareForm extends React.Component {
         }
     }
 
-    componentDidMount = () => {
-
-        // this.getcurrentuser()
-        // this.props.litter_registrations && this.getTransactUrl()
-    }
     handleImage = (e) => {
         this.setState({ imageSelected: e.target.files[0] },
             () => {
@@ -40,13 +35,14 @@ export class PedShareForm extends React.Component {
 
 
     getTransactUrl = () => {
-        console.log('hi im being called')
-        axios.post(`${url}api/dpo/transact`, {
+        axios.post(`${url}api/expresspaygh/transact`, {
             location: this.context.location,
             transaction_name: 'litter_registrations',
+            transaction_cost: this.props.price,
+            username: this.context.user.displayName,
+            email: this.context.user.email
         })
             .then((res) => {
-                // console.log(res.data)
                 this.setState({ dpo: res.data, dpo_loaded: true }, () => {
                     window.location = this.state.dpo
 

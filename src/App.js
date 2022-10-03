@@ -42,6 +42,7 @@ import { Post } from './components/community/posts';
 import { Ads } from './components/community/advertissements';
 
 import { CountryProvider } from './components/country_context';
+import RegistrationInternational from './components/registration_international';
 
 
 
@@ -207,9 +208,10 @@ class App extends Component {
             <Route exact path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/registration' element={<Registration litter_registrations_price={this.state.litter_registrations_price}
-              puppy_registrations_price={this.state.puppy_registrations_price}
-              dog_registrations_price={this.state.dog_registrations_price} country_name={this.state.location} />} />
+            <Route path='/registration' element={<Registration />}/>
+            <Route path='/registration/domestic' element={<Registration />}/>
+            <Route path='/registration/international' element={< RegistrationInternational />}/>
+
             <Route path='/breeds' element={<Breeds />} />
             <Route path='/breeds/americanbulldog' element={<AmericanBulldog />} />
             <Route path='/breeds/americanbully' element={<AmericanBully />} />
@@ -234,23 +236,23 @@ class App extends Component {
             <Route path='/reset' element={< Reset />} />
             <Route path='/dashboard' element={< Dashboard />} />
 
-            <Route path='/litter_registrations' element={<LitterRegistration />} />
+            <Route path='/litter_registrations/:price' element={<LitterRegistration />} />
 
             <Route path='/litter_registrations_success' element={<Litter_Register_Success />} />
 
-            <Route path='/dog_registrations' element={<DogRegistration
+            <Route path='/dog_registrations/:price' element={<DogRegistration
               navbar={true} user={this.state.user} 
               puppy_registrations_price={this.state.puppy_registrations_price}
               transaction_name={'dog_registrations'} />} />
 
             <Route path='/dog_registrations_success/:dog_name/:username/:email/' element={<Register_Success
               navbar={true} />} />
-            <Route path='/dog_registrations_special' element={<Register_Special
+            <Route path='/dog_registrations_special/:price' element={<Register_Special
               navbar={true} />} />
 
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
 
-            <Route path='/adult_registrations' element={<DogRegistration 
+            <Route path='/adult_registrations/:price' element={<DogRegistration 
               dog_registrations_price={this.state.dog_registrations_price} transaction_name={'adult_registrations'} />} />
             <Route path='/profile' element={<ProfileMain />} />
 
@@ -260,7 +262,7 @@ class App extends Component {
             <Route path='/profile/signout' element={<SignOut />} />
             <Route path='/profile/personal' element={<Personal user_sql_details={this.state.user_sql_details}/>} />
 
-            <Route path='/profile/personal/edit' element={<PersonalForm />} />
+            <Route path='/profile/personal/edit' element={<PersonalForm user={this.state.user_sql_details} />} />
 
             <Route path='/terms' element={< Terms />} />
 

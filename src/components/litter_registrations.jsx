@@ -10,7 +10,7 @@ import '../css_files/registration.css'
 import axios from "axios";
 import { url } from "./weburl";
 import { PedShareForm } from "./pedshareus";
-
+import { withRouter } from "./dog_registrations";
 
 
 
@@ -60,7 +60,8 @@ class LitterRegistration extends React.Component {
                         <div className="col-sm-6">
                         <p>3. Submit the Form to us</p>
     
-                        <PedShareForm label='Upload Filled Document Here' litter_registrations={true} />
+                        <PedShareForm label='Upload Filled Document Here' litter_registrations={true} 
+                        price={this.props.params.price}/>
                        
                         </div>
                        
@@ -78,4 +79,4 @@ class LitterRegistration extends React.Component {
     
 }
 
-export default LitterRegistration;
+export default withRouter(LitterRegistration);

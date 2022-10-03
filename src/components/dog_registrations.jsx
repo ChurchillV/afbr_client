@@ -16,7 +16,6 @@ import { PedShareForm } from "./pedshareus";
 import { getLocation } from "./confetti";
 import CountryContext from "./country_context";
 
-
 export function withRouter(Child) {
     return (props) => {
         const location = useLocation();
@@ -53,7 +52,6 @@ class DogRegistration extends React.Component {
 
     componentDidMount = () => {
         console.log('contenxt comes here',this.context)
-        // this.getcurrentuser()
         if (this.context.user){
             this.setState({loaded: true})
         }
@@ -165,45 +163,36 @@ class DogRegistration extends React.Component {
             dog: { ...this.state.dog, [name]: value }
         }, () => {
             console.log(this.state)
-            if (this.props.newdog) {
+            // if (this.props.newdog) {
 
-                console.log('manual pedigree working')
-                this.props.getnameofDog(this.state.dog.name)
-            }
-            if (this.props.appenddog) {
-                console.log(this.props)
-                console.log('manual pedigree working in appenddog')
-                this.props.getnameofDog2(this.state.dog.name)
-            }
+            //     console.log('manual pedigree working')
+            //     this.props.getnameofDog(this.state.dog.name)
+            // }
+            // if (this.props.appenddog) {
+            //     console.log(this.props)
+            //     console.log('manual pedigree working in appenddog')
+            //     this.props.getnameofDog2(this.state.dog.name)
+            // }
         }
         )
-
-
-        //change this to getteing the id later
-
-
-
 
     }
 
     getTransactUrl = () => {
-        
+
         axios.post(`${url}api/expresspaygh/transact`, {
             location: this.context.location,
             transaction_name: this.props.transaction_name,
-            transaction_cost: this.state.price,
+            transaction_cost: this.props.params.price,
             dog_name: this.state.dog.name,
-            // username: this.state.firebaseUser.displayName,
             username: this.context.user.displayName,
-            // email: this.state.firebaseUser.email
             email: this.context.user.email
         })
             .then((res) => {
                 console.log(res.data)
-                this.setState({ expresspaygh: res.data, dpo_loaded: true }, () => {
+                this.setState({ expresspaygh: res.data, expresspaygh_loaded: true }, () => {
                     
                     window.location = this.state.expresspaygh
-
                 })
 
             })
@@ -211,9 +200,7 @@ class DogRegistration extends React.Component {
             .catch((err) => console.log(err))
     }
 
-    onSearchChange = (e) => {
-
-    }
+  
 
     edit = (e) => {
 
@@ -274,32 +261,25 @@ class DogRegistration extends React.Component {
 
 
 
-    submit = (e) => {
+    submit = (e) => {   
 
         e.preventDefault()
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
         console.log(this.state)
 
-
-
-
-
-
         if (this.state.dog.image_url) {
             this.uploadImage(this.sendDogInfo)
-
-            console.log('image url  presnet  and navigating to dpo')
-            // window.location = this.state.dpo
+            // window.location = this.state.expresspaygh
             // window.location = `/dog_registrations_success/${this.state.dog.name}/${this.state.firebaseUser.displayName}/${this.state.dog.public_id}`
 
 
         }
         else {
             this.sendDogInfo()
-            console.log('navigating to profile')
 
-      
+            // window.location = this.state.expresspaygh
+
             console.log('no image url present')
         }
 
