@@ -54,5 +54,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "African Bully Registry Frontend",
+  "main": "App.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YawOtuo/afbr_client.git"
+  },
+  "author": "Yaw Otuo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YawOtuo/afbr_client/issues"
+  },
+  "homepage": "/"
 }
