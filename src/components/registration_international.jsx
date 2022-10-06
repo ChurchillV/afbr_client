@@ -36,7 +36,7 @@ class RegistrationInternational extends React.Component {
             <Navbar />
           </div>
         </div>
-        <div className="d9d9d9">
+        <div className="d9d9d9_international">
           <div className="container">
             <div className="container">
               <div className="row py-4">

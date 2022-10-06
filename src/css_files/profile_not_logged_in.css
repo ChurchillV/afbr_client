@@ -4,11 +4,20 @@
     background-image: linear-gradient(to right, #e2d9bb7f, #d9d9d96d);
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
+.d9d9d9_international {
+
+    background-image: linear-gradient(to right, #e2d9bb7f, #9e814c65);
+}
+
 
 @media screen and (max-width: 660px) {
     .full_width_mobile {
         height: 100vh;
     }
+}
+
+.view_height_100 {
+    height: 100vh;
 }
 
 @media screen and (max-width: 660px) {
