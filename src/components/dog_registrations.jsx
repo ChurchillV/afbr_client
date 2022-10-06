@@ -296,7 +296,8 @@ class DogRegistration extends React.Component {
                 <div className="container-fluid">
                     <div className="row align-items-center justify-content-center">
 
-                        {this.context.user && <div className="col-sm-9">
+                        {this.context.user && this.context.user_sql_details && 
+                        this.context.user_sql_details.phone_number && <div className="col-sm-9">
                             {this.state.edit ?
                                 <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                     dams={this.state.dams} submit={this.edit}
@@ -333,6 +334,10 @@ class DogRegistration extends React.Component {
                             </div>
                         </div>}
 
+                        {this.context.user && this.context.user_sql_details && 
+                        !this.context.user_sql_details.phone_number && <div>
+                            Please supply your phone number
+                        </div>}
 
                         {!this.context.user &&
                             <div >
