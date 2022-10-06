@@ -76,13 +76,6 @@ export const Register_Success = () => {
     navigate("/profile");
   };
 
-  // const dogDetails = () => {
-
-  //     return Object.keys(dog).map((key) =>
-  //         <p className='text-capitalize'>{key}: {dog[key]}</p>
-  //     )
-  // }
-
   return (
     <div className="container-fluid">
       <Navbar />
@@ -129,9 +122,19 @@ export const Register_Success = () => {
             </div>
           </div>
         ) : (
-          <div>
-            <p>Pending payment</p>
-            <h4>{username}</h4>
+          <div className="container ">
+           <div className="row align-items-center justify-content-center">
+
+            <div className="col-sm-6 py-5">
+                <p>Pending payment, {username}</p>  
+                <p>This message usually appears because mobile money was selected
+                  as a payment method.
+                  <hr /> Please be rest assurred that 
+                  once the payment has been completed and approved
+                  your registration will be 100% approved.
+                </p>
+              </div>
+           </div>
           </div>
         )}
       </div>
