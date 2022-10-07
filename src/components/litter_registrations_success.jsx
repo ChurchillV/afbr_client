@@ -77,46 +77,41 @@ export const Litter_Register_Success = () =>
         <Navbar />
         <div className='container-fluid w-100 registration_success_full '>
 
-            {!moneyPaid ?(
+            {moneyPaid ? (
                 <div className='view_height_100'>
 
-                    <div className='row align-items-center justify-content-center p1 py-5'>
-                        <div className='col-lg-'>
-                            <p className='text-capitalize text-white'>Hello {user_context.user_sql_details.username}, you have
+                    <div className='row align-items-center justify-content-center p1 py-5 my-5'>
+                        <div className='col-sm-3 py-5 my-5'>
+                            <p className='text-capitalize text-white py-5'>Hello
+                             <span className='text-warning font-weight-bold'>&nbsp;{user_context && user_context.user_sql_details && user_context.user_sql_details.username}&nbsp;,</span>
+                              you have
                                 successfully registered completed a litter registration form</p>
-
+                            <p className='text-capitalize text-white py-5'>Click Okay to Complete Process</p>
+                            <button className='btn btn-outline-warning w-100 ok' onClick={okay}>OK</button>
                         </div>
 
-                    </div>
-                    
-                    <div className='row align-items-center justify-content-center p3 '>
-                        <div className='col-sm-'>
-
-                            <p className='text-capitalize'>Click Okay to Complete PRocess</p>
-                            <button className='btn btn-success w-100 ok' onClick={okay}>OK</button>
 
 
-                        </div>
 
                     </div>
                 </div>
-  )  : (
+            ) : (
                 <div className="container ">
-                 <div className="row align-items-center justify-content-center">
-      
-                  <div className="col-sm-6 py-5">
-                     {user_context && user_context.user_sql_details && <p>Pending payment,
-                         {user_context.user_sql_details.username}</p>  }
-                      <p>This message usually appears because mobile money was selected
-                        as a payment method.
-                        <hr /> Please be rest assurred that 
-                        once the payment has been completed and approved
-                        your registration will be 100% approved.
-                      </p>
+                    <div className="row align-items-center justify-content-center">
+
+                        <div className="col-sm-6 py-5">
+                            {user_context && user_context.user_sql_details && <p>Pending payment,
+                                {user_context.user_sql_details.username}</p>}
+                            <p>This message usually appears because mobile money was selected
+                                as a payment method.
+                                <hr /> Please be rest assurred that
+                                once the payment has been completed and approved
+                                your registration will be 100% approved.
+                            </p>
+                        </div>
                     </div>
-                 </div>
                 </div>
-              )}
+            )}
         </div>
     </div>
 }

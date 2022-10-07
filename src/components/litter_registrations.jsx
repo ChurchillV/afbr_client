@@ -32,7 +32,7 @@ class LitterRegistration extends React.Component
     render()
     {
         return (
-            <div className="dog_reg_full view_height_100">
+            <div className="dog_reg_full ">
                 <div className="container  ">
                     <div className="row justify-content-center align-items-center">
                         <Navbar color='white' navbar_dark='navbar-dark' />
@@ -40,41 +40,41 @@ class LitterRegistration extends React.Component
                     {this.context.user && this.context.user_sql_details &&
                         this.context.user_sql_details.phone_number &&
 
-                        <div>
-                            <div className="row align-items-center justify-content-center  my-3">
-                                <p>Please follow the following three steps
-                                    to complete litter registration with us
-                                </p>
-                            </div>
-                            <div className="row align-items-center justify-content-center  my-3">
-                                <div className="col-sm-6">
+                        <div className="container">
 
-                                    <a href={litter_file} className="text-white" download>1. Download
-                                        the litter registration form here</a>
+                            <div className="row align-items-center justify-content-center ">
 
+                                <div className="col-sm-6 my-5 my-sm-0">
                                     <img src='https://res.cloudinary.com/daurieb51/image/upload/v1642082142/iztl3avchjiannfl0yim.png'
-                                        width={'10%'} />
+                                        width={'100%'} alt={'Registration Form'} />
+                                </div>
 
+                                <div className="col-sm-6 text-left">
+                                    <h2 className="text-warning">Please follow the following three steps
+                                        to complete litter registration with us.
+                                    </h2>
+                                    <hr />
+                                    <ol className="smallrem">
+                                        <li>
+                                            <h4><a href={litter_file} className="text-white smallrem" download>
+                                                Download
+                                                the litter registration form here</a></h4></li>
+                                        <li> <h4 className="text-white smallrem">Fill the form at your convenience  </h4>  </li>
+                                        <li> <h4 className="text-white smallrem">Submit the form to us</h4>
+                                        </li>
+
+                                        <hr />
+                                            <h4 className="text-white smallrem"><PedShareForm label='Upload Filled Document Here' litter_registrations={true}
+                                            price={this.props.params.price} /></h4>
+                                           
+                                    </ol>
 
 
                                 </div>
 
-                            </div>
 
-                            <div className="row align-items-center justify-content-center  my-3">
-                                2. Fill the form at your convenience
-                            </div>
-                            <div className="row justify-content-center align-items-center my-3">
-                                <div className="col-sm-6">
-                                    <p>3. Submit the Form to us</p>
-
-                                    <PedShareForm label='Upload Filled Document Here' litter_registrations={true}
-                                        price={this.props.params.price} />
-
-                                </div>
 
                             </div>
-
                         </div>
                     }
                     {this.context.user && this.context.user_sql_details &&
