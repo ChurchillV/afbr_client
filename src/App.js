@@ -43,6 +43,9 @@ import { Ads } from './components/community/advertissements';
 
 import { CountryProvider } from './components/country_context';
 import RegistrationInternational from './components/registration_international';
+import { AdminDogs } from './components/admin/admindogs';
+import { AdminUsers } from './components/admin/admin_users';
+import { AdminMain } from './components/admin/admin_main';
 
 
 
@@ -265,6 +268,13 @@ class App extends Component {
             <Route path='/profile/personal/edit' element={<PersonalForm user={this.state.user_sql_details} />} />
 
             <Route path='/terms' element={< Terms />} />
+
+            <Route path='/admin' element={< AdminMain />} />
+
+            <Route path='/admin/dogs' element={< AdminDogs />} />
+            <Route path='/admin/users' element={< AdminUsers />} />
+
+
 
           </Routes>
 
