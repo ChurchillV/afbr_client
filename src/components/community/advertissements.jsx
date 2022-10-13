@@ -25,8 +25,7 @@ export class Ads extends React.Component {
                 <div className='row align-items-center justify-content-center my-5'>
                     <div className='col-sm-12'>
                         <p>Advertissements</p>
-                        <img src={ads_image} alt="" />
-                    </div>
+gjhfcxzZ                    </div>
                 </div>
               
                 

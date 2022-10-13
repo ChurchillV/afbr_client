@@ -129,7 +129,7 @@ class Profile extends Component {
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             {this.state.profile_incomplete ?
-                                <Link class=' text-warning' style={{ color: this.props.navbarcolor }} 
+                                <Link style={{ color: this.props.navbarcolor }} 
                                 to={`/profile/personal`} >
                                     Personal</Link>
                                 :

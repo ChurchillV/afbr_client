@@ -76,13 +76,6 @@ export const Register_Success = () => {
     navigate("/profile");
   };
 
-  // const dogDetails = () => {
-
-  //     return Object.keys(dog).map((key) =>
-  //         <p className='text-capitalize'>{key}: {dog[key]}</p>
-  //     )
-  // }
-
   return (
     <div className="container-fluid">
       <Navbar />
@@ -90,48 +83,56 @@ export const Register_Success = () => {
         {moneyPaid ? (
           <div>
             <div className="row align-items-center justify-content-center p1 py-5 ">
-              <div className="col-sm-6">
-                <h2 className="text-capitalize text-white">
+
+              <div className="col-sm-3 py-5 my-5">
+                <h4 className="text-capitalize text-white">
                   Congratulations{" "}
-                  <span className="text-uppercase font-weight-bold">
+                  <span className="text-uppercase font-weight-bold text-warning">
                     {username}
                   </span>{" "}
                   , you have successfully registered{" "}
-                  <span className="font-weight-bold text-uppercase">
+                  <span className="font-weight-bold text-uppercase text-warning">
                     {dog_name}
                   </span>{" "}
                   with the AFBR
-                </h2>
+                </h4>
 
                 <br />
                 <p className="text-white">
-                  <span className="font-weight-bold text-uppercase">
+                  <span className="font-weight-bold text-uppercase text-warning">
                     {dog_name}
                   </span>{" "}
                   should appear under your profile within 6 hours of
                   registration
                 </p>
               </div>
-              <div className="col-sm-3">
+              {/* <div className="col-sm-3">
                 <img class="profile_img_sire" src={logo}></img>
-              </div>
-            </div>
+              </div> */}
 
-            <div className="row align-items-center justify-content-center ">
-              <div className="col-sm-4">
-                <h3 className="font-weight-light">
-                  Click on the Thumbs Up to complete the process
-                </h3>
-              </div>
-              <div className="col-sm-2">
+             
+              <div className="col-sm-3">
                 <img class="" onClick={(e) => okay(e)} src={thumbs}></img>
+                <p className="font-weight-light text-white">
+                  Click on the Thumbs Up to complete the process
+                </p>
               </div>
             </div>
           </div>
         ) : (
-          <div>
-            <p>Pending payment</p>
-            <h4>{username}</h4>
+          <div className="container ">
+           <div className="row align-items-center justify-content-center">
+
+            <div className="col-sm-6 py-5">
+                <p>Pending payment, {username}</p>  
+                <p>This message usually appears because mobile money was selected
+                  as a payment method.
+                  <hr /> Please be rest assurred that 
+                  once the payment has been completed and approved
+                  your registration will be 100% approved.
+                </p>
+              </div>
+           </div>
           </div>
         )}
       </div>
