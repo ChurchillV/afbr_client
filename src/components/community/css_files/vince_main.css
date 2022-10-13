@@ -1,10 +1,10 @@
-/* :root{
+ :root{
    --clr--shadow: #cfc0c0be;
    --clr--main: #e3e7f1;
    --clr--font: #dfbc5c;
    --radius: 20px;
    --clr--preview: #828385;
-} */
+} 
 
 * {
    padding: 0;
@@ -54,4 +54,19 @@ p {
       display: flex;
       flex-wrap: nowrap
    };
+}
+
+/*.footer_section {
+   background-color: #353330;
+}*/
+
+.No_Articles_Message {
+   color: var(--clr--preview);
+   margin: 10rem;
+   padding-bottom: 5rem;
+   border-bottom: .5px solid var(--clr--shadow);
+}
+
+.footer {
+   color: #353330;
 }
