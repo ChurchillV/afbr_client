@@ -46,12 +46,16 @@ import RegistrationInternational from './components/registration_international';
 import { AdminDogs } from './components/admin/admindogs';
 import { AdminUsers } from './components/admin/admin_users';
 import { AdminMain } from './components/admin/admin_main';
+import FeaturedArticlesContent from './components/community/featured_articles_content';
+import FeaturedArticlesFull from './components/community/featured_articles_full';
 
 
 
 
-class App extends Component {
-  constructor(props) {
+class App extends Component
+{
+  constructor(props)
+  {
     super(props)
     this.state = {
       user: '',
@@ -73,7 +77,7 @@ class App extends Component {
         damdamsire: { id: 404 },
         damdamdam: { id: 404 }
       },
-      location:'',
+      location: '',
       litter_registrations_price: 20,
       puppy_registrations_price: 30,
       dog_registrations_price: 35
@@ -84,39 +88,49 @@ class App extends Component {
 
 
 
-  componentDidMount() {
+  componentDidMount()
+  {
     this.getcurrentuserLocation()
     // console.log('calling this function')
     const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        this.setState({ ...this.state, user }, () => {
+    onAuthStateChanged(auth, (user) =>
+    {
+      if (user)
+      {
+        this.setState({ ...this.state, user }, () =>
+        {
           this.get_user_sql_details()
         }
-          );
+        );
         // console.log('onAuthState', user.displayName, user.uid, user.email)
-      } else {
+      } else
+      {
         this.setState({ user: null });
         console.log('usershmm')
 
       }
 
-      if (this.state.loading) {
+      if (this.state.loading)
+      {
         this.setState({ loading: false });
       }
     });
   }
 
-  
 
-  getdogpedigree = (id) => {
-    if (id) {
+
+  getdogpedigree = (id) =>
+  {
+    if (id)
+    {
       axios
         .get(`${url}api/dogs/pedigree/${id}`)
-        .then((res) => {
+        .then((res) =>
+        {
 
           // console.log(res.data);
-          this.setState({ pedigree: res.data }, () => {
+          this.setState({ pedigree: res.data }, () =>
+          {
             // console.log('getting pedigree for profile main')
             // console.log(this.state.pedigree)
 
@@ -124,40 +138,48 @@ class App extends Component {
           })
           // console.log('data',data)
         })
-        .catch((err) => {
+        .catch((err) =>
+        {
           console.log("Error couldn't get dog id");
           console.log(err.message);
         });
     }
     else axios
       .get(`${url}api/dogs/pedigree/${this.state.dog_id.id}`)
-      .then((res) => {
+      .then((res) =>
+      {
 
         // console.log(res.data);
-        this.setState({ pedigree: res.data }, () => {
+        this.setState({ pedigree: res.data }, () =>
+        {
           // console.log('getting pedigree')
           // console.log(this.state.pedigree)
 
         })
         // console.log('data',data)
       })
-      .catch((err) => {
+      .catch((err) =>
+      {
         console.log("Error couldn't get dog id");
         console.log(err.message);
       });
   }
 
-  getcurrentuserLocation = () => {
+  getcurrentuserLocation = () =>
+  {
     // console.log('calling this function actually')
 
     axios.get('https://ipapi.co/json/')
 
-      .then((res) => {
+      .then((res) =>
+      {
         // console.log(res.data)
         this.setState({ ...this.state, location: res.data.country_name },
-          () => {
+          () =>
+          {
 
-            if (this.state.location === 'Ghana') {
+            if (this.state.location === 'Ghana')
+            {
 
               this.setState({ litter_registrations_price: 20.00 })
               this.setState({ puppy_registrations_price: 30.00 })
@@ -165,7 +187,8 @@ class App extends Component {
               // console.log(this.state.location)
 
             }
-            else {
+            else
+            {
               //international prices
               this.setState({ litter_registrations_price: 25.00 })
               this.setState({ puppy_registrations_price: 35.00 })
@@ -179,41 +202,48 @@ class App extends Component {
       .catch((err) => console.log(err))
   }
 
-  get_user_sql_details = () => {
+  get_user_sql_details = () =>
+  {
     console.log('calling from profile sql')
     axios
-        .get(`${url}api/users/getUserByUid/${this.state.user.uid}`)
-        .then((res) => {
-            // console.log(res.data)
-            this.setState({
-                ...this.state,
-                user_sql_details: res.data[0]
-            },
-                () => {
-                    console.log('getting user details', this.state.user_sql_details)
+      .get(`${url}api/users/getUserByUid/${this.state.user.uid}`)
+      .then((res) =>
+      {
+        // console.log(res.data)
+        this.setState({
+          ...this.state,
+          user_sql_details: res.data[0]
+        },
+          () =>
+          {
+            console.log('getting user details', this.state.user_sql_details)
 
-                })
-        })
+          })
+      })
 
-        .catch((err) => {
-            console.log(err)
-        })
-}
+      .catch((err) =>
+      {
+        console.log(err)
+      })
+  }
 
-  render() {
+  render()
+  {
     return (
 
-      <CountryProvider value={{location:this.state.location,
-       user:this.state.user, user_sql_details:this.state.user_sql_details}}>
+      <CountryProvider value={{
+        location: this.state.location,
+        user: this.state.user, user_sql_details: this.state.user_sql_details
+      }}>
 
         <BrowserRouter>
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/registration' element={<Registration />}/>
-            <Route path='/registration/domestic' element={<Registration />}/>
-            <Route path='/registration/international' element={< RegistrationInternational />}/>
+            <Route path='/registration' element={<Registration />} />
+            <Route path='/registration/domestic' element={<Registration />} />
+            <Route path='/registration/international' element={< RegistrationInternational />} />
 
             <Route path='/breeds' element={<Breeds />} />
             <Route path='/breeds/americanbulldog' element={<AmericanBulldog />} />
@@ -231,6 +261,7 @@ class App extends Component {
             <Route path='/community/posts_mock' element={< Post />} /> */}
             <Route path='/community/advertissements_mock' element={< Ads />} />
 
+            <Route path='/community/featured_articles' element={< FeaturedArticlesFull />} />
 
 
             <Route path='/sign_up' element={< Register />} />
@@ -244,7 +275,7 @@ class App extends Component {
             <Route path='/litter_registrations_success' element={<Litter_Register_Success />} />
 
             <Route path='/dog_registrations/:price' element={<DogRegistration
-              navbar={true} user={this.state.user} 
+              navbar={true} user={this.state.user}
               puppy_registrations_price={this.state.puppy_registrations_price}
               transaction_name={'dog_registrations'} />} />
 
@@ -255,7 +286,7 @@ class App extends Component {
 
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
 
-            <Route path='/adult_registrations/:price' element={<DogRegistration 
+            <Route path='/adult_registrations/:price' element={<DogRegistration
               dog_registrations_price={this.state.dog_registrations_price} transaction_name={'adult_registrations'} />} />
             <Route path='/profile' element={<ProfileMain />} />
 
@@ -263,7 +294,7 @@ class App extends Component {
             <Route path='/my_dogs/:dog_id' element={<ProfileDog pedigree={this.state.pedigree} getdogpedigree={this.getdogpedigree} />} />
             <Route path='/profile/csandps' element={<CsAndPs />} />
             <Route path='/profile/signout' element={<SignOut />} />
-            <Route path='/profile/personal' element={<Personal user_sql_details={this.state.user_sql_details}/>} />
+            <Route path='/profile/personal' element={<Personal user_sql_details={this.state.user_sql_details} />} />
 
             <Route path='/profile/personal/edit' element={<PersonalForm user={this.state.user_sql_details} />} />
 
