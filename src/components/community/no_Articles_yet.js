@@ -7,7 +7,7 @@ function no_Articles_yet() {
    <>
     <div>
       <h1 className='No_Articles_Message'>
-         No Articles Posted Here Yet.<br/>
+         No Articles posted Here Yet.<br/>
          Interested in writing one? Reach out to us at <br/>
          <a href="mailto: africanbullyregistry@gmail.com">Africanbullyregistry@gmail.com</a> 
       </h1>
