@@ -1,0 +1,38 @@
+:root{
+   --clr--shadow: #cfc0c0be;
+   --clr--main: #e3e7f1;
+   --clr--font: #dfbc5c;
+   --radius: 20px;
+   --clr--preview: #828385;
+} 
+
+
+.Intro{
+   position: relative;
+   text-align: center;
+   color: white;
+   background-image: url(../images/DoggyPic.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   height: 100vh;
+}
+
+.Text {
+   position: absolute;
+   top: 40%;
+   bottom: 40%;
+   left: 5%;
+   font-size: 80px;
+   text-shadow: 5px 5px 0px #bbbec4;
+}
+
+.Disappointment {
+   color: var(--clr--preview);
+   margin-top: 30vh;
+   margin-bottom: 30vh;
+}
+
+.Disappointment a {
+   color: var(--clr--font);
+}
