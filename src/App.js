@@ -39,7 +39,7 @@ import { Litter_Register_Success } from './components/litter_registrations_succe
 import { Community_Main } from './components/community/community_main';
 import { Newly } from './components/community/newly_registered';
 import { Post } from './components/community/posts';
-import { Ads } from './components/community/advertissements';
+import  Ads  from './components/community/advertisements';
 
 import { CountryProvider } from './components/country_context';
 import RegistrationInternational from './components/registration_international';
@@ -47,7 +47,9 @@ import { AdminDogs } from './components/admin/admindogs';
 import { AdminUsers } from './components/admin/admin_users';
 import { AdminMain } from './components/admin/admin_main';
 import FeaturedArticlesContent from './components/community/featured_articles_content';
-import FeaturedArticlesFull from './components/community/featured_articles_full';
+import FeaturedArticlesFull  from './components/community/featured_articles_full';
+import Adverts from './components/community/advertisements';
+
 
 
 
@@ -259,7 +261,7 @@ class App extends Component
             {/* <Route path='/newly_registered' element={<Newly />} /> */}
             {/* <Route path='/community/posts' element={< Post />} />
             <Route path='/community/posts_mock' element={< Post />} /> */}
-            <Route path='/community/advertissements_mock' element={< Ads />} />
+            <Route path='/community/advertisements' element={< Ads />} />
 
             <Route path='/community/featured_articles' element={< FeaturedArticlesFull />} />
 
