@@ -1,5 +1,5 @@
 import React from 'react'
-import './css_files/vince_header.css'
+import '../css_files/vince_header.css'
 
 function FeaturedArticlesHeader() {
   return (

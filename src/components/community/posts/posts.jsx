@@ -1,13 +1,13 @@
 import React from 'react';
 import axios from 'axios'
-import Navbar from '../navbar';
+import Navbar from '../../navbar';
 import { PostCard } from './post_card';
 import { PostProfile } from './post_profile';
-import postpng from './images/post.png'
-import image_svg from './images/image_svg.png'
-import video_svg from './images/video_svg.png'
-import padlock from './images/padlock.png'
-import { Community_Nav } from './community_nav';
+import postpng from '../images/post.png'
+import image_svg from '../images/image_svg.png'
+import video_svg from '../images/video_svg.png'
+import padlock from '../images/padlock.png'
+import { Community_Nav } from '../community_nav';
 
 
 

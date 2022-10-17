@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios'
-import Navbar from '../navbar';
 
-const url = 'http://localhost:5000/'
+import { url } from '../../weburl';
+
+import CountryContext from '../../country_context';
 
 export class PostProfile extends React.Component {
+    static contextType = CountryContext
     constructor(props) {
         super(props)
         this.state = {
@@ -27,7 +29,7 @@ export class PostProfile extends React.Component {
                 </div>
                 <div className='row align-items-start justify-content-start my-1'>
                     <div className='col-sm-10 '>
-                        <p className='fs-1'>Name: Takyi Otuo</p>
+                        <p className='fs-1'>Name: {this.context.user && this.context.user_sql_details && this.context.user_sql_details.username}</p>
                         <p className='fs-1'>Posts:7 </p>
                         <p className='fs-1'>Following: 10</p>
                         <p className='fs-1'>Followers: 12</p>

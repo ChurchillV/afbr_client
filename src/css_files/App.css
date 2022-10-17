@@ -567,3 +567,8 @@
 .fa:hover {
   opacity: 0.7;
 }
+
+.No_articles_yet {
+  color:rgba(255, 255, 255, 0.249);
+  
+}

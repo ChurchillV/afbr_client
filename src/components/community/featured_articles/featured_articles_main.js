@@ -1,5 +1,4 @@
-import './css_files/vince_main.css'
-
+//import './css_files/vince_main.css'
 import FeaturedArticlesContent from './featured_articles_content'
 
 function FeaturedArticlesMain()
