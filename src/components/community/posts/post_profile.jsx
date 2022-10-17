@@ -29,7 +29,8 @@ export class PostProfile extends React.Component {
                 </div>
                 <div className='row align-items-start justify-content-start my-1'>
                     <div className='col-sm-10 '>
-                        <p className='fs-1'>Name: {this.context.user && this.context.user_sql_details && this.context.user_sql_details.username}</p>
+                        <p className='fs-1'>Name: {this.context.user && this.context.user_sql_details && this.context.user_sql_details.username}
+                        {!this.context.user && <p>Please log in</p>}</p>
                         <p className='fs-1'>Posts:7 </p>
                         <p className='fs-1'>Following: 10</p>
                         <p className='fs-1'>Followers: 12</p>

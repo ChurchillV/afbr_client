@@ -26,6 +26,7 @@ export const CommuniyHome = () =>
                     </div>
                     <div className='col-sm-4 border border-warning p-5 my-5'>
                         Just in:
+                        Newly Registered:
                     </div>
                     <div className='col-sm-4 border border-warning p-5 my-5'>
                         Coming Events
