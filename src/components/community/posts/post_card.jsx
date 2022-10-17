@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios'
-import Navbar from '../navbar';
-import comment_image from './images/comment.png'
-import love_image from './images/love.png'
+import Navbar from '../../navbar';
+import comment_image from '../images/comment.png'
+import love_image from '../images/love.png'
 import 'animate.css'
 
 const url = 'http://localhost:5000/'

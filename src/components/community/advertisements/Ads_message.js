@@ -1,7 +1,7 @@
 import React from 'react'
-import Background from './images/DoggyPic.jpg'
+import Background from '../images/DoggyPic.jpg'
 import { Parallax, ParallaxLayer} from '@react-spring/parallax'
-import './css_files/adverts.css'
+import '../css_files/adverts.css'
 
 
 

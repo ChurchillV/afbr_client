@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../navbar';
 import { Community_Nav } from './community_nav';
 import 'bootstrap/dist/css/bootstrap.css';
-import './community.css'
+import './css_files/community.css'
 
 export class Community_Main extends React.Component{
     render(){

@@ -1,5 +1,5 @@
 import React from 'react'
-import './css_files/adverts.css'
+import '../css_files/adverts.css'
 
 function No_Ads_Yet() {
   return (

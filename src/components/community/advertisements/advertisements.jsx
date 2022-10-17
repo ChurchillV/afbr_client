@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios'
-import Navbar from '../navbar';
-import ads_image from './images/ads.png'
-import { Community_Nav } from './community_nav'
-import Footer from '../footer'
+import Navbar from '../../navbar';
+import ads_image from '../images/ads.png'
+import { Community_Nav } from '../community_nav'
+import Footer from '../../footer'
 import Ads_Effect from './Ads_message' 
 import No_Ads_Yet from './No_Ads_Yet';
 

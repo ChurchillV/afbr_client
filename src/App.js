@@ -37,18 +37,19 @@ import Register_Special from './components/dog_registrations_special';
 import { Register_Success } from './components/dog_registrations_success';
 import { Litter_Register_Success } from './components/litter_registrations_success';
 import { Community_Main } from './components/community/community_main';
-import { Newly } from './components/community/newly_registered';
-import { Post } from './components/community/posts';
-import  Ads  from './components/community/advertisements';
+import { NewlyRegistered } from './components/community/newly_registered/newly_registered';
+import { Post } from './components/community/posts/posts';
+import  Ads  from './components/community/advertisements/advertisements';
 
 import { CountryProvider } from './components/country_context';
 import RegistrationInternational from './components/registration_international';
 import { AdminDogs } from './components/admin/admindogs';
 import { AdminUsers } from './components/admin/admin_users';
 import { AdminMain } from './components/admin/admin_main';
-import FeaturedArticlesContent from './components/community/featured_articles_content';
-import FeaturedArticlesFull  from './components/community/featured_articles_full';
-import Adverts from './components/community/advertisements';
+import FeaturedArticlesContent from './components/community/featured_articles/featured_articles_content';
+import FeaturedArticlesFull  from './components/community/featured_articles/featured_articles_full';
+import Adverts from './components/community/advertisements/advertisements';
+import { CommuniyHome } from './components/community/community_home/community_home';
 
 
 
@@ -255,12 +256,12 @@ class App extends Component
             <Route path='/shows_and_events' element={<Shows />} />
             <Route path='/judges' element={<Judges />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/community' element={<Post />} />
-            <Route path='/newly_registered' element={<Post />} />
+            <Route path='/community' element={< CommuniyHome />} />
+            <Route path='/community/newly_registered' element={< NewlyRegistered />} />
 
             {/* <Route path='/newly_registered' element={<Newly />} /> */}
-            {/* <Route path='/community/posts' element={< Post />} />
-            <Route path='/community/posts_mock' element={< Post />} /> */}
+            {/* {/* <Route path='/community/posts' element={< Post />} /> */}
+            <Route path='/community/posts' element={< Post />} /> 
             <Route path='/community/advertisements' element={< Ads />} />
 
             <Route path='/community/featured_articles' element={< FeaturedArticlesFull />} />
