@@ -94,9 +94,7 @@ class Register_Special extends React.Component {
         // this.getTransactUrl()
         this.getcurrentuser()
 
-        // const user =  this.context
-        // console.log('user',this.props.user.uid)
-        console.log('dog registrations state', this.state)
+    console.log('dog registrations state', this.state)
 
 
 
