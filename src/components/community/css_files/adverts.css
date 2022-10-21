@@ -29,10 +29,11 @@
 
 .Disappointment {
    background-color: #f1f1f3;
-   color: black;
+   color: rgb(70, 70, 70);
    height: 100vh;
    padding: 30vh;
 }
+
 
 .Disappointment a {
    color: var(--clr--font);
