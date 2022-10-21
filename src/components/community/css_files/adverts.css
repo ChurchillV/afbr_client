@@ -1,6 +1,6 @@
 :root{
-   --clr--shadow: #cfc0c0be;
-   --clr--main: #e3e7f1;
+   --clr--shadow: rgb(241, 241, 241);
+   --clr--main: #f1f1f3;
    --clr--font: #dfbc5c;
    --radius: 20px;
    --clr--preview: #828385;
@@ -28,9 +28,10 @@
 }
 
 .Disappointment {
-   color: var(--clr--preview);
-   margin-top: 30vh;
-   margin-bottom: 30vh;
+   background-color: #f1f1f3;
+   color: black;
+   height: 100vh;
+   padding: 30vh;
 }
 
 .Disappointment a {

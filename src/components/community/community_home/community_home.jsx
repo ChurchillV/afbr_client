@@ -1,10 +1,14 @@
 import React from 'react';
 import Navbar from '../../navbar';
 import { Community_Nav } from '../community_nav';
+import Footer from '../../footer';
+import '../css_files/community_homepage.css';
+import WelcomeMessage from './welcome_message.jsx'
+import ContentsArea from './contents_area'
 
 
 export const CommuniyHome = () =>
-{
+{/*
     return (
         <div className='container-fluid'>
             <Navbar/>
@@ -33,6 +37,29 @@ export const CommuniyHome = () =>
                    
                 </div>
             </div>
+        </div>*/
+
+    return (
+        <div>
+            <div>
+                    <Navbar/>
+                    <Community_Nav/>
+                    <div className='overall-bg'>
+                        <WelcomeMessage/>
+                        <div className='contents-area'>
+                            <ContentsArea/>
+                        </div>
+                    </div>
+                    <Footer/>
+                
+            </div>
+        
         </div>
     )
 }
+
+//Welcome to the afbr community section
+//Adverts
+//Posts           
+//Featured articles
+//Newly registered
