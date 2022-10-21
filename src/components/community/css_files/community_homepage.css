@@ -1,0 +1,117 @@
+:root{
+   --clr--shadow: #cfc0c0be;
+   --clr--main: #e3e7f1;
+   --clr--font: #dfbc5c;
+   --radius: 20px;
+   --clr--preview: #828385;
+} 
+
+.overall-bg {
+   background-image: url(../images/Home_Background1.jpg);
+   background-size: cover;
+   background-attachment: fixed;
+   height: 240vh;
+   position: relative;
+   display: grid;
+   text-align: center;
+   color: #ffffff;
+   isolation: isolate;
+}
+
+.overall-bg::after {
+   content: '';
+   position: absolute;
+   background:var(--clr--preview);
+   inset: 0;
+   z-index: -1;
+   opacity: .6;
+}
+
+.welcome-message {
+   margin-top:20%;
+}
+
+.contents-area {
+   margin-top: 10%;
+}
+
+.wrapper a {
+   color: #6d6d6d;
+}
+
+.wrapper a:hover {
+   color: #dfbc5c;
+}
+
+.wrapper {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: repeat(8, 180px);
+   gap: 15px;
+}
+
+.wrapper > div {
+   padding: 40px;
+   border: 1px solid var(--clr--preview);
+   color: #6d6d6d;
+}
+
+.ads-preview {
+   background-image: url(../images/DoggyPic.jpg);
+   background-size: cover;
+   color: #ffffff;
+   grid-row: span 1;
+}
+
+.posts-preview {
+   grid-row: span 3;
+   background-color:#ffffff;
+   color: var(--clr--preview);
+}
+
+.events-preview {
+   grid-row: span 2;
+   background-color:#ffffff;
+   color: var(--clr--preview);
+   opacity: .7
+}
+
+.events-preview > h3 {
+   margin-top: 100px;
+}
+
+.newly-registered-preview {
+   grid-row: span 3;
+   background-color:#ffffff;
+   color: var(--clr--preview);
+}
+
+.featured-articles-preview {
+   background-image: url(../images/FABG.jpg);
+   color: black;
+   background-size: contain;
+}
+
+@media (max-width:1000px) {
+   .overall-bg {
+      height: 400vh;
+   }
+
+   .wrapper{
+      grid-template-columns: 100%;
+      margin-left: -5px;
+   }
+}
+
+@media (max-width: 500px) {
+   .wrapper {
+      grid-template-columns: 450px;
+      margin-left: -5px;
+   }
+
+   .overall-bg {
+      height: 400vh;
+   }
+}
+
+
