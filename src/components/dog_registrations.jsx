@@ -328,10 +328,14 @@ class DogRegistration extends React.Component
                 <Navbar color='white' navbar_dark={'navbar-dark'} />
 
                 <div className="container-fluid">
-                    <div className="row align-items-center justify-content-center">
-
+                    <div className="row align-items-top justify-content-center">
+                        <div className="col-sm-3 pt-5 FORM text-left">
+                            <PedShareForm label="Please upload pedigree so that we fill it for you if your dog's 
+                            name does not appear in the drop down when searching for your sire/dam." pedigree={true} />
+                        </div>
                         {this.context.user && this.context.user_sql_details &&
-                            this.context.user_sql_details.phone_number && <div className="col-sm-9">
+                            this.context.user_sql_details.phone_number &&
+                            <div className="col-sm-6">
                                 {this.state.edit ?
                                     <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                         dams={this.state.dams} submit={this.edit}
@@ -363,9 +367,7 @@ class DogRegistration extends React.Component
 
 
                                 }
-                                <div className="col-sm-3">
-                                    <PedShareForm label='Upload Pedigree so that we fill it for you' pedigree={true} />
-                                </div>
+
                             </div>}
 
                         {this.context.user && this.context.user_sql_details &&
@@ -396,8 +398,8 @@ class DogRegistration extends React.Component
                                     <div className="col-sm-6 view_height_100 mx-5 mx-sm-0">
                                         <BeatLoader loading size={30} color={'white'} />
 
-                                        <p>Getting ready, please make sure you are 
-                                           <span className="text-warning"> logged in/signed up</span></p>
+                                        <p>Getting ready, please make sure you are
+                                            <span className="text-warning"> logged in/signed up</span></p>
 
                                     </div>
                                 </div>

@@ -143,10 +143,10 @@ export class PedShareForm extends React.Component {
                         this.uploadImage()
                     }}>
 
-                        <div className='form-row align-items-center justify-content-center'>
+                        <div className='form-row align-items-start justify-content-start'>
                             <div className='form-group col-sm-'>
                                 <label for="inputimage">{this.props.label} &nbsp;</label>
-                                <input type='file' name='image' className='btn btn-default text-white' onChange={this.handleImage} id='inputimage' ></input>
+                                <input type='file' name='image' className='text-white' onChange={this.handleImage} id='inputimage' ></input>
                                 {this.state.public_id && <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.state.public_id}.png`} width='100px'></img>
                                 }
 
@@ -169,7 +169,8 @@ export class PedShareForm extends React.Component {
                                 </div>}
 
                             {this.props.pedigree &&
-                                <input type='submit' className='btn btn-success' onClick={this.submit}></input>
+                                <input type='submit' value="Upload Pedigree"
+                                className='btn btn-success' onClick={this.submit}></input>
 
                             }
                             {/* {!this.props.litter_registrations && <input type='submit' className='btn btn-success' onClick={this.submit}></input>}  */}
