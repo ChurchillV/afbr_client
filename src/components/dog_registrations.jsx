@@ -331,13 +331,13 @@ class DogRegistration extends React.Component
                     <div className="row align-items-top justify-content-center">
                     {this.context.user && this.context.user_sql_details &&
                             (this.context.user_sql_details.phone_number || this.state.edit) &&  
-                            <div className="col-sm-3 pt-5 FORM  text-left px-5 ">
+                            <div className="col-lg-3 pt-5 FORM  text-left px-5 ">
                             <PedShareForm label="Please upload pedigree so that we fill it for you if a dog's 
                             name does not appear in the drop down when searching for your sire/dam." pedigree={true} />
                         </div>}
                         {this.context.user && this.context.user_sql_details &&
                                  (this.context.user_sql_details.phone_number || this.state.edit) &&
-                            <div className="col-sm-6">
+                            <div className="col-lg-6">
                                 {this.state.edit ?
                                     <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                         dams={this.state.dams} submit={this.edit}
