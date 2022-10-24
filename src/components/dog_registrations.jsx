@@ -329,12 +329,13 @@ class DogRegistration extends React.Component
 
                 <div className="container-fluid">
                     <div className="row align-items-top justify-content-center">
-                        <div className="col-sm-3 pt-5 FORM text-left">
+                    {this.context.user && this.context.user_sql_details &&
+                            (this.context.user_sql_details.phone_number || this.state.edit) &&  <div className="col-sm-3 pt-5 FORM text-left">
                             <PedShareForm label="Please upload pedigree so that we fill it for you if your dog's 
                             name does not appear in the drop down when searching for your sire/dam." pedigree={true} />
-                        </div>
+                        </div>}
                         {this.context.user && this.context.user_sql_details &&
-                            this.context.user_sql_details.phone_number &&
+                                 (this.context.user_sql_details.phone_number || this.state.edit) &&
                             <div className="col-sm-6">
                                 {this.state.edit ?
                                     <RegisterForm dog={this.state.dog} sires={this.state.sires}
@@ -371,17 +372,17 @@ class DogRegistration extends React.Component
                             </div>}
 
                         {this.context.user && this.context.user_sql_details &&
-                            !this.context.user_sql_details.phone_number && <div className="container">
+                            (!this.context.user_sql_details.phone_number && !this.state.edit) && <div className="container">
 
                                 <div className="row align-items-center justify-content-center  view_height_100">
 
                                     <div className="col-sm-6 mx-3 mx-sm-0 text-center text-md-left">
 
                                         <h3 className="text-warning">Please supply your phone number before proceeding.</h3>
-                                        <p>Phone numbers allow us to reach out to you after a dog has
+                                        <p className="text-white">Phone numbers allow us to reach out to you after a dog has
                                             been registered.
                                         </p>
-                                        <p>
+                                        <p className="text-white">
                                             Kindly use the link below to visit your attach your
                                             phone number to your details.
                                         </p>

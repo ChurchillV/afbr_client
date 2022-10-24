@@ -1,7 +1,6 @@
 import React from "react";
 import axios from 'axios'
 import { url } from "./weburl";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 // import { BeatLoader } from "react-spinners";
 import { BounceLoader, BarLoader, BeatLoader } from 'react-spinners'
 import CountryContext from "./country_context";
@@ -144,7 +143,7 @@ export class PedShareForm extends React.Component {
                     }}>
 
                         <div className='form-row align-items-start justify-content-start'>
-                            <div className='form-group col-sm-'>
+                            <div className='form-group col-sm-12'>
                                 <label for="inputimage">{this.props.label} &nbsp;</label>
                                 <input type='file' name='image' className='text-white' onChange={this.handleImage} id='inputimage' ></input>
                                 {this.state.public_id && <img src={`https://res.cloudinary.com/daurieb51/image/upload/v1642082142/${this.state.public_id}.png`} width='100px'></img>
