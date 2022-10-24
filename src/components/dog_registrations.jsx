@@ -331,7 +331,8 @@ class DogRegistration extends React.Component
                     <div className="row align-items-top justify-content-center">
                     {this.context.user && this.context.user_sql_details &&
                             (this.context.user_sql_details.phone_number || this.state.edit) &&  
-                            <div className="col-lg-3 pt-5 FORM  text-left px-5 ">
+                            <div className="col-lg-3 pt-5 FORM  
+                             text-left px-5 mb-2 mb-lg-0">
                             <PedShareForm label="Please upload pedigree so that we fill it for you if a dog's 
                             name does not appear in the drop down when searching for your sire/dam." pedigree={true} />
                         </div>}
