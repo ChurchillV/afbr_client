@@ -235,9 +235,6 @@ class Register_Special extends React.Component {
 
         //change this to getteing the id later
 
-
-
-
     }
 
 
