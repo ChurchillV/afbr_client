@@ -39,9 +39,9 @@
    margin: .5rem;
 }
 
-p {
+/* p {
    color: var(--clr--preview);
-}
+} */
 
 .read-or-hide {
    color: var(--clr--font);
