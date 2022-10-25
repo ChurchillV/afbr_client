@@ -27,9 +27,11 @@ class Search extends Component {
                 axios
                     .get(`${url}api/dogs/search/${this.state.search_dogs}`)
                     .then((res) => {
-                        console.log(res.data)
-                        this.setState({ ...this.state, search_dogs: res.data },
-                            () => console.log('search dogs', this.state.search_dogs))
+                        // console.log(res.data)
+                        this.setState({ ...this.state, search_dogs: res.data }
+                            // ,
+                            // () => console.log('search dogs', this.state.search_dogs)
+                            )
                     }
 
 
@@ -51,8 +53,8 @@ class Search extends Component {
     }
 
     reset = (dog) => {
-        this.setState({ search_dogs: {} }, () => console.log(this.state))
-        this.setState({ search_dogs: dog }, () => console.log(this.state))
+        this.setState({ search_dogs: {} })
+        this.setState({ search_dogs: dog })
 
         // console.log('dog in reset', dog)
         // console.log('reset')
@@ -61,7 +63,6 @@ class Search extends Component {
     onClickFunc = (e, item) => {
         if (this.props.send_to) {
             this.props.navigate(`/my_dogs/${item.id}`)
-            // console.log('send to ')
         }
         else {
             this.props.onSearchClick(e)
@@ -74,27 +75,31 @@ class Search extends Component {
 
         if (Object.keys(this.state.search_dogs)[0] != 'id') {
 
-            console.log('this,state,search_Dogs[0]',)
+            // console.log('this,state,search_Dogs[0]',)
             return Object.values(this.state.search_dogs).map((item) => {
 
                 let item_to_number = Number(item.id)
                 console.log('item', item)
+                // for some reason when the above code is commented, the search does not 
+                //work as effectively, really weird
+                //TODO, SEARCH NEEDS TO BE REDESIGNED
                 if (typeof (item) != 'string') {
-                    console.log(typeof (item))
+                    // console.log(typeof (item))
                     return <div className='row align-items-center justify-content-center'>
+
                         <button name={this.props.name} value={item_to_number}
                             onClick={(e) => {
                                 this.onClickFunc(e, item)
                             }
                             } value={item.id}
                             className='btn btn-info text-capitalize search_results_text fade-in w-100'>
-                            {/* <img src={logo} alt="" height='1%' className='float-left text-center'/> */}
+                            
                             <span className=''>{item.name}</span></button>
 
                     </div>
                 }
 
-
+                return 0 
             })
 
 

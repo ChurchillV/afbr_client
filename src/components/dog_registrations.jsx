@@ -180,17 +180,9 @@ class DogRegistration extends React.Component
             dog: { ...this.state.dog, [name]: value }
         }, () =>
         {
-            console.log(this.state)
-            // if (this.props.newdog) {
-
-            //     console.log('manual pedigree working')
-            //     this.props.getnameofDog(this.state.dog.name)
-            // }
-            // if (this.props.appenddog) {
-            //     console.log(this.props)
-            //     console.log('manual pedigree working in appenddog')
-            //     this.props.getnameofDog2(this.state.dog.name)
-            // }
+            // console.log('loggin state after setting field', [name], value)
+            // console.log(this.state)
+            
         }
         )
 
