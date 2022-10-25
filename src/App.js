@@ -50,6 +50,7 @@ import FeaturedArticlesContent from './components/community/featured_articles/fe
 import FeaturedArticlesFull  from './components/community/featured_articles/featured_articles_full';
 import Adverts from './components/community/advertisements/advertisements';
 import { CommuniyHome } from './components/community/community_home/community_home';
+import { RegistrationNextPage } from './components/special_registration_next';
 
 
 
@@ -286,6 +287,7 @@ class App extends Component
               navbar={true} />} />
             <Route path='/dog_registrations_special/:price' element={<Register_Special
               navbar={true} />} />
+              <Route path='/special_registration_next' element={< RegistrationNextPage />} />
 
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
 

@@ -318,7 +318,7 @@ class Register_Special extends React.Component {
             })
             .then((res) => {
                 console.log(res)
-                this.props.navigate('/profile')
+                this.props.navigate('/special_registration_next')
             }
             )
             .catch((err) => console.log(err))
@@ -348,10 +348,6 @@ class Register_Special extends React.Component {
         else {
             this.sendDogInfo()
             console.log('navigating to profile')
-
-            //changing this to avoid the user registering for free
-
-            // window.open(this.state.dpo, '_blank')
 
             console.log('no image url present')
         }
