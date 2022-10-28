@@ -34,7 +34,7 @@ export class PedShareForm extends React.Component {
 
 
     getTransactUrl = () => {
-        axios.post(`${url}api/expresspaygh/transact`, {
+        axios.post(`${url}api/expresspaygh/dpo_transact`, {
             location: this.context.location,
             transaction_name: 'litter_registrations',
             transaction_cost: this.props.price,

@@ -23,7 +23,9 @@ export const Register_Success = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkIfPaid();
+    // checkIfPaid();
+    setHasBeenPaidFor();
+    setMoneyPaid(true)
   }, []);
 
   const setHasBeenPaidFor = () => {
