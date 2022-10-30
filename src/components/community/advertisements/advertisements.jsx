@@ -9,26 +9,13 @@ import No_Ads_Yet from './noadsyet';
 
 
 
-/*const url = 'http://localhost:5000/'
-
-export class Ads extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            posts: {},
-            posts_loaded: false
-        }
-    }
-*/
-
-
 function advertisements() {
   return (
       
     <>
       <Navbar/>
       <Community_Nav/>
-      <Ads_Effect/>
+      {/* <Ads_Effect/> */}
       <No_Ads_Yet/>
       <Footer/>
     </>  

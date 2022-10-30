@@ -46,7 +46,7 @@ export const CommuniyHome = () =>
                     <Navbar/>
                     <Community_Nav/>
                     <div className='overall-bg'>
-                        <WelcomeMessage/>
+                        {/* <WelcomeMessage/> */}
                         <div className='contents-area'>
                             <ContentsArea/>
                         </div>

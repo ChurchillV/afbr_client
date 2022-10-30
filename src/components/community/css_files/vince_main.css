@@ -6,10 +6,10 @@
    --clr--preview: #828385;
 } 
 
-* {
+/* * {
    padding: 0;
    margin: 0;
-}
+} */
 
 .vince_image1 {
    height: 300px;
@@ -39,9 +39,9 @@
    margin: .5rem;
 }
 
-p {
+/* p {
    color: var(--clr--preview);
-}
+} */
 
 .read-or-hide {
    color: var(--clr--font);

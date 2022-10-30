@@ -6,7 +6,7 @@ import NewlyRegistered from './newly_registered_preview'
 
 export default function contents_area() {
   return (
-    <div className='wrapper container'>
+    <div className='wrapper container-fluid'>
       <div className='ads-preview'>
          <a href='community/advertisements'><AdsPreview/></a>
       </div>
