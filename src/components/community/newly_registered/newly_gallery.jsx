@@ -4,6 +4,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
 // import InfoIcon from '@mui/icons-material/Info';
 
 const default_name = 'Unnamed'
@@ -16,6 +17,7 @@ export default function NewlyImageGallery()
                 <ListSubheader component="div" className='bg-light border-dark'>Newly Registered</ListSubheader>
             </ImageListItem>
             {itemData.map((item) => (
+                <Link to='/community'>
                 <ImageListItem key={item.img}>
                     <img
                         src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -36,6 +38,7 @@ export default function NewlyImageGallery()
                         }
                     />
                 </ImageListItem>
+                </Link>
             ))}
         </ImageList>
     );
