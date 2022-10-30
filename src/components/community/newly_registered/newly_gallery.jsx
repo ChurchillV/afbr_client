@@ -13,7 +13,7 @@ export default function NewlyImageGallery()
     return (
         <ImageList sx={{ width: "auto", height: "auto" }}>
             <ImageListItem key="Subheader" cols={2}>
-                <ListSubheader component="div">Newly Registered</ListSubheader>
+                <ListSubheader component="div" className='bg-light border-dark'>Newly Registered</ListSubheader>
             </ImageListItem>
             {itemData.map((item) => (
                 <ImageListItem key={item.img}>
