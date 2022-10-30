@@ -265,7 +265,7 @@ class App extends Component
             <Route path='/community/posts' element={< Post />} /> 
             <Route path='/community/advertisements' element={< Post />} />
 
-            <Route path='/community/featured_articles' element={< Post />} />
+            <Route path='/community/featured_articles' element={< FeaturedArticlesFull />} />
 
 
             <Route path='/sign_up' element={< Register />} />
