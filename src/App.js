@@ -258,7 +258,7 @@ class App extends Component
             <Route path='/judges' element={<Judges />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/community' element={< Post />} />
-            <Route path='/community/newly_registered' element={< Post />} />
+            <Route path='/community/newly_registered' element={< NewlyRegistered />} />
 
             {/* <Route path='/newly_registered' element={<Newly />} /> */}
             {/* {/* <Route path='/community/posts' element={< Post />} /> */}
