@@ -21,9 +21,8 @@ export const Litter_Register_Success = () =>
 
     useEffect(() =>
     {
-        // checkIfPaid();
-        setMoneyPaid(true)
-        sendLitRegEmail(user_, public_id_)
+        checkIfPaid();
+        
     }, []);
 
 
