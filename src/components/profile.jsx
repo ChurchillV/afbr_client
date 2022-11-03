@@ -125,7 +125,7 @@ class Profile extends Component {
                             <Link style={{ color: this.props.navbarcolor }} to='/my_dogs'>My dogs</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
-                            <Link style={{ color: this.props.navbarcolor }} to='/registration'>Register</Link>
+                            <Link style={{ color: this.props.navbarcolor }} to='/registration'>Register Dog</Link>
                         </div>
                         <div className='row align-items-center justify-content-center pro_nav'>
                             {this.state.profile_incomplete ?

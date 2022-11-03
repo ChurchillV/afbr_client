@@ -5,9 +5,11 @@ import { url } from '../../weburl';
 
 import CountryContext from '../../country_context';
 
-export class PostProfile extends React.Component {
+export class PostProfile extends React.Component
+{
     static contextType = CountryContext
-    constructor(props) {
+    constructor(props)
+    {
         super(props)
         this.state = {
             posts: {},
@@ -17,24 +19,25 @@ export class PostProfile extends React.Component {
 
 
 
-    render() {
+    render()
+    {
         return (
-            <div className='container   text-left bg-white position-sticky animate__animated animate__fadeInLeft animate__slow'>
+            <div className='container   text-left bg-white rounded box_shadow position-sticky animate__animated animate__fadeInLeft animate__slow'>
                 <div className='row align-items-center justify-content-center'>
                     <div className='col-sm-12 text-center'>
-                        <img 
-                        className='rounded-circle image_fluid'
-                        src="https://res.cloudinary.com/daurieb51/image/upload/v1654329095/ipxfxfjkl8pueakmptkf.jpg" alt="" width={'50%'} />
+                        <img
+                            className='rounded-circle image_fluid'
+                            src="https://res.cloudinary.com/daurieb51/image/upload/v1654329095/ipxfxfjkl8pueakmptkf.jpg" alt="" width={'50%'} />
                     </div>
                 </div>
                 <div className='row align-items-start justify-content-start my-1'>
                     <div className='col-sm-10 '>
-                        <p className='fs-1'>Name: {this.context.user && this.context.user_sql_details && this.context.user_sql_details.username}
-                        {!this.context.user && <p>Please log in</p>}</p>
-                        <p className='fs-1'>Posts:7 </p>
-                        <p className='fs-1'>Following: 10</p>
-                        <p className='fs-1'>Followers: 12</p>
-                        <p className='fs-1'>Community Name: Corporate Love Pets</p>
+                        <p className='text-dark'>Name: {this.context.user && this.context.user_sql_details && this.context.user_sql_details.username}
+                        </p>
+                        <p className='text-dark'>Posts:7 </p>
+                        <p className='text-dark'>Following: 10</p>
+                        <p className='text-dark'>Followers: 12</p>
+                        <p className='text-dark'>Community Name: Corporate Love Pets</p>
 
                     </div>
                 </div>

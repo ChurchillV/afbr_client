@@ -22,6 +22,7 @@ export const Litter_Register_Success = () =>
     useEffect(() =>
     {
         checkIfPaid();
+        
     }, []);
 
 

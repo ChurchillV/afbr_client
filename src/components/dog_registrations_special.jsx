@@ -30,23 +30,12 @@ class Register_Special extends React.Component {
     constructor(props) {
         super(props)
 
-        console.log('this.props', this.props.location)
+        // console.log('this.props', this.props.location)
         // console.log(this.props.location.pathname.split('/'))
 
 
         this.state = {
-            dog: {
-                'name': '',
-                'sex': '',
-                'breed': '',
-                'sire': '',
-                'dam': '',
-                'age': '',
-                'date_of_birth': '',
-                'image_url': '',
-                'public_id': '',
-                'user': ''
-            },
+            dog: {},
 
             sires: {
 
@@ -67,20 +56,20 @@ class Register_Special extends React.Component {
 
     }
 
-    check_if_to_edit = () => {
-        for (let i = 0; i < this.props.location.pathname.split('/').length; i++) {
-            // console.log('bingo')
-            console.log(this.props.location.pathname.split('/').length)
-            // console.log(this.props.location.pathname.split())
-            console.log('..........', this.props.location.pathname.split('/')[i])
-            if (this.props.location.pathname.split('/')[i] === 'edit') {
-                console.log('bingo')
-                this.setState({ edit: true })
-            } else {
-                console.log('banjo')
-            }
-        }
-    }
+    // check_if_to_edit = () => {
+    //     for (let i = 0; i < this.props.location.pathname.split('/').length; i++) {
+    //         // console.log('bingo')
+    //         console.log(this.props.location.pathname.split('/').length)
+    //         // console.log(this.props.location.pathname.split())
+    //         console.log('..........', this.props.location.pathname.split('/')[i])
+    //         if (this.props.location.pathname.split('/')[i] === 'edit') {
+    //             console.log('bingo')
+    //             this.setState({ edit: true })
+    //         } else {
+    //             console.log('banjo')
+    //         }
+    //     }
+    // }
 
 
 
@@ -94,26 +83,25 @@ class Register_Special extends React.Component {
         // this.getTransactUrl()
         this.getcurrentuser()
 
-        // const user =  this.context
-        // console.log('user',this.props.user.uid)
-        console.log('dog registrations state', this.state)
+    // console.log('dog registrations state', this.state)
 
 
 
         //do so that this is only called when it is to be editted
-        axios
-            .get(`${url}api/dogs/${this.props.params.dog_id}`)
-            .then((res) => {
+        // axios
+        //     .get(`${url}api/dogs/${this.props.params.dog_id}`)
+        //     .then((res) => {
 
-                console.log(res.data);
-                this.setState({ dog: res.data[0] }, () => console.log(this.state))
-                // console.log('data',data)
-            })
-            .catch((err) => {
-                console.log("Error couldn't create Dog");
-                console.log(err.message);
-            });
-        this.check_if_to_edit()
+        //         console.log(res.data);
+        //         this.setState({ dog: res.data[0] }, () => console.log('warris this'))
+        //         // console.log('data',data)
+        //     })
+        //     .catch((err) => {
+        //         console.log("Error couldn't create Dog");
+        //         console.log(err.message);
+        //     });
+            
+        // this.check_if_to_edit()
 
 
 
@@ -239,30 +227,30 @@ class Register_Special extends React.Component {
 
 
 
-    edit = (e) => {
+    // edit = (e) => {
 
-        e.preventDefault()
+    //     e.preventDefault()
 
-        // setData((data) => ({...data, [e.target.name]: e.target.value }))
-        console.log(this.state)
-
-
-
-        if (this.state.imageSelected) {
-            this.uploadImage(this.updateDogInfo)
-            console.log('image url  presnet, ready to eedit')
-
-        }
-        else {
-            this.updateDogInfo()
-            this.props.navigate('/profile')
-
-            console.log('no image url present, ready to edit')
-        }
+    //     // setData((data) => ({...data, [e.target.name]: e.target.value }))
+    //     console.log(this.state)
 
 
 
-    }
+    //     if (this.state.imageSelected) {
+    //         this.uploadImage(this.updateDogInfo)
+    //         console.log('image url  presnet, ready to eedit')
+
+    //     }
+    //     else {
+    //         this.updateDogInfo()
+    //         this.props.navigate('/profile')
+
+    //         console.log('no image url present, ready to edit')
+    //     }
+
+
+
+    // }
 
     updateDogInfo = () => {
         axios
@@ -277,15 +265,15 @@ class Register_Special extends React.Component {
                 console.log(err.message);
             });
     }
-    sendDogRegEmail = () => {
-        axios
-            .post(`${url}api/email/dog_registered`, {
-                user: this.state.firebaseUser,
-                dog: this.state.dog
-            })
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err))
-    }
+    // sendDogRegEmail = () => {
+    //     axios
+    //         .post(`${url}api/email/dog_registered`, {
+    //             user: this.state.firebaseUser,
+    //             dog: this.state.dog
+    //         })
+    //         .then((res) => console.log(res))
+    //         .catch((err) => console.log(err))
+    // }
 
     sendDogInfo = () => {
         console.log('calling sendDogInfo')
@@ -293,7 +281,6 @@ class Register_Special extends React.Component {
             .post(`${url}api/dogs`, { dog: this.state.dog, user: this.state.firebaseUser })
             .then((res) => {
 
-                this.sendDogRegEmail()
                 console.log(res.data.message);
                 console.log('dog created/editted in congrats page')
                 this.setHasBeenPaidFor()
@@ -317,7 +304,7 @@ class Register_Special extends React.Component {
             })
             .then((res) => {
                 console.log(res)
-                this.props.navigate('/profile')
+                this.props.navigate('/special_registration_next')
             }
             )
             .catch((err) => console.log(err))
@@ -336,7 +323,7 @@ class Register_Special extends React.Component {
         e.preventDefault()
 
         // setData((data) => ({...data, [e.target.name]: e.target.value }))
-        console.log(this.state)
+        // console.log(this.state)
 
         if (this.state.dog.image_url) {
             this.uploadImage(this.sendDogInfo)
@@ -346,13 +333,9 @@ class Register_Special extends React.Component {
         }
         else {
             this.sendDogInfo()
-            console.log('navigating to profile')
+            // console.log('navigating to profile')
 
-            //changing this to avoid the user registering for free
-
-            // window.open(this.state.dpo, '_blank')
-
-            console.log('no image url present')
+            // console.log('no image url present')
         }
     }
 

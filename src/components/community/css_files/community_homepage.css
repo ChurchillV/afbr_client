@@ -6,7 +6,7 @@
    --clr--preview: #828385;
 } 
 
-.overall-bg {
+/*.overall-bg {
    background-image: url(../images/Home_Background1.jpg);
    background-size: cover;
    background-attachment: fixed;
@@ -25,15 +25,15 @@
    inset: 0;
    z-index: -1;
    opacity: .6;
-}
+}*/
 
 .welcome-message {
    margin-top:20%;
 }
 
-.contents-area {
+/*.contents-area {
    margin-top: 10%;
-}
+}*/
 
 .wrapper a {
    color: #6d6d6d;
@@ -60,62 +60,51 @@
    background-image: url(../images/DoggyPic.jpg);
    background-size: cover;
    color: #ffffff;
-   grid-row: span 1;
 }
 
-.posts-preview {
+/*.posts-preview {
    grid-row: span 3;
    background-color:#ffffff;
    color: var(--clr--preview);
-}
+}*/
 
 .events-preview {
-   grid-row: span 2;
    background-color:#ffffff;
    color: var(--clr--preview);
-   opacity: .7
+   opacity: .7;
 }
 
-.events-preview > h3 {
-   margin-top: 100px;
-}
 
 .newly-registered-preview {
-   grid-row: span 3;
    background-color:#ffffff;
    color: var(--clr--preview);
 }
 
-.featured-articles-preview {
+.featured-preview {
    background-image: url(../images/FABG.jpg);
    color: black;
+<<<<<<< HEAD
+   background-size: cover;
+   text-align: center;
+   margin-top: 10px;
+=======
    /* background-size: contain; */
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
    background-blend-mode: darken;
+>>>>>>> c48c030c55bdaf41ea7dd85fdc6a4b37dc976380
 }
 
-@media (max-width:1000px) {
-   .overall-bg {
-      height: 400vh;
-   }
-
-   .wrapper{
-      grid-template-columns: 100%;
-      margin-left: -5px;
-   }
+.ovr-bg {
+   background-image: url(../images/Home_Background1.jpg);
+   background-size: cover;
 }
 
-@media (max-width: 500px) {
-   .wrapper {
-      grid-template-columns: 450px;
-      margin-left: -5px;
-   }
+/*.posts-preview {
+   height:100px;
+   width: 100%
+}*/
 
-   .overall-bg {
-      height: 400vh;
-   }
-}
 
 
