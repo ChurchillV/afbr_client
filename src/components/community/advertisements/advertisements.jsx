@@ -4,7 +4,7 @@ import Navbar from '../../navbar';
 import { Community_Nav } from '../community_nav'
 import Footer from '../../footer'
 import AdsEffect from './ads_message' 
-import NoAdsYet from './noadsyet';
+import No_Ads_Yet from './noadsyet';
 
 
 
