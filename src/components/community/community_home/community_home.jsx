@@ -44,12 +44,9 @@ export const CommuniyHome = () =>
             <div>
                     <Navbar/>
                     <Community_Nav/>
-                    <div className='overall-bg'>
-                        <WelcomeMessage/>
                         <div className='contents-area'>
                             <ContentsArea/>
                         </div>
-                    </div>
                     <Footer/>
                 
             </div>
