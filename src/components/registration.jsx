@@ -66,7 +66,7 @@ class Registration extends React.Component {
                     title="Litter Registration"
                     className="puppies "
                     text1="Register a collection of puppies with us"
-                    text_price={` 20.00`}
+                    text_price={` $20.00`}
                     url="/litter_registrations/20"
                   />
                 </div>
@@ -82,7 +82,7 @@ class Registration extends React.Component {
                     text2="Age: less than 12 months old"
                     // cancelled_text={'$30.00'}
 
-                    text_price={` 25.00`}
+                    text_price={` $25.00`}
                     url="/dog_registrations/25"
                   />
                 </div>
@@ -98,7 +98,7 @@ class Registration extends React.Component {
                     text2="Age: above 12 months old"
                     // cancelled_text={'$35.00'}
 
-                    text_price={` 30.00`}
+                    text_price={` $30.00`}
                     url="/adult_registrations/30"
                   />
                 </div>

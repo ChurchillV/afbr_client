@@ -45,12 +45,14 @@ export const CommuniyHome = () =>
             <div>
                     <Navbar/>
                     <Community_Nav/>
+<<<<<<< HEAD
+=======
                     <div className='overall-bg'>
                         {/* <WelcomeMessage/> */}
+>>>>>>> c48c030c55bdaf41ea7dd85fdc6a4b37dc976380
                         <div className='contents-area'>
                             <ContentsArea/>
                         </div>
-                    </div>
                     <Footer/>
                 
             </div>

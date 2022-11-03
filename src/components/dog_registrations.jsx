@@ -180,17 +180,9 @@ class DogRegistration extends React.Component
             dog: { ...this.state.dog, [name]: value }
         }, () =>
         {
-            console.log(this.state)
-            // if (this.props.newdog) {
-
-            //     console.log('manual pedigree working')
-            //     this.props.getnameofDog(this.state.dog.name)
-            // }
-            // if (this.props.appenddog) {
-            //     console.log(this.props)
-            //     console.log('manual pedigree working in appenddog')
-            //     this.props.getnameofDog2(this.state.dog.name)
-            // }
+            // console.log('loggin state after setting field', [name], value)
+            // console.log(this.state)
+            
         }
         )
 
@@ -328,10 +320,17 @@ class DogRegistration extends React.Component
                 <Navbar color='white' navbar_dark={'navbar-dark'} />
 
                 <div className="container-fluid">
-                    <div className="row align-items-center justify-content-center">
-
+                    <div className="row align-items-top justify-content-center">
+                    {this.context.user && this.context.user_sql_details &&
+                            (this.context.user_sql_details.phone_number || this.state.edit) &&  
+                            <div className="col-lg-3 pt-5 FORM  
+                             text-left px-5 mb-2 mb-lg-0">
+                            <PedShareForm label="Please upload pedigree so that we fill it for you if a dog's 
+                            name does not appear in the drop down when searching for your sire/dam." pedigree={true} />
+                        </div>}
                         {this.context.user && this.context.user_sql_details &&
-                            this.context.user_sql_details.phone_number && <div className="col-sm-9">
+                                 (this.context.user_sql_details.phone_number || this.state.edit) &&
+                            <div className="col-lg-6">
                                 {this.state.edit ?
                                     <RegisterForm dog={this.state.dog} sires={this.state.sires}
                                         dams={this.state.dams} submit={this.edit}
@@ -363,23 +362,21 @@ class DogRegistration extends React.Component
 
 
                                 }
-                                <div className="col-sm-3">
-                                    <PedShareForm label='Upload Pedigree so that we fill it for you' pedigree={true} />
-                                </div>
+
                             </div>}
 
                         {this.context.user && this.context.user_sql_details &&
-                            !this.context.user_sql_details.phone_number && <div className="container">
+                            (!this.context.user_sql_details.phone_number && !this.state.edit) && <div className="container">
 
                                 <div className="row align-items-center justify-content-center  view_height_100">
 
                                     <div className="col-sm-6 mx-3 mx-sm-0 text-center text-md-left">
 
                                         <h3 className="text-warning">Please supply your phone number before proceeding.</h3>
-                                        <p>Phone numbers allow us to reach out to you after a dog has
+                                        <p className="text-white">Phone numbers allow us to reach out to you after a dog has
                                             been registered.
                                         </p>
-                                        <p>
+                                        <p className="text-white">
                                             Kindly use the link below to visit your attach your
                                             phone number to your details.
                                         </p>
@@ -396,8 +393,8 @@ class DogRegistration extends React.Component
                                     <div className="col-sm-6 view_height_100 mx-5 mx-sm-0">
                                         <BeatLoader loading size={30} color={'white'} />
 
-                                        <p>Getting ready, please make sure you are 
-                                           <span className="text-warning"> logged in/signed up</span></p>
+                                        <p>Getting ready, please make sure you are
+                                            <span className="text-warning"> logged in/signed up</span></p>
 
                                     </div>
                                 </div>

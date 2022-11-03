@@ -9,11 +9,11 @@ function no_Articles_yet() {
    <div className='container-fluid'>
      <div className='row align-items-center justify-content-center view_height_100 comm_body'>
         <div className='col-sm-6'>
-          <h4 className=' text-dark'>
+          <p className=' text-dark'>
              No articles posted here yet.<br/>
              interested in writing one? Reach out to us at <br/>
            <span className='text-warning'>  <a href="mailto: africanbullyregistry@gmail.com" className='text-warning'>africanbullyregistry@gmail.com</a> </span>
-          </h4>
+          </p>
         </div>
      </div>
    </div>

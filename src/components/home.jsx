@@ -27,13 +27,16 @@ import logo1 from '../images/logo2.jpg';
 import tree from '../images/tree-removebg-preview.png'
 import { CarouselW3, SliderC } from './sliderc';
 import About from './about';
+import { Link } from 'react-router-dom';
 
 let dog5 = 'https://res.cloudinary.com/daurieb51/image/upload/v1655742936/imperial_kennels_blackspade_q2zshb.jpg'
 
 
 
-class Home extends Component {
-  constructor(props) {
+class Home extends Component
+{
+  constructor(props)
+  {
     super(props)
     this.state = {
       sign_up_modal: false,
@@ -42,13 +45,15 @@ class Home extends Component {
   }
 
 
-  toggle_sign_up = () => {
+  toggle_sign_up = () =>
+  {
     this.setState({ sign_up_modal: !this.state.sign_up_modal });
     console.log('state changed')
     console.log('sign_up_modal', this.state.sign_up_modal)
   };
 
-  toggle_login = () => {
+  toggle_login = () =>
+  {
     this.setState({ login_modal: !this.state.login_modal });
     console.log('state changed')
     console.log('login_modal', this.state.login_modal)
@@ -56,7 +61,8 @@ class Home extends Component {
 
 
 
-  render() {
+  render()
+  {
     return (
 
 
@@ -98,10 +104,18 @@ class Home extends Component {
         </div>
         <div className='row  mt-5 pt-5 card_row align-items-center justify-content-center'>
           <div className='col-sm-6 '>
-            <h1 class='text-capitalize  animate__animated animate__fadeInRight animate__slow'
-              style={{ color: 'white' }}>Join the community of bull dog owners today</h1>
-            <h5 class='text-capitalize animate__animated animate__fadeInRight animate__slow'
-              style={{ color: 'white' }}>Connect with dog owners across Africa and the globe</h5>
+            <Link to='/community'>
+
+              <h1 class='text-capitalize  animate__animated animate__fadeInRight animate__slow'
+                style={{ color: 'white' }}>Join the community of bull dog owners today</h1>
+            </Link>
+            <Link to='/community'>
+
+              <h5 class='text-capitalize animate__animated animate__fadeInRight animate__slow'
+                style={{ color: 'white' }}>Connect with dog owners across Africa and the globe</h5>
+            </Link>
+            <Link to='/community'  class='text-white animate__animated 
+            text-decoration-underline animate__fadeInRight animate__slow mt-5'>Visit the Community Page</Link>
           </div>
           <div className='col-sm-6 '>
             <div>
