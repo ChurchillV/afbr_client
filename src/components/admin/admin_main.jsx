@@ -11,7 +11,7 @@ export const AdminMain = () =>
             </div>
             <div className='row align-items-center justify-content-center view_height_100 pb-5  mb-5'>
                 <div className='col-sm-6 font-weight-bold'>
-                    <button className='btn btn-outline-warning w-100 py-5 '>Add</button>
+                <Link class="btn btn-outline-warning w-100 py-5 " to="/dog_registrations_special/1">Add New Dog</Link>
                 </div>
                 <div className='col-sm-6'>
                     <Link class="btn btn-outline-warning w-100 py-5 " to="/admin/users">View All Users</Link>

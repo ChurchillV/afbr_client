@@ -24,8 +24,10 @@ export default function contents_area() {
          <a href='community/advertisements'><AdsPreview/></a>
       </div>
       <div className='posts-preview'>
-         <a href='community/posts'><h1>Show off your dogs on our Posts section📸</h1></a>
+         <a href='community/posts'><h1>Get the latest, eye-catching posts from fellow community members📸</h1></a>
          <PostsPreview/>
+         {/* <PostsPreview/> */}
+
       </div>
 
       <div className='featured-articles-preview'>

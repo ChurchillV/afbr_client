@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, A11y , Autoplay} from 'swiper'
+import SwiperCore, { Navigation, A11y, Autoplay } from 'swiper'
 import '../css_files/community.css'
 
 // Import Swiper styles

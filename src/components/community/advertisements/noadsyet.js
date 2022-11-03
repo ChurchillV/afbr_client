@@ -4,9 +4,9 @@ import '../css_files/adverts.css'
 function No_Ads_Yet() {
   return (
     <div className="Disappointment">
-      <h3>No advertisements to display😢</h3>
-      <h3>Want to advertise your dog? Reach out to us at</h3>
-      <h3><a href="mailto: africanbullyregistry@gmail.com">africanbullyregistry@gmail</a></h3>
+      <h6>No advertisements to display yet😢</h6>
+      <p className='text-dark'>Want to advertise your dog? Reach out to us at</p>
+      <p><a href="mailto: africanbullyregistry@gmail.com" className='text-warning'>africanbullyregistry@gmail</a></p>
     </div>
   )
 }

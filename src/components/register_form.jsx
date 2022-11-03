@@ -96,7 +96,7 @@ class RegisterForm extends Component {
                         <div class="form-row">
                             <div class="form-group col-md-">
                                 <label for="inputSire">Registered Sire</label>
-                                <p class='small'>Enter Unkown Genealogy if dam did not appear in searchlist</p>
+                                <p class='small'>Enter Unkown Genealogy if sire did not appear in searchlist</p>
 
                                 <Search onSearchClick={this.props.handleChange} name='sire' />
 

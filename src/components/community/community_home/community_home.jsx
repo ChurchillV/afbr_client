@@ -30,6 +30,7 @@ export const CommuniyHome = () =>
                     </div>
                     <div className='col-sm-4 border border-warning p-5 my-5'>
                         Just in:
+                        Newly Registered:
                     </div>
                     <div className='col-sm-4 border border-warning p-5 my-5'>
                         Coming Events
@@ -44,6 +45,11 @@ export const CommuniyHome = () =>
             <div>
                     <Navbar/>
                     <Community_Nav/>
+<<<<<<< HEAD
+=======
+                    <div className='overall-bg'>
+                        {/* <WelcomeMessage/> */}
+>>>>>>> c48c030c55bdaf41ea7dd85fdc6a4b37dc976380
                         <div className='contents-area'>
                             <ContentsArea/>
                         </div>
