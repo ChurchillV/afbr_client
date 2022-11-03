@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Community_Nav } from '../community_nav';
 import NewlyRegisteredSwiper from './swiper_newly_registered';
 import Navbar from '../../navbar';
+import NewlyImageGallery from './newly_gallery';
 
 
 export class NewlyRegistered extends React.Component
@@ -43,13 +44,10 @@ export class NewlyRegistered extends React.Component
                <Navbar/>
                <Community_Nav/>
                 <div className='row align-items-center justify-content-center '>
-                    <div className='col-sm-10'>
-                        <NewlyRegisteredSwiper />
+                    <div className='col-sm-12'>
+                        <NewlyImageGallery/>
                     </div>
-                    {/* <div className='col-sm-5 '>
-                    <h1 className='text-uppercase py-md-5'>{this.state.dog.name}</h1>
-
-                    </div> */}
+                    
                 </div>
             </div>
         )

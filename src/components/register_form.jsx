@@ -55,7 +55,7 @@ class RegisterForm extends Component {
             <form onSubmit={(e) => {
                 this.props.submit(e)
             }}
-                method='post' className='container  align-items-center justify-content-center FORM text-left'>
+                method='post' className='container  align-items-center justify-content-center FORM text-left p-4 p-sm-5'>
 
 
                 <div className='form-row'>

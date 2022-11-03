@@ -50,6 +50,7 @@ import FeaturedArticlesContent from './components/community/featured_articles/fe
 import FeaturedArticlesFull  from './components/community/featured_articles/featured_articles_full';
 import Adverts from './components/community/advertisements/advertisements';
 import { CommuniyHome } from './components/community/community_home/community_home';
+import { RegistrationNextPage } from './components/special_registration_next';
 
 
 
@@ -256,13 +257,13 @@ class App extends Component
             <Route path='/shows_and_events' element={<Shows />} />
             <Route path='/judges' element={<Judges />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/community' element={< CommuniyHome />} />
+            <Route path='/community' element={< Post />} />
             <Route path='/community/newly_registered' element={< NewlyRegistered />} />
 
             {/* <Route path='/newly_registered' element={<Newly />} /> */}
             {/* {/* <Route path='/community/posts' element={< Post />} /> */}
             <Route path='/community/posts' element={< Post />} /> 
-            <Route path='/community/advertisements' element={< Ads />} />
+            <Route path='/community/advertisements' element={< Post />} />
 
             <Route path='/community/featured_articles' element={< FeaturedArticlesFull />} />
 
@@ -286,6 +287,7 @@ class App extends Component
               navbar={true} />} />
             <Route path='/dog_registrations_special/:price' element={<Register_Special
               navbar={true} />} />
+              <Route path='/special_registration_next' element={< RegistrationNextPage />} />
 
             <Route path='/dog_registrations/edit/:dog_id' element={<DogRegistration />} />
 

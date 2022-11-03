@@ -19,12 +19,15 @@ import { BeatLoader } from 'react-spinners';
 import CountryContext from './country_context';
 import { Profile_Not_Logged_In } from './profile_not_logged_in';
 import Footer from './footer';
+import { PedShareForm } from './pedshareus';
 
 
-class ProfileMain extends Component {
+class ProfileMain extends Component
+{
     static contextType = CountryContext
 
-    constructor(props) {
+    constructor(props)
+    {
         super(props);
         this.state = {
             dogs: [
@@ -34,12 +37,14 @@ class ProfileMain extends Component {
         };
     }
 
-    componentDidMount = () => {
+    componentDidMount = () =>
+    {
         this.getcurrentuser(this.refreshList
         )
 
 
-        if (window.screen.width < 660) {
+        if (window.screen.width < 660)
+        {
             console.log('hide the following')
             $('.bottom_profile').css('display', 'visible')
 
@@ -47,60 +52,73 @@ class ProfileMain extends Component {
 
     }
 
-    getcurrentuser = (callback) => {
+    getcurrentuser = (callback) =>
+    {
         const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                this.setState({ ...this.state, firebaseUser: user }, () => {
+        onAuthStateChanged(auth, (user) =>
+        {
+            if (user)
+            {
+                this.setState({ ...this.state, firebaseUser: user }, () =>
+                {
                     console.log('on Authstate dog reg', this.state.firebaseUser)
                     this.changeUserToId(callback)
 
                 });
 
-            } else {
+            } else
+            {
                 this.setState({ user: null });
                 console.log('usershmm')
 
             }
 
-            if (this.state.loading) {
+            if (this.state.loading)
+            {
                 this.setState({ loading: false });
             }
         });
     }
 
 
-    changeUserToId = (callback) => {
+    changeUserToId = (callback) =>
+    {
         axios
             .get(`${url}api/users/getUserByUid/${this.state.firebaseUser.uid}`)
-            .then((res) => {
+            .then((res) =>
+            {
                 console.log(res.data)
                 this.setState({
                     ...this.state,
                     user: res.data[0].id
                 },
-                    () => {
+                    () =>
+                    {
                         callback()
                         console.log('chaingn profile main state after calling uid', this.state.user)
 
                     })
             })
 
-            .catch((err) => {
+            .catch((err) =>
+            {
                 console.log(err)
             })
     }
-    refreshList = () => {
+    refreshList = () =>
+    {
 
 
         axios
             .get(`${url}api/dogs/getdoguser/${this.state.user}`)
-            .then((res) => {
+            .then((res) =>
+            {
                 this.setState({ dogs: res.data }, () => ('b' * 10, console.log(this.state)))
             }
             )
 
-            .catch((err) => {
+            .catch((err) =>
+            {
                 console.log("Error couldnt get Dog");
                 console.log(err.message);
             });
@@ -110,7 +128,8 @@ class ProfileMain extends Component {
 
     };
 
-    render_dog_list = () => {
+    render_dog_list = () =>
+    {
 
         return this.state.dogs.map((dog) => (
             <div className='col-md-6 text-capitalize render_card'>
@@ -125,20 +144,26 @@ class ProfileMain extends Component {
 
 
 
-    onSearchClick = (e) => {
+    onSearchClick = (e) =>
+    {
         e.preventDefault()
 
     }
 
 
-    render() {
+    render()
+    {
         return (
             <div>
                 {this.context.user ?
                     <div>
                         <Profile class='profile_first' navbarcolor='black'>
                             <div className='row align-items-center justify-content-center' >
-                                <div className='col-sm-12'>
+                                {/* <div className='col-sm-2 smallrem'>
+                                    <PedShareForm label="Upload a Pedigree" pedigree={true} />
+
+                                </div> */}
+                                <div className='col-sm-9'>
                                     <Search name='profile_search' send_to={true} onSearchClick={this.onSearchClick} />
 
                                 </div>
@@ -160,7 +185,7 @@ class ProfileMain extends Component {
                                         <h3 className='text-dark'>You have no registered dogs yet.</h3>
                                         <p className='m-0 text-dark '>&#128517;Like to
                                             <Link class="text-warning" to="/registration"> register </Link>
-                                             one with us?</p>
+                                            one with us?</p>
                                         {/* <small className='text-warning mt-5' style={{fontSize: "1rem"}}>Please reach out to our support team if this is a mistake.</small> */}
                                     </div>}
                             </div>

@@ -33,6 +33,13 @@
     /* filter: brightness(90%);
     filter: blur(30%); */
 }
+.comm_body_blur{
+    background-color: #d9d9d94d;
+    opacity: 0.4;
+    background-blend-mode: darken;
+    filter: brightness(90%);
+    filter: blur(30%);
+}
 
 .padlock{
     z-index: 2;
