@@ -31,9 +31,6 @@
    margin-top:20%;
 }
 
-/*.contents-area {
-   margin-top: 10%;
-}*/
 
 .wrapper a {
    color: #6d6d6d;
@@ -57,9 +54,7 @@
 }
 
 .ads-preview {
-   background-image: url(../images/DoggyPic.jpg);
-   background-size: cover;
-   color: #ffffff;
+
 }
 
 /*.posts-preview {
@@ -69,31 +64,19 @@
 }*/
 
 .events-preview {
-   background-color:#ffffff;
+   /* background-color:#ffffff;
    color: var(--clr--preview);
-   opacity: .7;
+   opacity: .7; */
 }
 
 
 .newly-registered-preview {
-   background-color:#ffffff;
-   color: var(--clr--preview);
+   /* background-color:#ffffff;
+   color: var(--clr--preview); */
 }
 
 .featured-preview {
-   background-image: url(../images/FABG.jpg);
-   color: black;
-<<<<<<< HEAD
-   background-size: cover;
-   text-align: center;
-   margin-top: 10px;
-=======
-   /* background-size: contain; */
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-blend-mode: darken;
->>>>>>> c48c030c55bdaf41ea7dd85fdc6a4b37dc976380
+   
 }
 
 .ovr-bg {

@@ -5,12 +5,12 @@ import { Community_Nav } from '../community_nav'
 import Footer from '../../footer'
 
 import Ads_Effect from './ads_message' 
-import No_Ads_Yet from './No_Ads_Yet';
+import NoAdsYet from './noadsyet';
 
 
 
 
-function advertisements() {
+function Advertisements() {
   return (
       
     <>
@@ -18,10 +18,10 @@ function advertisements() {
       <Community_Nav/>
 
       {/* <Ads_Effect/> */}
-      <No_Ads_Yet/>
+      <NoAdsYet/>
       <Footer/>
     </>  
   )
 }
 
-export default advertisements
+export default Advertisements

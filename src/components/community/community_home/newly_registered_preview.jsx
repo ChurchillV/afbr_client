@@ -19,8 +19,8 @@ const imageStyling = {
 
 export default function newly_registered_preview() {
   return (
-    <div>
-      <h1>Take a look at the new dogs on the block🥳</h1>
+    <div className='container-fluid w-100'>
+      <p className='pb-3'>Take a look at the new dogs on the block🥳</p>
       <Swiper modules = {[Navigation, EffectFade]}
          navigation
          effect
@@ -28,14 +28,14 @@ export default function newly_registered_preview() {
          slidesPerView = {1}
          loop
          autoplay
-         className='myswiper'>
+         className='myswiper w-100'>
          
             <SwiperSlide className='swiper-slide'>
-               <img src={images[0].image} style = {imageStyling}/>
+               <img src={images[0].image} className='img-fluid img-responsive' width='100%'/>
             </SwiperSlide>
 
             <SwiperSlide className='swiper-slide'>
-               <img src={images[1].image} style = {imageStyling}/>
+               <img src={images[1].image} className='img-fluid img-responsive'/>
             </SwiperSlide>
       </Swiper>
     </div>

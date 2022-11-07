@@ -49,8 +49,9 @@ import { AdminMain } from './components/admin/admin_main';
 import FeaturedArticlesContent from './components/community/featured_articles/featured_articles_content';
 import FeaturedArticlesFull  from './components/community/featured_articles/featured_articles_full';
 import Adverts from './components/community/advertisements/advertisements';
-import { CommuniyHome } from './components/community/community_home/community_home';
+import { CommunityHome } from './components/community/community_home/community_home';
 import { RegistrationNextPage } from './components/special_registration_next';
+import Advertisements from './components/community/advertisements/advertisements';
 
 
 
@@ -257,13 +258,13 @@ class App extends Component
             <Route path='/shows_and_events' element={<Shows />} />
             <Route path='/judges' element={<Judges />} />
             <Route path='/contact' element={<Contact />} />
-            <Route path='/community' element={< Post />} />
+            <Route path='/community' element={< CommunityHome />} />
             <Route path='/community/newly_registered' element={< NewlyRegistered />} />
 
             {/* <Route path='/newly_registered' element={<Newly />} /> */}
             {/* {/* <Route path='/community/posts' element={< Post />} /> */}
             <Route path='/community/posts' element={< Post />} /> 
-            <Route path='/community/advertisements' element={< Post />} />
+            <Route path='/community/advertisements' element={< Advertisements />} />
 
             <Route path='/community/featured_articles' element={< FeaturedArticlesFull />} />
 

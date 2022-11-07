@@ -7,7 +7,7 @@ import WelcomeMessage from './welcome_message.jsx'
 import ContentsArea from './contents_area'
 
 
-export const CommuniyHome = () =>
+export const CommunityHome = () =>
 {/*
     return (
         <div className='container-fluid'>
@@ -43,26 +43,24 @@ export const CommuniyHome = () =>
     return (
         <div>
             <div>
-                    <Navbar/>
-                    <Community_Nav/>
-<<<<<<< HEAD
-=======
-                    <div className='overall-bg'>
-                        {/* <WelcomeMessage/> */}
->>>>>>> c48c030c55bdaf41ea7dd85fdc6a4b37dc976380
-                        <div className='contents-area'>
-                            <ContentsArea/>
-                        </div>
-                    <Footer/>
-                
+                <Navbar />
+                <Community_Nav />
+                <div className='overall-bg'>
+                    {/* <WelcomeMessage/> */}
+                    <div className='contents-area'>
+                        <ContentsArea />
+                    </div>
+                    <div className='bg-dark text-white'><Footer /></div>
+
+                </div>
+
             </div>
-        
         </div>
     )
 }
 
 //Welcome to the afbr community section
 //Adverts
-//Posts           
+//Posts
 //Featured articles
 //Newly registered

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css_files/adverts.css'
 
-function No_Ads_Yet() {
+function NoAdsYet() {
   return (
     <div className="Disappointment">
       <h6>No advertisements to display yet😢</h6>
@@ -11,4 +11,4 @@ function No_Ads_Yet() {
   )
 }
 
-export default No_Ads_Yet
+export default NoAdsYet

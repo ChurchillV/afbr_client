@@ -2,11 +2,11 @@ import React from 'react'
 
 function events() {
   return (
-    <div>
-      <h1>No upcoming events😓</h1>
-         <h3>Want to book one? Reach out to us at <br/> 
+    <div className='text-dark'>
+      <h6>No upcoming events😓</h6>
+         <p>Want to book one? Reach out to us at <hr/> 
          <a href="mailto: africanbullyregistry@gmail.com" className='text-warning'>africanbullyregistry@gmail.com</a> 
-         </h3>
+         </p>
     </div>
   )
 }

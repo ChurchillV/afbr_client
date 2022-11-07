@@ -23,8 +23,8 @@ const ovrStyling = {
 
 export default function posts_preview() {
   return (
-   <div>
-      <h1>Show off your dogs on our Posts section📸</h1>
+   <div className='container-fluid'>
+      <p className='pb-4'>Show off your dogs on our Posts section📸</p>
       <Swiper modules = {[Navigation, EffectFade]}
          navigation
          effect
@@ -32,13 +32,13 @@ export default function posts_preview() {
          slidesPerView = {1}
          loop
          autoplay
-         className='myswiper'>
+         className='myswiper w-100'>
             <SwiperSlide className='swiper-slide'>
-               <img src={images[0].image} style = {imageStyling}/>
+               <img src={images[0].image} className='img-fluid img-responsive'/>
             </SwiperSlide>
 
             <SwiperSlide className='swiper-slide'>
-               <img src={images[1].image} style = {imageStyling}/>
+               <img src={images[1].image} className='img-fluid img-responsive' />
             </SwiperSlide>
       </Swiper>
     </div>
