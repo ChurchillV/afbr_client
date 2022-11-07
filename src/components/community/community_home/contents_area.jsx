@@ -26,12 +26,15 @@ export default function contents_area()
          <div className='row align-items-center justify-content-center '>
             <div className='col-sm-6 mt-2'>
 
-               <p className=' text-canter mt-3 px-5 px-sm-0 mb-5 mb-sm-0'>Welcome to the <span className='font-weight-bold text-info'>African Bully Registry Community</span></p>
 
-               <div className='row  align-items-center justify-content-center  text-light newly-preview w-100'>
 
-                  <div className='col-sm-12 mt-2 box_shadow  pt-5'>
-                     <a href='community/newly_registered'>
+               <div className='row  align-items-center justify-content-center  text-dark newly-preview w-100'>
+
+                  <p className=' text-center mt-3 px-5 px-sm-0 mb-5 mb-sm-0
+               pt-5 pt-sm-0'>Welcome to the <span className='font-weight-bold text-dark'>African Bully Registry Community</span></p>
+
+                  <div className='col-sm-12 mt-2 box_shadow   pb-0 pb-sm-5 pt-5 '>
+                     <a href='community/newly_registered' className='w-100'>
                         <NewlyRegistered />
                      </a>
                   </div>
@@ -59,7 +62,7 @@ export default function contents_area()
 
                <div className='row align-items-center justify-content-center  text-dark posts-preview w-100 box_shadow'>
 
-                  <div className='col-sm-10 mt-2  pt-5'><a href='community/posts'><PostsPreview /></a></div>
+                  <div className='col-sm-12 mt-2  pb-0 pb-sm-5 pt-5'><a href='community/posts'><PostsPreview /></a></div>
                </div>
 
                <div className='row  align-items-center justify-content-center  text-secondary p-4 m-3 events-preview w-100'>

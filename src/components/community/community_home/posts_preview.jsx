@@ -6,8 +6,10 @@ import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
 
 const images = [
-   {image : require('../images/bully1.jpg')},
-   {image : require('../images/bully2.jpg')}
+   {image: 'https://res.cloudinary.com/daurieb51/image/upload/v1667147413/WhatsApp_Image_2022-10-25_at_17.14.13_qtapar.jpg',
+},
+   {image: 'https://res.cloudinary.com/daurieb51/image/upload/v1667147413/WhatsApp_Image_2022-10-25_at_15.50.40_pi84vi.jpg',
+}
 ];
 
 const imageStyling = {
@@ -24,11 +26,11 @@ const ovrStyling = {
 export default function posts_preview() {
   return (
    <div className='container-fluid'>
-      <p className='pb-4'>Show off your dogs on our Posts section📸</p>
+      <p className='pb-4 px-5 px-sm-0'>Show off your dogs on our <span className='text-dark font-weight-bold'>Posts</span> section📸</p>
       <Swiper modules = {[Navigation, EffectFade]}
          navigation
          effect
-         speed={800}
+         speed={1200}
          slidesPerView = {1}
          loop
          autoplay

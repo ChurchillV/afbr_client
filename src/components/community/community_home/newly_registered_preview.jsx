@@ -7,8 +7,10 @@ import 'swiper/css/effect-fade'
 import '../css_files/community_homepage.css'
 
 const images = [
-   {image : require('../images/bully1.jpg')},
-   {image : require('../images/bully2.jpg')}
+   {image: 'https://res.cloudinary.com/daurieb51/image/upload/v1659038540/africanbullystyles_frika_r1awjf.jpg',
+},
+   {image: 'https://res.cloudinary.com/daurieb51/image/upload/v1666646714/o4juyxmgery0cabfnsbg.jpg',
+}
 ];
 
 const imageStyling = {
@@ -20,7 +22,7 @@ const imageStyling = {
 export default function newly_registered_preview() {
   return (
     <div className='container-fluid w-100'>
-      <p className='pb-3'>Take a look at the new dogs on the block🥳</p>
+      <p className='pb-3 px-5 px-sm-0'>Take a look at the new dogs on the block🥳</p>
       <Swiper modules = {[Navigation, EffectFade]}
          navigation
          effect
@@ -31,7 +33,7 @@ export default function newly_registered_preview() {
          className='myswiper w-100'>
          
             <SwiperSlide className='swiper-slide'>
-               <img src={images[0].image} className='img-fluid img-responsive' width='100%'/>
+               <img src={images[0].image} className='img-fluid img-responsive'/>
             </SwiperSlide>
 
             <SwiperSlide className='swiper-slide'>
