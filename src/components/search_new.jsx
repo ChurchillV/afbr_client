@@ -1,5 +1,5 @@
 import React, { Component, useEffect } from 'react';
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css_files/breed.css';
@@ -14,7 +14,7 @@ export const SearchNew = (props) =>
     
     const [search_input, setSearchInput] = useState('')
     const [search_dogs, setSearchDogs] = useState({})
-
+    const navigate = useNavigate()
     useEffect(() => {
         axios
         .get(`${url}api/dogs/search/${search_input}`)
@@ -47,10 +47,10 @@ export const SearchNew = (props) =>
         {
             console.log(console.log(search_dogs[item]['name']))
             return <div>
-                <button className='btn btn-warning w-100 mb-1' name='sire'
+                <button className='btn btn-warning w-100 mb-1 search_results_text text-white' name='sire'
                  value={search_dogs[item]['id']}
                  onClick={e => {
-                    props.onSearchClick && props.onSearchClick(e) 
+                    props.onSearchClick ? props.onSearchClick(e) : navigate(`/my_dogs/${search_dogs[item]['id']}`)
                     setSearchInput(search_dogs[item]['name'])
                     setSearchDogs({})
                     console.log('search input', search_input)
