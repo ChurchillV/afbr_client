@@ -6,6 +6,7 @@ import { Image } from 'cloudinary-react'
 import axios from 'axios'
 import Search from './search'
 import { BarLoader, BeatLoader } from 'react-spinners';
+import { SearchNew } from './search_new';
 // import {AmplifySignOut, withAuthenticator} from '@aws-amplify/ui-react'
 
 
@@ -98,7 +99,7 @@ class RegisterForm extends Component {
                                 <label for="inputSire">Registered Sire</label>
                                 <p class='small'>Enter Unkown Genealogy if sire did not appear in searchlist</p>
 
-                                <Search onSearchClick={this.props.handleChange} name='sire' />
+                                <SearchNew onSearchClick={this.props.handleChange} name='sire' />
 
                             </div>
                         </div>

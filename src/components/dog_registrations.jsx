@@ -170,10 +170,11 @@ class DogRegistration extends React.Component
     {
         e.preventDefault()
         const { name, value } = e.target
-        let dog = {
-            [name]: value,
+        console.log(name, value)
+        // let dog = {
+        //     [name]: value,
 
-        }
+        // }
         // this.setState((data) => ({ ...data, [e.target.name]: e.target.value }));
         this.setState({
             ...this.state,
