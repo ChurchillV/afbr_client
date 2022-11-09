@@ -51,13 +51,14 @@ class Navbar extends Component {
                                     <Link class="nav-link" style={{ color: this.props.color }} to="/home">Home </Link>
                                 </li>
 
-                                {/* <li class="nav-item active">
-                                    <Link class="nav-link" style={{ color: this.props.color }} to="/breeds">Breeds</Link>
-                                </li> */}
+                                
                                 <li class="nav-item active">
                                     <Link class="nav-link" style={{ color: this.props.color }} to="/community">Community</Link>
                                 </li>
-
+                                
+                                <li class="nav-item active">
+                                    <Link class="nav-link" style={{ color: this.props.color }} to="/breeds">Breeds</Link>
+                                </li>
                                 <li class="nav-item active">
                                     <Link class="nav-link" style={{ color: this.props.color }} to="/registration" id="navbarDropdownMenuLink">Register Dog
                                     </Link>

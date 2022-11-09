@@ -25,9 +25,6 @@ export default function contents_area()
 
          <div className='row align-items-center justify-content-center '>
             <div className='col-sm-6 mt-2'>
-
-
-
                <div className='row  align-items-center justify-content-center  text-dark newly-preview w-100'>
 
                   <p className=' text-center mt-3 px-5 px-sm-0 mb-5 mb-sm-0
@@ -43,10 +40,10 @@ export default function contents_area()
                <div className='row  align-items-center justify-content-center  text-light m-3 ads-preview w-100'>
 
                   <div className='col-sm-12 mt-2  p-5 box_shadow'>
-                     <a href='community/advertisements'>
-                        <h6 className='ads-title'> Advertisements
+                   
+                        <h6 className='text-dark'>   <a href='community/advertisements'>Advertisements</a>
                         </h6>
-                     </a>
+                     
                      <p className='text-dark'>See what adorable doggies are on sale😍</p>
                   </div>
                </div>
