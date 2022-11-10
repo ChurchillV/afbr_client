@@ -4,17 +4,18 @@ import { Link } from "react-router-dom";
 import '../css_files/registration.css'
 import { Image } from 'cloudinary-react'
 import axios from 'axios'
-import Search from './search'
+import {Search} from './search'
 import { BarLoader, BeatLoader } from 'react-spinners';
-import { SearchNew } from './search_new';
 // import {AmplifySignOut, withAuthenticator} from '@aws-amplify/ui-react'
 
 
 // import "./Signup.css";
 
-class RegisterForm extends Component {
+class RegisterForm extends Component
+{
 
-    constructor(props) {
+    constructor(props)
+    {
         super(props)
         console.log('this.prpos.sires', this.props)
         this.state = {
@@ -27,22 +28,27 @@ class RegisterForm extends Component {
 
     }
 
-    option_list_dams = () => {
-        return Object.values(this.props.dams).map((item) => {
+    option_list_dams = () =>
+    {
+        return Object.values(this.props.dams).map((item) =>
+        {
             return <option name='dam' className='text-lowercase text-capitalize' value={item.id}>{item.name}</option>
 
         })
     }
 
-    option_list_sires = () => {
-        return Object.values(this.props.sires).map((item) => {
+    option_list_sires = () =>
+    {
+        return Object.values(this.props.sires).map((item) =>
+        {
             return <option name='sire' className='text-lowercase text-capitalize' value={item.id}>{item.name}</option>
 
         })
     }
 
 
-    changeToLoading = () => {
+    changeToLoading = () =>
+    {
         this.setState({ register_text: 'Loading, just a sec' })
         this.setState({ special_register_text: 'Loading, just a sec' })
 
@@ -50,10 +56,12 @@ class RegisterForm extends Component {
 
     }
 
-    render() {
+    render()
+    {
 
         return (
-            <form onSubmit={(e) => {
+            <form onSubmit={(e) =>
+            {
                 this.props.submit(e)
             }}
                 method='post' className='container  align-items-center justify-content-center FORM text-left p-4 p-sm-5'>
@@ -99,7 +107,7 @@ class RegisterForm extends Component {
                                 <label for="inputSire">Registered Sire</label>
                                 <p class='small'>Enter Unkown Genealogy if sire did not appear in searchlist</p>
 
-                                <SearchNew onSearchClick={this.props.handleChange} name='sire' />
+                                <Search onSearchClick={this.props.handleChange} name='sire' />
 
                             </div>
                         </div>
@@ -138,7 +146,7 @@ class RegisterForm extends Component {
 
 
                         </div>
- 
+
                         <div className='form-row '>
                             <div class="form-group col-md-">
                                 <label for="inputDate">Weight: &nbsp;</label>
@@ -208,8 +216,8 @@ class RegisterForm extends Component {
 
                 {/* {this.props.dpo_loaded && <button type="submit" class="btn btn-success">Register</button>} */}
                 {(!this.props.edit && !this.props.special) && <button type="submit" class="btn btn-success btn-lg w-100 mt-5"
-                 onClick={() => this.changeToLoading()}>{this.state.register_text}</button>}
-   
+                    onClick={() => this.changeToLoading()}>{this.state.register_text}</button>}
+
                 {this.props.special && <button type="submit" class="btn btn-success btn-lg w-100 mt-5" onClick={() => this.changeToLoading()}>{this.state.special_register_text}</button>}
                 {this.props.edit && <button type="submit" className="btn btn-success btn-lg w-100 mt-5" onClick={() => this.changeToLoading()}>{this.state.edit_text}</button>}
             </form>

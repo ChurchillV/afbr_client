@@ -51,7 +51,6 @@ class DogRegistration extends React.Component
     }
 
 
-
     componentDidMount = () =>
     {
         console.log('contenxt comes here', this.context)
@@ -69,12 +68,11 @@ class DogRegistration extends React.Component
         for (let i = 0; i < this.props.location.pathname.split('/').length; i++)
         {
             // console.log('bingo')
-            console.log(this.props.location.pathname.split('/').length)
+            // console.log(this.props.location.pathname.split('/').length)
             // console.log(this.props.location.pathname.split())
-            console.log('..........', this.props.location.pathname.split('/')[i])
+            // console.log('..........', this.props.location.pathname.split('/')[i])
             if (this.props.location.pathname.split('/')[i] === 'edit')
             {
-                console.log('bingo')
                 this.setState({ edit: true }, () =>
                 {
                     axios
@@ -82,8 +80,8 @@ class DogRegistration extends React.Component
                         .then((res) =>
                         {
 
-                            console.log(res.data);
-                            this.setState({ dog: res.data[0] }, () => console.log(this.state))
+                            // console.log('res data', res.data);
+                            this.setState({ dog: res.data }, () => console.log(this.state))
                             // console.log('data',data)
                         })
                         .catch((err) =>
@@ -162,10 +160,6 @@ class DogRegistration extends React.Component
 
 
     }
-
-
-
-
     handleChange = (e) =>
     {
         e.preventDefault()

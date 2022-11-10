@@ -7,11 +7,9 @@ import DogCard from './dog_card';
 import Card from './card';
 import Profile from './profile';
 import axios from 'axios';
-import { set } from 'mongoose';
-import { setState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { url } from './weburl';
-import Search from './search';
+import {Search} from './search';
 
 import $ from 'jquery'
 import { ProfileFooter } from './profile_footer';
@@ -143,14 +141,6 @@ class ProfileMain extends Component
 
 
 
-
-    onSearchClick = (e) =>
-    {
-        e.preventDefault()
-
-    }
-
-
     render()
     {
         return (
@@ -164,17 +154,12 @@ class ProfileMain extends Component
 
                                 </div> */}
                                 <div className='col-sm-9'>
-                                    <Search name='profile_search' send_to={true} onSearchClick={this.onSearchClick} />
+                                    <Search/>
 
                                 </div>
 
                             </div>
-                            {/* <div className='row align-items-center justify-content-center'>
-                                <div className='col-sm-'>
-                                    <p><small className='text-dark'> Please complete your profile details for us</small></p>
-                                </div>
-                            </div> */}
-
+      
                             <div className='row align-items-center justify-content-center' style={{ padding: '1%' }}>
                                 {/* check on this later , add a load spinner */}
                                 {/* {!this.state.dogs[0] && <BeatLoader size='large' color='black' />} */}
