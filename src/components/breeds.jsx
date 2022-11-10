@@ -69,7 +69,7 @@ class Breeds extends Component
                     <div class='container-fluid  mx-3'>
                         <div className='row breed_text align-items-center justify-content-center'>
                             <div class='container-fluid'>
-                                <div class="row align-items-center justify-content-center d9d9d9 pt-3">
+                                <div class="row align-items-center justify-content-center  pt-3">
                                     <div className='col-md-6'>
                                         <Search send_to={true} onSearchClick={this.onSearchClick} />
 
@@ -106,7 +106,7 @@ class Breeds extends Component
 
                                         </div>
                                     </div>
-                                    <div className='col-md-9 box_shadow  py-5'>
+                                    <div className='col-md-9 box_shadow'>
                                         <div className='container-fluid'>
                                             <div className='row align-items-center justify-content-center'>
                                                 <div class="col-lg-12">
@@ -149,7 +149,16 @@ class Breeds extends Component
                                                 </div>
                                             </div>
 
+                                            <div className='row align-items-center justify-content-center'>
 
+                                                <div class="col-lg-12 border border-dark-top py-5 my-5">
+                                                    <div class="my-5">
+                                                        <div class="">
+                                                           <p>Click on a Breed to read more</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                         </div>
 
