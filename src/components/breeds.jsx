@@ -10,6 +10,7 @@ import { AmericanBully } from './americanbully';
 import { FrenchBulldog } from './frenchbulldog';
 import { Pittbull } from './pitbull';
 import $ from 'jquery'
+import { SearchNew } from './search_new';
 
 class Breeds extends Component
 {
@@ -71,8 +72,8 @@ class Breeds extends Component
                             <div class='container-fluid'>
                                 <div class="row align-items-center justify-content-center  pt-3">
                                     <div className='col-md-6'>
-                                        <Search send_to={true} onSearchClick={this.onSearchClick} />
-
+                                        {/* <Search send_to={true} onSearchClick={this.onSearchClick} /> */}
+                                        <SearchNew onSearchClick={this.onSearchClick}/>
                                     </div>
                                 </div>
                                 <div className='row align-items-start justify-content-center'>
